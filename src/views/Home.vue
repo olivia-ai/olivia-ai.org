@@ -1,32 +1,59 @@
 <template>
-
-
   <div class="wrapper">
     <div class="container">
       <div class="right">
         <div class="top"><span>À: <span class="name">Olivia</span></span></div>
         <div class="chat active-chat" data-chat="person1">
           <div class="conversation-start"><span>Aujourd'hui</span></div>
-          <div v-for="bubble in bubbles" :key="bubble">
+          <div v-for="bubble in bubbles" :key="bubble.id">
             <div :class="'bubble ' + bubble.who">{{ bubble.content }}</div>
           </div>
         </div>
         <div class="write">
-          <input type="text"/>
+          <input type="text" v-model="input" v-on:keyup.enter="validate"/>
         </div>
       </div>
     </div>
   </div>
-
-
 </template>
 
 <script>
   export default {
     data() {
       return {
+        input: "",
         bubbles: []
       }
+    },
+    methods: {
+      validate() {
+        this.addBubble("me", this.input)
+
+        this.$http.post('https://olivia.cleverapps.io/api/response?sentence='
+          + this.input + '&authorId=' + localStorage.getItem("authorId")).then(
+          data => {
+            var response = data.body.content
+            this.input = ""
+
+            new Promise((resolve) => setTimeout(resolve,Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
+              this.addBubble("you", response)
+            })
+          },
+          error => {
+            console.log(error)
+          }
+        )
+      },
+      addBubble(who, content) {
+        this.bubbles.push({
+          id: this.bubbles.length,
+          who,
+          content
+        })
+      }
+    },
+    mounted() {
+      localStorage.setItem("authorId", Math.floor(Math.random() * 1000000000000).toString())
     }
   }
 </script>
@@ -51,7 +78,7 @@
   .wrapper {
     position: relative;
     left: 50%;
-    width: 1000px;
+    width: 60%;
     height: 800px;
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
