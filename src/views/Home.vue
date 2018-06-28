@@ -99,7 +99,7 @@
     left: 22%;
     position: fixed;
     overflow: scroll;
-    height: 70%;
+    height: 60%;
   }
 
   .bubble {
