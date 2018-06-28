@@ -7,12 +7,14 @@
       </span>
       </div>
     </div>
-    <div class="container">
+    <div class="container messages-wrapper">
       <div v-for="bubble in bubbles" :key="bubble.id">
         <div :class="'bubble ' + bubble.who">
           {{ bubble.content }}
         </div>
       </div>
+    </div>
+    <div class="container">
       <input type="text" v-model="input" v-on:keyup.enter="validate"/>
     </div>
   </div>
@@ -41,8 +43,8 @@
               this.addBubble("you", response)
             })
           },
-          error => {
-            console.log(error)
+          _ => {
+           this.addBubble("you", "Je ne peux pas répondre, l'api est indisponible")
           }
         )
       },
@@ -91,6 +93,13 @@
     padding: 25px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .messages-wrapper {
+    left: 22%;
+    position: fixed;
+    overflow: scroll;
+    height: 70%;
   }
 
   .bubble {
