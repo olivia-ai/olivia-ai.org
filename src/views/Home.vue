@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div :class="(dark ? 'dark ' : '') + 'main'">
     <div class="container">
       <div class="top">
-      <span>À:
-        <span class="name">Olivia</span>
-      </span>
+        <span>À:
+          <span class="name">Olivia</span>
+        </span>
+        <div @click="changeTheme" class="dark">
+          <span style="cursor: pointer">Thème {{ dark ? 'clair' : 'sombre' }}</span>
+        </div>
       </div>
     </div>
     <div class="container messages-wrapper">
@@ -25,17 +28,22 @@
     data() {
       return {
         input: "",
+        dark: false,
         bubbles: []
       }
     },
     methods: {
       validate() {
         var sentence = this.input
+
+        if (sentence == "")
+          return
+
         this.addBubble("me", this.input)
         this.input = ""
 
         this.$http.post('https://olivia.cleverapps.io/api/response?sentence='
-          + sentence + '&authorId=' + localStorage.getItem("authorId")).then(
+          + sentence + '&authorId=' + localStorage.getItem("authorId"), {emulateHTTP: true}).then(
           data => {
             var response = data.body.content
 
@@ -44,7 +52,7 @@
             })
           },
           _ => {
-           this.addBubble("you", "Je ne peux pas répondre, l'api est indisponible")
+            this.addBubble("you", "Je ne peux pas répondre, l'api est indisponible")
           }
         )
       },
@@ -54,6 +62,10 @@
           who,
           content
         })
+      },
+      changeTheme() {
+        this.dark = !this.dark
+        console.log(this.dark)
       }
     },
     mounted() {
@@ -69,6 +81,26 @@
     font-family: 'Source Sans Pro', sans-serif;
   }
 
+  .main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  .main.dark {
+    background-color: #2b2b2b;
+  }
+
+  .container {
+    width: 55%;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .top {
     width: 100%;
     padding: 15px 15px;
@@ -77,9 +109,18 @@
     background-color: #eceff1;
   }
 
+  .main.dark .container .top {
+    border-color: #444444;
+    background-color: #444444;
+  }
+
   .top span {
     font-size: 15px;
     color: #999;
+  }
+
+  .main.dark .container .top span {
+    color: #cccccc;
   }
 
   .top span .name {
@@ -88,11 +129,12 @@
     font-weight: 600;
   }
 
-  .container {
-    width: 55%;
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
+  .main.dark .container .top span .name {
+    color: #fff;
+  }
+  
+  .top .dark {
+    float: right;
   }
 
   .messages-wrapper {
@@ -164,6 +206,11 @@
     border: 1px solid #e6e6e6;
     background-color: #eceff1;
     border-radius: 5px;
+  }
+
+  .main.dark .container input {
+    border-color: #666666;
+    background-color: #444444;
   }
 
   @keyframes slideFromLeft {
