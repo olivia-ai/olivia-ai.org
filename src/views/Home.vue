@@ -1,10 +1,13 @@
 <template>
-  <div class="main">
+  <div :class="(dark ? 'dark ' : '') + 'main'">
     <div class="container">
       <div class="top">
         <span>À:
           <span class="name">Olivia</span>
         </span>
+        <div @click="changeTheme" class="dark">
+          <span style="cursor: pointer">Thème {{ dark ? 'clair' : 'sombre' }}</span>
+        </div>
       </div>
     </div>
     <div class="container messages-wrapper">
@@ -25,6 +28,7 @@
     data() {
       return {
         input: "",
+        dark: false,
         bubbles: []
       }
     },
@@ -48,7 +52,7 @@
             })
           },
           _ => {
-           this.addBubble("you", "Je ne peux pas répondre, l'api est indisponible")
+            this.addBubble("you", "Je ne peux pas répondre, l'api est indisponible")
           }
         )
       },
@@ -58,6 +62,10 @@
           who,
           content
         })
+      },
+      changeTheme() {
+        this.dark = !this.dark
+        console.log(this.dark)
       }
     },
     mounted() {
@@ -102,7 +110,7 @@
   }
 
   .main.dark .container .top {
-    border-color: #666666;
+    border-color: #444444;
     background-color: #444444;
   }
 
@@ -123,6 +131,10 @@
 
   .main.dark .container .top span .name {
     color: #fff;
+  }
+  
+  .top .dark {
+    float: right;
   }
 
   .messages-wrapper {
