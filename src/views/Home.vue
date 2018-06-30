@@ -42,7 +42,7 @@
         this.addBubble("me", this.input)
         this.input = ""
 
-        this.$http.post('https://olivia.cleverapps.io/api/response?sentence='
+        this.$http.post('https://olivia-api.herokuapp.com/api/response?sentence='
           + sentence + '&authorId=' + localStorage.getItem("authorId"), {emulateHTTP: true}).then(
           data => {
             var response = data.body.content
@@ -65,7 +65,6 @@
       },
       changeTheme() {
         this.dark = !this.dark
-        console.log(this.dark)
       }
     },
     mounted() {
