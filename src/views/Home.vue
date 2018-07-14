@@ -210,6 +210,7 @@
   .main.dark .container input {
     border-color: #666666;
     background-color: #444444;
+    color: #ffffff;
   }
 
   @keyframes slideFromLeft {
