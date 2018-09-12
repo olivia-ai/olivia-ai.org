@@ -47,7 +47,7 @@
           data => {
             var response = data.body.content
 
-            new Promise((resolve) => setTimeout(resolve,Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
+            new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
               this.addBubble("you", response)
             })
           },
@@ -101,7 +101,7 @@
   }
 
   .top {
-    width: 100%;
+    width: 93%;
     padding: 15px 15px;
     border: 1px solid #eceff1;
     border-radius: 5px;
@@ -198,7 +198,7 @@
     height: 40px;
     bottom: 29px;
     padding: 0 10px;
-    width: 55%;
+    width: 52%;
     font-size: 16px;
     font-weight: 400;
     font-family: 'Source Sans Pro', sans-serif;
