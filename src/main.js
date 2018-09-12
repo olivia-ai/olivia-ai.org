@@ -11,6 +11,10 @@ const router = new Router({
     {
       path: '/',
       component: require('./views/Home.vue').default
+    },
+    {
+      path: '/api',
+      component: require('./views/Api.vue').default
     }
   ],
   mode: 'history'
