@@ -13,6 +13,14 @@ body {
     z-index: 10;
 }
 
+.main.dark .container p {
+    color: #cccccc;
+}
+
+.main.dark .container h2 {
+    color: #fff;
+}
+
 a {
     font-size: 15px;
     color: #999;
