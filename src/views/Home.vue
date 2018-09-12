@@ -137,10 +137,11 @@
   }
 
   .messages-wrapper {
-    left: 22%;
+    left: 21%;
     position: fixed;
     overflow: scroll;
     height: 60%;
+    width: 53%;
   }
 
   .bubble {
