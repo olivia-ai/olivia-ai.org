@@ -2,7 +2,9 @@ module.exports = {
   baseUrl: ".",
   pwa: {
     workboxPluginMode: "InjectManifest",
-    themeColor: "#f635cb",
+    workboxOptions: {
+      swSrc: "./src/service-worker.js"
+    },
     iconPaths: {
       appleTouchIcon: "images/icons/icon-152x152.png",
       maskIcon: null,
