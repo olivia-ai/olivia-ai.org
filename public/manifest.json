@@ -14,7 +14,8 @@
     }
   ],
   "theme_color": "#f32173",
-  "display": "fullscreen",
+  "background_color": "#fff",
+  "display": "minimal-ui",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/index.html"
