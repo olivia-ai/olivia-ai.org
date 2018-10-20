@@ -7,6 +7,8 @@ import './registerServiceWorker'
 Vue.use(Router)
 Vue.use(Resource)
 
+Vue.config.productionTip = false
+
 const router = new Router({
   routes: [
     {
