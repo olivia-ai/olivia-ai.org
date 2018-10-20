@@ -1,12 +1,9 @@
 {
   "name": "Olivia",
   "short_name": "Olivia",
-  "theme_color": "#fe4677",
-  "background_color": "#2196f3",
   "display": "fullscreen",
   "orientation": "portrait",
-  "Scope": "/",
-  "start_url": "/",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
@@ -48,6 +45,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
