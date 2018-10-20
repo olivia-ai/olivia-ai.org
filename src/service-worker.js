@@ -1,14 +1,11 @@
+/* eslint-disable no-console */
 
-workbox.clientsClaim();
-workbox.skipWaiting();
+if (workbox) {
+  console.log(`Workbox is loaded`);
 
-workbox.precaching.precacheAndRoute([]);
+  workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
-workbox.routing.registerNavigationRoute("/index.html", {
-  blacklist: [/img/, /manifest\.json/]
-});
-
-workbox.routing.registerRoute(
-  new RegExp("^https://fonts.(?:googleapis|gstatic).com/(.*)"),
-  workbox.strategies.cacheFirst()
-);
+}
+else {
+  console.log(`Workbox didn't load`);
+}
