@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
+import './registerServiceWorker'
 
 Vue.use(Router)
 Vue.use(Resource)
