@@ -1,13 +1,11 @@
 <template>
-  <div :class="(dark ? 'dark ' : '') + 'main'">
+  <div class="main">
     <div class="container">
       <div class="top">
         <span>À:
-          <span class="name">Olivia</span>
+            <span class="name">Olivia</span>
         </span>
-        <div class="dark">
-          <span @click="changeTheme" style="cursor: pointer">Thème {{ dark ? 'clair' : 'sombre' }}</span>
-          <span> | </span>
+        <div class="right">
           <router-link to="api">API</router-link>
         </div>
       </div>
@@ -30,7 +28,6 @@
     data() {
       return {
         input: "",
-        dark: localStorage.getItem('dark'),
         bubbles: []
       }
     },
@@ -64,10 +61,6 @@
           who,
           content
         })
-      },
-      changeTheme() {
-        this.dark = !this.dark
-        localStorage.setItem('dark', this.dark)
       }
     },
     mounted() {
