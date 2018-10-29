@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="container">
-      <input autofocus type="text" v-model="input" v-on:keyup.enter="validate"/>
+      <input autofocus type="" v-model="input" v-on:keyup.enter="validate"/>
     </div>
   </div>
 </template>
