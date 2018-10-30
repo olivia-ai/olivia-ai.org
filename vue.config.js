@@ -6,9 +6,8 @@ module.exports = {
       swSrc: 'src/service-worker.js',
     },
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: 'black',
     themeColor: '#f32173',
-    msTileColor: '#2b2b2b',
+    msTileColor: '#fff',
     iconPaths: {
       favicon32: "img/icons/favicon-32x32.png",
       favicon16: "img/icons/favicon-16x16.png",

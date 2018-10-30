@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div>
     <div class="container">
       <div class="top">
         <span>À:
@@ -18,7 +18,10 @@
       </div>
     </div>
     <div class="container">
-      <input autofocus type="" v-model="input" v-on:keyup.enter="validate"/>
+      <input autofocus type="text" placeholder="Écrivez un message" v-model="input" v-on:keyup.enter="validate"/>
+      <div class="submit">
+        <input type="submit" value="Envoyer" @click="validate">
+      </div>
     </div>
   </div>
 </template>
