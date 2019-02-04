@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="main container">
     <router-view></router-view>
   </div>
 </template>
@@ -14,6 +14,12 @@
   });
 
   export default {
-    name: 'app'
+    name: 'app',
+    data: () => ({
+      links: [
+        { name: 'À propos', link: '' },
+        { name: 'Code source', link: 'https://github.com/olivia-ai' }
+      ]
+    })
   }
 </script>

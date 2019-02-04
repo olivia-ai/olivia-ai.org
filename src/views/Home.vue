@@ -1,26 +1,24 @@
 <template>
   <div>
-    <div class="container">
-      <div class="top">
-        <span>À:
-            <span class="name">Olivia</span>
-        </span>
-        <div class="right">
-          <router-link to="api">API</router-link>
+    <h1>Olivia</h1>
+
+    <div class="grid">
+      <div class="cell -3of12">
+        <div class="card">
+          <header class="card-header">menu</header>
+          <div class="card-content">
+            <div class="inner">
+              <div class="menu">
+                <a class="menu-item">
+                  boîte de chat<div class="pull-right">»</div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="container messages-wrapper">
-      <div v-for="bubble in bubbles" :key="bubble.id">
-        <div :class="'bubble ' + bubble.who">
-          {{ bubble.content }}
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <input autofocus type="text" placeholder="Écrivez un message" v-model="input" v-on:keyup.enter="validate"/>
-      <div class="submit">
-        <input type="submit" value="Envoyer" @click="validate">
+      <div class="cell -8of12">
+        <div class="content">8</div>
       </div>
     </div>
   </div>
