@@ -1,6 +1,29 @@
 <template>
   <div id="app" class="main container">
-    <router-view></router-view>
+    <h1>Olivia</h1>
+
+    <div class="grid -between">
+      <div class="cell -3of12">
+        <div class="card">
+          <header class="card-header">menu</header>
+          <div class="card-content">
+            <div class="inner">
+              <div class="menu">
+                <a class="menu-item" href="/">
+                  boîte de chat<div class="pull-right">»</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="cell -8of12">
+        <div class="content">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
