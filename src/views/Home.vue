@@ -2,7 +2,7 @@
   <div>
     <h1>Olivia</h1>
 
-    <div class="grid">
+    <div class="grid -between">
       <div class="cell -3of12">
         <div class="card">
           <header class="card-header">menu</header>
@@ -17,8 +17,28 @@
           </div>
         </div>
       </div>
+      <br>
       <div class="cell -8of12">
-        <div class="content">8</div>
+        <div class="content">
+          <div
+              v-for="bubble in bubbles"
+              :key="bubble.id"
+              :class="'alert alert-' + (bubble.who == 'me' ? 'info' : 'normal')"
+          >
+            &lt;{{ bubble.who == 'me' ? 'moi' : 'Olivia' }}&gt; {{ bubble.content }}
+          </div>
+
+
+          <form class="form">
+            <fieldset class="form-group">
+              <label>Message:</label>
+              <input v-model="input" id="message" type="text" class="form-control">
+            </fieldset>
+            <fieldset class="form-actions">
+              <button type="button" @click="validate" class="btn btn-primary">Envoyer</button>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </div>
   </div>
