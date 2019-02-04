@@ -18,8 +18,7 @@
     "vue": "^2.5.16",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
-    "vue-set-state": "^0.1.1",
-    "vuetify": "^1.4.4"
+    "vue-set-state": "^0.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.3",
