@@ -1,22 +1,30 @@
 <template>
   <div>
-    <div
-        v-for="bubble in bubbles"
-        :key="bubble.id"
-        :class="'alert alert-' + (bubble.who == 'me' ? 'info' : 'normal')"
-    >
-      &lt;{{ bubble.who == 'me' ? 'moi' : 'Olivia' }}&gt; {{ bubble.content }}
-    </div>
-
-    <form class="form">
-      <fieldset class="form-group">
-        <label>Message:</label>
-        <input v-model="input" id="message" type="text" class="form-control">
-      </fieldset>
-      <fieldset class="form-actions">
-        <button type="button" @click="validate" class="btn btn-primary">Envoyer</button>
-      </fieldset>
-    </form>
+    <section class="cover height-100 switchable switchable--switch bg--secondary text-center-xs">
+      <div class="container pos-vertical-center">
+        <div class="row align-items-center justify-content-around">
+          <div class="col-md-6 col-lg-5">
+            <h1>
+              Your new open-source best friend
+            </h1>
+            <p class="lead">
+              Enjoy the pleasure of chatting with a contextual open-source chatbot
+            </p>
+            <a class="btn btn--primary type--uppercase" href="#">
+              <span class="btn__text">
+                Chat online
+              </span>
+            </a>
+            <span class="block type--fine-print">or
+              <a href="#">host olivia yourself</a>
+            </span>
+          </div>
+          <div class="col-md-6">
+            <img alt="Olivia character" src="img/icons/olivia.png"/>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
