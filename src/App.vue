@@ -32,9 +32,6 @@
                 <a class="btn btn--sm type--uppercase" href="https://github.com/olivia-ai">
                   <span class="btn__text">On Github</span>
                 </a>
-                <a class="btn btn--sm btn--primary type--uppercase" href="https://github.com/olivia-ai">
-                  <span class="btn__text">Donate</span>
-                </a>
               </div>
             </div>
           </div>
