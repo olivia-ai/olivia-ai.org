@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="text-center">
+    <section class="text-center" style="height: 100px">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </section>
-    <section class="switchable" style="height: 250px; overflow: auto;">
+    <section class="switchable" id="bubbles" style="height: 300px; overflow: auto;">
       <div v-for="bubble in bubbles" :key="bubble.id" class="container">
         <div class="testimonial testimonial-2">
           <div class="testimonial__body boxed boxed--border bg--secondary"
@@ -42,6 +42,11 @@
   </div>
 </template>
 <script>
+  window.setInterval(function() {
+    let elem = document.getElementById('bubbles');
+    elem.scrollTop = elem.scrollHeight;
+  }, 5000);
+
   export default {
     data() {
       return {
