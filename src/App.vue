@@ -66,12 +66,6 @@
   });
 
   export default {
-    name: 'app',
-    data: () => ({
-      links: [
-        { name: 'À propos', link: '' },
-        { name: 'Code source', link: 'https://github.com/olivia-ai' }
-      ]
-    })
+    name: 'app'
   }
 </script>
