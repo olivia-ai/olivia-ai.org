@@ -14,6 +14,10 @@ const router = new Router({
     {
       path: '/',
       component: require('./views/Home.vue').default
+    },
+    {
+      path: '/chat',
+      component: require('./views/Chat.vue').default
     }
   ],
   mode: 'history'

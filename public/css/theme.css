@@ -951,8 +951,8 @@ div[data-overlay] ul {
 }
 .btn--primary,
 .btn--primary:visited {
-  background: #4a90e2;
-  border-color: #4a90e2;
+  background: #ff3aaf;
+  border-color: #ff3aaf;
 }
 .btn--primary .btn__text,
 .btn--primary:visited .btn__text {
@@ -963,10 +963,10 @@ div[data-overlay] ul {
   color: #fff;
 }
 .btn--primary:hover {
-  background: #609de6;
+  background: #db1f95;
 }
 .btn--primary:active {
-  background: #3483de;
+  background: #db1f95;
 }
 .btn--primary-1,
 .btn--primary-1:visited {
@@ -2727,7 +2727,7 @@ body {
   background: #ffffff;
 }
 .color--primary {
-  color: #4a90e2 !important;
+  color: #ff3aaf !important;
 }
 a {
   color: #4a90e2;
@@ -2777,7 +2777,7 @@ a {
   background: #fafafa;
 }
 .bg--primary {
-  background: #4a90e2;
+  background: #ff3aaf;
 }
 .bg--primary p,
 .bg--primary span,

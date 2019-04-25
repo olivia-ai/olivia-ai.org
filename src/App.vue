@@ -5,7 +5,7 @@
         <div class="container">
           <div class="row">
             <div class="col-3 col-md-2">
-              <a href="index.html">
+              <a href="/">
                 <img class="logo" alt="logo" src="img/icons/olivia-text.png" />
               </a>
             </div>
@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col-lg-1 col-md-2 hidden-xs">
               <div class="bar__module">
-                <a href="index.html">
+                <a href="/">
                   <img class="logo" alt="logo" src="img/icons/olivia-text.png" />
                 </a>
               </div>
