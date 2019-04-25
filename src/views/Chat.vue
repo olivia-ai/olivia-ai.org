@@ -29,7 +29,7 @@
           <div class="col-md-10 col-lg-8">
             <div class="row">
               <div class="col-md-8">
-                <input v-model="input" type="text" placeholder="Write your message" />
+                <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
               </div>
               <div class="col-md-4">
                 <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
