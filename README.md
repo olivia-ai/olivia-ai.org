@@ -1,10 +1,10 @@
-# Website
+# olivia-ai.org [![Netlify Status](https://api.netlify.com/api/v1/badges/a465948c-abf9-4677-8943-f14d0e3bc648/deploy-status)](https://app.netlify.com/sites/olivia-ai/deploys)
 
 The website for Olivia
 
 ## Contributing
 
-1. Fork it (https://github.com/olivia-ai/Api/fork)
+1. Fork it (https://github.com/olivia-ai/olivia-ai.org/fork)
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
