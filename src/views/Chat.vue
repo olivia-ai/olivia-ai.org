@@ -15,7 +15,7 @@
       <div v-for="bubble in bubbles" :key="bubble.id" class="container">
         <div class="testimonial testimonial-2">
           <div class="testimonial__body boxed boxed--border bg--secondary"
-               :style="'width: 400px;' + (bubble.who === 'me' ? 'float: right;' : '')">
+               :style="'width: 300px;' + (bubble.who === 'me' ? 'float: right;' : '')">
             <p class="lead">
               {{ bubble.content }}
             </p>
