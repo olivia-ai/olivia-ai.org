@@ -45,7 +45,7 @@
   window.setInterval(function() {
     let elem = document.getElementById('bubbles');
     elem.scrollTop = elem.scrollHeight;
-  }, 1000);
+  }, 300);
 
   export default {
     data() {
