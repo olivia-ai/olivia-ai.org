@@ -39,6 +39,14 @@
   </div>
 </template>
 <script>
+  let voices = window.speechSynthesis.getVoices()
+  let voice
+  for (let i = 0; i < voices.length; i++) {
+    if (voices[i].name == "Google UK English Female") {
+      voice = voices[i]
+    }
+  }
+
   export default {
     data() {
       return {
@@ -47,6 +55,11 @@
       }
     },
     methods: {
+      speak(text) {
+        let message = new SpeechSynthesisUtterance(text);
+        message.voice = voice
+        window.speechSynthesis.speak(message);
+      },
       validate() {
         let sentence = this.input
 
@@ -65,12 +78,16 @@
               this.addBubble("him", response)
             })
           },
-          _ => {
+          () => {
             this.addBubble("him", "I can't reach the API.")
           }
         )
       },
       addBubble(who, content) {
+        if (who === "him") {
+          this.speak(content)
+        }
+
         this.bubbles.push({
           id: this.bubbles.length,
           who,
@@ -97,7 +114,6 @@
     padding: 20px;
     border-radius: 30px;
     margin-bottom: 2px;
-    font-family: Helvetica, Arial, sans-serif;
   }
 
   .him{
