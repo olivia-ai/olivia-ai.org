@@ -54,9 +54,9 @@
     },
     methods: {
       speak(text) {
-        let message = new SpeechSynthesisUtterance(text);
-        message.lang = "en-GB"
+        let message = new SpeechSynthesisUtterance(text)
         message.voice = speechSynthesis.getVoices()[33]
+        message.lang = "en-GB"
         window.speechSynthesis.speak(message);
       },
       dictate() {
