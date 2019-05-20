@@ -28,8 +28,11 @@
               <div class="col-md-8">
                 <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
+              </div>
+              <div class="col-md-2">
+                <button @click="dictate()" type="submit" class="btn btn--primary type--uppercase">Dictate</button>
               </div>
             </div>
           </div>
@@ -39,26 +42,37 @@
   </div>
 </template>
 <script>
-  let voices = window.speechSynthesis.getVoices()
-  let voice
-  for (let i = 0; i < voices.length; i++) {
-    if (voices[i].name == "Google UK English Female") {
-      voice = voices[i]
-    }
-  }
+  let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+
+  window.speechSynthesis.getVoices()
 
   export default {
     data() {
       return {
         input: "",
+        voice: null,
         bubbles: []
       }
     },
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text);
-        message.voice = voice
+        message.lang = "en-GB"
+        message.voice = window.speechSynthesis.getVoices()[50]
         window.speechSynthesis.speak(message);
+      },
+      dictate() {
+        let recognition = new SpeechRecognition()
+        recognition.lang = "en-GB"
+        recognition.start()
+        recognition.onresult = (event) => {
+          const speechToText = event.results[0][0].transcript
+          this.input = speechToText
+        }
+
+        recognition.onend = () => {
+          this.validate()
+        }
       },
       validate() {
         let sentence = this.input
