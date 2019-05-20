@@ -11,16 +11,13 @@
         </div>
       </div>
     </section>
-    <section class="switchable height-60" id="bubbles" style="overflow: auto;">
-      <div v-for="bubble in bubbles" :key="bubble.id" class="container">
-        <div class="testimonial testimonial-2">
-          <div class="testimonial__body boxed boxed--border bg--secondary"
-               :style="'width: 300px;' + (bubble.who === 'me' ? 'float: right;' : '')">
-            <p class="lead">
-              {{ bubble.content }}
-            </p>
-          </div>
-        </div>
+    <section class="switchable height-60" id="bubbles" style="overflow: auto">
+      <div class="container">
+        <ul v-for="bubble in bubbles" :key="bubble.id" >
+          <li :class="bubble.who">
+            {{ bubble.content }}
+          </li>
+        </ul>
       </div>
     </section>
     <section class="text-center height-20">
@@ -42,11 +39,6 @@
   </div>
 </template>
 <script>
-  window.setInterval(function() {
-    let elem = document.getElementById('bubbles');
-    elem.scrollTop = elem.scrollHeight;
-  }, 300);
-
   export default {
     data() {
       return {
@@ -70,11 +62,11 @@
             let response = data.body.content
 
             new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
-              this.addBubble("you", response)
+              this.addBubble("him", response)
             })
           },
           _ => {
-            this.addBubble("you", "I can't reach the API.")
+            this.addBubble("him", "I can't reach the API.")
           }
         )
       },
@@ -91,3 +83,44 @@
     }
   }
 </script>
+
+<style>
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li{
+    display:inline-block;
+    clear: both;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .him{
+    background: #ff3aaf;
+    color: #fff;
+    float: left;
+  }
+
+  .me{
+    float: right;
+    background: #eee;
+  }
+
+  .him + .me{
+    border-bottom-right-radius: 5px;
+  }
+
+  .me + .me{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .me:last-of-type {
+    border-bottom-right-radius: 30px;
+  }
+</style>
