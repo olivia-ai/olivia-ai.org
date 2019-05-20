@@ -44,8 +44,6 @@
 <script>
   let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
 
-  window.speechSynthesis.getVoices()
-
   export default {
     data() {
       return {
@@ -58,7 +56,7 @@
       speak(text) {
         let message = new SpeechSynthesisUtterance(text);
         message.lang = "en-GB"
-        message.voice = window.speechSynthesis.getVoices()[50]
+        message.voice = speechSynthesis.getVoices()[33]
         window.speechSynthesis.speak(message);
       },
       dictate() {
