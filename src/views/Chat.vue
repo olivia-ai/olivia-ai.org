@@ -41,7 +41,7 @@
   </div>
 </template>
 <script>
-  let SpeechRecognition = SpeechRecognition
+  let SpeechRecognition = webkitSpeechRecognition
   let voice
 
   const voices = speechSynthesis.getVoices()
