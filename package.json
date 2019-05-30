@@ -17,7 +17,7 @@
     "register-service-worker": "^1.5.2",
     "vue": "^2.5.16",
     "vue-resource": "^1.5.1",
-    "vue-router": "^3.0.1",
+    "vue-router": "^3.0.6",
     "vue-set-state": "^0.1.1"
   },
   "devDependencies": {
