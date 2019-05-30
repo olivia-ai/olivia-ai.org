@@ -1,17 +1,16 @@
 <template>
   <div>
-    <section class="text-center height-10">
-      <div class="container pos-vertical-center">
+
+    <section class="text-center cta cta-4 space--xxs border--bottom ">
+      <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>
-              Hi there, I'm <span class="color--primary">Olivia</span>.
-            </h1>
+            <span>This online version of Olivia is sometimes answering wrong, it's better to use Olivia locally!</span>
           </div>
         </div>
       </div>
     </section>
-    <section class="switchable height-60" id="bubbles" style="overflow: auto">
+    <section class="switchable height-70" id="bubbles" style="overflow: auto">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id" >
           <li :class="bubble.who">
