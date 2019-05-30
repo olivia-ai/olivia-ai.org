@@ -27,10 +27,10 @@
               <div class="col-md-8">
                 <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
               </div>
-              <div class="col-md-2">
+              <div :class="'col-md-' + (recorgnitionEnabled ? '2' : '4')">
                 <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2" v-if="recorgnitionEnabled">
                 <button @click="dictate()" type="submit" class="btn btn--primary type--uppercase">Dictate</button>
               </div>
             </div>
@@ -41,20 +41,30 @@
   </div>
 </template>
 <script>
-  let SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+  let SpeechRecognition = SpeechRecognition
+  let voice
+
+  const voices = speechSynthesis.getVoices()
+  for (let i = 0; i < voices.length; i++) {
+    if (!voices[i].lang.includes('en'))
+      continue
+
+    if (voices[i].name === 'Samantha')
+      voice = voices[i]
+  }
 
   export default {
     data() {
       return {
         input: "",
-        voice: null,
+        recorgnitionEnabled: typeof SpeechRecognition !== "undefined",
         bubbles: []
       }
     },
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
-        message.voice = speechSynthesis.getVoices()[33]
+        message.voice = voice
         message.lang = "en-GB"
         window.speechSynthesis.speak(message);
       },
