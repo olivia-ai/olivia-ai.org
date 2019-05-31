@@ -13,7 +13,7 @@
     <section class="switchable height-70" id="bubbles" style="overflow: auto">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id" >
-          <li :class="bubble.who">
+          <li :class="bubble.who" :id="'message-' + bubble.id">
             {{ bubble.content }}
           </li>
         </ul>
@@ -41,36 +41,27 @@
   </div>
 </template>
 <script>
-  let SpeechRecognition = webkitSpeechRecognition
-  let voice
-
-  const voices = speechSynthesis.getVoices()
-  for (let i = 0; i < voices.length; i++) {
-    if (!voices[i].lang.includes('en'))
-      continue
-
-    if (voices[i].name === 'Samantha')
-      voice = voices[i]
-  }
-
   export default {
     data() {
       return {
         input: "",
-        recorgnitionEnabled: typeof SpeechRecognition !== "undefined",
+        recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
         bubbles: []
       }
     },
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
-        message.voice = voice
-        message.lang = "en-GB"
+        message.voice = speechSynthesis.getVoices().find(voice => {
+          return voice.name.includes("Samantha")
+        })
+        message.lang = "en-US"
         window.speechSynthesis.speak(message);
       },
       dictate() {
+        let SpeechRecognition = webkitSpeechRecognition
         let recognition = new SpeechRecognition()
-        recognition.lang = "en-GB"
+        recognition.lang = "en-US"
         recognition.start()
         recognition.onresult = (event) => {
           const speechToText = event.results[0][0].transcript
@@ -114,6 +105,19 @@
           who,
           content
         })
+
+
+        const sleep = (milliseconds) => {
+          return new Promise(resolve => setTimeout(resolve, milliseconds))
+        }
+
+        sleep(100).then(() => {
+          // Scroll to the last message
+          console.log('message-' + (this.bubbles.length - 1))
+          let bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
+          document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
+        })
+
       }
     },
     mounted() {
