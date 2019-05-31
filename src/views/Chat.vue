@@ -41,6 +41,9 @@
   </div>
 </template>
 <script>
+  const voice = speechSynthesis.getVoices().find(voice => { return voice.name.includes("Samantha") })
+  console.log(voice)
+
   export default {
     data() {
       return {
@@ -52,9 +55,7 @@
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
-        message.voice = speechSynthesis.getVoices().find(voice => {
-          return voice.name.includes("Samantha")
-        })
+        message.voice = this.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message);
       },
@@ -113,7 +114,6 @@
 
         sleep(100).then(() => {
           // Scroll to the last message
-          console.log('message-' + (this.bubbles.length - 1))
           let bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
