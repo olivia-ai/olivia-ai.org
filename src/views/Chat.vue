@@ -31,14 +31,12 @@
   </div>
 </template>
 <script>
-  const voice = speechSynthesis.getVoices().find(voice => { return voice.name.includes("Samantha") })
-  console.log(voice)
-
   export default {
     data() {
       return {
         input: "",
         recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
+        voice: speechSynthesis.getVoices().find(voice => { return voice.name.includes("Samantha") }),
         bubbles: []
       }
     },
