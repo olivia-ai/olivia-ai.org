@@ -16,7 +16,7 @@
               </span>
             </a>
             <span class="block type--fine-print">or
-              <a href="#">host olivia yourself</a>
+              <a href="https://docs.olivia-ai.org">host olivia yourself</a>
             </span>
           </div>
           <div class="col-md-6">

@@ -32,6 +32,10 @@
                 <a class="btn btn--sm type--uppercase" href="https://github.com/olivia-ai">
                   <span class="btn__text">On Github</span>
                 </a>
+                <a class="btn btn--sm type--uppercase btn--primary" href="https://docs.olivia-ai.org">
+                  <span class="btn__text">Documentation</span>
+                </a>
+
               </div>
             </div>
           </div>
