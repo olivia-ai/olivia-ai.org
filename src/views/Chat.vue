@@ -1,16 +1,6 @@
 <template>
   <div>
-
-    <section class="text-center cta cta-4 space--xxs border--bottom ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <span>This online version of Olivia is sometimes answering wrong, it's better to use Olivia locally!</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="switchable height-70" id="bubbles" style="overflow: auto">
+    <section class="switchable height-90" id="bubbles" style="overflow: auto">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id" >
           <li :class="bubble.who" :id="'message-' + bubble.id">
