@@ -14,7 +14,7 @@
   "dependencies": {
     "@capacitor/cli": "^1.0.0",
     "@capacitor/core": "^1.0.0",
-    "register-service-worker": "^1.5.2",
+    "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.6",
