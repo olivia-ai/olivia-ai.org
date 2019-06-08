@@ -18,7 +18,7 @@
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.6",
-    "vue-set-state": "^0.1.1"
+    "vue-set-state": "^0.1.1",
     "braces": ">=2.3.1",
     "js-yaml": ">=3.13.1"
   },
