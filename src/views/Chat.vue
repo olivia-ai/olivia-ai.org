@@ -43,6 +43,7 @@
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
+        this.voice
         message.voice = this.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message);
