@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="switchable height-90" id="bubbles" style="overflow: auto">
+    <section class="switchable height-90" id="bubbles" style="overflow: auto; max-height: 75vh;">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id" >
           <li :class="bubble.who" :id="'message-' + bubble.id">
@@ -9,10 +9,27 @@
         </ul>
       </div>
     </section>
-    <section class="text-center height-20">
-      <div class="container">
+    <section class="text-center">
+      <div class="container hidden-lg hidden-md hidden-sm input">
         <div class="row">
-          <div class="col-md-10 col-lg-8">
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-8">
+                <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
+              </div>
+              <div :class="'col-md-' + (recorgnitionEnabled ? '2' : '4')">
+                <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
+              </div>
+              <div class="col-md-2" v-if="recorgnitionEnabled">
+                <button @click="dictate()" type="submit" class="btn btn--primary type--uppercase">Dictate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="height-10 container hidden-xs">
+        <div class="row">
+          <div class="col-md-10">
             <div class="row">
               <div class="col-md-8">
                 <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
@@ -115,6 +132,11 @@
 </script>
 
 <style>
+  .input{
+    position: absolute;
+    bottom: 2vh;
+  }
+
   ul{
     list-style: none;
     margin: 0;

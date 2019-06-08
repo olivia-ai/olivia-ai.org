@@ -22,12 +22,7 @@
                 </a>
               </div>
             </div>
-            <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
-              <div class="bar__module">
-                <ul class="menu-horizontal text-left">
-                  <a></a>
-                </ul>
-              </div>
+            <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm hidden-sm">
               <div class="bar__module">
                 <a class="btn btn--sm type--uppercase" href="https://github.com/olivia-ai">
                   <span class="btn__text">On Github</span>
@@ -35,27 +30,14 @@
                 <a class="btn btn--sm type--uppercase btn--primary" href="https://docs.olivia-ai.org">
                   <span class="btn__text">Documentation</span>
                 </a>
-
               </div>
             </div>
           </div>
         </div>
       </nav>
     </div>
-    <div class="main-container">
+    <div>
       <router-view></router-view>
-
-      <footer class="text-center-xs space--xs bg--dark ">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-7">
-              <span class="type--fine-print">
-                &copy;<span class="update-year"></span> Published under MIT License
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
 </template>
