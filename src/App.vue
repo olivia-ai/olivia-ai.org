@@ -1,46 +1,46 @@
 <template>
   <div id="app">
     <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="img/icons/olivia.png">
-          </a>
-
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbar" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="/">
-              Home
+      <section class="hero is-fullheight">
+        <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <img src="img/icons/olivia.png">
             </a>
-            <a class="navbar-item" href="https://docs.olivia-ai.org">
-              Documentation
-            </a>
-            <a class="navbar-item" href="https://github.com/olivia-ai">
-              Github
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
             </a>
           </div>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary" href="https://docs.olivia-ai.org">
-                  <strong>Chat</strong>
-                </a>
+          <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="/">
+                Home
+              </a>
+              <a class="navbar-item" href="https://docs.olivia-ai.org">
+                Documentation
+              </a>
+              <a class="navbar-item" href="https://github.com/olivia-ai">
+                Github
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-primary" href="/chat">
+                    <strong>Chat</strong>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </div>
-    <div>
-      <router-view></router-view>
+        </nav>
+        <router-view></router-view>
+      </section>
     </div>
   </div>
 </template>
