@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
 import Resource from 'vue-resource'
+import Buefy from 'buefy'
 import './registerServiceWorker'
 
+Vue.use(Buefy)
 Vue.use(Router)
 Vue.use(Resource)
 

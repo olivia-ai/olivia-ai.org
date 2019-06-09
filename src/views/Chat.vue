@@ -65,7 +65,7 @@
         window.speechSynthesis.speak(message);
       },
       dictate() {
-        let SpeechRecognition = webkitSpeechRecognition
+        const SpeechRecognition = webkitSpeechRecognition
         let recognition = new SpeechRecognition()
         recognition.lang = "en-US"
         recognition.start()
@@ -74,15 +74,14 @@
           this.input = speechToText
         }
 
-        recognition.onend = () => {
-          this.validate()
-        }
+        recognition.onend = () => this.validate()
       },
       validate() {
-        let sentence = this.input
+        const sentence = this.input
 
-        if (sentence == "")
+        if (sentence == "") {
           return
+        }
 
         this.addBubble("me", sentence)
         this.input = ""
@@ -96,9 +95,7 @@
               this.addBubble("him", response)
             })
           },
-          () => {
-            this.addBubble("him", "I can't reach the API.")
-          }
+          () => this.addBubble("him", "I can't reach the API.")
         )
       },
       addBubble(who, content) {
@@ -134,7 +131,7 @@
 <style>
   .input{
     position: absolute;
-    bottom: 2vh;
+    bottom: 2.5vh;
   }
 
   ul{

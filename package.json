@@ -14,13 +14,14 @@
   "dependencies": {
     "@capacitor/cli": "^1.0.0",
     "@capacitor/core": "^1.0.0",
+    "braces": ">=2.3.1",
+    "buefy": "^0.7.7",
+    "js-yaml": ">=3.13.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.6",
-    "vue-set-state": "^0.1.1",
-    "braces": ">=2.3.1",
-    "js-yaml": ">=3.13.1"
+    "vue-set-state": "^0.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
@@ -28,6 +29,8 @@
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "element-theme-chalk": "^2.9.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "vue-cli-plugin-pwa": "^1.0.0-alpha.1",
     "vue-template-compiler": "^2.6.10"
   },
