@@ -1,66 +1,55 @@
 <template>
   <div>
-    <section class="switchable height-90" id="bubbles" style="overflow: auto; max-height: 75vh;">
+    <div class="hero-body" style="overflow: scroll; max-height: 82vh">
       <div class="container">
-        <ul v-for="bubble in bubbles" :key="bubble.id" >
+        <ul v-for="bubble in bubbles" :key="bubble.id">
           <li :class="bubble.who" :id="'message-' + bubble.id">
             {{ bubble.content }}
           </li>
         </ul>
       </div>
-    </section>
-    <section class="text-center">
-      <div class="container hidden-lg hidden-md hidden-sm input">
-        <div class="row">
-          <div class="col-md-10">
-            <div class="row">
-              <div class="col-md-8">
-                <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
-              </div>
-              <div :class="'col-md-' + (recorgnitionEnabled ? '2' : '4')">
-                <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
-              </div>
-              <div class="col-md-2" v-if="recorgnitionEnabled">
-                <button @click="dictate()" type="submit" class="btn btn--primary type--uppercase">Dictate</button>
-              </div>
-            </div>
+    </div>
+    <div class="hero-foot" style="padding: 0 20px 20px 20px">
+      <div class="is-boxed is-fullwidth" >
+        <div class="field is-grouped is-expanded">
+          <div class="control is-expanded">
+            <input class="input" v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Message">
           </div>
+          <p class="control">
+            <a class="button is-primary" @click="validate()">
+              Send
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-primary" @click="dictate()">
+              Dictate
+            </a>
+          </p>
         </div>
       </div>
-      <div class="height-10 container hidden-xs">
-        <div class="row">
-          <div class="col-md-10">
-            <div class="row">
-              <div class="col-md-8">
-                <input v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Write your message" />
-              </div>
-              <div :class="'col-md-' + (recorgnitionEnabled ? '2' : '4')">
-                <button @click="validate()" type="submit" class="btn btn--primary type--uppercase">Send</button>
-              </div>
-              <div class="col-md-2" v-if="recorgnitionEnabled">
-                <button @click="dictate()" type="submit" class="btn btn--primary type--uppercase">Dictate</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
 </template>
 <script>
+  let voice
+  window.speechSynthesis.onvoiceschanged = () => {
+    voice = speechSynthesis.getVoices().find(voice => {
+      return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.include("Samantha"))
+    })
+  }
+
   export default {
     data() {
       return {
         input: "",
         recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-        voice: speechSynthesis.getVoices().find(voice => voice.name.includes("Samantha")),
         bubbles: []
       }
     },
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
-        message.voice = this.voice
+        message.voice = voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message);
       },
@@ -109,17 +98,14 @@
           content
         })
 
-
-        const sleep = (milliseconds) => {
-          return new Promise(resolve => setTimeout(resolve, milliseconds))
-        }
-
-        sleep(100).then(() => {
+        this.sleep(100).then(() => {
           // Scroll to the last message
           let bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
-
+      },
+      sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
       }
     },
     mounted() {
@@ -129,18 +115,13 @@
 </script>
 
 <style>
-  .input{
-    position: absolute;
-    bottom: 2.5vh;
-  }
-
-  ul{
+  ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  ul li{
+  ul li {
     display:inline-block;
     clear: both;
     padding: 20px;
@@ -148,22 +129,22 @@
     margin-bottom: 2px;
   }
 
-  .him{
+  .him {
     background: #ff3aaf;
     color: #fff;
     float: left;
   }
 
-  .me{
+  .me {
     float: right;
     background: #eee;
   }
 
-  .him + .me{
+  .him + .me {
     border-bottom-right-radius: 5px;
   }
 
-  .me + .me{
+  .me + .me {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
