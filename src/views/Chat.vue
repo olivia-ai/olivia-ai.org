@@ -11,19 +11,25 @@
     </div>
     <div class="hero-foot" style="padding: 0 20px 20px 20px">
       <div class="is-boxed is-fullwidth" >
-        <div class="field is-grouped is-expanded">
-          <div class="control is-expanded">
-            <input class="input" v-model="input" v-on:keyup.enter="validate()" type="text" placeholder="Message">
-          </div>
+        <div class="field has-addons">
+          <p class="control has-icons-left has-icons-right is-expanded">
+            <input class="input" type="text" v-model="input" v-on:keyup.enter="validate()" placeholder="Message">
+            <span class="icon is-small is-left">
+              <font-awesome-icon icon="comment" />
+            </span>
+          </p>
           <p class="control">
-            <a class="button is-primary" @click="validate()">
-              Send
-            </a>
+            <button class="button is-primary" @click="validate()">
+              <font-awesome-icon icon="paper-plane" />
+            </button>
           </p>
           <p class="control" v-if="recorgnitionEnabled">
-            <a class="button is-primary" @click="dictate()">
-              Dictate
-            </a>
+            <b-tooltip label="Just click and speak"
+                       animated>
+              <button class="button is-twitter" @click="dictate()">
+                <font-awesome-icon icon="microphone" />
+              </button>
+            </b-tooltip>
           </p>
         </div>
       </div>
@@ -31,17 +37,11 @@
   </div>
 </template>
 <script>
-  let voice
-  window.speechSynthesis.onvoiceschanged = () => {
-    voice = speechSynthesis.getVoices().find(voice => {
-      return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.includes("Samantha"))
-    })
-  }
-
   export default {
     data() {
       return {
         input: "",
+        voice: undefined,
         recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
         bubbles: []
       }
@@ -49,7 +49,7 @@
     methods: {
       speak(text) {
         let message = new SpeechSynthesisUtterance(text)
-        message.voice = voice
+        message.voice = this.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message);
       },
@@ -110,6 +110,12 @@
     },
     mounted() {
       localStorage.setItem("authorId", Math.floor(Math.random() * 1000000000000).toString())
+
+      window.speechSynthesis.onvoiceschanged = () => {
+        this.voice = speechSynthesis.getVoices().find(voice => {
+          return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.includes("Samantha"))
+        })
+      }
     }
   }
 </script>

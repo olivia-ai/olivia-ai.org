@@ -4,8 +4,17 @@ import Router from 'vue-router'
 import Resource from 'vue-resource'
 import Buefy from 'buefy'
 import './registerServiceWorker'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPaperPlane, faMicrophone, faComment } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-Vue.use(Buefy)
+library.add(faPaperPlane, faMicrophone, faComment)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.use(Buefy, {
+  defaultIconComponent: 'vue-fontawesome',
+  defaultIconPack: 'fas',
+})
 Vue.use(Router)
 Vue.use(Resource)
 
