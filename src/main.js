@@ -5,10 +5,10 @@ import Resource from 'vue-resource'
 import Buefy from 'buefy'
 import './registerServiceWorker'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPaperPlane, faMicrophone, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faPaperPlane, faMicrophone, faComment, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faPaperPlane, faMicrophone, faComment)
+library.add(faPaperPlane, faMicrophone, faComment, faVolumeMute, faVolumeUp)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(Buefy, {

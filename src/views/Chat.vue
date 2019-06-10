@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hero-body" style="overflow: scroll; max-height: 82vh">
+    <div class="hero-body" style="overflow: scroll; max-height: 82vh" id="bubbles">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id">
           <li :class="bubble.who" :id="'message-' + bubble.id">
@@ -12,6 +12,14 @@
     <div class="hero-foot" style="padding: 0 20px 20px 20px">
       <div class="is-boxed is-fullwidth" >
         <div class="field has-addons">
+          <p class="control">
+            <b-tooltip :label="this.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
+                       animated>
+              <button class="button is-primary" @click="mute()">
+                <font-awesome-icon :icon="this.isMuted ? 'volume-mute' : 'volume-up'" />
+              </button>
+            </b-tooltip>
+          </p>
           <p class="control has-icons-left has-icons-right is-expanded">
             <input class="input" type="text" v-model="input" v-on:keyup.enter="validate()" placeholder="Message">
             <span class="icon is-small is-left">
@@ -43,15 +51,24 @@
         input: "",
         voice: undefined,
         recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-        bubbles: []
+        bubbles: [],
+        isMuted: localStorage.getItem('muted')
       }
     },
     methods: {
+      mute() {
+        this.isMuted = !this.isMuted
+        localStorage.setItem('muted', this.isMuted)
+      },
       speak(text) {
+        if (this.isMuted) {
+          return
+        }
+
         let message = new SpeechSynthesisUtterance(text)
         message.voice = this.voice
         message.lang = "en-US"
-        window.speechSynthesis.speak(message);
+        window.speechSynthesis.speak(message)
       },
       dictate() {
         const SpeechRecognition = webkitSpeechRecognition
@@ -84,7 +101,16 @@
               this.addBubble("him", response)
             })
           },
-          () => this.addBubble("him", "I can't reach the API.")
+          () => {
+            this.$snackbar.open({
+              duration: 5000,
+              message: "Cannot reach Oliva's API",
+              type: 'is-danger',
+              position: 'is-top',
+              actionText: 'Close',
+              queue: false
+            })
+          }
         )
       },
       addBubble(who, content) {
@@ -101,7 +127,9 @@
         this.sleep(100).then(() => {
           // Scroll to the last message
           let bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
+          console.log(document.getElementById('bubbles').scrollTop)
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
+          console.log(document.getElementById('bubbles').scrollTop)
         })
       },
       sleep(milliseconds) {
@@ -113,9 +141,24 @@
 
       window.speechSynthesis.onvoiceschanged = () => {
         this.voice = speechSynthesis.getVoices().find(voice => {
-          return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.includes("Samantha"))
+          return (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha")
         })
       }
+
+      this.sleep(3000).then(() => {
+        if (this.voice !== undefined) {
+          return
+        }
+
+        this.$snackbar.open({
+          duration: 5000,
+          message: "Olivia's voice cannot load, the voice is now the default english one.",
+          type: 'is-danger',
+          position: 'is-top',
+          actionText: 'Close',
+          queue: false
+        })
+      })
     }
   }
 </script>
