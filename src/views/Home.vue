@@ -4,7 +4,7 @@
       <div class="column is-4 is-narrow">
         <div class="columns is-vcentered">
           <div class="column is-4 is-narrow">
-            <img src="img/icons/olivia.webp" alt="Olivia character" height="1000" width="1000"/>
+            <img src="img/icons/olivia.png" alt="Olivia character" height="1000" width="1000"/>
           </div>
 
           <h1 class="title is-1 has-text-left-tablet">
@@ -37,7 +37,7 @@
       </div>
 
       <div class="column is-8 is-narrow">
-        <img src="img/icons/olivia-app.webp" alt="Screenshot of the PWA of Olivia on macOS">
+        <img src="img/icons/olivia-app.png" alt="Screenshot of the PWA of Olivia on macOS">
       </div>
     </div>
   </div>
