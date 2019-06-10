@@ -61,18 +61,16 @@
         localStorage.setItem('muted', this.isMuted)
       },
       speak(text) {
-        if (this.isMuted) {
-          return
-        }
+        if (this.isMuted) return;
 
-        let message = new SpeechSynthesisUtterance(text)
+        const message = new SpeechSynthesisUtterance(text)
         message.voice = this.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message)
       },
       dictate() {
         const SpeechRecognition = webkitSpeechRecognition
-        let recognition = new SpeechRecognition()
+        const recognition = new SpeechRecognition()
         recognition.lang = "en-US"
         recognition.start()
         recognition.onresult = (event) => {
@@ -95,7 +93,7 @@
         this.$http.post('https://olivia-api.herokuapp.com/api/response?sentence='
           + sentence + '&authorId=' + localStorage.getItem("authorId"), {emulateHTTP: true}).then(
           data => {
-            let response = data.body.content
+            const response = data.body.content
 
             new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
               this.addBubble("him", response)
@@ -114,9 +112,8 @@
         )
       },
       addBubble(who, content) {
-        if (who === "him") {
+        if (who === "him") 
           this.speak(content)
-        }
 
         this.bubbles.push({
           id: this.bubbles.length,
@@ -126,7 +123,7 @@
 
         this.sleep(100).then(() => {
           // Scroll to the last message
-          let bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
+          const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           console.log(document.getElementById('bubbles').scrollTop)
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
           console.log(document.getElementById('bubbles').scrollTop)
@@ -140,16 +137,12 @@
       localStorage.setItem("authorId", Math.floor(Math.random() * 1000000000000).toString())
 
       window.speechSynthesis.onvoiceschanged = () => {
-        this.voice = speechSynthesis.getVoices().find(voice => {
-          return (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha")
-        })
+        this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
       }
 
       this.sleep(3000).then(() => {
-        if (this.voice !== undefined) {
-          return
-        }
-
+        if (this.voice !== undefined) return;
+        
         this.$snackbar.open({
           duration: 5000,
           message: "Olivia's voice cannot load, the voice is now the default english one.",
