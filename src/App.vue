@@ -5,7 +5,8 @@
         <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="img/icons/olivia.png">
+              <img src="img/icons/olivia.png" alt="Olivia">
+              Olivia
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">

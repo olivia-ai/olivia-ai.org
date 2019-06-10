@@ -21,13 +21,13 @@
               <div class="columns">
                 <div class="column">
                   <a class="button is-medium is-primary is-rounded" href="/chat">
-                    Chat online
+                    <strong>Chat online</strong>
                   </a>
                 </div>
 
                 <div class="column">
                   <a class="button is-light is-medium is-rounded paddle_download" href="https://docs.olivia-ai.org">
-                    Host oliva yourself
+                    <strong>Host oliva yourself</strong>
                   </a>
                 </div>
               </div>
@@ -37,7 +37,7 @@
       </div>
 
       <div class="column is-8 is-narrow">
-        <img src="img/icons/olivia-app.png">
+        <img src="img/icons/olivia-app.png" alt="Screenshot of the PWA of Olivia on macOS">
       </div>
     </div>
   </div>
