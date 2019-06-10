@@ -20,7 +20,7 @@
               Send
             </a>
           </p>
-          <p class="control">
+          <p class="control" v-if="recorgnitionEnabled">
             <a class="button is-primary" @click="dictate()">
               Dictate
             </a>
@@ -34,7 +34,7 @@
   let voice
   window.speechSynthesis.onvoiceschanged = () => {
     voice = speechSynthesis.getVoices().find(voice => {
-      return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.include("Samantha"))
+      return voice.lang === "en-GB" && (voice.name.includes("Female") || voice.name.includes("Samantha"))
     })
   }
 
