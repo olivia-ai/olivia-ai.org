@@ -4,7 +4,7 @@
       <section class="hero is-fullheight">
         <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
               <img src="img/icons/olivia.png">
             </a>
 
@@ -17,9 +17,6 @@
 
           <div id="navbar" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item" href="/">
-                Home
-              </a>
               <a class="navbar-item" href="https://docs.olivia-ai.org">
                 Documentation
               </a>
@@ -63,7 +60,26 @@
   })
 
   export default {
-    name: 'app'
+    name: 'app',
+    mounted() {
+      // Show a popup on the website of Olivia
+      const isIOS = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase()
+        return /iphone|ipad|ipod/.test(userAgent)
+      }
+      const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
+
+      if (isIOS() && !isInStandaloneMode()) {
+        this.$snackbar.open({
+          duration: 5000,
+          message: "You can add this webapp to your home screen just below.",
+          type: 'is-primary',
+          position: 'is-bottom',
+          actionText: 'Close',
+          queue: false
+        })
+      }
+    }
   }
 </script>
 
