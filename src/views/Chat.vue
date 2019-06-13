@@ -90,8 +90,11 @@
         this.addBubble("me", sentence)
         this.input = ""
 
-        this.$http.post('https://olivia-api.herokuapp.com/api/response?sentence='
-          + sentence + '&authorId=' + localStorage.getItem("authorId"), {emulateHTTP: true}).then(
+        let formData = new FormData()
+        formData.append('sentence', sentence)
+        formData.append('authorId', localStorage.getItem("authorId"))
+
+        this.$http.post('https://olivia-api.herokuapp.com/api/response', formData).then(
           data => {
             const response = data.body.content
 
@@ -124,9 +127,7 @@
         this.sleep(100).then(() => {
           // Scroll to the last message
           const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
-          console.log(document.getElementById('bubbles').scrollTop)
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
-          console.log(document.getElementById('bubbles').scrollTop)
         })
       },
       sleep(milliseconds) {
