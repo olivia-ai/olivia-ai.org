@@ -27,7 +27,7 @@
 
                 <div class="column">
                   <a class="button is-light is-medium is-rounded paddle_download" href="https://docs.olivia-ai.org">
-                    <strong>Host oliva yourself</strong>
+                    <strong>Host Olivia yourself</strong>
                   </a>
                 </div>
               </div>
