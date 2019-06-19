@@ -24,6 +24,9 @@
               <a class="navbar-item" href="https://opencollective.com/olivia-ai">
                 Donate
               </a>
+              <a class="navbar-item" href="https://discord.gg/8mPFPQs">
+                Discord
+              </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
                 Github
               </a>
