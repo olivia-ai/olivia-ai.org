@@ -21,7 +21,11 @@
             </b-tooltip>
           </p>
           <p class="control has-icons-left has-icons-right is-expanded">
-            <input class="input" type="text" v-model="input" v-on:keyup.enter="validate()" placeholder="Message">
+            <input class="input"
+                   type="text"
+                   v-model="input"
+                   v-on:keyup.enter="validate()"
+                   placeholder="Message"/>
             <span class="icon is-small is-left">
               <font-awesome-icon icon="comment" />
             </span>
@@ -105,7 +109,7 @@
           () => {
             this.$snackbar.open({
               duration: 5000,
-              message: "Cannot reach Oliva's API",
+              message: "Cannot reach Olivia's API",
               type: 'is-danger',
               position: 'is-top',
               actionText: 'Close',
