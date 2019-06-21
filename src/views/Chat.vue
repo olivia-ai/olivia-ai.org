@@ -169,7 +169,7 @@
   }
 
   ul li {
-    display:inline-block;
+    display: inline-block;
     clear: both;
     padding: 20px;
     border-radius: 30px;
@@ -185,18 +185,5 @@
   .me {
     float: right;
     background: #eee;
-  }
-
-  .him + .me {
-    border-bottom-right-radius: 5px;
-  }
-
-  .me + .me {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-
-  .me:last-of-type {
-    border-bottom-right-radius: 30px;
   }
 </style>
