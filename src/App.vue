@@ -21,6 +21,9 @@
               <a class="navbar-item" href="https://docs.olivia-ai.org">
                 Documentation
               </a>
+              <a class="navbar-item" href="https://twitter.com/olivia_ai_org">
+                Twiiter
+              </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
                 Github
               </a>
