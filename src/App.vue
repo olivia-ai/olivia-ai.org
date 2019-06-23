@@ -5,7 +5,7 @@
         <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
-              <img src="img/icons/olivia.png" alt="Olivia">
+              <img src="https://olivia-ai.org/img/icons/olivia.png" alt="Olivia">
               Olivia
             </a>
 
@@ -20,6 +20,9 @@
             <div class="navbar-start">
               <a class="navbar-item" href="https://docs.olivia-ai.org">
                 Documentation
+              </a>
+              <a class="navbar-item" href="https://olivia-ai.org/news">
+                News
               </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
                 Github
