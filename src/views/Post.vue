@@ -32,6 +32,13 @@
     data() {
       return {
         posts: {
+          'the-story-of-olivia': {
+            id: 'the-story-of-olivia',
+            title: 'The story of Olivia',
+            date: 'June 23, 2019',
+            readingTime: '',
+            content: ''
+          }
         },
         routeName: this.$route.params.name
       }

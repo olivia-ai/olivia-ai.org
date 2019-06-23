@@ -21,7 +21,7 @@
               <a class="navbar-item" href="https://docs.olivia-ai.org">
                 Documentation
               </a>
-              <a class="navbar-item" href="https://olivia-ai.org/news">
+              <a class="navbar-item" href="https://olivia-ai.org/blog">
                 News
               </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
