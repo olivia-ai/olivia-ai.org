@@ -22,7 +22,7 @@
                 Documentation
               </a>
               <a class="navbar-item" href="https://olivia-ai.org/blog">
-                News
+                Blog
               </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
                 Github
