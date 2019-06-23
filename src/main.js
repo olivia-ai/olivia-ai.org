@@ -31,11 +31,11 @@ const router = new Router({
       component: require('./views/Chat.vue').default
     },
     {
-      path: '/news/:name',
+      path: '/blog/:name',
       component: require('./views/Post.vue').default
     },
     {
-      path: '/news',
+      path: '/blog',
       component: require('./views/Post.vue').default
     }
   ],
