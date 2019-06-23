@@ -13,7 +13,7 @@
       <div class="content" v-else>
         <h1>Articles</h1>
         <ul v-for="post in posts" :id="post.title">
-          <li>• <a :href="'/news/' + post.id">{{ post.title }}</a></li>
+          <li>• <a :href="'/blog/' + post.id">{{ post.title }}</a></li>
         </ul>
       </div>
     </div>
