@@ -33,6 +33,10 @@ const router = new Router({
     {
       path: '/news/:name',
       component: require('./views/Post.vue').default
+    },
+    {
+      path: '/news',
+      component: require('./views/Post.vue').default
     }
   ],
   mode: 'history'
