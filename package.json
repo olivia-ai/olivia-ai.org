@@ -12,8 +12,8 @@
     "capacitor-update": "vue-cli-service capacitor-update"
   },
   "dependencies": {
-    "@capacitor/cli": "^1.0.0",
-    "@capacitor/core": "^1.0.0",
+    "@capacitor/cli": "^1.1.0",
+    "@capacitor/core": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
@@ -34,7 +34,7 @@
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.8.0",
     "@vue/cli-service": "^3.8.4",
-    "element-theme-chalk": "^2.9.1",
+    "element-theme-chalk": "^2.9.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-pwa": "^1.0.0-alpha.1",
