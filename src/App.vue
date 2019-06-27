@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="container">
-      <section class="hero is-fullheight">
+    <div>
+      <section :class="'hero is-fullheight ' + (darkTheme ? 'is-dark' : '')">
         <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -30,6 +30,16 @@
             </div>
 
             <div class="navbar-end">
+              <div class="navbar-item">
+                <b-tooltip :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
+                           :type="darkTheme ? 'is-light' : 'is-dark'"
+                           position="is-bottom"
+                           animated>
+                  <a class="button is-rounded" @click="changeTheme()">
+                    <font-awesome-icon :icon="darkTheme ? 'sun' : 'moon'" />
+                  </a>
+                </b-tooltip>
+              </div>
               <div class="navbar-item">
                 <div class="buttons">
                   <a class="button is-primary" href="/chat">
@@ -64,7 +74,18 @@
   })
 
   export default {
-    name: 'app'
+    name: 'app',
+    data() {
+      return {
+        darkTheme: localStorage.getItem('darkTheme') === 'true'
+      }
+    },
+    methods: {
+      changeTheme() {
+        this.darkTheme = !this.darkTheme
+        localStorage.setItem('darkTheme', this.darkTheme.toString())
+      }
+    }
   }
 </script>
 
@@ -77,6 +98,8 @@
   $primary-invert: findColorInvert($primary);
   $twitter: #d40890;
   $twitter-invert: findColorInvert($twitter);
+
+  $input-background-color: $light;
 
   // Setup $colors to use as bulma classes (e.g. 'is-twitter')
   $colors: (

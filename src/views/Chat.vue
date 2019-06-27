@@ -3,46 +3,48 @@
     <div class="hero-body" style="overflow: scroll; max-height: 82vh" id="bubbles">
       <div class="container">
         <ul v-for="bubble in bubbles" :key="bubble.id">
-          <li :class="bubble.who" :id="'message-' + bubble.id">
+          <li :class="bubble.who + ' is-dark'" :id="'message-' + bubble.id">
             {{ bubble.content }}
           </li>
         </ul>
       </div>
     </div>
     <div class="hero-foot" style="padding: 0 20px 20px 20px">
-      <div class="is-boxed is-fullwidth" >
-        <div class="field has-addons">
-          <p class="control">
-            <b-tooltip :label="this.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
-                       animated>
-              <button class="button is-primary" @click="mute()">
-                <font-awesome-icon :icon="this.isMuted ? 'volume-mute' : 'volume-up'" />
-              </button>
-            </b-tooltip>
-          </p>
-          <p class="control has-icons-left has-icons-right is-expanded">
-            <input class="input"
-                   type="text"
-                   v-model="input"
-                   v-on:keyup.enter="validate()"
-                   placeholder="Message"/>
-            <span class="icon is-small is-left">
+      <div class="container">
+        <div class="is-boxed is-fullwidth" >
+          <div class="field has-addons">
+            <p class="control">
+              <b-tooltip :label="this.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
+                         animated>
+                <button class="button is-primary" @click="mute()">
+                  <font-awesome-icon :icon="this.isMuted ? 'volume-mute' : 'volume-up'" />
+                </button>
+              </b-tooltip>
+            </p>
+            <p class="control has-icons-left has-icons-right is-expanded">
+              <input class="input"
+                     type="text"
+                     v-model="input"
+                     v-on:keyup.enter="validate()"
+                     placeholder="Message"/>
+              <span class="icon is-small is-left">
               <font-awesome-icon icon="comment" />
             </span>
-          </p>
-          <p class="control">
-            <button class="button is-primary" @click="validate()">
-              <font-awesome-icon icon="paper-plane" />
-            </button>
-          </p>
-          <p class="control" v-if="recorgnitionEnabled">
-            <b-tooltip label="Just click and speak"
-                       animated>
-              <button class="button is-twitter" @click="dictate()">
-                <font-awesome-icon icon="microphone" />
+            </p>
+            <p class="control">
+              <button class="button is-primary" @click="validate()">
+                <font-awesome-icon icon="paper-plane" />
               </button>
-            </b-tooltip>
-          </p>
+            </p>
+            <p class="control" v-if="recorgnitionEnabled">
+              <b-tooltip label="Just click and speak"
+                         animated>
+                <button class="button is-twitter" @click="dictate()">
+                  <font-awesome-icon icon="microphone" />
+                </button>
+              </b-tooltip>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -180,5 +182,6 @@
   .me {
     float: right;
     background: #eee;
+    color: #363636;
   }
 </style>

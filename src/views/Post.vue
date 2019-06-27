@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <div class="content" v-if="posts[routeName] !== undefined">
-        <h1>{{ posts[routeName].title }}</h1>
+        <h1 class="title">{{ posts[routeName].title }}</h1>
         <p>
           <font-awesome-icon icon="clock" /> {{ posts[routeName].readingTime }}&nbsp;&nbsp;
           <font-awesome-icon icon="calendar" /> {{ posts[routeName].date }}
@@ -16,13 +16,13 @@
         </a>
       </div>
       <div class="content" v-else>
-        <h1>Articles</h1>
-        <div v-for="post in posts" :id="post.title">
+        <h1 class="title">Articles</h1>
+        <div v-for="post in posts" :key="post.title">
           <div class="card">
-            <div class="card-content">
-              <p class="title is-5">
+            <div class="card-content is-dark">
+              <h2 class="is-5">
                 {{ post.title }}
-              </p>
+              </h2>
               <p>
                 <font-awesome-icon icon="clock" /> {{ post.readingTime }}&nbsp;&nbsp;
                 <font-awesome-icon icon="calendar" /> {{ post.date }}
@@ -41,6 +41,16 @@
     </div>
   </div>
 </template>
+
+<style>
+  .hero.is-dark .card .title {
+    color: #363636;
+  }
+
+  .is-5.is-dark {
+    color: #F5F5F5;
+  }
+</style>
 
 <script>
   import VueMarkdown from 'vue-markdown'

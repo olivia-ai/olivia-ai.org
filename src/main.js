@@ -13,7 +13,9 @@ import {
   faVolumeMute,
   faClock,
   faCalendar,
-  faLongArrowAltLeft
+  faLongArrowAltLeft,
+  faMoon,
+  faSun
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -25,7 +27,9 @@ library.add(
   faVolumeUp,
   faClock,
   faCalendar,
-  faLongArrowAltLeft
+  faLongArrowAltLeft,
+  faMoon,
+  faSun
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
