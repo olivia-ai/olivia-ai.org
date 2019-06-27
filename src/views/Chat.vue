@@ -94,32 +94,15 @@
         this.addBubble("me", sentence)
         this.input = ""
 
-        let formData = new FormData()
-        formData.append('sentence', sentence)
-        formData.append('authorId', localStorage.getItem("authorId"))
-
-        this.$http.post('https://olivia-api.herokuapp.com/api/response', formData).then(
-          data => {
-            const response = data.body.content
-
-            new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * (3000 - 750 + 1) + 750))).then(() => {
-              this.addBubble("him", response)
-            })
-          },
-          () => {
-            this.$snackbar.open({
-              duration: 5000,
-              message: "Cannot reach Olivia's API",
-              type: 'is-danger',
-              position: 'is-top',
-              actionText: 'Close',
-              queue: false
-            })
-          }
+        this.websocket.send(
+          JSON.stringify({
+              content: sentence,
+              authorid: localStorage.getItem("authorid")
+          })
         )
       },
       addBubble(who, content) {
-        if (who === "him") 
+        if (who === "him")
           this.speak(content)
 
         this.bubbles.push({
@@ -139,15 +122,27 @@
       }
     },
     mounted() {
-      localStorage.setItem("authorId", Math.floor(Math.random() * 1000000000000).toString())
+      // Generate the author id
+      localStorage.setItem("authorid", Math.floor(Math.random() * 1000000000000).toString())
 
+      // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
         this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
       }
 
+      // Initializes the connection with the websocket
+      this.websocket = new WebSocket('ws://olivia-api.herokuapp.com/')
+      // Add a bubble when the websocket receives a response
+      this.websocket.addEventListener('message', e => {
+        setTimeout(() => {
+          this.addBubble("him", JSON.parse(e.data)['content'])
+        }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
+      })
+
+      // If the voices didn't load send a snackbar
       this.sleep(3000).then(() => {
         if (this.voice !== undefined) return;
-        
+
         this.$snackbar.open({
           duration: 5000,
           message: "Olivia's voice cannot load, the voice is now the default english one.",
