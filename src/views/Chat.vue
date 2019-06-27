@@ -131,7 +131,7 @@
       }
 
       // Initializes the connection with the websocket
-      this.websocket = new WebSocket('ws://localhost:8080/')
+      this.websocket = new WebSocket('ws://olivia-api.herokuapp.com/')
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
         setTimeout(() => {
