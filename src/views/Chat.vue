@@ -137,7 +137,9 @@
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
         setTimeout(() => {
-          this.addBubble("him", JSON.parse(e.data)['content'])
+          let data = JSON.parse(e.data)
+          this.addBubble("him", data['content'])
+          localStorage.setItem("information", data['information'])
         }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
       })
 
