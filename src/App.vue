@@ -84,6 +84,8 @@
       changeTheme() {
         this.darkTheme = !this.darkTheme
         localStorage.setItem('darkTheme', this.darkTheme.toString())
+        let color = this.darkTheme ? '#363636' : '#fff'
+        document.getElementById('html').style = 'background-color: ' + color
       }
     }
   }
