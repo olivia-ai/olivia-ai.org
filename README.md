@@ -2,7 +2,7 @@
 
 <img src="https://olivia-ai.org/img/olivia-iphonex.png" alt="Olivia's PWA on iPhone X" height="500"/>
 <br>
-<img src="https://olivia-ai.org/img/olivia-app.png" alt="Olivia's PWA on macOS" height="500"/>
+<img src="https://olivia-ai.org/img/olivia-macos.png" alt="Olivia's PWA on macOS" height="500"/>
 
 ## Contributing
 
