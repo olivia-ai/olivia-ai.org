@@ -21,15 +21,15 @@
               <a class="navbar-item" href="https://docs.olivia-ai.org">
                 Documentation
               </a>
-              <a class="navbar-item" href="/blog">
-                Blog
-              </a>
               <a class="navbar-item" href="https://github.com/olivia-ai">
                 Github
               </a>
             </div>
 
             <div class="navbar-end">
+              <a class="navbar-item" href="/blog">
+                Blog
+              </a>
               <div class="navbar-item">
                 <b-tooltip :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
                            :type="darkTheme ? 'is-light' : 'is-dark'"
@@ -52,6 +52,9 @@
         </nav>
         <router-view></router-view>
       </section>
+      <footer v-if="this.$route.path === '/'">
+        <img src="img/background/background-olivia.png" style="position: absolute;">
+      </footer>
     </div>
   </div>
 </template>
@@ -89,7 +92,7 @@
       }
     },
     mounted() {
-      this.setTheme(localStorage.getItem('darkTheme'))
+      this.setTheme(localStorage.getItem('darkTheme') === 'true')
     }
   }
 </script>
