@@ -38,7 +38,20 @@
         </div>
 
         <div class="column is-8 is-narrow">
-          <img src="img/icons/olivia-app.png" alt="Screenshot of the PWA of Olivia on macOS">
+          <img src="img/olivia-macos.png" alt="Screenshot of the PWA of Olivia on macOS">
+        </div>
+      </div>
+      <div class="columns is-vcentered">
+        <div class="column is-4 is-narrow">
+          <img src="img/olivia-iphonex.png" height="5vh" alt="Screenshot of the PWA of Olivia on macOS">
+        </div>
+        <div class="column is-8 is-narrow">
+          <h1 class="title">Progressive web application</h1>
+          <h2 class="subtitle">A fully compatible standalone website in iOS, Android and Desktop</h2>
+          <p>
+            You can directly add the PWA to your homescreen from the website, and you won't remember that it is
+            a website running behind this native-like app.
+          </p>
         </div>
       </div>
     </div>
