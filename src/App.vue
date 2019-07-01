@@ -35,7 +35,7 @@
                            :type="darkTheme ? 'is-light' : 'is-dark'"
                            position="is-bottom"
                            animated>
-                  <a class="button is-rounded" @click="changeTheme()">
+                  <a class="button is-rounded" @click="setTheme(!darkTheme)">
                     <font-awesome-icon :icon="darkTheme ? 'sun' : 'moon'" />
                   </a>
                 </b-tooltip>
@@ -81,12 +81,15 @@
       }
     },
     methods: {
-      changeTheme() {
-        this.darkTheme = !this.darkTheme
+      setTheme(isDark) {
+        this.darkTheme = isDark
         localStorage.setItem('darkTheme', this.darkTheme.toString())
         let color = this.darkTheme ? '#363636' : '#fff'
         document.getElementById('html').style = 'background-color: ' + color
       }
+    },
+    mounted() {
+      this.setTheme(localStorage.getItem('darkTheme'))
     }
   }
 </script>
