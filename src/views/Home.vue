@@ -43,9 +43,18 @@
       </div>
       <div class="columns is-vcentered">
         <div class="column is-3 is-narrow">
-          <img src="img/olivia-iphonex.png" height="5vh" alt="Screenshot of the PWA of Olivia on macOS">
+          <img
+              src="img/olivia-iphonex.png"
+              alt="Screenshot of the PWA of Olivia on an iPhone X in light theme"
+          >
         </div>
-        <div class="column is-8 is-narrow">
+        <div class="column is-3 is-narrow">
+          <img
+              src="img/olivia-iphonex-dark.png"
+              alt="Screenshot of the PWA of Olivia on an iPhone X in dark theme"
+          >
+        </div>
+        <div class="column is-6 is-narrow">
           <h1 class="title">Progressive web application</h1>
           <h2 class="subtitle">A fully compatible standalone website in iOS, Android and Desktop</h2>
           <p>
