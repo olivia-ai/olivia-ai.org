@@ -1,8 +1,8 @@
 # olivia-ai.org [![Netlify Status](https://api.netlify.com/api/v1/badges/a465948c-abf9-4677-8943-f14d0e3bc648/deploy-status)](https://app.netlify.com/sites/olivia-ai/deploys)
 
-<img src="https://olivia-ai.org/img/icons/olivia-iphonex.png" alt="Olivia's PWA on iPhone X" height="500"/>
+<img src="https://olivia-ai.org/img/olivia-iphonex.png" alt="Olivia's PWA on iPhone X" height="500"/>
 <br>
-<img src="https://olivia-ai.org/img/icons/olivia-app.png" alt="Olivia's PWA on macOS" height="500"/>
+<img src="https://olivia-ai.org/img/olivia-macos.png" alt="Olivia's PWA on macOS" height="500"/>
 
 ## Contributing
 
