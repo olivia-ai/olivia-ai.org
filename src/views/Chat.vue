@@ -97,20 +97,11 @@
         this.addBubble("me", sentence)
         this.input = ""
 
-        console.log(JSON.stringify({
-          content: sentence,
-          user_token: localStorage.getItem('token'),
-          information: {
-            name: this.information.name
-          }
-        }))
         this.websocket.send(
           JSON.stringify({
               content: sentence,
               user_token: localStorage.getItem('token'),
-              information: {
-                name: this.information.name
-              }
+              information: JSON.parse(localStorage.getItem('information'))
           })
         )
       },
@@ -129,10 +120,6 @@
           const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
-      },
-      setInformation(information) {
-        this.information = information
-        localStorage.setItem('information', information)
       },
       sleep(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -154,10 +141,9 @@
       }
 
       if (localStorage.getItem('information') == null) {
-        localStorage.setItem('information', {
+        localStorage.setItem('information', JSON.stringify({
           name: ''
-        })
-        this.information = localStorage.getItem('information')
+        }))
       }
 
       // Wait that the voices are loaded to choose the right one
@@ -172,7 +158,7 @@
         setTimeout(() => {
           let data = JSON.parse(e.data)
           this.addBubble('him', data['content'])
-          this.setInformation(data['information'])
+          localStorage.setItem('information', JSON.stringify(data['information']))
         }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
       })
 
