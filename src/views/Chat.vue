@@ -97,11 +97,20 @@
         this.addBubble("me", sentence)
         this.input = ""
 
+        console.log(JSON.stringify({
+          content: sentence,
+          user_token: localStorage.getItem('token'),
+          information: {
+            name: this.information.name
+          }
+        }))
         this.websocket.send(
           JSON.stringify({
               content: sentence,
               user_token: localStorage.getItem('token'),
-              information: this.information
+              information: {
+                name: this.information.name
+              }
           })
         )
       },
@@ -143,7 +152,13 @@
       if (localStorage.getItem('token') == null) {
         localStorage.setItem('token', this.generateToken(200))
       }
-      console.log(localStorage.getItem('token'))
+
+      if (localStorage.getItem('information') == null) {
+        localStorage.setItem('information', {
+          name: ''
+        })
+        this.information = localStorage.getItem('information')
+      }
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
