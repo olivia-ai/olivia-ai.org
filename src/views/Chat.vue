@@ -100,7 +100,7 @@
         this.websocket.send(
           JSON.stringify({
               content: sentence,
-              authorid: localStorage.getItem("authorid"),
+              user_token: localStorage.getItem('token'),
               information: this.information
           })
         )
@@ -127,11 +127,23 @@
       },
       sleep(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
+      },
+      generateToken(n) {
+        let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_)°^¨$*£ù%=+:/;.,?-(}{[]&é@#'
+        let token = ''
+        for (let i = 0; i < n; i++) {
+          token += chars[Math.floor(Math.random() * chars.length)]
+        }
+
+        return token
       }
     },
     mounted() {
-      // Generate the author id
-      localStorage.setItem("authorid", Math.floor(Math.random() * 1000000000000).toString())
+      // Generate the token
+      if (localStorage.getItem('token') == null) {
+        localStorage.setItem('token', this.generateToken(200))
+      }
+      console.log(localStorage.getItem('token'))
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
