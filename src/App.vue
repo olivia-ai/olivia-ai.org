@@ -67,6 +67,10 @@
   #app > div > footer > div.is-dark > p {
     color: #fff;
   }
+
+  #app > div > footer > div > p > strong > a:hover {
+    color: #d40890;
+  }
 </style>
 
 <script>
