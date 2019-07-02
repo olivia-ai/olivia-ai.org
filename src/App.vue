@@ -52,7 +52,7 @@
         </nav>
         <router-view></router-view>
       </section>
-      <footer v-if="this.$route.path === '/'">
+      <footer>
         <div :class="'has-text-centered ' + (this.darkTheme ? 'is-dark' : '')">
           <p>Made with ❤️ by <strong><a href="mailto:hugo.lageneste@pm.me">Hugo Lageneste</a></strong></p>
           <p>Licensed under <strong><a href="http://opensource.org/licenses/mit-license.php">MIT</a></strong></p>
