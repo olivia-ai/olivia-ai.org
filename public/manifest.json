@@ -1,6 +1,11 @@
 {
   "name": "Olivia",
   "short_name": "Olivia",
+  "description": "Your new open-source best friend",
+  "theme_color": "#ff3aaf",
+  "background_color": "#fff",
+  "display": "standalone",
+  "start_url": "/",
   "icons": [
     {
       "src": "/img/icons/manifest-192x192.png",
@@ -12,10 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#ff3aaf",
-  "background_color": "#fff",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/"
+  ]
 }
