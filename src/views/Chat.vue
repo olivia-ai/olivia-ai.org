@@ -58,7 +58,8 @@
         voice: undefined,
         recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
         bubbles: [],
-        isMuted: localStorage.getItem('muted')
+        isMuted: localStorage.getItem('muted'),
+        information: localStorage.getItem('information')
       }
     },
     methods: {
@@ -99,7 +100,8 @@
         this.websocket.send(
           JSON.stringify({
               content: sentence,
-              authorid: localStorage.getItem("authorid")
+              authorid: localStorage.getItem("authorid"),
+              information: this.information
           })
         )
       },
@@ -119,6 +121,10 @@
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
       },
+      setInformation(information) {
+        this.information = information
+        localStorage.setItem('information', information)
+      },
       sleep(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
       }
@@ -133,13 +139,13 @@
       }
 
       // Initializes the connection with the websocket
-      this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
+      this.websocket = new WebSocket('ws://localhost:8080/')
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
         setTimeout(() => {
           let data = JSON.parse(e.data)
-          this.addBubble("him", data['content'])
-          localStorage.setItem("information", data['information'])
+          this.addBubble('him', data['content'])
+          this.setInformation(data['information'])
         }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
       })
 
