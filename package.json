@@ -32,7 +32,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.9.1",
-    "@vue/cli-plugin-pwa": "^3.8.0",
+    "@vue/cli-plugin-pwa": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "element-theme-chalk": "^2.10.0",
     "node-sass": "^4.12.0",
