@@ -26,7 +26,7 @@
     "vue": "^2.6.10",
     "vue-markdown": "^2.2.4",
     "vue-resource": "^1.5.1",
-    "vue-router": "^3.0.6",
+    "vue-router": "^3.0.7",
     "vue-set-state": "^0.1.1"
   },
   "devDependencies": {
