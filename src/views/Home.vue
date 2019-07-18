@@ -78,13 +78,11 @@
       const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone)
 
       if (isIOS() && !isInStandaloneMode()) {
-        this.$snackbar.open({
+        this.$toast.open({
           duration: 5000,
           message: "You can add this webapp to your home screen just below.",
           type: 'is-primary',
-          position: 'is-bottom',
-          actionText: 'Close',
-          queue: false
+          position: 'is-bottom'
         })
       }
     }

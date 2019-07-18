@@ -56,6 +56,8 @@
   </div>
 </template>
 <script>
+  import chat from '../utils/chat'
+
   export default {
     data() {
       return {
@@ -63,7 +65,7 @@
         speech: {
           voice: undefined,
           recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-          isMuted: localStorage.getItem('muted'),
+          isMuted: localStorage.getItem('muted') === 'true',
         },
         status: {
           face: '눈_눈',
@@ -100,7 +102,6 @@
       },
       validate() {
         const sentence = this.input
-
         if (sentence === "") return
 
         this.addBubble("me", sentence)
@@ -124,70 +125,15 @@
           content
         })
 
-        this.sleep(100).then(() => {
+        chat.sleep(100).then(() => {
           // Scroll to the last message
           const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
-      },
-      websocketStatus() {
-        let state = this.websocket.readyState
-
-        switch (state) {
-          case 0:
-            this.status = {
-              face: '(ᵔᴥᵔ)',
-              color: 'is-warning',
-              text: 'Connecting...'
-            }
-            break
-          case 1:
-            this.status = {
-              face: '•ᴗ•',
-              color: 'is-success',
-              text: 'Connected!'
-            }
-            break
-          case 2:
-            this.status = {
-              face: '⇀_↼',
-              color: 'is-warning',
-              text: 'Closing :/'
-            }
-            break
-          case 3:
-            this.status = {
-              face: '눈_눈',
-              color: 'is-danger',
-              text: 'Closed :('
-            }
-            break
-        }
-      },
-      sleep(milliseconds) {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-      },
-      generateToken(n) {
-        let chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_)°^¨$*£ù%=+:/;.,?-(}{[]&é@#'
-        let token = ''
-        for (let i = 0; i < n; i++) {
-          token += chars[Math.floor(Math.random() * chars.length)]
-        }
-
-        return token
       }
     },
     mounted() {
-      // Generate the token
-      if (localStorage.getItem('token') == null) {
-        localStorage.setItem('token', this.generateToken(200))
-      }
-
-      if (localStorage.getItem('information') == null) {
-        localStorage.setItem('information', JSON.stringify({
-          name: ''
-        }))
-      }
+      chat.createUserInformations()
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
@@ -205,20 +151,16 @@
         }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
       })
 
+      // Change the websocket status
       setTimeout(() => {
-        this.websocketStatus()
+        this.status = chat.getStatus(this.websocket)
       }, 1000)
 
       // If the voices didn't load send a snackbar
-      this.sleep(3000).then(() => {
+      chat.sleep(3000).then(() => {
         if (this.speech.voice !== undefined) return;
 
-        this.$toast.open({
-          duration: 5000,
-          message: `Olivia's voice cannot load, her voice is now the default english one.`,
-          position: 'is-top',
-          type: 'is-danger'
-        })
+        chat.sendVoiceErrorMessage(this.$toast)
       })
     }
   }
