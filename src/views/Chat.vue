@@ -12,50 +12,17 @@
     <div class="hero-foot" style="padding: 0 20px 20px 20px">
       <div class="container">
         <div class="is-boxed is-fullwidth" >
-          <div class="field has-addons">
-            <b-tooltip :label="status.text" :type="status.color">
-              <b-tag :type="status.color" rounded>{{ status.face }}</b-tag>
-            </b-tooltip>
-          </div>
-          <div class="field has-addons">
-            <p class="control">
-              <b-tooltip :label="this.speech.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
-                         animated>
-                <button class="button is-primary" @click="mute()">
-                  <font-awesome-icon :icon="this.speech.isMuted ? 'volume-mute' : 'volume-up'" />
-                </button>
-              </b-tooltip>
-            </p>
-            <p class="control has-icons-left has-icons-right is-expanded">
-              <input class="input"
-                     type="text"
-                     v-model="input"
-                     v-on:keyup.enter="validate()"
-                     placeholder="Message"/>
-              <span class="icon is-small is-left">
-              <font-awesome-icon icon="comment" />
-            </span>
-            </p>
-            <p class="control">
-              <button class="button is-primary" @click="validate()">
-                <font-awesome-icon icon="paper-plane" />
-              </button>
-            </p>
-            <p class="control" v-if="speech.recognitionEnabled">
-              <b-tooltip label="Just click and speak"
-                         animated>
-                <button class="button is-twitter" @click="dictate()">
-                  <font-awesome-icon icon="microphone" />
-                </button>
-              </b-tooltip>
-            </p>
-          </div>
+          <chat-input
+              :speech.sync="speech"
+              :bubbles.sync="bubbles">
+          </chat-input>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import ChatInput from '../components/ChatInput'
   import chat from '../utils/chat'
 
   export default {
@@ -67,70 +34,11 @@
           recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
           isMuted: localStorage.getItem('muted') === 'true',
         },
-        status: {
-          face: '눈_눈',
-          color: 'is-danger',
-          text: 'Connection closed :('
-        },
-        bubbles: [],
-        information: localStorage.getItem('information')
+        bubbles: []
       }
     },
-    methods: {
-      mute() {
-        this.speech.isMuted = !this.speech.isMuted
-        localStorage.setItem('muted', this.speech.isMuted)
-      },
-      speak(text) {
-        if (this.speech.isMuted) return;
-
-        const message = new SpeechSynthesisUtterance(text)
-        message.voice = this.speech.voice
-        message.lang = "en-US"
-        window.speechSynthesis.speak(message)
-      },
-      dictate() {
-        const SpeechRecognition = webkitSpeechRecognition
-        const recognition = new SpeechRecognition()
-        recognition.lang = "en-US"
-        recognition.start()
-        recognition.onresult = (event) => {
-          this.input = event.results[0][0].transcript
-        }
-
-        recognition.onend = () => this.validate()
-      },
-      validate() {
-        const sentence = this.input
-        if (sentence === "") return
-
-        this.addBubble("me", sentence)
-        this.input = ""
-
-        this.websocket.send(
-          JSON.stringify({
-              content: sentence,
-              user_token: localStorage.getItem('token'),
-              information: JSON.parse(localStorage.getItem('information'))
-          })
-        )
-      },
-      addBubble(who, content) {
-        if (who === "him")
-          this.speak(content)
-
-        this.bubbles.push({
-          id: this.bubbles.length,
-          who,
-          content
-        })
-
-        chat.sleep(100).then(() => {
-          // Scroll to the last message
-          const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
-          document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
-        })
-      }
+    components: {
+      ChatInput
     },
     mounted() {
       chat.createUserInformations()
@@ -139,22 +47,6 @@
       window.speechSynthesis.onvoiceschanged = () => {
         this.speech.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
       }
-
-      // Initializes the connection with the websocket
-      this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
-      // Add a bubble when the websocket receives a response
-      this.websocket.addEventListener('message', e => {
-        setTimeout(() => {
-          let data = JSON.parse(e.data)
-          this.addBubble('him', data['content'])
-          localStorage.setItem('information', JSON.stringify(data['information']))
-        }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
-      })
-
-      // Change the websocket status
-      setTimeout(() => {
-        this.status = chat.getStatus(this.websocket)
-      }, 1000)
 
       // If the voices didn't load send a snackbar
       chat.sleep(3000).then(() => {

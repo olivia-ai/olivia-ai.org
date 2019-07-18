@@ -2,26 +2,25 @@ export default {
   // Returns an object for the current status of the websocket
   getStatus(websocket) {
     switch (websocket.readyState) {
-      case 0:
+      case websocket.CONNECTING:
         return {
           face: '(ᵔᴥᵔ)',
           color: 'is-warning',
           text: 'Connecting...'
         }
-      case 1:
+      case websocket.OPEN:
         return {
           face: '•ᴗ•',
           color: 'is-success',
           text: 'Connected!'
         }
-        break
-      case 2:
+      case websocket.CLOSING:
         return {
           face: '⇀_↼',
           color: 'is-warning',
           text: 'Closing :/'
         }
-      case 3:
+      case websocket.CLOSED:
         return {
           face: '눈_눈',
           color: 'is-danger',
@@ -46,6 +45,15 @@ export default {
     toast.open({
       duration: 5000,
       message: `Olivia's voice cannot load, her voice is now the default english one.`,
+      position: 'is-top',
+      type: 'is-danger'
+    })
+  },
+
+  sendClosedWebsocketErrorMessage(toast) {
+    toast.open({
+      duration: 5000,
+      message: `Can't send a message to Olivia, the connection is closed.`,
       position: 'is-top',
       type: 'is-danger'
     })
