@@ -13,11 +13,16 @@
       <div class="container">
         <div class="is-boxed is-fullwidth" >
           <div class="field has-addons">
+            <b-tooltip :label="status.text" :type="status.color">
+              <b-tag :type="status.color" rounded>{{ status.face }}</b-tag>
+            </b-tooltip>
+          </div>
+          <div class="field has-addons">
             <p class="control">
-              <b-tooltip :label="this.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
+              <b-tooltip :label="this.speech.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
                          animated>
                 <button class="button is-primary" @click="mute()">
-                  <font-awesome-icon :icon="this.isMuted ? 'volume-mute' : 'volume-up'" />
+                  <font-awesome-icon :icon="this.speech.isMuted ? 'volume-mute' : 'volume-up'" />
                 </button>
               </b-tooltip>
             </p>
@@ -36,7 +41,7 @@
                 <font-awesome-icon icon="paper-plane" />
               </button>
             </p>
-            <p class="control" v-if="recorgnitionEnabled">
+            <p class="control" v-if="speech.recognitionEnabled">
               <b-tooltip label="Just click and speak"
                          animated>
                 <button class="button is-twitter" @click="dictate()">
@@ -55,23 +60,30 @@
     data() {
       return {
         input: "",
-        voice: undefined,
-        recorgnitionEnabled: typeof webkitSpeechRecognition !== "undefined",
+        speech: {
+          voice: undefined,
+          recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
+          isMuted: localStorage.getItem('muted'),
+        },
+        status: {
+          face: '눈_눈',
+          color: 'is-danger',
+          text: 'Connection closed :('
+        },
         bubbles: [],
-        isMuted: localStorage.getItem('muted'),
         information: localStorage.getItem('information')
       }
     },
     methods: {
       mute() {
-        this.isMuted = !this.isMuted
-        localStorage.setItem('muted', this.isMuted)
+        this.speech.isMuted = !this.speech.isMuted
+        localStorage.setItem('muted', this.speech.isMuted)
       },
       speak(text) {
-        if (this.isMuted) return;
+        if (this.speech.isMuted) return;
 
         const message = new SpeechSynthesisUtterance(text)
-        message.voice = this.voice
+        message.voice = this.speech.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message)
       },
@@ -81,8 +93,7 @@
         recognition.lang = "en-US"
         recognition.start()
         recognition.onresult = (event) => {
-          const speechToText = event.results[0][0].transcript
-          this.input = speechToText
+          this.input = event.results[0][0].transcript
         }
 
         recognition.onend = () => this.validate()
@@ -90,9 +101,7 @@
       validate() {
         const sentence = this.input
 
-        if (sentence == "") {
-          return
-        }
+        if (sentence === "") return
 
         this.addBubble("me", sentence)
         this.input = ""
@@ -121,6 +130,40 @@
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
       },
+      websocketStatus() {
+        let state = this.websocket.readyState
+
+        switch (state) {
+          case 0:
+            this.status = {
+              face: '(ᵔᴥᵔ)',
+              color: 'is-warning',
+              text: 'Connecting...'
+            }
+            break
+          case 1:
+            this.status = {
+              face: '•ᴗ•',
+              color: 'is-success',
+              text: 'Connected!'
+            }
+            break
+          case 2:
+            this.status = {
+              face: '⇀_↼',
+              color: 'is-warning',
+              text: 'Closing :/'
+            }
+            break
+          case 3:
+            this.status = {
+              face: '눈_눈',
+              color: 'is-danger',
+              text: 'Closed :('
+            }
+            break
+        }
+      },
       sleep(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
       },
@@ -148,7 +191,7 @@
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
-        this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
+        this.speech.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
       }
 
       // Initializes the connection with the websocket
@@ -162,17 +205,19 @@
         }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
       })
 
+      setTimeout(() => {
+        this.websocketStatus()
+      }, 1000)
+
       // If the voices didn't load send a snackbar
       this.sleep(3000).then(() => {
-        if (this.voice !== undefined) return;
+        if (this.speech.voice !== undefined) return;
 
-        this.$snackbar.open({
+        this.$toast.open({
           duration: 5000,
-          message: "Olivia's voice cannot load, the voice is now the default english one.",
-          type: 'is-danger',
+          message: `Olivia's voice cannot load, her voice is now the default english one.`,
           position: 'is-top',
-          actionText: 'Close',
-          queue: false
+          type: 'is-danger'
         })
       })
     }
