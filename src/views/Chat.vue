@@ -2,7 +2,7 @@
   <div>
     <div
         class="hero-body"
-        style="overflow: scroll; max-height: 82vh"
+        style="overflow: scroll; max-height: 78vh"
         id="bubbles">
       <div class="container">
         <ul
