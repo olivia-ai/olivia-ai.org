@@ -1,15 +1,22 @@
 <template>
   <div>
-    <div class="hero-body" style="overflow: scroll; max-height: 82vh" id="bubbles">
+    <div
+        class="hero-body"
+        style="overflow: scroll; max-height: 82vh"
+        id="bubbles">
       <div class="container">
-        <ul v-for="bubble in bubbles" :key="bubble.id">
+        <ul
+            v-for="bubble in bubbles"
+            :key="bubble.id">
           <li :class="bubble.who + ' is-dark'" :id="'message-' + bubble.id">
             {{ bubble.content }}
           </li>
         </ul>
       </div>
     </div>
-    <div class="hero-foot" style="padding: 0 20px 20px 20px">
+    <div
+        class="hero-foot"
+        style="padding: 0 20px 20px 20px">
       <div class="container">
         <div class="is-boxed is-fullwidth" >
           <chat-input

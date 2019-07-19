@@ -156,7 +156,7 @@
       })
 
       // Change the websocket status
-      setTimeout(() => {
+      setInterval(() => {
         this.status = chat.getStatus(this.websocket)
       }, 1000)
     }
