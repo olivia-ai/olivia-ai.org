@@ -2,7 +2,7 @@
   <div>
     <div
         class="hero-body"
-        style="overflow: scroll; max-height: 78vh"
+        style="overflow-y: scroll; overflow-z: hidden; max-height: 78vh"
         id="bubbles">
       <div class="container">
         <ul
@@ -90,5 +90,20 @@
     float: right;
     background: #eee;
     color: #363636;
+  }
+
+  /* width */
+  #bubbles::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Handle */
+  #bubbles::-webkit-scrollbar-thumb {
+    background: #ff3aaf;
+  }
+
+  /* Handle on hover */
+  #bubbles::-webkit-scrollbar-thumb:hover {
+    background: #ff3aaf;
   }
 </style>
