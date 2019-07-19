@@ -54,7 +54,7 @@
       </section>
       <footer v-if="this.$route.path === '/'">
         <div :class="'has-text-centered ' + (this.darkTheme ? 'is-dark' : '')">
-          <p>Made with ❤️ by <strong><a href="mailto:hugo.lageneste@pm.me">Hugo Lageneste</a></strong></p>
+          <p>Made with ❤️ by <strong><a href="https://github.com/ananagame">Hugo Lageneste</a></strong></p>
           <p>Licensed under <strong><a href="http://opensource.org/licenses/mit-license.php">MIT</a></strong></p>
         </div>
         <img src="img/background-olivia.png" style="position: absolute;">
