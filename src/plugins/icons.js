@@ -10,8 +10,7 @@ import {
   faClock,
   faCalendar,
   faLongArrowAltLeft,
-  faMoon,
-  faSun
+  faAdjust
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -23,7 +22,6 @@ library.add(
   faClock,
   faCalendar,
   faLongArrowAltLeft,
-  faMoon,
-  faSun
+  faAdjust
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)

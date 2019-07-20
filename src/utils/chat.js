@@ -18,13 +18,13 @@ export default {
         return {
           face: '⇀_↼',
           color: 'is-warning',
-          text: 'Closing :/'
+          text: 'Closing the connection :/'
         }
       case websocket.CLOSED:
         return {
           face: '눈_눈',
           color: 'is-danger',
-          text: 'Closed :('
+          text: 'Connection closed :('
         }
     }
   },

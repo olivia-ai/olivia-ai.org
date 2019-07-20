@@ -1,15 +1,24 @@
 <template>
   <div>
-    <div class="field has-addons">
-      <b-tooltip
-          :label="status.text"
-          :type="status.color">
-        <b-tag
-            :type="status.color"
-            rounded>
-          {{ status.face }}
-        </b-tag>
-      </b-tooltip>
+    <div class="field is-grouped">
+      <div class="control">
+        <b-tooltip
+            :label="status.text"
+            :type="status.color">
+          <b-tag
+              :type="status.color"
+              rounded>
+            {{ status.face }}
+          </b-tag>
+        </b-tooltip>
+      </div>
+      <div class="control" style="height: 28px">
+        <div v-if="writing">
+          <div class="writing-effect">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="field has-addons">
       <p class="control">
@@ -17,7 +26,7 @@
             :label="this.speech.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
             animated>
           <button
-              class="button is-primary"
+              class="button is-primary is-rounded"
               @click="mute()">
             <font-awesome-icon :icon="this.speech.isMuted ? 'volume-mute' : 'volume-up'" />
           </button>
@@ -48,7 +57,7 @@
             label="Just click and speak"
             animated>
           <button
-              class="button is-twitter"
+              class="button is-twitter is-rounded"
               @click="dictate()">
             <font-awesome-icon icon="microphone" />
           </button>
@@ -69,6 +78,7 @@
     data() {
       return {
         input: '',
+        writing: false,
         status: {
           face: '눈_눈',
           color: 'is-danger',
@@ -90,6 +100,8 @@
           chat.sendClosedWebsocketErrorMessage(this.$toast)
           return
         }
+
+        this.writing = true
 
         this.websocket.send(
           JSON.stringify({
@@ -150,9 +162,10 @@
       this.websocket.addEventListener('message', e => {
         setTimeout(() => {
           let data = JSON.parse(e.data)
+          this.writing = false
           this.addBubble('him', data['content'])
           localStorage.setItem('information', JSON.stringify(data['information']))
-        }, Math.floor(Math.random() * (3000 - 750 + 1) + 750))
+        }, Math.floor(Math.random() * 3000))
       })
 
       // Change the websocket status

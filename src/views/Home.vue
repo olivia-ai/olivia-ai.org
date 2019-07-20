@@ -14,7 +14,7 @@
           </div>
           <div class="has-text-left-tablet">
             <h5 class="subtitle is-5 has-text-left-tablet">
-              <span>Enjoy the pleasure of chatting with a contextual open-source chatbot</span>
+              <span>Enjoy the pleasure of chatting with a <strong>contextual</strong>&nbsp;<span class="is-underlined">open-source chatbot</span></span>
             </h5>
 
             <div class="columns is-centered is-vcentered">
@@ -42,21 +42,17 @@
         </div>
       </div>
       <div class="columns is-vcentered">
-        <div class="column is-3 is-narrow">
+        <div class="column is-6 is-narrow">
           <img
-              src="img/olivia-iphonex.png"
+              src="img/olivia-iphones.png"
               alt="Screenshot of the PWA of Olivia on an iPhone X in light theme"
-          >
-        </div>
-        <div class="column is-3 is-narrow">
-          <img
-              src="img/olivia-iphonex-dark.png"
-              alt="Screenshot of the PWA of Olivia on an iPhone X in dark theme"
           >
         </div>
         <div class="column is-6 is-narrow">
           <h1 class="title">Progressive web application</h1>
-          <h2 class="subtitle">A fully compatible standalone website in iOS, Android and Desktop</h2>
+          <h2 class="subtitle">
+            A fully compatible <strong>standalone</strong> website in <span class="is-underlined">iOS</span>, <span class="is-underlined">Android</span> and <span class="is-underlined">Desktop</span>
+          </h2>
           <p>
             You can directly add the PWA to your homescreen from the website, and you won't remember that it is
             a website running behind this native-like app.
@@ -88,3 +84,10 @@
     }
   }
 </script>
+
+<style>
+  .is-underlined {
+    border-bottom: 3px solid;
+    border-color: #ff3aaf;
+  }
+</style>

@@ -27,22 +27,29 @@
             </div>
 
             <div class="navbar-end">
-              <a class="navbar-item" href="/blog">
+              <a
+                  class="navbar-item"
+                  href="/blog">
                 Blog
               </a>
               <div class="navbar-item">
-                <b-tooltip :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
-                           :type="darkTheme ? 'is-light' : 'is-dark'"
-                           position="is-bottom"
-                           animated>
-                  <a class="button is-rounded" @click="setTheme(!darkTheme)">
-                    <font-awesome-icon :icon="darkTheme ? 'sun' : 'moon'" />
+                <b-tooltip
+                    :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
+                    :type="darkTheme ? 'is-light' : 'is-dark'"
+                    position="is-bottom"
+                    animated>
+                  <a
+                      class="button is-rounded is-light"
+                      @click="setTheme(!darkTheme)">
+                    <font-awesome-icon icon="adjust" />
                   </a>
                 </b-tooltip>
               </div>
               <div class="navbar-item">
                 <div class="buttons">
-                  <a class="button is-primary" href="/chat">
+                  <a
+                      class="button is-primary is-rounded"
+                      href="/chat">
                     <strong>Chat</strong>
                   </a>
                 </div>
