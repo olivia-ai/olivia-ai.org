@@ -45,7 +45,7 @@
       </p>
       <p class="control">
         <button
-            class="button is-primary"
+            class="button is-primary is-rounded"
             @click="validate()">
           <font-awesome-icon icon="paper-plane" />
         </button>
