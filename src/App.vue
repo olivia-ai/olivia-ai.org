@@ -39,7 +39,7 @@
                     position="is-bottom"
                     animated>
                   <a
-                      :class="'button is-rounded ' + (darkTheme ? 'is-black' : 'is-light')"
+                      class="button is-rounded is-light"
                       @click="setTheme(!darkTheme)">
                     <font-awesome-icon icon="adjust" />
                   </a>
