@@ -158,7 +158,7 @@
       },
 
       getStatusTooltip() {
-        let processing = this.processingTime === undefined ? '' : 'Processing time: ' + this.processingTime + 'ms'
+        let processing = this.processingTime === undefined || this.websocket.readyState === 3 ? '' : 'Processing time: ' + this.processingTime + 'ms'
         return this.status.text + `\n` + processing
       }
     },
