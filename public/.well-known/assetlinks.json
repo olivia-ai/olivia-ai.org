@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.knvpnv",
+      "sha256_cert_fingerprints": ["77:41:48:A3:87:96:0A:3C:9E:56:DB:34:DC:61:EB:B8:39:CB:F0:3E:BC:23:9A:56:3E:7D:D8:49:43:60:90:4F"]
+    }
+  }
+]
