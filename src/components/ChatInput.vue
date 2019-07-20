@@ -3,8 +3,10 @@
     <div class="field is-grouped">
       <div class="control">
         <b-tooltip
-            :label="status.text"
-            :type="status.color">
+            style="white-space: pre"
+            :label="getStatusTooltip()"
+            :type="status.color"
+            position="is-right">
           <b-tag
               :type="status.color"
               rounded>
@@ -102,7 +104,7 @@
         }
 
         this.writing = true
-
+        this.startTime = Date.now()
         this.websocket.send(
           JSON.stringify({
             content: text,
@@ -153,6 +155,11 @@
           const bubbleElement = document.getElementById('message-' + (this.bubbles.length - 1))
           document.getElementById('bubbles').scrollTop = bubbleElement.offsetHeight + bubbleElement.offsetTop
         })
+      },
+
+      getStatusTooltip() {
+        let processing = this.processingTime === undefined ? '' : 'Processing time: ' + this.processingTime + 'ms'
+        return this.status.text + `\n` + processing
       }
     },
     mounted() {
@@ -160,6 +167,7 @@
       this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
+        this.processingTime = Date.now() - this.startTime
         setTimeout(() => {
           let data = JSON.parse(e.data)
           this.writing = false
