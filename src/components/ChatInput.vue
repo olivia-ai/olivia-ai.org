@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="field has-addons">
+    <div class="field">
       <b-tooltip
           :label="status.text"
           :type="status.color">
@@ -17,7 +17,7 @@
             :label="this.speech.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
             animated>
           <button
-              class="button is-primary"
+              class="button is-primary is-rounded"
               @click="mute()">
             <font-awesome-icon :icon="this.speech.isMuted ? 'volume-mute' : 'volume-up'" />
           </button>
@@ -48,7 +48,7 @@
             label="Just click and speak"
             animated>
           <button
-              class="button is-twitter"
+              class="button is-twitter is-rounded"
               @click="dictate()">
             <font-awesome-icon icon="microphone" />
           </button>
