@@ -22,5 +22,5 @@ export default new Router({
       component: require('../views/Post.vue').default
     }
   ],
-  mode: 'history'
+  mode: 'hash'
 })
