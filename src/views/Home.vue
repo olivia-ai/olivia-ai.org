@@ -21,9 +21,9 @@
               <div class="column">
                 <div class="columns">
                   <div class="column">
-                    <a class="button is-medium is-primary is-rounded" href="/chat">
+                    <router-link class="button is-medium is-primary is-rounded" to="/chat">
                       <strong>Chat online</strong>
-                    </a>
+                    </router-link>
                   </div>
 
                   <div class="column">

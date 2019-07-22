@@ -4,10 +4,10 @@
       <section :class="'hero is-fullheight ' + (darkTheme ? 'is-dark' : '')">
         <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+            <router-link class="navbar-item" to="/">
               <img src="https://olivia-ai.org/img/icons/olivia.png" alt="Olivia">
               Olivia
-            </a>
+            </router-link>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
               <span aria-hidden="true"></span>
