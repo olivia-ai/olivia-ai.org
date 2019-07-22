@@ -19,3 +19,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# Cordova
+/cordova/www
+/cordova/platforms
+/cordova/plugins
+/public/cordova.js
