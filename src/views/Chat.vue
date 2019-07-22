@@ -39,7 +39,7 @@
         speech: {
           voice: undefined,
           recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-          isMuted: localStorage.getItem('muted') === 'true',
+          isMuted: localStorage.getItem('muted') !== 'true',
         },
         bubbles: []
       }

@@ -121,6 +121,7 @@
 
       speak(text) {
         if (this.speech.isMuted) return;
+        if (!SpeechSynthesisUtterance) return;
 
         const message = new SpeechSynthesisUtterance(text)
         message.voice = this.speech.voice
