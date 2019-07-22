@@ -11,9 +11,9 @@
         </vue-markdown>
       </div>
       <div v-if="posts[routeName] !== undefined">
-        <a class="button is-primary is-rounded" href="/blog">
+        <router-link class="button is-primary is-rounded" to="/blog">
           <font-awesome-icon icon="long-arrow-alt-left" />&nbsp;<strong>Get back</strong>
-        </a>
+        </router-link>
       </div>
       <div class="content" v-else>
         <h1 class="title">Articles</h1>
@@ -31,7 +31,7 @@
             <footer class="card-footer">
               <p class="card-footer-item">
                 <span>
-                  <strong><a class="button is-rounded is-primary" :href="'/blog/' + post.id">Read the article</a></strong>
+                  <strong><router-link class="button is-rounded is-primary" :to="'/blog/' + post.id">Read the article</router-link></strong>
                 </span>
               </p>
             </footer>

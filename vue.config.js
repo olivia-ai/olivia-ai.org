@@ -1,5 +1,7 @@
-// vue.config.js
+const { BASE_URL = "/" } = process.env;
+
 module.exports = {
+  baseUrl: BASE_URL,
   chainWebpack: config => {
     config.module.rule('loaders')
       .test(/\.(png|svg|gif|md)$/)

@@ -27,11 +27,11 @@
             </div>
 
             <div class="navbar-end">
-              <a
+              <router-link
                   class="navbar-item"
-                  href="/blog">
+                  to="/blog">
                 Blog
-              </a>
+              </router-link>
               <div class="navbar-item">
                 <b-tooltip
                     :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
@@ -47,11 +47,11 @@
               </div>
               <div class="navbar-item">
                 <div class="buttons">
-                  <a
+                  <router-link
                       class="button is-primary is-rounded"
-                      href="/chat">
+                      to="/chat">
                     <strong>Chat</strong>
-                  </a>
+                  </router-link>
                 </div>
               </div>
             </div>
