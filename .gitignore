@@ -24,4 +24,6 @@ yarn-error.log*
 /cordova/www
 /cordova/platforms
 /cordova/plugins
+/cordova/olivia.keystore
+/cordova/build.json
 /public/cordova.js
