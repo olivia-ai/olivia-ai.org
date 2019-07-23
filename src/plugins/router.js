@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       path: '/blog',
-      component: require('../views/Post.vue').default
+      component: require('../views/Posts.vue').default
     }
   ],
   mode: 'hash'

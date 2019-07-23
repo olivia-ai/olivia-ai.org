@@ -169,6 +169,7 @@
       this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
       // Send the informations on connection
       this.websocket.onopen = () => {
+        this.processingTime = Date.now() - this.startTime
         this.websocket.send(
           JSON.stringify({
             type: 0,
