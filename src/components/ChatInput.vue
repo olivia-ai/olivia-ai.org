@@ -107,6 +107,7 @@
         this.startTime = Date.now()
         this.websocket.send(
           JSON.stringify({
+            type: 1,
             content: text,
             user_token: localStorage.getItem('token'),
             information: JSON.parse(localStorage.getItem('information'))
@@ -170,7 +171,7 @@
       this.websocket.onopen = () => {
         this.websocket.send(
           JSON.stringify({
-            content: '',
+            type: 0,
             user_token: localStorage.getItem('token'),
             information: JSON.parse(localStorage.getItem('information'))
           })
