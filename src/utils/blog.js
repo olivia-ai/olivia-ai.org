@@ -1,4 +1,3 @@
-import readingTime from 'reading-time'
 import posts from '../../public/blog/posts.json'
 import axios from 'axios'
 
@@ -11,7 +10,6 @@ export default {
 
       axios.get(file).then(res => {
         post['content'] = res.data
-        post['readingTime'] = readingTime(res.data).text
       })
 
       output.push(post)
