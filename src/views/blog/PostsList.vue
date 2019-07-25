@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import blog from '../utils/blog.js'
+  import blog from '../../utils/blog.js'
 
   export default {
     data() {

@@ -15,8 +15,12 @@ export default new Router({
     },
     {
       path: '/blog',
-      component: require('../views/Blog.vue').default
+      component: require('../views/blog/PostsList.vue').default
+    },
+    {
+      path: '/blog/:id',
+      component: require('../views/blog/Post.vue').default
     }
   ],
-  mode: 'hash'
+  mode: 'history'
 })
