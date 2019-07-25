@@ -11,7 +11,9 @@
         </vue-markdown>
       </div>
       <div>
-        <router-link class="button is-primary is-rounded" to="/blog">
+        <router-link
+            class="button is-primary is-rounded"
+            to="/blog">
           <font-awesome-icon icon="long-arrow-alt-left" />&nbsp;<strong>Get back</strong>
         </router-link>
       </div>

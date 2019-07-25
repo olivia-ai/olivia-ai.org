@@ -18,17 +18,19 @@
 
           <div id="navbar" class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item" href="https://docs.olivia-ai.org">
+              <router-link
+                  class="navbar-item"
+                  to="/docs">
                 Documentation
-              </a>
-              <a class="navbar-item" href="https://github.com/olivia-ai">
-                Github
-              </a>
+              </router-link>
               <router-link
                   class="navbar-item"
                   to="/blog">
                 Blog
               </router-link>
+              <a class="navbar-item" href="https://github.com/olivia-ai">
+                Github
+              </a>
               <div class="navbar-item">
                 <b-tooltip
                     :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
