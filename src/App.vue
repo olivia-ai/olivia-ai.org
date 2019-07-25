@@ -2,61 +2,7 @@
   <div id="app">
     <div>
       <section :class="'hero is-fullheight ' + (darkTheme ? 'is-dark' : '')">
-        <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <router-link class="navbar-item" to="/">
-              <img src="https://olivia-ai.org/img/icons/olivia.png" alt="Olivia">
-              Olivia
-            </router-link>
-
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <div id="navbar" class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item" href="https://docs.olivia-ai.org">
-                Documentation
-              </a>
-              <a class="navbar-item" href="https://github.com/olivia-ai">
-                Github
-              </a>
-            </div>
-
-            <div class="navbar-end">
-              <router-link
-                  class="navbar-item"
-                  to="/blog">
-                Blog
-              </router-link>
-              <div class="navbar-item">
-                <b-tooltip
-                    :label="darkTheme ? 'Move to light theme' : 'Move to dark theme'"
-                    :type="darkTheme ? 'is-light' : 'is-dark'"
-                    position="is-bottom"
-                    animated>
-                  <a
-                      class="button is-rounded is-light"
-                      @click="setTheme(!darkTheme)">
-                    <font-awesome-icon icon="adjust" />
-                  </a>
-                </b-tooltip>
-              </div>
-              <div class="navbar-item">
-                <div class="buttons">
-                  <router-link
-                      class="button is-primary is-rounded"
-                      to="/chat">
-                    <strong>Chat</strong>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <navigation-bar></navigation-bar>
         <router-view></router-view>
       </section>
       <footer v-if="this.$route.path === '/'">
@@ -69,16 +15,6 @@
     </div>
   </div>
 </template>
-
-<style>
-  #app > div > footer > div.is-dark > p {
-    color: #fff;
-  }
-
-  #app > div > footer > div > p > strong > a:hover {
-    color: #d40890;
-  }
-</style>
 
 <script>
   // Burger menu on mobile
@@ -96,12 +32,17 @@
     }
   })
 
+  import NavigationBar from './components/NavigationBar.vue'
+
   export default {
     name: 'app',
     data() {
       return {
         darkTheme: localStorage.getItem('darkTheme') === 'true'
       }
+    },
+    components: {
+      NavigationBar
     },
     methods: {
       setTheme(isDark) {
@@ -118,18 +59,16 @@
 </script>
 
 <style lang="scss">
-  // Import Bulma's core
   @import "~bulma/sass/utilities/_all";
+  $family-sans-serif: "Segoe UI";
 
-  // Set your colors
   $primary: #ff3aaf;
   $primary-invert: findColorInvert($primary);
   $twitter: #d40890;
   $twitter-invert: findColorInvert($twitter);
-
   $input-background-color: $light;
-
-  // Setup $colors to use as bulma classes (e.g. 'is-twitter')
+  $input-border-color: transparent;
+  $input-shadow: none;
   $colors: (
       "white": ($white, $black),
       "black": ($black, $white),
@@ -143,12 +82,10 @@
       "twitter": ($twitter, $twitter-invert)
   );
 
-  // Links
   $link: $primary;
   $link-invert: $primary-invert;
   $link-focus-border: $primary;
 
-  // Import Bulma and Buefy styles
   @import "~bulma";
   @import "~buefy/src/scss/buefy";
 </style>

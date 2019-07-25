@@ -1,0 +1,34 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    clear: both;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 2px;
+}
+
+.him {
+    background: #ff3aaf;
+    color: #fff;
+    float: left;
+}
+
+.me {
+    float: right;
+    background: #eee;
+    color: #363636;
+}
+
+#bubbles::-webkit-scrollbar {
+    width: 5px;
+}
+
+#bubbles::-webkit-scrollbar-thumb {
+    background: #ff3aaf;
+    border-radius: 20px;
+}

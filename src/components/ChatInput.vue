@@ -14,7 +14,9 @@
           </b-tag>
         </b-tooltip>
       </div>
-      <div class="control" style="height: 28px">
+      <div
+          class="control"
+          style="height: 28px">
         <div v-if="writing">
           <div class="writing-effect">
             <div></div><div></div><div></div>
@@ -22,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="field has-addons">
+    <div class="field is-grouped">
       <p class="control">
         <b-tooltip
             :label="this.speech.isMuted ? 'Make Olivia speak again' : 'Mute Olivia'"
@@ -34,9 +36,9 @@
           </button>
         </b-tooltip>
       </p>
-      <p class="control has-icons-left has-icons-right is-expanded">
+      <p class="control has-icons-left is-expanded">
         <input
-            class="input"
+            class="input is-rounded"
             type="text"
             v-model="input"
             v-on:keyup.enter="validate()"
@@ -45,26 +47,18 @@
           <font-awesome-icon icon="comment" />
         </span>
       </p>
-      <p class="control">
+      <div class="buttons has-addons">
         <button
             class="button is-primary is-rounded"
             @click="validate()">
           <font-awesome-icon icon="paper-plane" />
         </button>
-      </p>
-      <p
-          class="control"
-          v-if="speech.recognitionEnabled">
-        <b-tooltip
-            label="Just click and speak"
-            animated>
-          <button
-              class="button is-twitter is-rounded"
-              @click="dictate()">
-            <font-awesome-icon icon="microphone" />
-          </button>
-        </b-tooltip>
-      </p>
+        <button
+            class="button is-twitter is-rounded"
+            @click="dictate()">
+          <font-awesome-icon icon="microphone" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -169,7 +163,7 @@
       this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
       // Send the informations on connection
       this.websocket.onopen = () => {
-        this.processingTime = Date.now() - this.startTime
+        this.startTime = Date.now()
         this.websocket.send(
           JSON.stringify({
             type: 0,

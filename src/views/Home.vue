@@ -2,52 +2,42 @@
   <div class="hero-body has-text-centered">
     <div class="container">
       <div class="columns is-vcentered">
-        <div class="column is-4 is-narrow">
-          <div class="columns is-vcentered">
-            <div class="column is-4 is-narrow">
-              <img src="img/icons/olivia.png" alt="Olivia character" height="1000" width="1000"/>
-            </div>
-
-            <h1 class="title is-1 has-text-left-tablet">
-              <span>Olivia</span>
-            </h1>
-          </div>
-          <div class="has-text-left-tablet">
-            <h5 class="subtitle is-5 has-text-left-tablet">
-              <span>Enjoy the pleasure of chatting with a <strong>contextual</strong>&nbsp;<span class="is-underlined">open-source chatbot</span></span>
-            </h5>
-
-            <div class="columns is-centered is-vcentered">
-              <div class="column">
-                <div class="columns">
-                  <div class="column">
-                    <router-link class="button is-medium is-primary is-rounded" to="/chat">
-                      <strong>Chat online</strong>
-                    </router-link>
-                  </div>
-
-                  <div class="column">
-                    <a class="button is-light is-medium is-rounded paddle_download" href="https://docs.olivia-ai.org">
-                      <strong>Host Olivia yourself</strong>
-                    </a>
-                  </div>
-                </div>
+        <div class="column is-6 is-narrow">
+          <h1 class="title">
+            <div class="columns is-centered">
+              <div class="column is-6 is-narrow">
+                <img src="img/icons/olivia-with-text.png" alt="Olivia character with the text written in black" height="200" v-if="!darkTheme"/>
+                <img src="img/icons/olivia-with-white-text.png" alt="Olivia character with the text written in white" height="200" v-else/>
               </div>
             </div>
+          </h1>
+          <h1 class="title">
+            Your new <span class="is-underlined">best friend</span>
+          </h1>
+          <h2 class="subtitle">
+            An <span class="is-underlined">open-source</span> chatbot built with an <strong>artificial neural network</strong>
+          </h2>
+          <div class="columns is-centered">
+            <div class="column is-4 is-narrow">
+              <router-link class="button is-medium is-primary is-rounded" to="/chat">
+                <strong>Chat online</strong>
+              </router-link>
+            </div>
+            <div class="column is-4 is-narrow">
+              <a class="button is-medium is-rounded" href="https://github.com/olivia-ai">
+                <strong>See the GitHub</strong>
+              </a>
+            </div>
           </div>
         </div>
-
-        <div class="column is-8 is-narrow">
-          <img src="img/olivia-macos.png" alt="Screenshot of the PWA of Olivia on macOS">
-        </div>
-      </div>
-      <div class="columns is-vcentered">
         <div class="column is-6 is-narrow">
           <img
               src="img/olivia-iphones.png"
-              alt="Screenshot of the PWA of Olivia on an iPhone X in light theme"
+              alt="Two iPhone X where the Olivia app is launched"
           >
         </div>
+      </div>
+      <div class="columns is-vcentered">
         <div class="column is-6 is-narrow">
           <h1 class="title">Progressive web application</h1>
           <h2 class="subtitle">
@@ -58,14 +48,35 @@
             a website running behind this native-like app.
           </p>
         </div>
+        <div class="column is-6 is-narrow">
+          <h1 class="title">An open-source project</h1>
+          <h2 class="subtitle">
+            The core of <strong>Olivia</strong>, which is written in <span class="is-underlined">Golang</span> is entirely <strong>open-source</strong> so you can make contribute to it!
+          </h2>
+          <div class="columns is-centered">
+            <div class="column is-4 is-narrow">
+              <a class="button is-medium is-rounded" href="https://github.com/olivia-ai/olivia">
+                <strong>The repository</strong>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style>
-  .is-underlined {
-    border-bottom: 3px solid;
-    border-color: #ff3aaf;
+<script>
+  export default {
+    data() {
+      return {
+        darkTheme: localStorage.getItem('darkTheme') === 'true'
+      }
+    },
+    mounted() {
+      setInterval(() => {
+        this.darkTheme = localStorage.getItem('darkTheme') === 'true'
+      }, 10)
+    }
   }
-</style>
+</script>

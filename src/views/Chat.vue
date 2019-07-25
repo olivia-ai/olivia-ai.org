@@ -2,13 +2,15 @@
   <div>
     <div
         class="hero-body"
-        style="overflow-y: scroll; max-height: 78vh"
+        style="overflow-y: scroll; max-height: 72vh"
         id="bubbles">
       <div class="container">
         <ul
             v-for="bubble in bubbles"
             :key="bubble.id">
-          <li :class="bubble.who + ' is-dark'" :id="'message-' + bubble.id">
+          <li
+              :class="bubble.who + ' is-dark'"
+              :id="'message-' + bubble.id">
             {{ bubble.content }}
           </li>
         </ul>
@@ -39,7 +41,7 @@
         speech: {
           voice: undefined,
           recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-          isMuted: localStorage.getItem('muted') !== 'true',
+          isMuted: localStorage.getItem('muted') === 'true',
         },
         bubbles: []
       }
@@ -64,40 +66,3 @@
     }
   }
 </script>
-
-<style>
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul li {
-    display: inline-block;
-    clear: both;
-    padding: 20px;
-    border-radius: 30px;
-    margin-bottom: 2px;
-  }
-
-  .him {
-    background: #ff3aaf;
-    color: #fff;
-    float: left;
-  }
-
-  .me {
-    float: right;
-    background: #eee;
-    color: #363636;
-  }
-
-  #bubbles::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  #bubbles::-webkit-scrollbar-thumb {
-    background: #ff3aaf;
-    border-radius: 20px;
-  }
-</style>
