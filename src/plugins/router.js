@@ -14,12 +14,8 @@ export default new Router({
       component: require('../views/Chat.vue').default
     },
     {
-      path: '/blog/:name',
-      component: require('../views/Post.vue').default
-    },
-    {
       path: '/blog',
-      component: require('../views/Posts.vue').default
+      component: require('../views/Blog.vue').default
     }
   ],
   mode: 'hash'

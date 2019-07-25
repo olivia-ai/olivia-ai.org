@@ -47,18 +47,20 @@
           <font-awesome-icon icon="comment" />
         </span>
       </p>
-      <div class="buttons has-addons">
+      <p class="control">
         <button
             class="button is-primary is-rounded"
             @click="validate()">
           <font-awesome-icon icon="paper-plane" />
         </button>
+      </p>
+      <p class="control">
         <button
             class="button is-twitter is-rounded"
             @click="dictate()">
           <font-awesome-icon icon="microphone" />
         </button>
-      </div>
+      </p>
     </div>
   </div>
 </template>
