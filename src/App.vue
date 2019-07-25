@@ -18,11 +18,11 @@
 
           <div id="navbar" class="navbar-menu">
             <div class="navbar-end">
-              <router-link
+              <a
                   class="navbar-item"
-                  to="/docs/getting-started">
+                  href="https://docs.olivia-ai.org">
                 Documentation
-              </router-link>
+              </a>
               <router-link
                   class="navbar-item"
                   to="/blog">

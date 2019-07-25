@@ -20,10 +20,6 @@ export default new Router({
     {
       path: '/blog/:id',
       component: require('../views/blog/Post.vue').default
-    },
-    {
-      path: '/docs/:id',
-      component: require('../views/docs/Docs.vue').default
     }
   ],
   mode: 'history'
