@@ -62,7 +62,7 @@ export default {
   createUserInformations() {
     // Generate the token
     if (localStorage.getItem('token') == null) {
-      localStorage.setItem('token', chat.generateToken(200))
+      localStorage.setItem('token', this.generateToken(200))
     }
 
     if (localStorage.getItem('information') == null) {
