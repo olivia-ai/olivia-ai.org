@@ -22,10 +22,6 @@ export default new Router({
       component: require('../views/blog/Post.vue').default
     },
     {
-      path: '/docs',
-      component: require('../views/docs/Docs.vue').default
-    },
-    {
       path: '/docs/:id',
       component: require('../views/docs/Docs.vue').default
     }

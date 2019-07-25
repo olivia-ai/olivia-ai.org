@@ -20,7 +20,7 @@
             <div class="navbar-end">
               <router-link
                   class="navbar-item"
-                  to="/docs">
+                  to="/docs/getting-started">
                 Documentation
               </router-link>
               <router-link
