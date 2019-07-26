@@ -12,7 +12,6 @@ module.exports = {
   pwa: {
     name: "Olivia",
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: 'black-translucent',
     themeColor: '#ff3aaf',
     msTileColor: '#fff',
     iconPaths: {
