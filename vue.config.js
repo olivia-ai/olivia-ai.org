@@ -13,6 +13,7 @@ module.exports = {
     name: "Olivia",
     appleMobileWebAppCapable: 'yes',
     themeColor: '#ff3aaf',
+    appleMobileWebAppStatusBarStyle: 'black-translucent',
     msTileColor: '#fff',
     iconPaths: {
       favicon32: "img/icons/favicon-32x32.png",
