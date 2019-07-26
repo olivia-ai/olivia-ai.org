@@ -1,6 +1,29 @@
 <template>
   <div>
-
+    <div class="field is-grouped">
+      <div class="control">
+        <b-tooltip
+            style="white-space: pre"
+            :label="getStatusTooltip()"
+            :type="status.color"
+            position="is-right">
+          <b-tag
+              :type="status.color"
+              rounded>
+            {{ status.face }}
+          </b-tag>
+        </b-tooltip>
+      </div>
+      <div
+          class="control"
+          style="height: 28px">
+        <div v-if="writing">
+          <div class="writing-effect">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="field is-grouped">
       <p class="control">
         <b-tooltip
