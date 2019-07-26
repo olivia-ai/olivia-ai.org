@@ -2,7 +2,7 @@
   <div>
     <div
         class="hero-body"
-        style="overflow-y: scroll; max-height: 72vh"
+        :style="'overflow-y: scroll; max-height: ' + (ios ? '80vh' : '72vh')"
         id="bubbles">
       <div class="container">
         <ul
@@ -43,7 +43,8 @@
           recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
           isMuted: localStorage.getItem('muted') === 'true',
         },
-        bubbles: []
+        bubbles: [],
+        ios: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
       }
     },
     components: {
