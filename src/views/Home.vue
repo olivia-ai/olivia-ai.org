@@ -32,7 +32,7 @@
         </div>
         <div class="column is-6 is-narrow">
           <img
-              src="img/olivia-iphones.png"
+              src="img/olivia-iphones-inclined.png"
               alt="Two iPhone X where the Olivia app is launched"
           >
         </div>
