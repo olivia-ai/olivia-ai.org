@@ -7,9 +7,9 @@ ul {
 ul li {
     display: inline-block;
     clear: both;
-    padding: 20px;
+    padding: 13px;
+    margin: 2px;
     border-radius: 30px;
-    margin-bottom: 2px;
 }
 
 .him {
