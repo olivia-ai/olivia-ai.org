@@ -1,69 +1,27 @@
 <template>
-  <div>
-    <div
-        class="hero-body"
-        :style="'overflow-y: scroll; max-height: ' + (ios ? '80vh' : '72vh')"
-        id="bubbles">
-      <div class="container">
-        <ul
-            v-for="bubble in bubbles"
-            :key="bubble.id">
-          <li
-              :class="bubble.who + ' is-dark'"
-              :id="'message-' + bubble.id">
-            {{ bubble.content }}
-          </li>
-        </ul>
-      </div>
+  <div class="hero is-fullheight">
+    <div class="hero-body">
     </div>
-    <div
-        class="hero-foot"
-        style="padding: 0 20px 20px 20px">
+
+    <div class="hero-foot">
       <div class="container">
-        <div class="is-boxed is-fullwidth" >
-          <chat-input
-              :speech.sync="speech"
-              :bubbles.sync="bubbles">
-          </chat-input>
+        <div class="m-carl-notification">
+          <div class="m-carl-notification-caption title has-text-centered">
+            What can I do for you?
+          </div>
+
+          <div class="m-carl-notification-cue m-cue" style="padding-top: 100px">
+            <div class="a-cue-voice">
+              <div class="a-cue-voice-el"></div>
+              <div class="a-cue-voice-el"></div>
+              <div class="a-cue-voice-el"></div>
+              <div class="a-cue-voice-el"></div>
+              <div class="a-cue-voice-el"></div>
+            </div>
+            <div class="a-cue-icon"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script>
-  import ChatInput from '../components/ChatInput'
-  import chat from '../utils/chat'
-
-  export default {
-    data() {
-      return {
-        input: "",
-        speech: {
-          voice: undefined,
-          recognitionEnabled: typeof webkitSpeechRecognition !== "undefined",
-          isMuted: localStorage.getItem('muted') === 'true',
-        },
-        bubbles: [],
-        ios: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream
-      }
-    },
-    components: {
-      ChatInput
-    },
-    mounted() {
-      chat.createUserInformations()
-
-      // Wait that the voices are loaded to choose the right one
-      window.speechSynthesis.onvoiceschanged = () => {
-        this.speech.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
-      }
-
-      // If the voices didn't load send a snackbar
-      chat.sleep(3000).then(() => {
-        if (this.speech.voice !== undefined) return;
-
-        chat.sendVoiceErrorMessage(this.$toast)
-      })
-    }
-  }
-</script>

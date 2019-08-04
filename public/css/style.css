@@ -1,0 +1,172 @@
+* {
+    transition: all .2s ease-in-out;
+}
+
+.container.negative {
+    background: linear-gradient(160deg, #D14C4C 0%, #FF0000 100%);
+}
+
+.container.negative .m-carl-notification .m-cue .a-cue-icon {
+    background: #E82525;
+    transform: translateX(0px) translateY(0px);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+    width: 168px;
+    height: 168px;
+}
+
+.container.positive {
+    background: linear-gradient(200deg, #4DA84C 0%, #76CCD9 100%);
+}
+
+.container.positive .m-carl-notification .m-cue .a-cue-icon {
+    background: #03A87C;
+    transform: translateX(0px) translateY(0px);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+    width: 168px;
+    height: 168px;
+}
+
+.container:before {
+    content: '';
+    top: -60vw;
+    left: -80vw;
+    width: 150vw;
+    height: 150vw;
+    border-radius: 50%;
+    background: rgba(238, 238, 238, 0.04);
+}
+
+.container:after {
+    content: '';
+    top: -40vw;
+    left: -50vw;
+    width: 90vw;
+    height: 90vw;
+    border-radius: 50%;
+    background: rgba(238, 238, 238, 0.04);
+}
+
+.m-carl-notification {
+    transform: translateY(-60%);
+}
+
+.m-carl-notification .m-cue {
+    width: 168px;
+    height: 168px;
+    margin: 0 auto 50px;
+}
+
+.m-carl-notification .m-cue .a-cue-icon {
+    width: 163px;
+    height: 163px;
+    transform: translateX(5px) translateY(5px);
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FF4FC0 0%, #FF4E83 100%);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.m-carl-notification .m-cue .a-cue-voice {
+    transform-origin: center center;
+    height: 168px;
+    width: 168px;
+    position: absolute;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el {
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    background: #ff90c3;
+    opacity: .2;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el:nth-child(1) {
+    animation: hovering 6s ease 0s infinite reverse both;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el:nth-child(2) {
+    animation: hovering 7s ease 0s infinite both;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el:nth-child(3) {
+    animation: hovering 8s ease 0s infinite reverse both;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el:nth-child(4) {
+    animation: hovering 9s ease 0s infinite both;
+}
+
+.m-carl-notification .m-cue .a-cue-voice-el:nth-child(5) {
+    animation: hovering 10s ease 0s infinite reverse both;
+}
+
+.m-carl-notification .m-cue:hover .a-cue-voice, .m-carl-notification .m-cue.speaking .a-cue-voice {
+    animation: pulse 2s ease 0s infinite;
+}
+
+.m-carl-notification .a-caption {
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 1.8em;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);
+    text-align: center;
+}
+
+.m-carl-notification .a-caption.speaking {
+    text-shadow: 0px 0px 0px;
+    opacity: .4;
+}
+
+@keyframes hovering {
+    from {
+        transform: rotate(0deg) translateX(18px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(18px) rotate(-360deg);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.15);
+    }
+    15% {
+        transform: scale(1.25);
+    }
+    20% {
+        transform: scale(1.05);
+    }
+    30% {
+        transform: scale(1.3);
+    }
+    40% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    55% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    65% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(1.15);
+    }
+    90% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
