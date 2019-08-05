@@ -2,10 +2,6 @@
     transition: all .2s ease-in-out;
 }
 
-html {
-    background: linear-gradient(135deg, #fca7c7 0%, #E74181 85%, #E3348D 100%);
-}
-
 .m-cue .a-cue-icon {
     background: #E82525;
     transform: translateX(0px) translateY(0px);

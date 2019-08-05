@@ -15,8 +15,8 @@
   $primary-invert: findColorInvert($primary);
   $twitter: #d40890;
   $twitter-invert: findColorInvert($twitter);
-  $input-background-color: none;
-  $input-border-color: none;
+  $input-background-color: $white-ter;
+  $input-border-color: $grey-lighter;
   $input-shadow: none;
   $colors: (
       "white": ($white, $black),

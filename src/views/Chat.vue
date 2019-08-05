@@ -5,16 +5,17 @@
          aria-label="main navigation">
       <div class="navbar-brand">
         <router-link
-            class="navbar-item has-text-white"
+            class="navbar-item"
             to="/">
           <font-awesome-icon icon="arrow-left"></font-awesome-icon>
         </router-link>
       </div>
     </nav>
 
-    <div class="hero-head" style="padding-top: 10vh">
+    <div class="hero-head"
+         style="padding-top: 10vh">
       <div class="container has-text-centered">
-        <div class="m-carl-notification-caption title has-text-white">
+        <div class="m-carl-notification-caption title">
           {{ message }}
         </div>
       </div>
@@ -31,13 +32,15 @@
               <div class="a-cue-voice-el"></div>
               <div class="a-cue-voice-el"></div>
             </div>
+
             <div class="a-cue-icon"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="hero-foot" style="padding-bottom: 10vh">
+    <div class="hero-foot"
+         style="padding-bottom: 10vh">
       <div class="container">
         <div class="columns is-mobile is-centered">
           <div class="column is-two-thirds">
@@ -46,16 +49,6 @@
         </div>
       </div>
     </div>
-
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <li><a class="has-text-white">Home</a></li>
-          <li><a class="has-text-white">Chat</a></li>
-          <li><a class="has-text-white">Profile</a></li>
-        </ul>
-      </div>
-    </nav>
   </div>
 </template>
 
