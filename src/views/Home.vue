@@ -93,7 +93,7 @@
             </div>
             <div class="column is-6 is-narrow">
               <img
-                  src="img/olivia-iphones-inclined.png"
+                  src="img/olivia-iphonex.png"
                   alt="Two iPhone X where the Olivia app is launched"
               >
             </div>
@@ -104,7 +104,7 @@
           <div class="column is-6 is-narrow">
             <h1 class="title">Progressive web application</h1>
             <h2 class="subtitle">
-              A fully compatible <strong>standalone</strong> website in <span class="is-underlined">iOS</span>, <span class="is-underlined">Android</span> and <span class="is-underlined">Desktop</span>
+              A fully compatible <strong>standalone</strong> website in iOS, Android and Desktop
             </h2>
             <p>
               You can directly add the PWA to your homescreen from the website, and you won't remember that it is
@@ -114,7 +114,7 @@
           <div class="column is-6 is-narrow">
             <h1 class="title">An open-source project</h1>
             <h2 class="subtitle">
-              The core of <strong>Olivia</strong>, which is written in <span class="is-underlined">Golang</span> is entirely <strong>open-source</strong> so you can make contribute to it!
+              The core of <strong>Olivia</strong>, which is written in Golang is entirely <strong>open-source</strong> so you can make contribute to it!
             </h2>
             <div class="columns is-centered">
               <div class="column is-4 is-narrow">
