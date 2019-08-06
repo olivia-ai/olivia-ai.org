@@ -1,17 +1,31 @@
 <template>
   <div class="hero is-fullheight">
-    <nav class="navbar"
-         role="navigation"
-         aria-label="main navigation">
-      <div class="navbar-brand">
+    <b-navbar class="is-spaced">
+      <template slot="brand">
         <router-link
             class="navbar-item"
             to="/">
           <font-awesome-icon icon="arrow-left"></font-awesome-icon>
         </router-link>
-      </div>
-    </nav>
+      </template>
 
+      <template slot="end">
+        <b-navbar-item tag="div">
+          <div class="buttons">
+            <a
+                class="button is-rounded is-primary"
+                @click="openProfileModal()">
+              <strong>
+                Profile
+              </strong>
+            </a>
+          </div>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+
+
+    <!-- Olivia's answer -->
     <div class="hero-head"
          style="padding-top: 10vh">
       <div class="container has-text-centered">
@@ -21,6 +35,7 @@
       </div>
     </div>
 
+    <!-- Animation -->
     <div class="hero-body">
       <div class="container">
         <div class="m-carl-notification">
@@ -44,7 +59,37 @@
       <div class="container">
         <div class="columns is-mobile is-centered">
           <div class="column is-two-thirds">
-            <input class="input is-rounded" type="text">
+            <!-- Input -->
+            <div class="field is-grouped">
+              <!-- Mute control -->
+              <p class="control">
+                <b-tooltip
+                    :label="muted ? 'Make Olivia speak again' : 'Mute Olivia'"
+                    animated>
+                  <button
+                      class="button is-primary is-rounded"
+                      @click="mute()">
+
+                    <font-awesome-icon icon="volume-mute" v-if="muted" />
+                    <font-awesome-icon icon="volume-up" v-else />
+                  </button>
+                </b-tooltip>
+              </p>
+
+              <!-- Field -->
+              <p class="control has-icons-left is-expanded">
+                <input
+                    class="input is-rounded"
+                    type="text"
+                    v-model="input"
+                    v-on:keyup.enter="send()"
+                    placeholder="Message"/>
+
+                <span class="icon is-small is-left">
+                  <font-awesome-icon icon="comment" />
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -53,17 +98,44 @@
 </template>
 
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+  });
+
+  import Profile from '../components/Profile'
+
   export default {
     data() {
       return {
         message: 'What can I do for you?',
-        input: ''
+        input: '',
+        muted: localStorage.getItem('muted') === 'true'
       }
     },
     methods: {
       speak(text) {
-        if (!SpeechSynthesisUtterance) return;
+        if (this.muted || !SpeechSynthesisUtterance) {
+          return
+        }
+
         const message = new SpeechSynthesisUtterance(text)
+
         message.voice = this.voice
         message.lang = "en-US"
         window.speechSynthesis.speak(message)
@@ -72,6 +144,7 @@
       dictate() {
         const SpeechRecognition = webkitSpeechRecognition
         const recognition = new SpeechRecognition()
+
         recognition.lang = "en-US"
         recognition.start()
         recognition.onresult = (event) => {
@@ -80,7 +153,13 @@
         recognition.onend = () => this.send()
       },
 
+      mute() {
+        this.muted = !this.muted
+        localStorage.setItem('muted', this.muted)
+      },
+
       send() {
+        this.writing = true
         this.websocket.send(
           JSON.stringify({
             type: 1,
@@ -115,6 +194,14 @@
             name: ''
           }))
         }
+      },
+
+      openProfileModal() {
+        this.$buefy.modal.open({
+          parent: this,
+          component: Profile,
+          hasModalCard: true
+        })
       }
     },
     mounted() {
@@ -134,10 +221,11 @@
         setTimeout(() => {
           let data = JSON.parse(e.data)
 
+          this.writing = false
           this.message = data['content']
           this.speak(this.message)
           localStorage.setItem('information', JSON.stringify(data['information']))
-        }, Math.floor(Math.random() * 3000))
+        }, Math.floor(Math.random() * 1500))
       })
     }
   }

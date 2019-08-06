@@ -22,15 +22,21 @@
             <a
                 class="navbar-item"
                 href="https://docs.olivia-ai.org">
-              Documentation
+              <strong>
+                Documentation
+              </strong>
             </a>
             <router-link
                 class="navbar-item"
                 to="/blog">
-              Blog
+              <strong>
+                Blog
+              </strong>
             </router-link>
             <a class="navbar-item" href="https://github.com/olivia-ai">
-              Github
+              <strong>
+                Github
+              </strong>
             </a>
             <div class="navbar-item">
               <div class="buttons">
@@ -114,8 +120,8 @@
       </div>
     </section>
 
-    <footer v-if="this.$route.path === '/'">
-      <div :class="'has-text-centered ' + (this.darkTheme ? 'is-dark' : '')">
+    <footer>
+      <div class="has-text-centered">
         <p>Made with ❤️ by <strong><a href="https://github.com/ananagame">Hugo Lageneste</a></strong></p>
         <p>Licensed under <strong><a href="http://opensource.org/licenses/mit-license.php">MIT</a></strong></p>
       </div>
