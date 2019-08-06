@@ -8,6 +8,10 @@ module.exports = {
       .use('file')
       .loader('file-loader')
       .end()
+      .test(/\.(md)$/)
+      .use('file')
+      .loader('raw-loader')
+      .end();
   },
   pwa: {
     name: "Olivia",

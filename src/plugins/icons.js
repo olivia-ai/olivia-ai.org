@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faArrowLeft,
   faVolumeUp,
-  faVolumeMute,
-  faComment
+  faVolumeMute
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faArrowLeft,
   faVolumeUp,
   faVolumeMute,
-  faComment
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)

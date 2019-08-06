@@ -26,13 +26,6 @@
                 Documentation
               </strong>
             </a>
-            <router-link
-                class="navbar-item"
-                to="/blog">
-              <strong>
-                Blog
-              </strong>
-            </router-link>
             <a class="navbar-item" href="https://github.com/olivia-ai">
               <strong>
                 Github
@@ -82,6 +75,16 @@
                   </a>
                 </div>
               </div>
+              <h2 class="subtitle">
+                <github-button
+                    href="https://github.com/olivia-ai/olivia"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Star olivia-ai/olivia on GitHub">
+                  Star
+                </github-button>
+              </h2>
             </div>
             <div class="column is-6 is-narrow">
               <img
@@ -129,3 +132,13 @@
     </footer>
   </div>
 </template>
+
+<script>
+  import GithubButton from 'vue-github-button'
+
+  export default {
+    components: {
+      GithubButton
+    }
+  }
+</script>
