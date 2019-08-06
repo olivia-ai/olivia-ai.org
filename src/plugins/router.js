@@ -12,6 +12,10 @@ export default new Router({
     {
       path: '/chat',
       component: require('../views/Chat.vue').default
+    },
+    {
+      path: '/changelog',
+      component: require('../views/Changelog.vue').default
     }
   ],
   mode: 'history'

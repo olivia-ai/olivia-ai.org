@@ -4,6 +4,7 @@ import Resource from 'vue-resource'
 import Buefy from 'buefy'
 import './registerServiceWorker'
 import './plugins/icons'
+import 'bulma-timeline/dist/css/bulma-timeline.min.css'
 import router from './plugins/router'
 
 Vue.use(Buefy, {

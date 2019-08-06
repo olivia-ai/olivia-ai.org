@@ -26,6 +26,11 @@
                 Documentation
               </strong>
             </a>
+            <router-link to="/changelog" class="navbar-item">
+              <strong>
+                Changelog
+              </strong>
+            </router-link>
             <a class="navbar-item" href="https://github.com/olivia-ai">
               <strong>
                 Github
