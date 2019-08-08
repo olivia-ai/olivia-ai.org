@@ -8,20 +8,6 @@
           <font-awesome-icon icon="arrow-left"></font-awesome-icon>
         </router-link>
       </template>
-
-      <template slot="end">
-        <b-navbar-item tag="div">
-          <div class="buttons">
-            <a
-                class="button is-rounded is-primary"
-                @click="openProfileModal()">
-              <strong>
-                Profile
-              </strong>
-            </a>
-          </div>
-        </b-navbar-item>
-      </template>
     </b-navbar>
 
 
@@ -118,8 +104,6 @@
     }
   });
 
-  import Profile from '../components/Profile'
-
   export default {
     data() {
       return {
@@ -194,14 +178,6 @@
             name: ''
           }))
         }
-      },
-
-      openProfileModal() {
-        this.$buefy.modal.open({
-          parent: this,
-          component: Profile,
-          hasModalCard: true
-        })
       }
     },
     mounted() {
