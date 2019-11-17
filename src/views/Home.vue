@@ -33,7 +33,7 @@
             </router-link>
             <a class="navbar-item" href="https://github.com/olivia-ai">
               <strong>
-                Github
+                GitHub
               </strong>
             </a>
             <div class="navbar-item">
@@ -80,27 +80,23 @@
                   </a>
                 </div>
               </div>
-              <h2 class="subtitle">
-                <github-button
-                    href="https://github.com/olivia-ai/olivia"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star olivia-ai/olivia on GitHub">
-                  Star
-                </github-button>
-              </h2>
             </div>
             <div class="column is-6 is-narrow">
               <img
-                  src="img/olivia-iphonex.png"
-                  alt="Two iPhone X where the Olivia app is launched"
+                  src="img/oliviaiphone11.png"
+                  alt="Mockup iPhone 11 Pro"
               >
             </div>
           </div>
         </div>
 
         <div class="columns is-vcentered">
+          <div class="column is-6 is-narrow">
+            <img
+                src="img/oliviaiphone11ipadpro.png"
+                alt="Mockup iPhone 11 Pro + iPad Pro"
+            >
+          </div>
           <div class="column is-6 is-narrow">
             <h1 class="title">Progressive web application</h1>
             <h2 class="subtitle">
@@ -110,19 +106,6 @@
               You can directly add the PWA to your homescreen from the website, and you won't remember that it is
               a website running behind this native-like app.
             </p>
-          </div>
-          <div class="column is-6 is-narrow">
-            <h1 class="title">An open-source project</h1>
-            <h2 class="subtitle">
-              The core of <strong>Olivia</strong>, which is written in Golang is entirely <strong>open-source</strong> so you can make contribute to it!
-            </h2>
-            <div class="columns is-centered">
-              <div class="column is-4 is-narrow">
-                <a class="button is-medium is-rounded" href="https://github.com/olivia-ai/olivia">
-                  <strong>The repository</strong>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
