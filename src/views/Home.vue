@@ -58,7 +58,7 @@
               <h1 class="title">
                 <div class="columns is-centered">
                   <div class="column is-6 is-narrow">
-                    <img src="img/icons/olivia-with-text.png" alt="Olivia character with the text written in white" height="200"/>
+                    <img src="img/icons/olivia-with-text.jpg" alt="Olivia character with the text written in white" height="200"/>
                   </div>
                 </div>
               </h1>
@@ -83,7 +83,7 @@
             </div>
             <div class="column is-6 is-narrow">
               <img
-                  src="img/oliviaiphone11.png"
+                  src="img/oliviaiphone11.jpg"
                   alt="Mockup iPhone 11 Pro"
               >
             </div>
@@ -93,7 +93,7 @@
         <div class="columns is-vcentered">
           <div class="column is-6 is-narrow">
             <img
-                src="img/oliviaiphone11ipadpro.png"
+                src="img/oliviaiphone11ipadpro.jpg"
                 alt="Mockup iPhone 11 Pro + iPad Pro"
             >
           </div>

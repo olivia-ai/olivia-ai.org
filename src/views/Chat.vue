@@ -16,7 +16,7 @@
          style="padding-top: 10vh">
       <div class="container has-text-centered">
         <div class="m-carl-notification-caption title">
-          {{ message }}
+          {{ writing ? writing_text : message }}
         </div>
       </div>
     </div>
@@ -109,7 +109,9 @@
       return {
         message: 'What can I do for you?',
         input: '',
-        muted: localStorage.getItem('muted') === 'true'
+        muted: localStorage.getItem('muted') === 'true',
+        writing: false,
+        writing_text: '...'
       }
     },
     methods: {
@@ -144,6 +146,7 @@
 
       send() {
         this.writing = true
+        this.writing_text = '.'
         this.websocket.send(
           JSON.stringify({
             type: 1,
@@ -203,6 +206,13 @@
           localStorage.setItem('information', JSON.stringify(data['information']))
         }, Math.floor(Math.random() * 1500))
       })
+
+      setInterval(() => {
+        this.writing_text += '.'
+        if (this.writing_text.length === 4) {
+          this.writing_text = '.'
+        }
+      }, 300)
     }
   }
 </script>
