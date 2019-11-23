@@ -25,7 +25,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "axios": "^0.19.0",
     "braces": ">=2.3.1",
-    "buefy": "^0.8.6",
+    "buefy": "^0.8.8",
     "bulma-timeline": "^3.0.4",
     "js-yaml": ">=3.13.1",
     "pagemap": "^1.2.0",
