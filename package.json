@@ -43,7 +43,7 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-pwa": "^4.1.1",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^4.1.1",
     "element-theme-chalk": "^2.13.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^7.3.1",
