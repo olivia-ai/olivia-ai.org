@@ -1,7 +1,7 @@
 const { BASE_URL = "/" } = process.env;
 
 module.exports = {
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   chainWebpack: config => {
     config.module.rule('loaders')
       .test(/\.(png|svg|gif|md)$/)
