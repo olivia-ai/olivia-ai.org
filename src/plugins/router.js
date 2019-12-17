@@ -16,6 +16,10 @@ export default new Router({
     {
       path: '/changelog',
       component: require('../views/Changelog.vue').default
+    },
+    {
+      path: '/hugo',
+      component: require('../views/Creator.vue').default
     }
   ],
   mode: 'history'
