@@ -26,7 +26,7 @@
               <strong>scientific</strong> french baccalaureate degree with a computer option in june 2020
             </h2>
             <h2 class="subtitle">
-              maintainer of <strong>Olivia, 1.5K stars-projet</strong> and <strong>first</strong> in general trending on <a href="https://github.com/olivia-ai/olivia"><strong>GitHub</strong></a><br>
+              maintainer of <strong>Olivia, 1.5K stars-projet</strong> and <strong>first</strong> in general trending during 2 days on <a href="https://github.com/olivia-ai/olivia"><strong>GitHub</strong></a><br>
               schematized it at the age of <strong>14</strong><br>
               built it at <strong>15 years old</strong>
             </h2>
