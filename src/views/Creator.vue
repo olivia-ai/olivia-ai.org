@@ -22,8 +22,8 @@
             </h2>
             <br>
             <h2 class="subtitle">
-              no qualifications, still in <strong>high school</strong><br>
-              <strong>scientific</strong> french baccalaureate degree with a computer option
+              no qualifications yet, still in <strong>high school</strong><br>
+              <strong>scientific</strong> french baccalaureate degree with a computer option in june 2020
             </h2>
             <h2 class="subtitle">
               maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub<br>
