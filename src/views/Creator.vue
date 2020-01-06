@@ -22,7 +22,7 @@
             </h2>
             <br>
             <h2 class="subtitle">
-              no qualifications yet, still in <strong>high school</strong><br>
+              still in <strong>high school</strong><br>
               <strong>scientific</strong> french baccalaureate degree with a computer option in june 2020
             </h2>
             <h2 class="subtitle">
