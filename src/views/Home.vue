@@ -130,8 +130,10 @@
             <img alt="Olivia logo" src="img/icons/olivia-with-text.png" style="max-height: 1.75rem;">
             <br>
             <div class="content is-small">
-              Your new best friend<br>Geneva, Switzerland<br>
-              <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">hugo.lageneste@pm.me</a>
+              Your new best friend<br><font-awesome-icon icon="map-pin" /> Geneva, Switzerland<br>
+              <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">
+                <font-awesome-icon icon="envelope" /> hugo.lageneste@pm.me
+              </a>
             </div>
           </div>
           <div class="column">
