@@ -5,13 +5,21 @@ import {
   faArrowLeft,
   faVolumeUp,
   faVolumeMute,
-  faComment
+  faComment,
+  faCubes,
+  faCode,
+  faMobileAlt,
+  faSortDown
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faArrowLeft,
   faVolumeUp,
   faVolumeMute,
-  faComment
+  faComment,
+  faCubes,
+  faCode,
+  faMobileAlt,
+  faSortDown
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
