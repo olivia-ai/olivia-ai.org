@@ -81,20 +81,23 @@
       </div>
     </section>
 
-    <section class="hero">
+    <section class="hero is-light">
       <div class="hero-body has-text-centered">
+        <h1 class="title">Main features</h1>
         <div class="columns is-vcentered">
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="cubes" /> Completely modulable
+              <font-awesome-icon icon="cubes" /><br>
+              <span class="is-pink">1.</span> Completely modulable
             </h1>
             <p>
-              Olivia is organized in modules to facilitate the addition of new capabilities.
+              Olivia is organized in modules to facilitate the addition of new capabilities. These modules can be written in Go to execute multiple tasks.
             </p>
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="code" /> Fully open-source
+              <font-awesome-icon icon="code" /><br>
+              <span class="is-pink">2.</span> Fully open-source
             </h1>
             <p>
               The project is entirely open-source from the website to the backend. Thus you can build your own chatbot and contribute to Olivia.
@@ -102,7 +105,8 @@
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="mobile-alt" /> Progressive web app
+              <font-awesome-icon icon="mobile-alt" /><br>
+              <span class="is-pink">3.</span> Progressive web app
             </h1>
             <p>
               You can directly add the PWA to your homescreen from the website, and you won't remember that it is
@@ -168,6 +172,13 @@
     </footer>
   </div>
 </template>
+
+<style>
+  .is-pink {
+    color: #ff3aaf;
+    font-size: 25px;
+  }
+</style>
 
 <script>
   import GithubButton from 'vue-github-button'
