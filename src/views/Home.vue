@@ -1,107 +1,109 @@
 <template>
-  <div>
-    <section class="hero">
-      <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <router-link class="navbar-item" to="/">
-            <img src="https://olivia-ai.org/img/icons/olivia.png" alt="Olivia">
+  <div id="home">
+    <!-- NAVBAR -->
+    <nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <router-link class="navbar-item" to="/">
+          <img src="https://olivia-ai.org/img/icons/olivia.png" alt="Olivia">
+          <strong>Olivia</strong>
+        </router-link>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="https://docs.olivia-ai.org">
             <strong>
-              Olivia
+              Documentation
+            </strong>
+          </a>
+
+          <router-link to="/changelog" class="navbar-item">
+            <strong>
+              Changelog
             </strong>
           </router-link>
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+          <a class="navbar-item" href="https://github.com/olivia-ai">
+            <strong>
+              GitHub
+            </strong>
           </a>
-        </div>
 
-        <div id="navbar" class="navbar-menu">
-          <div class="navbar-end">
-            <a
-                class="navbar-item"
-                href="https://docs.olivia-ai.org">
-              <strong>
-                Documentation
-              </strong>
-            </a>
-            <router-link to="/changelog" class="navbar-item">
-              <strong>
-                Changelog
-              </strong>
-            </router-link>
-            <a class="navbar-item" href="https://github.com/olivia-ai">
-              <strong>
-                GitHub
-              </strong>
-            </a>
-            <div class="navbar-item">
-              <div class="buttons">
-                <router-link
-                    class="button is-rounded is-primary"
-                    to="/chat">
-                  <strong>
-                    Chat
-                  </strong>
-                </router-link>
-              </div>
+          <div class="navbar-item">
+            <div class="buttons">
+              <router-link class="button is-rounded is-primary" to="/chat">
+                <strong>
+                  Chat
+                </strong>
+              </router-link>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <div class="hero-body has-text-centered">
-        <div class="container">
-          <div class="columns is-vcentered">
-            <div class="column is-6 is-narrow">
-              <h1 class="title">
-                <div class="columns is-centered">
-                  <div class="column is-6 is-narrow">
-                    <img src="img/icons/olivia-with-text.jpg" alt="Olivia character with the text written in white" height="200"/>
-                  </div>
-                </div>
-              </h1>
-              <h1 class="title">
-                Your new <span class="is-underlined">best friend</span>
-              </h1>
-              <h2 class="subtitle">
-                An <span class="is-underlined">open-source</span> chatbot built with an <strong>artificial neural network</strong>
-              </h2>
-              <div class="columns is-centered">
-                <div class="column is-4 is-narrow">
-                  <router-link class="button is-medium is-primary is-rounded" to="/chat">
-                    <strong>Chat online</strong>
-                  </router-link>
-                </div>
-                <div class="column is-4 is-narrow">
-                  <a class="button is-medium is-rounded" href="https://github.com/olivia-ai">
-                    <strong>See the GitHub</strong>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="column is-6 is-narrow">
-              <img
-                  src="img/oliviaiphone11.jpg"
-                  alt="Mockup iPhone 11 Pro"
-              >
-            </div>
-          </div>
-        </div>
-
+    <!-- HERO -->
+    <section class="hero is-fullheight-with-navbar">
+      <div class="hero-body container">
         <div class="columns is-vcentered">
+          <!-- BODY -->
           <div class="column is-6 is-narrow">
-            <img
-                src="img/oliviaiphone11ipadpro.jpg"
-                alt="Mockup iPhone 11 Pro + iPad Pro"
-            >
+            <div class="container">
+              <h1 class="title is-size-1">
+                Your new best friend.
+              </h1>
+              <h1 class="subtitle">
+                An open-source chatbot built with an <strong>artificial neural network</strong>.
+              </h1>
+              <div class="buttons">
+                <router-link class="button is-medium is-primary is-rounded" to="/chat">
+                  <strong>Chat online</strong>
+                </router-link>
+
+                <a class="button is-medium is-rounded" href="https://github.com/olivia-ai">
+                  <strong>See the GitHub</strong>
+                </a>
+              </div>
+            </div>
           </div>
+
+          <!-- IMAGE -->
           <div class="column is-6 is-narrow">
-            <h1 class="title">Progressive web application</h1>
-            <h2 class="subtitle">
-              A fully compatible <strong>standalone</strong> website in iOS, Android and Desktop
-            </h2>
+            <img src="img/oliviaiphone11ipadpro.jpg" alt="Mockup iPhone 11 Pro">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="hero-body has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column is-4 is-narrow">
+            <h1 class="title">
+              <font-awesome-icon icon="cubes" /> Completely modulable
+            </h1>
+            <p>
+              Olivia is organized in modules to facilitate the addition of new capabilities.
+            </p>
+          </div>
+          <div class="column is-4 is-narrow">
+            <h1 class="title">
+              <font-awesome-icon icon="code" /> Fully open-source
+            </h1>
+            <p>
+              The project is entirely open-source from the website to the backend. Thus you can build your own chatbot and contribute to Olivia.
+            </p>
+          </div>
+          <div class="column is-4 is-narrow">
+            <h1 class="title">
+              <font-awesome-icon icon="mobile-alt" /> Progressive web app
+            </h1>
             <p>
               You can directly add the PWA to your homescreen from the website, and you won't remember that it is
               a website running behind this native-like app.
@@ -111,10 +113,56 @@
       </div>
     </section>
 
+    <div class="container">
+      <br>
+      <br>
+      <br>
+    </div>
+
     <footer>
-      <div class="has-text-centered">
-        <p>Made with ❤️ by <strong><a href="https://github.com/ananagame">Hugo Lageneste</a></strong></p>
-        <p>Licensed under <strong><a href="http://opensource.org/licenses/mit-license.php">MIT</a></strong></p>
+      <div class="container is-small">
+        <div class="columns">
+          <div class="column is-narrow" style="width: 300px;">
+            <img alt="Olivia logo" src="img/icons/olivia-with-text.png" style="max-height: 1.75rem;">
+            <br>
+            <div class="content is-small">
+              Your new best friend<br>Geneva, Switzerland<br>
+              <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">hugo.lageneste@pm.me</a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns">
+              <div class="column">
+                <h6 class="title is-6">About</h6>
+                <ul>
+                  <li>
+                    <a class="has-text-dark" href="https://docs.olivia-ai.org">Documentation</a>
+                  </li>
+                  <li>
+                    <a class="has-text-dark" href="/changelog">Changelog</a>
+                  </li>
+                  <li>
+                    <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="column">
+                <h6 class="title is-6">Information</h6>
+                <ul>
+                  <li><a class="has-text-dark" href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">License</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <h6 class="title is-6">Community</h6>
+                <ul>
+                  <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://twitter.com/oliv_ai">Twitter</a></li>
+                  <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://trello.com/b/azB6r2IC/olivia">Trello</a></li>
+                  <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://github.com/olivia-ai">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <img src="img/background-olivia.png" style="position: absolute;">
     </footer>
