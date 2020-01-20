@@ -120,10 +120,9 @@
     <div class="container">
       <br>
       <br>
-      <br>
     </div>
 
-    <footer>
+    <footer class="section">
       <div class="container is-small">
         <div class="columns">
           <div class="column is-narrow" style="width: 300px;">
@@ -170,8 +169,9 @@
           </div>
         </div>
       </div>
-      <img src="img/background-olivia.png" style="position: absolute;">
     </footer>
+
+    <img src="img/background-olivia.png" style="position: absolute;">
   </div>
 </template>
 
