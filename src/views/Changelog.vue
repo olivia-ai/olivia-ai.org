@@ -1,14 +1,6 @@
 <template>
   <div class="hero">
-    <b-navbar class="is-spaced">
-      <template slot="brand">
-        <router-link
-            class="navbar-item"
-            to="/">
-          <font-awesome-icon icon="arrow-left"></font-awesome-icon>
-        </router-link>
-      </template>
-    </b-navbar>
+    <navbar></navbar>
 
     <div class="hero-body">
       <div class="columns is-centered">
@@ -57,6 +49,7 @@
 
 <script>
   import VueMarkdown from 'vue-markdown'
+  import Navbar from '../components/Navbar'
 
   export default {
     data() {
@@ -65,7 +58,8 @@
       }
     },
     components: {
-      VueMarkdown
+      VueMarkdown,
+      Navbar
     },
     mounted() {
       import('../../public/changelog/august-2019.md').then(res => this.august2019 = res.default)

@@ -10,7 +10,9 @@ import {
   faCode,
   faMobileAlt,
   faMapPin,
-  faEnvelope
+  faEnvelope,
+  faClock,
+  faUser
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -22,6 +24,8 @@ library.add(
   faCode,
   faMobileAlt,
   faMapPin,
-  faEnvelope
+  faEnvelope,
+  faClock,
+  faUser
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
