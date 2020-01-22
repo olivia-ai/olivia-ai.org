@@ -160,5 +160,7 @@ Complex example
 </center>
 
 <span>And repeat the process until the success rate is \>95%</span>
+<br><br>
+<span>You can read this article in PDF <a href="https://github.com/ananagame/the-math-behind-an-artificial-neural-network/raw/master/The_math_behind_an_artificial_neural_network.pdf">here</a></span>
 
 [^1]: Artificial Neural Network
