@@ -11,7 +11,13 @@ module.exports = {
       .test(/\.(md)$/)
       .use('file')
       .loader('raw-loader')
-      .end();
+      .end()
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
+      .options({
+        raw: true
+      })
+      .end()
   },
   pwa: {
     name: "Olivia",

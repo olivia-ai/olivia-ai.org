@@ -1,7 +1,5 @@
 <template>
   <div class="hero">
-    <navbar></navbar>
-
     <div class="hero-body">
       <div class="columns is-centered">
         <div class="column is-8">

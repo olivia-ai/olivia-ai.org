@@ -1,40 +1,52 @@
 <template>
   <div class="hero">
-    <navbar></navbar>
-
     <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-6">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                <img src="../../../public/blog/the-math-behind-a-neural-network/thumbmail.png" alt="Thumbmail">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-4">
-                    The math behind a neural network
-                  </p>
-                  <div class="subtitle is-6">
-                    <div class="columns">
-                      <div class="column is-3">
-                        <font-awesome-icon icon="user" /> <a href="https://twitter.com/hugolgst">@hugolgst</a>
-                      </div>
-                      <div class="column">
-                        <font-awesome-icon icon="clock" /> January 20, 2020
-                      </div>
-                    </div>
+      <div class="columns is-multiline is-centered">
+        <div class="column is-4" v-for="post in posts" :key="post.name">
+          <router-link :to="'/blog/' + post.path">
+            <!-- POST CARD -->
+            <div class="card">
+              <!-- THUMBMAIL -->
+              <div class="card-image">
+                <figure class="image">
+                  <img :src="'/blog/' + post.path + '/thumbmail.png'" alt="Thumbmail">
+                </figure>
+              </div>
+
+              <!-- POST CONTENT -->
+              <div class="card-content">
+                <!-- TITLE -->
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">
+                      {{ post.name }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="content">
+                  {{ post.description }}
+                </div>
+
+                <!-- AUTHOR -->
+                <div class="columns is-vcentered">
+                  <div class="column">
+                    <a :href="post.author.link">
+                      <b-tooltip :label="post.author.name">
+                        <figure class="image is-48x48">
+                          <img class="is-rounded" :src="post.author.picture">
+                        </figure>
+                      </b-tooltip>
+                    </a>
+                  </div>
+                  <div class="column">
+                    <font-awesome-icon icon="calendar" /> {{ post.date }}
                   </div>
                 </div>
               </div>
-
-              <div class="content">
-                Understand what is the mechanism behind Olivia's functioning
-              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -43,10 +55,16 @@
 
 <script>
   import Navbar from '../../components/Navbar'
+  import posts from '../../plugins/posts.js'
 
   export default {
     components: {
       Navbar
+    },
+    data() {
+      return {
+        posts: posts.posts
+      }
     }
   }
 </script>

@@ -11,7 +11,7 @@ import {
   faMobileAlt,
   faMapPin,
   faEnvelope,
-  faClock,
+  faCalendar,
   faUser
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -25,7 +25,7 @@ library.add(
   faMobileAlt,
   faMapPin,
   faEnvelope,
-  faClock,
+  faCalendar,
   faUser
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)

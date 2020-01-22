@@ -1,15 +1,5 @@
 <template>
   <div class="hero">
-    <b-navbar class="is-spaced">
-      <template slot="brand">
-        <router-link
-            class="navbar-item"
-            to="/">
-          <font-awesome-icon icon="arrow-left"></font-awesome-icon>
-        </router-link>
-      </template>
-    </b-navbar>
-
     <div class="hero-body">
       <div class="hero-body">
         <div class="columns is-centered">
