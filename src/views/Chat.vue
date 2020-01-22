@@ -10,7 +10,6 @@
       </template>
     </b-navbar>
 
-
     <!-- Olivia's answer -->
     <div class="hero-head"
          style="padding-top: 10vh">

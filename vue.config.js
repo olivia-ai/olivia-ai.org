@@ -11,7 +11,7 @@ module.exports = {
       .test(/\.(md)$/)
       .use('file')
       .loader('raw-loader')
-      .end();
+      .end()
   },
   pwa: {
     name: "Olivia",
