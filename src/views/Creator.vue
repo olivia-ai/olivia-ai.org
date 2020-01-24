@@ -5,23 +5,21 @@
         <div class="columns is-centered">
           <div class="column is-8">
             <h1 class="title">
-              Hugo Lageneste<span class="subtitle">, 17yo.</span>
+              Hugo Lageneste<span class="subtitle">, {{ calculateAge("2002-12-04") }} years old.</span>
             </h1>
             <h2 class="subtitle">
-              based in <strong>Geneva</strong>.
-            </h2>
-            <br>
-            <h2 class="subtitle">
-              no qualifications, still in <strong>high school</strong><br>
-              <strong>scientific</strong> french baccalaureate degree with a computer option
+              Based in <strong>Geneva, Switzerland</strong>.
             </h2>
             <h2 class="subtitle">
-              maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub<br>
-              schematized it at the age of <strong>14</strong><br>
+              <strong>Scientific</strong> french baccalaureate degree with a computer option
+            </h2>
+            <h2 class="subtitle">
+              Maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub,<br>
+              schematized it at the age of <strong>14</strong>,<br>
               built it at <strong>15 years old</strong>
             </h2>
             <h2 class="subtitle">
-              just a young student that loves <strong>programming</strong> and <strong>artificial intelligence</strong>
+              Just a young student that loves <strong>programming</strong> and <strong>artificial intelligence</strong>.
             </h2>
           </div>
         </div>
@@ -31,5 +29,15 @@
 </template>
 
 <script>
+  export default {
+    methods: {
+      calculateAge(birthday) {
+        let date = new Date(birthday)
+        let ageDifMs = Date.now() - date.getTime()
+        let ageDate = new Date(ageDifMs)
 
+        return Math.abs(ageDate.getUTCFullYear() - 1970)
+      }
+    }
+  }
 </script>
