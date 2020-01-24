@@ -21,6 +21,39 @@
             <h2 class="subtitle">
               Just a young student that loves <strong>programming</strong> and <strong>artificial intelligence</strong>.
             </h2>
+            <h2 class="subtitle">
+              <div class="columns">
+                <div class="column is-2">
+                  <a href="https://twitter.com/hugolgst">
+                    twitter
+                  </a>
+                </div>
+
+                <div class="column is-2">
+                  <a href="https://github.com/ananagame">
+                    github
+                  </a>
+                </div>
+
+                <div class="column is-2">
+                  <a href="https://keybase.io/ananagame">
+                    keybase
+                  </a>
+                </div>
+
+                <div class="column is-2">
+                  <a href="https://www.reddit.com/user/ananagame">
+                    reddit
+                  </a>
+                </div>
+
+                <div class="column is-2">
+                  <a href="mailto:hugo.lageneste@pm.me">
+                    email
+                  </a>
+                </div>
+              </div>
+            </h2>
           </div>
         </div>
       </div>
