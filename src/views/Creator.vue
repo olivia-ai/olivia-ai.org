@@ -14,9 +14,7 @@
               <strong>Scientific</strong> french baccalaureate degree with a computer option
             </h2>
             <h2 class="subtitle">
-              Maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub,<br>
-              schematized it at the age of <strong>14</strong>,<br>
-              built it at <strong>15 years old</strong>
+              Maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub
             </h2>
             <h2 class="subtitle">
               Just a young student that loves <strong>programming</strong> and <strong>artificial intelligence</strong>.
