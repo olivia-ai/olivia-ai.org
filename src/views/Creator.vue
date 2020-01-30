@@ -17,16 +17,7 @@
               Maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub
             </h2>
             <h2 class="subtitle">
-              Just a young student that loves <strong>programming</strong> and <strong>artificial intelligence</strong>.
-            </h2>
-            <h2 class="subtitle">
               <div class="columns">
-                <div class="column is-2">
-                  <a href="https://twitter.com/hugolgst">
-                    twitter
-                  </a>
-                </div>
-
                 <div class="column is-2">
                   <a href="https://github.com/ananagame">
                     github
