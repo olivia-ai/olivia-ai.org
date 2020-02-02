@@ -11,34 +11,31 @@
               Based in <strong>Geneva, Switzerland</strong>.
             </h2>
             <h2 class="subtitle">
-              <strong>Scientific</strong> french baccalaureate degree with a computer option
+              ● Student at <a href="https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl">Lycée Madame de Staël</a>. <strong>Earth and life sciences</strong> option, specialization in <strong>computer science</strong>.
             </h2>
             <h2 class="subtitle">
-              Maintainer of <strong>Olivia, 1.5K stars-projet</strong> on GitHub
+              ● Creator and maintainer of <strong>Olivia, 1.5K stars-projet</strong> on <a href="https://github.com/olivia-ai/olivia">GitHub</a>
+            </h2>
+            <h2 class="subtitle">
+              ● Skills: programming languages: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>
             </h2>
             <h2 class="subtitle">
               <div class="columns">
                 <div class="column is-2">
-                  <a href="https://github.com/ananagame">
-                    github
+                  <a href="https://github.com/hugolgst">
+                    ● github
                   </a>
                 </div>
 
                 <div class="column is-2">
-                  <a href="https://keybase.io/ananagame">
-                    keybase
-                  </a>
-                </div>
-
-                <div class="column is-2">
-                  <a href="https://www.reddit.com/user/ananagame">
-                    reddit
+                  <a href="https://www.linkedin.com/in/hugolageneste/">
+                    ● linkedin
                   </a>
                 </div>
 
                 <div class="column is-2">
                   <a href="mailto:hugo.lageneste@pm.me">
-                    email
+                    ● email
                   </a>
                 </div>
               </div>

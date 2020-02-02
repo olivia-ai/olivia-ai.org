@@ -40,6 +40,7 @@
               <div class="column">
                 <h6 class="title is-6">Information</h6>
                 <ul>
+                  <li><a class="has-text-dark" href="https://olivia-ai.org/hugo">Creator</a></li>
                   <li><a class="has-text-dark" href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">License</a></li>
                 </ul>
               </div>
