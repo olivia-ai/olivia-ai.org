@@ -14,7 +14,7 @@
             <div class="content is-small">
               Your new best friend<br><font-awesome-icon icon="map-pin" /> Geneva, Switzerland<br>
               <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">
-                <font-awesome-icon icon="envelope" /> hugo.lageneste@pm.me
+                <font-awesome-icon icon="envelope" /> hello@olivia-ai.org
               </a>
             </div>
           </div>
