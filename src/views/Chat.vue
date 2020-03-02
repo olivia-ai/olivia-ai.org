@@ -21,7 +21,7 @@
     </div>
 
     <!-- Animation -->
-    <div class="hero-body">
+    <div class="hero-body" @click="dictate()">
       <div class="container">
         <div class="m-carl-notification">
           <div class="m-carl-notification-cue m-cue">
