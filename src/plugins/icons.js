@@ -6,13 +6,19 @@ import {
   faVolumeUp,
   faVolumeMute,
   faComment,
+  faComments,
   faCubes,
   faCode,
   faMobileAlt,
   faMapPin,
   faEnvelope,
   faCalendar,
-  faUser
+  faUser,
+  faTimes,
+  faLayerGroup,
+  faTags,
+  faClock,
+  faPercentage
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -20,12 +26,18 @@ library.add(
   faVolumeUp,
   faVolumeMute,
   faComment,
+  faComments,
   faCubes,
   faCode,
   faMobileAlt,
   faMapPin,
   faEnvelope,
   faCalendar,
-  faUser
+  faUser,
+  faTimes,
+  faLayerGroup,
+  faTags,
+  faClock,
+  faPercentage
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)

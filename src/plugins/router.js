@@ -28,6 +28,10 @@ export default new Router({
     {
       path: '/blog/:id',
       component: require('../views/blog/Post.vue').default
+    },
+    {
+      path: '/dash',
+      component: require('../views/dashboard/Dashboard.vue').default
     }
   ],
   mode: 'history'

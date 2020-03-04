@@ -33,11 +33,11 @@
           </strong>
         </router-link>
 
-        <a class="navbar-item" href="https://github.com/olivia-ai">
+        <router-link to="/dash" class="navbar-item">
           <strong>
-            GitHub
+            Dashboard
           </strong>
-        </a>
+        </router-link>
 
         <div class="navbar-item">
           <div class="buttons">
