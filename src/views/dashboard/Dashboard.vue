@@ -52,23 +52,6 @@
         </div>
 
         <div class="tile">
-          <div class="tile is-6 is-parent">
-            <div class="tile is-child notification">
-              <canvas id="error-loss">
-
-              </canvas>
-            </div>
-          </div>
-          <div class="tile is-parent">
-            <div class="tile is-child notification">
-              <canvas id="intent-radar">
-
-              </canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="tile">
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
@@ -99,6 +82,23 @@
               <p class="subtitle">
                 Learning rate
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tile">
+          <div class="tile is-6 is-parent">
+            <div class="tile is-child notification">
+              <canvas id="error-loss">
+
+              </canvas>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child notification">
+              <canvas id="intent-radar">
+
+              </canvas>
             </div>
           </div>
         </div>
@@ -211,9 +211,9 @@
       new Chart(document.getElementById("intent-radar"), {
         type: 'radar',
         data: {
-          labels: ['hello', 'feeling', 'capital', 'random-number', 'area', 'name-setter', 'job'],
+          labels: ['hello', 'feeling', 'capital', 'random-number', 'area', 'name-setter', 'job', 'a','e','u','z'],
           datasets: [{
-            data: [20, 10, 4, 2, 18, 9, 12],
+            data: [20, 10, 4, 2, 18, 9, 12,1,2,3,4],
             borderColor: "#ff3aaf",
             label: "Intents frequency"
           }]

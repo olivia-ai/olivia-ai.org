@@ -17,7 +17,8 @@
                 <font-awesome-icon icon="envelope" /> hello@olivia-ai.org
               </a>
               <br>
-              Licenced under MIT
+              <br>
+              Licenced under <a href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">MIT</a>
             </div>
           </div>
           <div class="column">
