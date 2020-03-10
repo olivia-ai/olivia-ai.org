@@ -148,7 +148,6 @@
         this.writing_text = '.'
         this.websocket.send(
           JSON.stringify({
-            type: 1,
             content: this.input,
             user_token: localStorage.getItem('token'),
             information: JSON.parse(localStorage.getItem('information'))
@@ -191,7 +190,7 @@
       }
 
       // Initializes the connection with the websocket
-      this.websocket = new WebSocket('wss://olivia-api.herokuapp.com/')
+      this.websocket = new WebSocket('ws://localhost:8080/')
       // Send the informations on connection
 
       // Add a bubble when the websocket receives a response

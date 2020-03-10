@@ -13,11 +13,25 @@
 <p align="center">
   <a href="https://olivia-ai.org">Website</a> —
   <a href="https://olivia-ai.org/chat">Chat online</a> —
+  <a href="#genting-started">Getting started</a> —
   <a href="https://olivia-ai.org/blog">Blog</a> —
   <a href="https://olivia-ai.org/changelog">Changelog</a> —
   <a href="https://trello.com/b/azB6r2IC/olivia">Trello</a> —
   <a href="#license">License</a>
 </p>
+
+## Getting started
+With docker:
+
+Build the image
+```bash
+$ docker build -t front .
+```
+
+And then run it
+```bash
+$ docker run -p 8080:8080 front
+```
 
 ## License
 [MIT](https://github.com/olivia-ai/olivia-ai.org/blob/master/LICENSE)
