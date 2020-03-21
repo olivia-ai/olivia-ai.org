@@ -1,10 +1,10 @@
 <template>
   <div>
-    <section class="hero">
+    <section class="hero has-text-centered">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Welcome to <span class="is-pink">Olivia</span>'s dashboard
+            <img width="450" src="img/olivia-dashboard.png" alt="Olivia Dashboard">
           </h1>
         </div>
       </div>
