@@ -15,18 +15,18 @@
       <div class="tile is-vertical is-12">
         <div class="tile">
           <div class="tile is-4 is-parent is-vertical">
-            <div class="tile is-child notification is-bold">
+            <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="comments" class="is-pink" /> 14,583
+                <font-awesome-icon icon="tags" class="is-pink"/> {{ data.layers.output }}
               </p>
               <p class="subtitle">
-                Messages sent
+                Intents' tags
               </p>
             </div>
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <font-awesome-icon icon="times" class="is-pink" /> 0.194%
+                <font-awesome-icon icon="times" class="is-pink" /> {{ Math.round(data.training.errors[18]*10000)/10000 }}
               </p>
               <p class="subtitle">
                 Error loss
@@ -35,7 +35,7 @@
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <font-awesome-icon icon="layer-group" class="is-pink"/> 100
+                <font-awesome-icon icon="layer-group" class="is-pink"/> {{ data.layers.hidden }}
               </p>
               <p class="subtitle">
                 Hidden layers
@@ -55,18 +55,7 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="tags" class="is-pink"/> 18
-              </p>
-              <p class="subtitle">
-                Intents' tags
-              </p>
-            </div>
-          </div>
-
-          <div class="tile is-parent">
-            <div class="tile is-child notification">
-              <p class="title">
-                <font-awesome-icon icon="clock" class="is-pink"/> 1m18s
+                <font-awesome-icon icon="clock" class="is-pink"/> {{ data.training.time }}s
               </p>
               <p class="subtitle">
                 Learning time
@@ -77,7 +66,7 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="percentage" class="is-pink"/> 0.1
+                <font-awesome-icon icon="percentage" class="is-pink"/> {{ data.training.rate }}
               </p>
               <p class="subtitle">
                 Learning rate
@@ -99,51 +88,74 @@
 
 <script>
   export default {
-    mounted() {
-      let iterations = 1000
-      let labels = []
-      for (let i = 0; i <= 20; i++) {
-        let a = i/20
-        labels.push(iterations*a)
-      }
-
-
-      new Chart(document.getElementById("error-loss"), {
-        type: 'line',
+    data() {
+      return {
         data: {
-          labels,
-          datasets: [{
-            data: [0.35,0.33,0.26,0.20,0.13,0.07,0.065,0.06,0.058,0.056, 0.054, 0.053, 0.05, 0.046, 0.04, 0.037],
-            label: "Error loss",
-            borderColor: "#ff3aaf",
-            fill: false
-          }
-          ]
-        },
-        options: {
-          responsive: true,
-          title: {
-            display: true,
-            text: 'Error loss of the neural network'
+          training: {
+            rate: '...',
+            time: '...',
+            errors: [],
           },
-          scales: {
-            x: {
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: 'Network iterations'
-              }
-            },
-            y: {
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: 'Error loss'
-              }
-            }
+          layers: {
+            input: 0,
+            hidden: 0,
+            output: 0,
           }
         }
-      })
+      }
+    },
+    async mounted() {
+      this.$http.get('https://cors-anywhere.herokuapp.com/https://olivia-api.herokuapp.com/dashboard').then(
+        data => {
+          this.data = data.body
+          let errors = data.body.training.errors
+          errors.shift()
+
+          let iterations = 1000
+          let labels = []
+          for (let i = 0; i <= 18; i++) {
+            let a = i / 20
+            labels.push(iterations * a)
+          }
+
+          new Chart(document.getElementById("error-loss"), {
+            type: 'line',
+            data: {
+              labels,
+              datasets: [{
+                data: errors,
+                label: "Error loss",
+                borderColor: "#ff3aaf",
+                fill: false
+              }
+              ]
+            },
+            options: {
+              responsive: true,
+              title: {
+                display: true,
+                text: 'Error loss of the neural network'
+              },
+              scales: {
+                x: {
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Network iterations'
+                  }
+                },
+                y: {
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Error loss'
+                  }
+                }
+              }
+            }
+          })
+        }
+      )
     }
   }
 </script>
