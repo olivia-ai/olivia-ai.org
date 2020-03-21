@@ -16,6 +16,9 @@
               <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">
                 <font-awesome-icon icon="envelope" /> hello@olivia-ai.org
               </a>
+              <br>
+              <br>
+              Licenced under <a href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">MIT</a>
             </div>
           </div>
           <div class="column">
@@ -33,7 +36,7 @@
                     <a class="has-text-dark" href="/changelog">Changelog</a>
                   </li>
                   <li>
-                    <a class="has-text-dark" href="mailto:hugo.lageneste@pm.me">Contact</a>
+                    <a class="has-text-dark" href="mailto:hello@olivia-ai.org">Contact</a>
                   </li>
                 </ul>
               </div>
