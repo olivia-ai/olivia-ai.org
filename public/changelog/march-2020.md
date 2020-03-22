@@ -1,3 +1,9 @@
+# Releasing the Dashboard
+## ⚡ New features
+The dashboard has been released with a chart of the error loss, the number of intents tags, hidden layers, the learning rate and time.
+
+![](https://i.imgur.com/hxGxV3O.png)
+
 # Releasing a new neural network and new CIs
 ## ⚡ New features [*olivia-ai/olivia*](https://github.com/olivia-ai/olivia)
 ### 🛠 The new neural network
