@@ -9,4 +9,4 @@ COPY . .
 RUN VUE_APP_URL=$URL npm run build
 
 EXPOSE $PORT
-CMD [ "http-server", "dist", "-p", $PORT]
+CMD [ "http-server", "dist", "-p", "$PORT" ]
