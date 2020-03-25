@@ -9,4 +9,4 @@ COPY . .
 RUN VUE_APP_URL=$URL npm run build
 
 EXPOSE $WEBPORT
-CMD [ "http-server", "dist", "-p $WEBPORT" ]
+CMD http-server dist -p $WEBPORT
