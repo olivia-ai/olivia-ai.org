@@ -61,7 +61,6 @@
 
   export default {
     components: {
-      Navbar,
       VueMarkdown
     },
     data() {

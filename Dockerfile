@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-RUN npm run build
+RUN VUE_APP_URL=$URL npm run build
 
 EXPOSE $PORT
 CMD [ "http-server", "dist", "-p", "$PORT"]

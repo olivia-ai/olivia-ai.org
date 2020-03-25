@@ -67,7 +67,6 @@
 
 <script>
   import VueMarkdown from 'vue-markdown'
-  import Navbar from '../components/Navbar'
 
   export default {
     data() {
@@ -78,8 +77,7 @@
       }
     },
     components: {
-      VueMarkdown,
-      Navbar
+      VueMarkdown
     },
     mounted() {
       import('../../public/changelog/august-2019.md').then(res => this.august2019 = res.default)

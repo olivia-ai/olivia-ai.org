@@ -54,13 +54,9 @@
 </template>
 
 <script>
-  import Navbar from '../../components/Navbar'
   import posts from '../../plugins/posts.js'
 
   export default {
-    components: {
-      Navbar
-    },
     data() {
       return {
         posts: posts.posts

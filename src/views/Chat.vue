@@ -110,7 +110,8 @@
         input: '',
         muted: localStorage.getItem('muted') === 'true',
         writing: false,
-        writing_text: '...'
+        writing_text: '...',
+        url: process.env.VUE_APP_URL
       }
     },
     methods: {
@@ -182,6 +183,11 @@
       }
     },
     mounted() {
+      if (this.url == undefined) {
+        this.url = "wss://olivia-api.herokuapp.com"
+      }
+      console.log(this.url)
+
       this.createUserInformations()
 
       // Wait that the voices are loaded to choose the right one
@@ -190,7 +196,7 @@
       }
 
       // Initializes the connection with the websocket
-      this.websocket = new WebSocket('wss://olivia-api.herokuapp.com')
+      this.websocket = new WebSocket(this.url)
       // Send the informations on connection
 
       // Add a bubble when the websocket receives a response
