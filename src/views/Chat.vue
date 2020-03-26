@@ -111,7 +111,7 @@
         muted: localStorage.getItem('muted') === 'true',
         writing: false,
         writing_text: '...',
-        url: process.env.VUE_APP_URL
+        url: null
       }
     },
     methods: {
@@ -183,6 +183,7 @@
       }
     },
     mounted() {
+      this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
       }

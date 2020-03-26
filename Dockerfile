@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-RUN VUE_APP_URL=ws://localhost:8080 npm run build
+RUN VUE_APP_URL=$VUE_APP_URL npm run build
 
 EXPOSE $WEBPORT
 CMD http-server dist -p $WEBPORT
