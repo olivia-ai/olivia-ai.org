@@ -149,6 +149,7 @@
         this.writing_text = '.'
         this.websocket.send(
           JSON.stringify({
+            type: 1,
             content: this.input,
             user_token: localStorage.getItem('token'),
             information: JSON.parse(localStorage.getItem('information'))
@@ -198,13 +199,15 @@
       // Initializes the connection with the websocket
       this.websocket = new WebSocket(this.url)
       // Send the information on connection
-      this.websocket.send(
-        JSON.stringify({
-          content: "",
-          user_token: localStorage.getItem('token'),
-          information: JSON.parse(localStorage.getItem('information'))
-        })
-      )
+      setTimeout(() => {
+        this.websocket.send(
+          JSON.stringify({
+            type: 0,
+            user_token: localStorage.getItem('token'),
+            information: JSON.parse(localStorage.getItem('information'))
+          })
+        )
+      }, 500)
 
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
