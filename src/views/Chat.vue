@@ -187,7 +187,6 @@
       if (this.url == undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
       }
-      console.log(this.url)
 
       this.createUserInformations()
 
@@ -198,7 +197,14 @@
 
       // Initializes the connection with the websocket
       this.websocket = new WebSocket(this.url)
-      // Send the informations on connection
+      // Send the information on connection
+      this.websocket.send(
+        JSON.stringify({
+          content: "",
+          user_token: localStorage.getItem('token'),
+          information: JSON.parse(localStorage.getItem('information'))
+        })
+      )
 
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
