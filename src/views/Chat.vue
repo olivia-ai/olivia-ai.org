@@ -109,7 +109,7 @@
         message: 'What can I do for you?',
         input: '',
         muted: localStorage.getItem('muted') === 'true',
-        writing: false,
+        writing: true,
         writing_text: '...',
         url: null
       }
@@ -196,10 +196,29 @@
         this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
       }
 
+      const SpeechRecognition = webkitSpeechRecognition
+      const recognition = new SpeechRecognition()
+
+      recognition.lang = "en-US"
+      recognition.start()
+      recognition.onresult = (event) => {
+        let input = event.results[0][0].transcript
+        console.log(input)
+        if (input.toLowerCase().startsWith("hey olivia") || input.toLowerCase().startsWith("hi olivia")) {
+          this.input = input.replace("hey Olivia", "").replace("hi Olivia", "")
+
+          this.send()
+        }
+      }
+
+      recognition.onend = function() {
+        recognition.start();
+      };
+
       // Initializes the connection with the websocket
       this.websocket = new WebSocket(this.url)
       // Send the information on connection
-      setTimeout(() => {
+      this.websocket.addEventListener('open', _ => {
         this.websocket.send(
           JSON.stringify({
             type: 0,
@@ -207,7 +226,7 @@
             information: JSON.parse(localStorage.getItem('information'))
           })
         )
-      }, 500)
+      })
 
       // Add a bubble when the websocket receives a response
       this.websocket.addEventListener('message', e => {
