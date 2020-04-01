@@ -10,8 +10,16 @@
       </template>
     </b-navbar>
 
+    <audio id="sound-on">
+      <source src="../../public/sounds/on.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="sound-off">
+      <source src="sounds/off.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Olivia's answer -->
-    <div class="hero-head"
+    <div id="message" class="hero-head"
          style="padding-top: 10vh">
       <div class="container has-text-centered">
         <div class="m-carl-notification-caption title">
@@ -111,7 +119,8 @@
         muted: localStorage.getItem('muted') === 'true',
         writing: true,
         writing_text: '...',
-        url: null
+        url: null,
+        hotwordAppeared: false
       }
     },
     methods: {
@@ -127,21 +136,14 @@
         window.speechSynthesis.speak(message)
       },
 
-      dictate() {
-        const SpeechRecognition = webkitSpeechRecognition
-        const recognition = new SpeechRecognition()
-
-        recognition.lang = "en-US"
-        recognition.start()
-        recognition.onresult = (event) => {
-          this.input = event.results[0][0].transcript
-        }
-        recognition.onend = () => this.send()
-      },
-
       mute() {
         this.muted = !this.muted
         localStorage.setItem('muted', this.muted)
+      },
+
+      dictate() {
+        this.hotwordAppeared = true
+        document.getElementById("sound-on").play()
       },
 
       send() {
@@ -184,6 +186,8 @@
       }
     },
     mounted() {
+      document.getElementById('message').click();
+
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
@@ -194,6 +198,31 @@
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
         this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
+
+        // Initializes the connection with the websocket
+        this.websocket = new WebSocket(this.url)
+        // Send the information on connection
+        this.websocket.addEventListener('open', _ => {
+          this.websocket.send(
+            JSON.stringify({
+              type: 0,
+              user_token: localStorage.getItem('token'),
+              information: JSON.parse(localStorage.getItem('information'))
+            })
+          )
+        })
+
+        // Add a bubble when the websocket receives a response
+        this.websocket.addEventListener('message', e => {
+          setTimeout(() => {
+            let data = JSON.parse(e.data)
+
+            this.writing = false
+            this.message = data['content']
+            this.speak(this.message)
+            localStorage.setItem('information', JSON.stringify(data['information']))
+          }, Math.floor(Math.random() * 1500))
+        })
       }
 
       const SpeechRecognition = webkitSpeechRecognition
@@ -203,42 +232,23 @@
       recognition.start()
       recognition.onresult = (event) => {
         let input = event.results[0][0].transcript
-        console.log(input)
-        if (input.toLowerCase().startsWith("hey olivia") || input.toLowerCase().startsWith("hi olivia")) {
-          this.input = input.replace("hey Olivia", "").replace("hi Olivia", "")
 
+        if (this.hotwordAppeared) {
+          this.hotwordAppeared = false
+          document.getElementById("sound-off").play()
+          this.input = input
           this.send()
+        }
+
+        if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
+          this.hotwordAppeared = true
+          document.getElementById("sound-on").play()
         }
       }
 
       recognition.onend = function() {
         recognition.start();
       };
-
-      // Initializes the connection with the websocket
-      this.websocket = new WebSocket(this.url)
-      // Send the information on connection
-      this.websocket.addEventListener('open', _ => {
-        this.websocket.send(
-          JSON.stringify({
-            type: 0,
-            user_token: localStorage.getItem('token'),
-            information: JSON.parse(localStorage.getItem('information'))
-          })
-        )
-      })
-
-      // Add a bubble when the websocket receives a response
-      this.websocket.addEventListener('message', e => {
-        setTimeout(() => {
-          let data = JSON.parse(e.data)
-
-          this.writing = false
-          this.message = data['content']
-          this.speak(this.message)
-          localStorage.setItem('information', JSON.stringify(data['information']))
-        }, Math.floor(Math.random() * 1500))
-      })
 
       setInterval(() => {
         this.writing_text += '.'
