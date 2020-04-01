@@ -15,15 +15,14 @@
     </audio>
 
     <audio id="sound-off">
-      <source src="sounds/off.mp3" type="audio/mpeg">
+      <source src="../../public/sounds/off.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Olivia's answer -->
     <div id="message" class="hero-head"
          style="padding-top: 10vh">
       <div class="container has-text-centered">
-        <div class="m-carl-notification-caption title">
-          {{ writing ? writing_text : message }}
+        <div class="m-carl-notification-caption title" v-html="writing ? writing_text : message">
         </div>
       </div>
     </div>
@@ -129,7 +128,7 @@
           return
         }
 
-        const message = new SpeechSynthesisUtterance(text)
+        const message = new SpeechSynthesisUtterance(text.replace(/<.+>/, ""))
 
         message.voice = this.voice
         message.lang = "en-US"
