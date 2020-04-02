@@ -211,6 +211,11 @@
             localStorage.setItem('information', JSON.stringify(data['information']))
           }, Math.floor(Math.random() * 1500))
         })
+
+        // Restart the socket when it closes.
+        this.websocket.onclose = function() {
+          setTimeout(this.initSocket, 500)
+        }
       }
     },
     mounted() {
