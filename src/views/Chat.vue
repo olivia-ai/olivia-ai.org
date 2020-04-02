@@ -182,20 +182,9 @@
             name: ''
           }))
         }
-      }
-    },
-    mounted() {
-      document.getElementById('message').click();
+      },
 
-      this.url = process.env.VUE_APP_URL
-      if (this.url == undefined) {
-        this.url = "wss://olivia-api.herokuapp.com"
-      }
-
-      this.createUserInformations()
-
-      // Wait that the voices are loaded to choose the right one
-      window.speechSynthesis.onvoiceschanged = () => {
+      initSocket() {
         this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
 
         // Initializes the connection with the websocket
@@ -223,31 +212,52 @@
           }, Math.floor(Math.random() * 1500))
         })
       }
+    },
+    mounted() {
+      setInterval(() => {
+        document.getElementById('message').click();
+      }, 1000)
 
-      const SpeechRecognition = webkitSpeechRecognition
-      const recognition = new SpeechRecognition()
-
-      recognition.lang = "en-US"
-      recognition.start()
-      recognition.onresult = (event) => {
-        let input = event.results[0][0].transcript
-
-        if (this.hotwordAppeared) {
-          this.hotwordAppeared = false
-          document.getElementById("sound-off").play()
-          this.input = input
-          this.send()
-        }
-
-        if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
-          this.hotwordAppeared = true
-          document.getElementById("sound-on").play()
-        }
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "wss://olivia-api.herokuapp.com"
       }
 
-      recognition.onend = function() {
-        recognition.start();
-      };
+      this.createUserInformations()
+
+      // Wait that the voices are loaded to choose the right one
+      window.speechSynthesis.onvoiceschanged = () => {
+        this.initSocket()
+      }
+
+      if (typeof webkitSpeechRecognition !== "undefined") {
+        const SpeechRecognition = webkitSpeechRecognition
+        const recognition = new SpeechRecognition()
+
+        recognition.lang = "en-US"
+        recognition.start()
+        recognition.onresult = (event) => {
+          let input = event.results[0][0].transcript
+
+          if (this.hotwordAppeared) {
+            this.hotwordAppeared = false
+            document.getElementById("sound-off").play()
+            this.input = input
+            this.send()
+          }
+
+          if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
+            this.hotwordAppeared = true
+            document.getElementById("sound-on").play()
+          }
+        }
+
+        recognition.onend = function() {
+          recognition.start();
+        };
+      } else {
+        this.initSocket()
+      }
 
       setInterval(() => {
         this.writing_text += '.'
