@@ -185,20 +185,8 @@
       },
 
       initSocket() {
-        this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
-
         // Initializes the connection with the websocket
         this.websocket = new WebSocket(this.url)
-        // Send the information on connection
-        this.websocket.addEventListener('open', _ => {
-          this.websocket.send(
-            JSON.stringify({
-              type: 0,
-              user_token: localStorage.getItem('token'),
-              information: JSON.parse(localStorage.getItem('information'))
-            })
-          )
-        })
 
         // Add a bubble when the websocket receives a response
         this.websocket.addEventListener('message', e => {
@@ -212,17 +200,21 @@
           }, Math.floor(Math.random() * 1500))
         })
 
-        // Restart the socket when it closes.
-        this.websocket.onclose = function() {
-          setTimeout(this.initSocket, 500)
-        }
+        // Send the information on connection
+        this.websocket.addEventListener('open', _ => {
+          this.websocket.send(
+            JSON.stringify({
+              type: 0,
+              user_token: localStorage.getItem('token'),
+              information: JSON.parse(localStorage.getItem('information'))
+            })
+          )
+        })
+
+        this.websocket.onclose = this.initSocket
       }
     },
     mounted() {
-      setInterval(() => {
-        document.getElementById('message').click();
-      }, 1000)
-
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
@@ -232,6 +224,8 @@
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
+        this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
+
         this.initSocket()
       }
 
@@ -260,8 +254,6 @@
         recognition.onend = function() {
           recognition.start();
         };
-      } else {
-        this.initSocket()
       }
 
       setInterval(() => {
