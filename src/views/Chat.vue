@@ -116,7 +116,7 @@
         message: 'What can I do for you?',
         input: '',
         muted: localStorage.getItem('muted') === 'true',
-        writing: false,
+        writing: true,
         writing_text: '...',
         url: null,
         hotwordAppeared: false
