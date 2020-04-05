@@ -6,12 +6,12 @@ To use Spotify with Olivia, we will need to create an application which Olivia w
 First of all, login into your account in the [Spotify dashboard page](https://developer.spotify.com/dashboard/applications)
 Then create a Spotify application:
 <p align="center">
-<img src="create-app.png" width="300">
+<img src="/blog/the-math-behind-a-neural-network/create-app.png" width="300">
 </p>
 
 Enter some details about the application, its name, description
 <p align="center">
-<img src="create-app2.png" width="300">
+<img src="/blog/the-math-behind-a-neural-network/create-app2.png" width="300">
 </p>
 
 Say to Spotify that it is a **non-commercial** application.
@@ -20,7 +20,7 @@ And understand the terms of service of Spotify.
 You are now in your application's page.
 Click on the settings button and add these **Redirect URLs**
 <p align="center">
-<img src="redirect-url.png" width="300">
+<img src="/blog/the-math-behind-a-neural-network/redirect-url.png" width="300">
 </p>
 
 Your application is now created!
@@ -38,7 +38,7 @@ You need to enter the Client ID **first**.
 
 Then this window will show
 <p align="center">
-<img src="spotify-auth.png" width="300">
+<img src="/blog/the-math-behind-a-neural-network/spotify-auth.png" width="300">
 </p>
 You need to agree and it will redirect you to Olivia's website
 
