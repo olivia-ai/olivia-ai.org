@@ -33,11 +33,7 @@
                 <div class="columns is-vcentered">
                   <div class="column">
                     <a :href="post.author.link">
-                      <b-tooltip :label="post.author.name">
-                        <figure class="image is-48x48">
-                          <img class="is-rounded" :src="post.author.picture">
-                        </figure>
-                      </b-tooltip>
+                      <p>@hugolgst</p>
                     </a>
                   </div>
                   <div class="column">

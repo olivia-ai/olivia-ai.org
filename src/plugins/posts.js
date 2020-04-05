@@ -9,8 +9,21 @@ export default {
       author: {
         name: "Hugo Lageneste",
         id: "@hugolgst",
-        link: "https://twitter.com/hugolgst",
-        picture: "https://pbs.twimg.com/profile_images/1217018956009086976/TL0wkuSm_400x400.jpg"
+        link: "https://github.com/hugolgst",
+        picture: "https://avatars3.githubusercontent.com/u/15371828?s=460&u=46a045fe604f4e4275c48f0e09a8932784c85bf8&v=4"
+      }
+    },
+    {
+      name: "Use Spotify on Olivia",
+      date: "April 5, 2020",
+      description: "Learn to create the Spotify application which will allow you to login with Olivia and play your favorite musics.",
+      path: "use-spotify-on-olivia",
+      content: require("../../public/blog/use-spotify-on-olivia/post.md").default,
+      author: {
+        name: "Hugo Lageneste",
+        id: "@hugolgst",
+        link: "https://github.com/hugolgst",
+        picture: "https://avatars3.githubusercontent.com/u/15371828?s=460&u=46a045fe604f4e4275c48f0e09a8932784c85bf8&v=4"
       }
     }
   ]

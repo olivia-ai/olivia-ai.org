@@ -5,7 +5,7 @@
       <div class="hero-body">
         <div class="container has-text-centered">
           <span>
-            <strong class="is-pink">
+            <strong class="is-pink" style="font-size: 15px;">
               {{ post.date }}
             </strong>
           </span>
@@ -47,12 +47,6 @@
   </div>
 </template>
 
-<style>
-  .is-pink {
-    color: #ff3aaf;
-    font-size: 15px;
-  }
-</style>
 
 <script>
   import Navbar from '../../components/Navbar'

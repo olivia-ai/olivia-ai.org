@@ -202,6 +202,7 @@
 
         // Send the information on connection
         this.websocket.addEventListener('open', _ => {
+          console.log("Websocket connection opened.")
           this.websocket.send(
             JSON.stringify({
               type: 0,
@@ -225,9 +226,9 @@
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
         this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
-
-        this.initSocket()
       }
+
+      this.initSocket()
 
       if (typeof webkitSpeechRecognition !== "undefined") {
         const SpeechRecognition = webkitSpeechRecognition

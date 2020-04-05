@@ -11,7 +11,7 @@
                 Your new best friend.
               </h1>
               <h1 class="subtitle">
-                An open-source chatbot built with an <strong>artificial neural network</strong>.
+                An open-source contextual chatbot built with an <strong>artificial neural network</strong>.
               </h1>
               <div class="buttons">
                 <router-link class="button is-medium is-primary is-rounded" to="/chat">
@@ -33,9 +33,59 @@
       </div>
     </section>
 
+    <section class="hero">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <div class="container">
+              <div class="m-carl-notification">
+                <div class="m-carl-notification-cue m-cue">
+                  <div class="a-cue-voice">
+                    <div class="a-cue-voice-el"></div>
+                    <div class="a-cue-voice-el"></div>
+                    <div class="a-cue-voice-el"></div>
+                    <div class="a-cue-voice-el"></div>
+                    <div class="a-cue-voice-el"></div>
+                  </div>
+
+                  <div class="a-cue-icon"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <h1 class="title is-size-2">
+              Ability to speak
+            </h1>
+            <h1 class="subtitle">
+              Olivia can listen to you by saying <strong>“Hey Olivia”</strong> or clicking on the central button.<br>
+              She speak to reply you, unless you've disabled her voice.
+            </h1>
+          </div>
+        </div>
+
+        <div class="columns is-centered is-vcentered">
+          <div class="column is-6">
+            <h1 class="title is-size-2">
+              Privacy
+            </h1>
+            <h1 class="subtitle">
+              Olivia respects your <strong>privacy</strong>. All the data used by Olivia is saved in <strong>your client</strong><br>
+              You own <strong>your data</strong>, simply as that.
+            </h1>
+          </div>
+
+          <div class="column is-4">
+            <img src="img/olivia-privacy.png" width="350">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="hero is-light">
       <div class="hero-body has-text-centered">
-        <h1 class="title">Main features</h1>
+        <h1 class="title">Features</h1>
         <div class="columns is-vcentered">
           <div class="column is-4 is-narrow">
             <h1 class="title">
