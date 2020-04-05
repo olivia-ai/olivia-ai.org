@@ -10,6 +10,17 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"></div>
               <div class="timeline-content">
+                <p class="heading">April 2020</p>
+                <p class="content">
+                  <vue-markdown :source="april2020">
+                  </vue-markdown>
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item is-primary">
+              <div class="timeline-marker is-primary"></div>
+              <div class="timeline-content">
                 <p class="heading">March 2020</p>
                 <p class="content">
                   <vue-markdown :source="march2020">
@@ -73,6 +84,7 @@
       return {
         august2019: 'Loading...',
         march2020: 'Loading...',
+        april2020: 'Loading...',
         january2020: 'Loading...'
       }
     },
@@ -83,6 +95,7 @@
       import('../../public/changelog/august-2019.md').then(res => this.august2019 = res.default)
       import('../../public/changelog/january-2020.md').then(res => this.january2020 = res.default)
       import('../../public/changelog/march-2020.md').then(res => this.march2020 = res.default)
+      import('../../public/changelog/april-2020.md').then(res => this.april2020 = res.default)
     }
   }
 </script>
