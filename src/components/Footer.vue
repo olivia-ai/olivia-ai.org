@@ -5,18 +5,6 @@
       <br>
     </div>
 
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-2 has-text-centered">
-          <a class="github-button" href="https://github.com/olivia-ai/olivia" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star olivia-ai/olivia on GitHub">Star</a>
-        </div>
-
-        <div class="column is-2 has-text-centered">
-          <a class="github-button" href="https://github.com/sponsors/hugolgst" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @hugolgst on GitHub">Sponsor</a>
-        </div>
-      </div>
-    </div>
-
     <footer class="section">
       <div class="container is-small">
         <div class="columns">
