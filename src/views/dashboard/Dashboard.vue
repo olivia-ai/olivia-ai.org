@@ -105,7 +105,7 @@
       }
     },
     async mounted() {
-      this.$http.get('https://cors-anywhere.herokuapp.com/https://olivia-api.herokuapp.com/dashboard').then(
+      this.$http.get('https://cors-anywhere.herokuapp.com/https://olivia-api.herokuapp.com/api/dashboard').then(
         data => {
           this.data = data.body
           let errors = data.body.training.errors
