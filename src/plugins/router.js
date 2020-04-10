@@ -30,8 +30,12 @@ export default new Router({
       component: require('../views/blog/Post.vue').default
     },
     {
-      path: '/dash',
+      path: '/dashboard/data',
       component: require('../views/dashboard/Dashboard.vue').default
+    },
+    {
+      path: '/dashboard/intents',
+      component: require('../views/dashboard/Intents.vue').default
     }
   ],
   mode: 'history'

@@ -33,11 +33,28 @@
           </strong>
         </router-link>
 
-        <router-link to="/dash" class="navbar-item">
-          <strong>
-            Dashboard
-          </strong>
-        </router-link>
+        <b-dropdown aria-role="list">
+          <a class="navbar-item" slot="trigger" role="button">
+            <strong>
+              Dashboard
+            </strong>
+          </a>
+
+          <b-dropdown-item aria-role="listitem">
+            <router-link to="/dashboard/data">
+              <strong>
+                Training data
+              </strong>
+            </router-link>
+          </b-dropdown-item>
+          <b-dropdown-item aria-role="listitem">
+            <router-link to="/dashboard/intents">
+              <strong>
+                Intents
+              </strong>
+            </router-link>
+          </b-dropdown-item>
+        </b-dropdown>
 
         <div class="navbar-item">
           <div class="buttons">
