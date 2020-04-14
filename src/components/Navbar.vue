@@ -34,25 +34,26 @@
         </router-link>
 
         <b-dropdown aria-role="list">
-          <a class="navbar-item" slot="trigger" role="button">
-            <strong>
-              Dashboard
-            </strong>
+          <a class="navbar-item" slot="trigger">
+            <strong>Dashboard</strong>
           </a>
 
           <b-dropdown-item aria-role="listitem">
-            <router-link to="/dashboard/data">
-              <strong>
-                Training data
-              </strong>
-            </router-link>
+            <div class="media">
+              <router-link to="/dashboard/intents" class="media-content">
+                <h3>Intents</h3>
+                <small>Where you can add intents</small>
+              </router-link>
+            </div>
           </b-dropdown-item>
+
           <b-dropdown-item aria-role="listitem">
-            <router-link to="/dashboard/intents">
-              <strong>
-                Intents
-              </strong>
-            </router-link>
+            <div class="media">
+              <router-link to="/dashboard/data" class="media-content">
+                <h3>Data</h3>
+                <small>For getting training data</small>
+              </router-link>
+            </div>
           </b-dropdown-item>
         </b-dropdown>
 

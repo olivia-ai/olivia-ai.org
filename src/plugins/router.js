@@ -31,7 +31,7 @@ export default new Router({
     },
     {
       path: '/dashboard/data',
-      component: require('../views/dashboard/Dashboard.vue').default
+      component: require('../views/dashboard/Data.vue').default
     },
     {
       path: '/dashboard/intents',
