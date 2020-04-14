@@ -218,8 +218,9 @@
     mounted() {
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
-        this.url = "wss://olivia-api.herokuapp.com/websocket"
+        this.url = "wss://olivia-api.herokuapp.com"
       }
+      this.url += "/websocket"
 
       this.createUserInformations()
 

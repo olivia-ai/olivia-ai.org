@@ -20,7 +20,8 @@ import {
   faClock,
   faPercentage,
   faReplyAll,
-  faClone
+  faClone,
+  faPlusSquare
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -42,6 +43,7 @@ library.add(
   faClock,
   faPercentage,
   faReplyAll,
-  faClone
+  faClone,
+  faPlusSquare
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)

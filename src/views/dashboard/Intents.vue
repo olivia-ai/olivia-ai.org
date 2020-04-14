@@ -6,9 +6,27 @@
           <h1 class="title">
             <img width="450" src="../../../public/img/olivia-dashboard.png" alt="Olivia Dashboard">
           </h1>
-          <b-button class="is-primary" rounded @click="credentialsModal = true">
-            <strong>Enter credentials</strong>
-          </b-button>
+          <div class="columns is-centered">
+            <div class="column is-2">
+              <b-button rounded @click="credentialsModal = true">
+                <strong>Enter credentials</strong>
+              </b-button>
+            </div>
+
+            <div class="column is-2">
+              <b-button class="is-primary" rounded @click="intentModal = true">
+                <strong>Create an intent</strong>
+              </b-button>
+            </div>
+          </div>
+
+          <b-modal :active.sync="intentModal"
+                   has-modal-card
+                   aria-role="dialog"
+                   aria-modal>
+            <intent v-model="url"></intent>
+          </b-modal>
+
           <b-modal :active.sync="credentialsModal"
                    has-modal-card
                    trap-focus
@@ -64,21 +82,25 @@
 
 <script>
   import Credentials from '../../components/Credentials'
+  import Intent from '../../components/Intent'
 
   export default {
     data() {
       return {
         intents: [],
-        credentialsModal: false
+        credentialsModal: false,
+        intentModal: false,
+        url: ''
       }
     },
     components: {
-      Credentials
+      Credentials,
+      Intent
     },
     methods: {
       deleteIntent(tag) {
         let token = localStorage.getItem('Olivia-Token')
-        this.$http.delete('http://localhost:8080/api/intent', {
+        this.$http.delete(this.url + '/api/intent', {
           body: {
             tag
           },
@@ -99,12 +121,18 @@
       },
 
       getIntents() {
-        this.$http.get('http://localhost:8080/api/intents').then(data => {
+        this.$http.get(this.url + '/api/intents').then(data => {
           this.intents = data.body
         })
       }
     },
     mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
+
       this.getIntents()
     }
   }

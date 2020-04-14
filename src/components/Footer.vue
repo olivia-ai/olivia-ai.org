@@ -53,6 +53,7 @@
                   <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://twitter.com/oliv_ai">Twitter</a></li>
                   <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://trello.com/b/azB6r2IC/olivia">Trello</a></li>
                   <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://github.com/olivia-ai">GitHub</a></li>
+                  <li><a rel="noopener noreferrer" target="_blank" class="has-text-dark" href="https://discord.gg/bXv2Wd">Discord</a></li>
                 </ul>
               </div>
             </div>

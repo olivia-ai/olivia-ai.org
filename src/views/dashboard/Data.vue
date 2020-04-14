@@ -105,7 +105,13 @@
       }
     },
     async mounted() {
-      this.$http.get('https://cors-anywhere.herokuapp.com/https://olivia-api.herokuapp.com/api/dashboard').then(
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
+
+      this.$http.get(this.url + '/api/dashboard').then(
         data => {
           this.data = data.body
           let errors = data.body.training.errors
