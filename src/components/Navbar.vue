@@ -40,7 +40,8 @@
 
           <b-dropdown-item aria-role="listitem">
             <div class="media">
-              <router-link to="/dashboard/intents" class="media-content">
+              <b-icon class="media-left" icon="tag-multiple"></b-icon>
+              <router-link to="/dashboard/intents" class="media-content" style="color: #1b1b1b">
                 <h3>Intents</h3>
                 <small>Where you can add intents</small>
               </router-link>
@@ -49,7 +50,8 @@
 
           <b-dropdown-item aria-role="listitem">
             <div class="media">
-              <router-link to="/dashboard/data" class="media-content">
+              <b-icon class="media-left" icon="chart-areaspline"></b-icon>
+              <router-link to="/dashboard/data" class="media-content" style="color: #1b1b1b">
                 <h3>Data</h3>
                 <small>For getting training data</small>
               </router-link>

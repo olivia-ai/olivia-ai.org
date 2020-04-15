@@ -14,17 +14,17 @@
             </div>
 
             <div class="column is-2">
-              <b-button class="is-primary" rounded @click="intentModal = true">
+              <b-button class="is-primary" rounded @click="createIntentModal = true">
                 <strong>Create an intent</strong>
               </b-button>
             </div>
           </div>
 
-          <b-modal :active.sync="intentModal"
+          <b-modal :active.sync="createIntentModal"
                    has-modal-card
                    aria-role="dialog"
                    aria-modal>
-            <intent v-model="url"></intent>
+            <create-intent v-model="url"></create-intent>
           </b-modal>
 
           <b-modal :active.sync="credentialsModal"
@@ -38,38 +38,49 @@
       </div>
     </section>
 
-    <br>
-    <div class="container">
-      <div class="columns is-multiline">
-        <div class="column is-3 " v-for="intent in intents" :key="intent.tag">
-          <div class="tile is-child notification">
-            <button class="delete" @click="deleteIntent(intent.tag)"></button>
-            <p class="title">
-              <b-tooltip label="Tag" v-if="intent.context == ''">
-                <font-awesome-icon icon="tags" class="is-pink"/>
-              </b-tooltip>
-              <b-tooltip label="Contextual tag" v-else>
-                <font-awesome-icon icon="clone" class="is-pink"/>
-              </b-tooltip>
-              {{ intent.tag }}
-            </p>
-            <p class="subtitle">
-              “{{ intent.patterns[0] }}”
-            </p>
-            <p class="subtitle">
-              <b-tooltip label="Number of responses">
-                <font-awesome-icon icon="reply-all" class="is-pink" style="font-size: 20px;"/>
-              </b-tooltip>
-              {{ intent.responses.length }} — 
-              <b-tooltip label="Number of patterns">
-                <font-awesome-icon icon="clone" class="is-pink" style="font-size: 20px;"/>
-              </b-tooltip>
-              {{ intent.patterns.length }}
-            </p>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-multiline">
+            <div class="column is-3" v-for="intent in intents" :key="intent.tag">
+              <b-modal :active.sync="intent.active"
+                       has-modal-card
+                       trap-focus
+                       aria-role="dialog"
+                       aria-modal>
+                <div class="card new-card">
+                  <p span="title">{{ intent.tag }}</p>
+                </div>
+              </b-modal>
+
+              <div class="card new-card">
+                <div class="card-content">
+                  <p class="title">
+                    <b-tooltip label="Tag" v-if="intent.context == ''">
+                      <b-icon size="is-medium" class="is-pink" icon="tag-multiple"></b-icon>
+                    </b-tooltip>
+                    <b-tooltip label="Contextual tag" v-else>
+                      <b-icon size="is-medium" class="is-pink" icon="content-copy"></b-icon>
+                    </b-tooltip>
+                    {{ intent.tag }}
+                    <a @click="intent.active = true">
+                      <b-icon style="float: right"
+                              class="is-pink"
+                              icon="menu"
+                      >
+                      </b-icon>
+                    </a>
+                  </p>
+                  <p class="subtitle">
+                    {{ intent.patterns[0] }}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -78,11 +89,18 @@
     color: #ff3aaf;
     font-size: 30px;
   }
+
+  .new-card {
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #f5f5f5;
+  }
 </style>
 
 <script>
   import Credentials from '../../components/Credentials'
-  import Intent from '../../components/Intent'
+  import CreateIntent from '../../components/CreateIntent'
 
   export default {
     data() {
@@ -90,12 +108,13 @@
         intents: [],
         credentialsModal: false,
         intentModal: false,
+        createIntentModal: false,
         url: ''
       }
     },
     components: {
       Credentials,
-      Intent
+      CreateIntent
     },
     methods: {
       deleteIntent(tag) {
@@ -124,6 +143,10 @@
         this.$http.get(this.url + '/api/intents').then(data => {
           this.intents = data.body
         })
+      },
+
+      openIntentModal() {
+
       }
     },
     mounted() {

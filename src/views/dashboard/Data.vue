@@ -17,7 +17,7 @@
           <div class="tile is-4 is-parent is-vertical">
             <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="tags" class="is-pink"/> {{ data.layers.output }}
+                <b-icon size="is-medium" class="is-pink" icon="tag-multiple"></b-icon> {{ data.layers.output }}
               </p>
               <p class="subtitle">
                 Intents' tags
@@ -26,7 +26,7 @@
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <font-awesome-icon icon="times" class="is-pink" /> {{ Math.round(data.training.errors[18]*10000)/10000 }}
+                <b-icon size="is-medium" class="is-pink" icon="close"></b-icon> {{ Math.round(data.training.errors[18]*10000)/10000 }}
               </p>
               <p class="subtitle">
                 Error loss
@@ -35,7 +35,7 @@
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <font-awesome-icon icon="layer-group" class="is-pink"/> {{ data.layers.hidden }}
+                <b-icon size="is-medium" class="is-pink" icon="layers"></b-icon> {{ data.layers.hidden }}
               </p>
               <p class="subtitle">
                 Hidden layers
@@ -55,7 +55,7 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="clock" class="is-pink"/> {{ data.training.time }}s
+                <b-icon size="is-medium" class="is-pink" icon="clock"></b-icon> {{ data.training.time }}s
               </p>
               <p class="subtitle">
                 Learning time
@@ -66,7 +66,7 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <font-awesome-icon icon="percentage" class="is-pink"/> {{ data.training.rate }}
+                <b-icon size="is-medium" class="is-pink" icon="percent"></b-icon> {{ data.training.rate }}
               </p>
               <p class="subtitle">
                 Learning rate

@@ -5,7 +5,7 @@
         <router-link
             class="navbar-item"
             to="/">
-          <font-awesome-icon icon="arrow-left"></font-awesome-icon>
+          <b-icon icon="arrow-left"></b-icon>
         </router-link>
       </template>
     </b-navbar>
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Animation -->
-    <div class="hero-body" @click="dictate()">
+    <div class="hero-body">
       <div class="container">
         <div class="m-carl-notification">
           <div class="m-carl-notification-cue m-cue">
@@ -40,7 +40,7 @@
               <div class="a-cue-voice-el"></div>
             </div>
 
-            <div class="a-cue-icon"></div>
+            <div class="a-cue-icon" @click="dictate()"></div>
           </div>
         </div>
       </div>
@@ -62,24 +62,20 @@
                       class="button is-primary is-rounded"
                       @click="mute()">
 
-                    <font-awesome-icon icon="volume-mute" v-if="muted" />
-                    <font-awesome-icon icon="volume-up" v-else />
+                    <b-icon icon="volume-off" v-if="muted"></b-icon>
+                    <b-icon icon="volume-high" v-else></b-icon>
                   </button>
                 </b-tooltip>
               </p>
 
               <!-- Field -->
-              <p class="control has-icons-left is-expanded">
+              <p class="control is-expanded">
                 <input
                     class="input is-rounded"
                     type="text"
                     v-model="input"
                     v-on:keyup.enter="send()"
-                    placeholder="Message"/>
-
-                <span class="icon is-small is-left">
-                  <font-awesome-icon icon="comment" />
-                </span>
+                    placeholder="Write your message"/>
               </p>
             </div>
           </div>
@@ -174,6 +170,11 @@
       createUserInformations() {
         // Generate the token
         if (localStorage.getItem('token') == null) {
+          this.$buefy.snackbar.open({
+            message: `Hey, I'm Olivia. You can talk with me by writing in the field below, saying the hotword “Hey Olivia” or clicking the main circle and speak.`,
+            duration: 5000,
+            position: 'is-top'
+          })
           localStorage.setItem('token', this.generateToken(200))
         }
 

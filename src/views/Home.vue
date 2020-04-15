@@ -89,7 +89,7 @@
         <div class="columns is-vcentered">
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="cubes" /><br>
+              <b-icon size="is-medium" icon="cube-scan"></b-icon><br>
               <span class="is-pink">1.</span> Completely modulable
             </h1>
             <p>
@@ -98,7 +98,7 @@
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="code" /><br>
+              <b-icon size="is-medium" icon="code-tags"></b-icon><br>
               <span class="is-pink">2.</span> Fully open-source
             </h1>
             <p>
@@ -107,7 +107,7 @@
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
-              <font-awesome-icon icon="mobile-alt" /><br>
+              <b-icon size="is-medium" icon="cellphone"></b-icon><br>
               <span class="is-pink">3.</span> Progressive web app
             </h1>
             <p>
