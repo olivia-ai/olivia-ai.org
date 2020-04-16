@@ -13,7 +13,7 @@
               </b-button>
             </div>
 
-            <div class="column is-2" v-if="token != ''">
+            <div class="column is-2" v-if="token != undefined">
               <b-button class="is-primary" rounded @click="createIntentModal = true">
                 <strong>Create an intent</strong>
               </b-button>

@@ -23,7 +23,7 @@
                 icon-left="delete"
                 rounded
                 @click="deleteIntent(tag)"
-                v-if="token != ''"
+                v-if="token != undefined"
                 style="float: right">
         Delete
       </b-button>
