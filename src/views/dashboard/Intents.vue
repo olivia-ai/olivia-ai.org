@@ -13,7 +13,7 @@
               </b-button>
             </div>
 
-            <div class="column is-2" v-if="localStorage.getItem('Olivia-Token') != ''">
+            <div class="column is-2" v-if="token != ''">
               <b-button class="is-primary" rounded @click="createIntentModal = true">
                 <strong>Create an intent</strong>
               </b-button>
@@ -109,7 +109,8 @@
         intents: [],
         credentialsModal: false,
         createIntentModal: false,
-        url: ''
+        url: '',
+        token: localStorage.getItem('Olivia-Token')
       }
     },
     components: {
