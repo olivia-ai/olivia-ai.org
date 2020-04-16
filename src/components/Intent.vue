@@ -16,15 +16,16 @@
         {{ context }}
       </p>
 
+      <b-button rounded @click="$parent.close()">
+        Close
+      </b-button>
       <b-button type="is-danger"
                 icon-left="delete"
                 rounded
                 @click="deleteIntent(tag)"
-                v-if="token != ''">
+                v-if="token != ''"
+                style="float: right">
         Delete
-      </b-button>
-      <b-button rounded style="float: right" @click="$parent.close()">
-        Close
       </b-button>
     </div>
   </div>
