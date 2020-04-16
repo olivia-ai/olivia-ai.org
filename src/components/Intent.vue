@@ -19,7 +19,8 @@
       <b-button type="is-danger"
                 icon-left="delete"
                 rounded
-                @click="deleteIntent(tag)">
+                @click="deleteIntent(tag)"
+                v-if="token != ''">
         Delete
       </b-button>
       <b-button rounded style="float: right" @click="$parent.close()">
@@ -32,6 +33,11 @@
 <script>
   export default {
     props: ['tag', 'patterns', 'responses', 'context'],
+    data() {
+      return {
+        token: localStorage.getItem('Olivia-Token')
+      }
+    },
     methods: {
       deleteIntent(tag) {
         let token = localStorage.getItem('Olivia-Token')
