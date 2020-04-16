@@ -19,21 +19,6 @@
               </b-button>
             </div>
           </div>
-
-          <b-modal :active.sync="createIntentModal"
-                   has-modal-card
-                   aria-role="dialog"
-                   aria-modal>
-            <create-intent v-model="url"></create-intent>
-          </b-modal>
-
-          <b-modal :active.sync="credentialsModal"
-                   has-modal-card
-                   trap-focus
-                   aria-role="dialog"
-                   aria-modal>
-            <credentials></credentials>
-          </b-modal>
         </div>
       </div>
     </section>
@@ -63,7 +48,7 @@
                       <b-icon size="is-medium" class="is-pink" icon="content-copy"></b-icon>
                     </b-tooltip>
                     {{ intent.tag }}
-                    <a @click="intent.active = true">
+                    <a @click="openIntentModal(intent)">
                       <b-icon style="float: right"
                               class="is-pink"
                               icon="menu"
@@ -81,6 +66,21 @@
         </div>
       </div>
     </section>
+
+    <b-modal :active.sync="createIntentModal"
+             has-modal-card
+             aria-role="dialog"
+             aria-modal>
+      <create-intent v-model="url"></create-intent>
+    </b-modal>
+
+    <b-modal :active.sync="credentialsModal"
+             has-modal-card
+             trap-focus
+             aria-role="dialog"
+             aria-modal>
+      <credentials></credentials>
+    </b-modal>
   </div>
 </template>
 
@@ -101,13 +101,13 @@
 <script>
   import Credentials from '../../components/Credentials'
   import CreateIntent from '../../components/CreateIntent'
+  import ModalIntent from '../../components/Intent'
 
   export default {
     data() {
       return {
         intents: [],
         credentialsModal: false,
-        intentModal: false,
         createIntentModal: false,
         url: ''
       }
@@ -117,36 +117,18 @@
       CreateIntent
     },
     methods: {
-      deleteIntent(tag) {
-        let token = localStorage.getItem('Olivia-Token')
-        this.$http.delete(this.url + '/api/intent', {
-          body: {
-            tag
-          },
-          headers: {
-            'Olivia-Token': token
-          }
-        }).then(data => {
-          if (data.body.message !== undefined) {
-            this.$buefy.snackbar.open({
-              message: data.body.message,
-              type: 'is-warning',
-              position: 'is-top'
-            })
-          }
-
-          this.getIntents()
-        })
-      },
-
       getIntents() {
         this.$http.get(this.url + '/api/intents').then(data => {
           this.intents = data.body
         })
       },
 
-      openIntentModal() {
-
+      openIntentModal(intent) {
+        this.$buefy.modal.open({
+          parent: this,
+          component: ModalIntent,
+          props: intent
+        })
       }
     },
     mounted() {
