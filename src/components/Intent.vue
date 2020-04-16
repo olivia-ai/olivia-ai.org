@@ -36,11 +36,13 @@
     props: ['tag', 'patterns', 'responses', 'context'],
     data() {
       return {
-        token: localStorage.getItem('Olivia-Token')
+        token: localStorage.getItem('Olivia-Token'),
+        url: ''
       }
     },
     methods: {
       deleteIntent(tag) {
+        console.log('ssss')
         let token = localStorage.getItem('Olivia-Token')
         this.$http.delete(this.url + '/api/intent', {
           body: {
@@ -61,6 +63,13 @@
           this.getIntents()
         })
       }
+    },
+    mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
     }
   }
 </script>

@@ -18,6 +18,17 @@
                 <strong>Create an intent</strong>
               </b-button>
             </div>
+
+            <div class="column is-2" v-if="token != undefined">
+              <b-button
+                        icon-left="sync"
+                        rounded
+                        @click="syncNetwork()"
+                        v-if="token != undefined"
+                        style="float: right">
+                <strong>Sync the model</strong>
+              </b-button>
+            </div>
           </div>
         </div>
       </div>
@@ -129,6 +140,22 @@
           parent: this,
           component: ModalIntent,
           props: intent
+        })
+      },
+
+      syncNetwork() {
+        this.$http.post(this.url + '/api/train', {}, {
+          headers: {
+            'Olivia-Token': localStorage.getItem('Olivia-Token')
+          }
+        }).then(data => {
+          if (data.body.message !== undefined) {
+            this.$buefy.snackbar.open({
+              message: data.body.message,
+              type: 'is-warning',
+              position: 'is-top'
+            })
+          }
         })
       }
     },

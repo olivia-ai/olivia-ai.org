@@ -42,13 +42,12 @@
 
 <script>
   export default {
-    props: ['url'],
     data() {
       return {
         params: {
           tag: '',
-          patterns: '',
-          responses: '',
+          patterns: [],
+          responses: [],
           context: ''
         }
       }
@@ -73,6 +72,13 @@
           this.$parent.close()
         })
       }
+    },
+    mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
     }
   }
 </script>
