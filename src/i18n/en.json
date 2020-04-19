@@ -1,0 +1,122 @@
+{
+  "generic": {
+    "close": "Close",
+    "create": "Create",
+    "save": "Save",
+    "delete": "Delete"
+  },
+  "navbar": {
+    "documentation": "Documentation",
+    "changelog": "Changelog",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "intents": {
+      "title": "Intents",
+      "text": "Where you can add intents"
+    },
+    "data": {
+      "title": "Data",
+      "text": "For getting training data"
+    },
+    "chat": "Chat"
+  },
+  "home": {
+    "introduction": {
+      "title": "Your new best friend.",
+      "text": "An open-source contextual chatbot built with an <strong>artificial neural network</strong>.",
+      "chat": "Chat online",
+      "github": "See on GitHub"
+    },
+    "speakAbility": {
+      "title": "Ability to speak",
+      "text": "Olivia can listen to you by saying <strong>“Hey Olivia”</strong> or clicking on the central button.<br>She speak to reply you, unless you've disabled her voice."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "Olivia respects your <strong>privacy</strong>. All the data used by Olivia is saved in <strong>your client</strong><br>You own <strong>your data</strong>, simply as that."
+    },
+    "features": {
+      "title": "Features",
+      "modulable": {
+        "title": "Completely modulable",
+        "text": "Olivia is organized in modules to facilitate the addition of new capabilities. These modules can be written in Go to execute multiple tasks."
+      },
+      "openSource": {
+        "title": "Fully open-source",
+        "text": "The project is entirely open-source from the website to the backend. Thus you can build your own chatbot and contribute to Olivia."
+      },
+      "pwa": {
+        "title": "Progressive web app",
+        "text": "You can directly add the PWA to your homescreen from the website, and you won't remember that it is a website running behind this native-like app."
+      }
+    }
+  },
+  "changelog": {
+    "april2020": "April 2020",
+    "march2020": "March 2020",
+    "january2020": "January 2020",
+    "august2019": "August 2019",
+    "start": "Start"
+  },
+  "chat": {
+    "welcome": "Hey, I'm Olivia. You can talk with me by writing in the field below, saying the hotword “Hey Olivia” or clicking the main circle and speak.",
+    "defaultMessage": "What can I do for you?",
+    "fieldPlaceholder": "Write your message"
+  },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Intents' tags",
+      "errorLoss": "Error loss",
+      "errorLossText": "Error loss of the neural network",
+      "networkIterations": "Network iterations",
+      "hiddenLayers": "Hidden layers",
+      "learningTime": "Learning time",
+      "learningRate": "Learning rate"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Credentials",
+        "enter": "Enter credentials",
+        "token": {
+          "title": "Token",
+          "text": "The authentication token"
+        }
+      },
+      "create": {
+        "title": "Create an intent"
+      },
+      "sync": "Sync the model",
+
+      "patterns": "Patterns",
+      "responses": "Responses",
+      "tag": "Tag",
+      "contextualTag": "Contextual tag",
+      "context": "Context"
+    }
+  },
+  "creator": {
+    "age": "years old.",
+    "location": "Based in <strong>Geneva, Switzerland</strong>.",
+    "studies": "● Student at <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Earth and life sciences</strong> option, specialization in <strong>computer science</strong>.",
+    "olivia": "● Creator and maintainer of <strong>Olivia, 1.5K stars-projet</strong> on <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Skills: programming languages: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "email"
+  },
+  "footer": {
+    "bestFriend": "Your new best friend",
+    "location": "Geneva, Switzerland",
+    "license": "Licenced under <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "about": {
+      "title": "About",
+      "contact": "Contact"
+    },
+    "information": {
+      "title": "Information",
+      "creator": "Creator",
+      "license": "License"
+    },
+    "community": {
+      "title": "Community"
+    }
+  }
+}

@@ -2,14 +2,14 @@
   <form action="">
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Credentials</p>
+        <p class="modal-card-title">{{ $t('dashboard.intents.credentials.title') }}</p>
       </header>
       <section class="modal-card-body">
-        <b-field label="Token">
+        <b-field :label="$t('dashboard.intents.credentials.token.title')">
           <b-input
               type="text"
               v-model="token"
-              placeholder="The authentication token"
+              :placeholder="$t('dashboard.intents.credentials.token.text')"
               required>
           </b-input>
         </b-field>
@@ -17,12 +17,12 @@
       <footer class="modal-card-foot">
         <button class="button is-rounded" type="button" @click="$parent.close()">
           <strong>
-            Close
+            {{ $t('generic.close') }}
           </strong>
         </button>
         <button class="button is-primary is-rounded" @click="saveToken()">
           <strong>
-            Save
+            {{ $t('generic.save') }}
           </strong>
         </button>
       </footer>

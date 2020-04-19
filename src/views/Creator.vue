@@ -5,20 +5,12 @@
         <div class="columns is-centered">
           <div class="column is-8">
             <h1 class="title">
-              Hugo Lageneste<span class="subtitle">, {{ calculateAge("2002-12-04") }} years old.</span>
+              Hugo Lageneste<span class="subtitle">, {{ calculateAge("2002-12-04") }} {{ $t('creator.age') }}</span>
             </h1>
-            <h2 class="subtitle">
-              Based in <strong>Geneva, Switzerland</strong>.
-            </h2>
-            <h2 class="subtitle">
-              ● Student at <a href="https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl">Lycée Madame de Staël</a>. <strong>Earth and life sciences</strong> option, specialization in <strong>computer science</strong>.
-            </h2>
-            <h2 class="subtitle">
-              ● Creator and maintainer of <strong>Olivia, 1.5K stars-projet</strong> on <a href="https://github.com/olivia-ai/olivia">GitHub</a>
-            </h2>
-            <h2 class="subtitle">
-              ● Skills: programming languages: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>
-            </h2>
+            <h2 class="subtitle" v-html="$t('creator.location')"/>
+            <h2 class="subtitle" v-html="$t('creator.studies')"/>
+            <h2 class="subtitle" v-html="$t('creator.olivia')"/>
+            <h2 class="subtitle" v-html="$t('creator.skills')"/>
             <h2 class="subtitle">
               <div class="columns">
                 <div class="column is-2">
@@ -35,7 +27,7 @@
 
                 <div class="column is-2">
                   <a href="mailto:hugo.lageneste@pm.me">
-                    ● email
+                    ● {{ $t('creator.email') }}
                   </a>
                 </div>
               </div>

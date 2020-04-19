@@ -14,36 +14,59 @@
     </div>
 
     <div id="navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <b-dropdown aria-role="list">
+          <a class="navbar-item" slot="trigger">
+            <b-icon class="media-left" icon="translate"/>
+          </a>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('en')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/en.png" width="30">
+              <h3>English</h3>
+            </div>
+          </b-dropdown-item>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('fr')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/fr.png" width="30">
+              <h3>Français</h3>
+            </div>
+          </b-dropdown-item>
+        </b-dropdown>
+      </div>
       <div class="navbar-end">
         <a class="navbar-item" href="https://docs.olivia-ai.org">
           <strong>
-            Documentation
+            {{ $t('navbar.documentation') }}
           </strong>
         </a>
 
         <router-link to="/changelog" class="navbar-item">
           <strong>
-            Changelog
+            {{ $t('navbar.changelog') }}
           </strong>
         </router-link>
 
         <router-link to="/blog" class="navbar-item">
           <strong>
-            Blog
+            {{ $t('navbar.blog') }}
           </strong>
         </router-link>
 
         <b-dropdown aria-role="list">
           <a class="navbar-item" slot="trigger">
-            <strong>Dashboard</strong>
+            <strong>
+              {{ $t('navbar.dashboard') }}
+            </strong>
           </a>
 
           <b-dropdown-item aria-role="listitem">
             <div class="media">
               <b-icon class="media-left" icon="tag-multiple"></b-icon>
               <router-link to="/dashboard/intents" class="media-content" style="color: #1b1b1b">
-                <h3>Intents</h3>
-                <small>Where you can add intents</small>
+                <h3>{{ $t('navbar.intents.title') }}</h3>
+                <small>{{ $t('navbar.intents.text') }}</small>
               </router-link>
             </div>
           </b-dropdown-item>
@@ -52,8 +75,8 @@
             <div class="media">
               <b-icon class="media-left" icon="chart-areaspline"></b-icon>
               <router-link to="/dashboard/data" class="media-content" style="color: #1b1b1b">
-                <h3>Data</h3>
-                <small>For getting training data</small>
+                <h3>{{ $t('navbar.data.title') }}</h3>
+                <small>{{ $t('navbar.data.text') }}</small>
               </router-link>
             </div>
           </b-dropdown-item>
@@ -63,7 +86,7 @@
           <div class="buttons">
             <router-link class="button is-rounded is-primary" to="/chat">
               <strong>
-                Chat
+                {{ $t('navbar.chat') }}
               </strong>
             </router-link>
           </div>
@@ -72,3 +95,14 @@
     </div>
   </nav>
 </template>
+
+<script>
+  export default {
+    methods: {
+      changeLocale(locale) {
+        this.$i18n.locale = locale
+        localStorage.setItem('language', locale)
+      }
+    }
+  }
+</script>
