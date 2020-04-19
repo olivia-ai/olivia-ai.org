@@ -10,7 +10,7 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"></div>
               <div class="timeline-content">
-                <p class="heading">April 2020</p>
+                <p class="heading">{{ $t('changelog.april2020') }}</p>
                 <p class="content">
                   <vue-markdown :source="april2020">
                   </vue-markdown>
@@ -21,7 +21,7 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"></div>
               <div class="timeline-content">
-                <p class="heading">March 2020</p>
+                <p class="heading">{{ $t('changelog.march2020') }}</p>
                 <p class="content">
                   <vue-markdown :source="march2020">
                   </vue-markdown>
@@ -32,7 +32,7 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"></div>
               <div class="timeline-content">
-                <p class="heading">January 2020</p>
+                <p class="heading">{{ $t('changelog.january2020') }}</p>
                 <p class="content">
                   <vue-markdown :source="january2020">
                   </vue-markdown>
@@ -46,7 +46,7 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"></div>
               <div class="timeline-content">
-                <p class="heading">August 2019</p>
+                <p class="heading">{{ $t('changelog.august2020') }}</p>
                 <p class="content">
                   <vue-markdown :source="august2019">
                   </vue-markdown>
@@ -67,7 +67,7 @@
 
             </div>
             <header class="timeline-header">
-              <span class="tag is-medium is-primary">Start</span>
+              <span class="tag is-medium is-primary">{{ $t('changelog.start') }}</span>
             </header>
           </div>
         </div>

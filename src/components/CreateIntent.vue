@@ -2,37 +2,37 @@
   <form action="">
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Create an intent</p>
+        <p class="modal-card-title">{{ $t('dashboard.intents.create.title') }}</p>
       </header>
       <section class="modal-card-body">
         <b-field grouped >
-          <b-input expanded v-model="params.tag" placeholder="Tag"></b-input>
-          <b-input expanded v-model="params.context" placeholder="Context"></b-input>
+          <b-input expanded v-model="params.tag" :placeholder="$t('dashboard.intents.tag')"></b-input>
+          <b-input expanded v-model="params.context" :placeholder="$t('dashboard.intents.context')"></b-input>
         </b-field>
         <b-field>
           <b-taginput
               ellipsis
               v-model="params.patterns"
-              placeholder="Patterns..">
+              :placeholder="$t('dashboard.intents.patterns') + '..'">
           </b-taginput>
         </b-field>
         <b-field>
           <b-taginput
               ellipsis
               v-model="params.responses"
-              placeholder="Responses..">
+              :placeholder="$t('dashboard.intents.responses') + '..'">
           </b-taginput>
         </b-field>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-rounded" type="button" @click="$parent.close()">
           <strong>
-            Close
+            {{ $t('generic.close') }}
           </strong>
         </button>
         <a class="button is-primary is-rounded" @click="createIntent()">
           <strong>
-            Create
+            {{ $t('generic.create') }}
           </strong>
         </a>
       </footer>

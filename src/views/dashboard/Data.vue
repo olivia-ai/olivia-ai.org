@@ -20,7 +20,7 @@
                 <b-icon size="is-medium" class="is-pink" icon="tag-multiple"></b-icon> {{ data.layers.output }}
               </p>
               <p class="subtitle">
-                Intents' tags
+                {{ $t('dashboard.data.intentsTags') }}
               </p>
             </div>
 
@@ -29,7 +29,7 @@
                 <b-icon size="is-medium" class="is-pink" icon="close"></b-icon> {{ Math.round(data.training.errors[18]*10000)/10000 }}
               </p>
               <p class="subtitle">
-                Error loss
+                {{ $t('dashboard.data.errorLoss') }}
               </p>
             </div>
 
@@ -38,7 +38,7 @@
                 <b-icon size="is-medium" class="is-pink" icon="layers"></b-icon> {{ data.layers.hidden }}
               </p>
               <p class="subtitle">
-                Hidden layers
+                {{ $t('dashboard.data.hiddenLayers') }}
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@
                 <b-icon size="is-medium" class="is-pink" icon="clock"></b-icon> {{ data.training.time }}s
               </p>
               <p class="subtitle">
-                Learning time
+                {{ $t('dashboard.data.learningTime') }}
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@
                 <b-icon size="is-medium" class="is-pink" icon="percent"></b-icon> {{ data.training.rate }}
               </p>
               <p class="subtitle">
-                Learning rate
+                {{ $t('dashboard.data.learningRate') }}
               </p>
             </div>
           </div>
@@ -130,7 +130,7 @@
               labels,
               datasets: [{
                 data: errors,
-                label: "Error loss",
+                label: this.$t('dashboard.data.errorLoss'),
                 borderColor: "#ff3aaf",
                 fill: false
               }
@@ -140,21 +140,21 @@
               responsive: true,
               title: {
                 display: true,
-                text: 'Error loss of the neural network'
+                text: this.$t('dashboard.data.errorLossText')
               },
               scales: {
                 x: {
                   display: true,
                   scaleLabel: {
                     display: true,
-                    labelString: 'Network iterations'
+                    labelString: this.$t('dashboard.data.networkIterations')
                   }
                 },
                 y: {
                   display: true,
                   scaleLabel: {
                     display: true,
-                    labelString: 'Error loss'
+                    labelString: this.$t('dashboard.data.errorLoss')
                   }
                 }
               }

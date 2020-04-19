@@ -8,18 +8,16 @@
           <div class="column is-6 is-narrow">
             <div class="container">
               <h1 class="title is-size-1">
-                Your new best friend.
+                {{ $t('home.introduction.title') }}
               </h1>
-              <h1 class="subtitle">
-                An open-source contextual chatbot built with an <strong>artificial neural network</strong>.
-              </h1>
+              <h1 class="subtitle" v-html="$t('home.introduction.text')"/>
               <div class="buttons">
                 <router-link class="button is-medium is-primary is-rounded" to="/chat">
-                  <strong>Chat online</strong>
+                  <strong>{{ $t('home.introduction.chat') }}</strong>
                 </router-link>
 
                 <a class="button is-medium is-rounded" href="https://github.com/olivia-ai">
-                  <strong>See the GitHub</strong>
+                  <strong>{{ $t('home.introduction.github') }}</strong>
                 </a>
               </div>
             </div>
@@ -56,24 +54,18 @@
 
           <div class="column is-6">
             <h1 class="title is-size-2">
-              Ability to speak
+              {{ $t('home.speakAbility.title') }}
             </h1>
-            <h1 class="subtitle">
-              Olivia can listen to you by saying <strong>“Hey Olivia”</strong> or clicking on the central button.<br>
-              She speak to reply you, unless you've disabled her voice.
-            </h1>
+            <h1 class="subtitle" v-html="$t('home.speakAbility.text')"/>
           </div>
         </div>
 
         <div class="columns is-centered is-vcentered">
           <div class="column is-6">
             <h1 class="title is-size-2">
-              Privacy
+              {{ $t('home.privacy.title') }}
             </h1>
-            <h1 class="subtitle">
-              Olivia respects your <strong>privacy</strong>. All the data used by Olivia is saved in <strong>your client</strong><br>
-              You own <strong>your data</strong>, simply as that.
-            </h1>
+            <h1 class="subtitle" v-html="$t('home.privacy.text')"/>
           </div>
 
           <div class="column is-4">
@@ -85,35 +77,28 @@
 
     <section class="hero is-light">
       <div class="hero-body has-text-centered">
-        <h1 class="title">Features</h1>
+        <h1 class="title">{{ $t('home.features.title') }}</h1>
         <div class="columns is-vcentered">
           <div class="column is-4 is-narrow">
             <h1 class="title">
               <b-icon size="is-medium" icon="cube-scan"></b-icon><br>
-              <span class="is-pink">1.</span> Completely modulable
+              <span class="is-pink">1.</span> {{ $t('home.features.modulable.title') }}
             </h1>
-            <p>
-              Olivia is organized in modules to facilitate the addition of new capabilities. These modules can be written in Go to execute multiple tasks.
-            </p>
+            <p>{{ $t('home.features.modulable.text') }}</p>
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
               <b-icon size="is-medium" icon="code-tags"></b-icon><br>
-              <span class="is-pink">2.</span> Fully open-source
+              <span class="is-pink">2.</span> {{ $t('home.features.openSource.title') }}
             </h1>
-            <p>
-              The project is entirely open-source from the website to the backend. Thus you can build your own chatbot and contribute to Olivia.
-            </p>
+            <p>{{ $t('home.features.openSource.text') }}</p>
           </div>
           <div class="column is-4 is-narrow">
             <h1 class="title">
               <b-icon size="is-medium" icon="cellphone"></b-icon><br>
-              <span class="is-pink">3.</span> Progressive web app
+              <span class="is-pink">3.</span> {{ $t('home.features.pwa.title') }}
             </h1>
-            <p>
-              You can directly add the PWA to your homescreen from the website, and you won't remember that it is
-              a website running behind this native-like app.
-            </p>
+            <p>{{ $t('home.features.pwa.text') }}</p>
           </div>
         </div>
       </div>

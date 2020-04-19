@@ -75,7 +75,7 @@
                     type="text"
                     v-model="input"
                     v-on:keyup.enter="send()"
-                    placeholder="Write your message"/>
+                    :placeholder="$t('chat.fieldPlaceholder')"/>
               </p>
             </div>
           </div>
@@ -109,7 +109,7 @@
   export default {
     data() {
       return {
-        message: 'What can I do for you?',
+        message: this.$t('chat.defaultMessage'),
         input: '',
         muted: localStorage.getItem('muted') === 'true',
         writing: false,
@@ -171,7 +171,7 @@
         // Generate the token
         if (localStorage.getItem('token') == null) {
           this.$buefy.snackbar.open({
-            message: `Hey, I'm Olivia. You can talk with me by writing in the field below, saying the hotword “Hey Olivia” or clicking the main circle and speak.`,
+            message: this.$t('chat.welcome'),
             duration: 5000,
             position: 'is-top'
           })

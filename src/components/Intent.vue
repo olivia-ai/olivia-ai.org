@@ -3,21 +3,21 @@
     <div class="card-content">
       <p class="title">{{ tag }}</p>
       <p class="subtitle">
-        <strong>Patterns</strong>:
+        <strong>{{ $t('dashboard.intents.patterns') }}</strong>:
         {{ patterns.join(' — ') }}
       </p>
       <p class="subtitle">
-        <strong>Responses</strong>:
+        <strong>{{ $t('dashboard.intents.responses') }}</strong>:
         {{ responses.join(' — ') }}
       </p>
 
       <p class="subtitle" v-if="context != ''">
-        <strong>Context</strong>:
+        <strong>{{ $t('dashboard.intents.context') }}</strong>:
         {{ context }}
       </p>
 
       <b-button rounded @click="$parent.close()">
-        Close
+        {{ $t('generic.close') }}
       </b-button>
       <b-button type="is-danger"
                 icon-left="delete"
@@ -25,7 +25,7 @@
                 @click="deleteIntent(tag)"
                 v-if="token != undefined"
                 style="float: right">
-        Delete
+        {{ $t('generic.delete') }}
       </b-button>
     </div>
   </div>

@@ -9,13 +9,13 @@
           <div class="columns is-centered">
             <div class="column is-2">
               <b-button rounded @click="credentialsModal = true">
-                <strong>Enter credentials</strong>
+                <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
               </b-button>
             </div>
 
             <div class="column is-2" v-if="token != undefined">
               <b-button class="is-primary" rounded @click="createIntentModal = true">
-                <strong>Create an intent</strong>
+                <strong>{{ $t('dashboard.intents.create.title')}}</strong>
               </b-button>
             </div>
 
@@ -26,7 +26,7 @@
                         @click="syncNetwork()"
                         v-if="token != undefined"
                         style="float: right">
-                <strong>Sync the model</strong>
+                <strong>{{ $t('dashboard.intents.sync')}}</strong>
               </b-button>
             </div>
           </div>
@@ -52,10 +52,10 @@
               <div class="card new-card">
                 <div class="card-content">
                   <p class="title">
-                    <b-tooltip label="Tag" v-if="intent.context == ''">
+                    <b-tooltip :label="$t('dashboard.intents.tag')" v-if="intent.context == ''">
                       <b-icon size="is-medium" class="is-pink" icon="tag-multiple"></b-icon>
                     </b-tooltip>
-                    <b-tooltip label="Contextual tag" v-else>
+                    <b-tooltip :label="$t('dashboard.intents.contextualTag')" v-else>
                       <b-icon size="is-medium" class="is-pink" icon="content-copy"></b-icon>
                     </b-tooltip>
                     {{ intent.tag }}
