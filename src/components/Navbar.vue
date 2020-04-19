@@ -14,6 +14,27 @@
     </div>
 
     <div id="navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <b-dropdown aria-role="list">
+          <a class="navbar-item" slot="trigger">
+            <b-icon class="media-left" icon="translate"/>
+          </a>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('en')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/en.png" width="30">
+              <h3>English</h3>
+            </div>
+          </b-dropdown-item>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('fr')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/fr.png" width="30">
+              <h3>Français</h3>
+            </div>
+          </b-dropdown-item>
+        </b-dropdown>
+      </div>
       <div class="navbar-end">
         <a class="navbar-item" href="https://docs.olivia-ai.org">
           <strong>
@@ -74,3 +95,14 @@
     </div>
   </nav>
 </template>
+
+<script>
+  export default {
+    methods: {
+      changeLocale(locale) {
+        this.$i18n.locale = locale
+        localStorage.setItem('language', locale)
+      }
+    }
+  }
+</script>
