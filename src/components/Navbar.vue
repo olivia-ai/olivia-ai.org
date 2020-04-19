@@ -33,6 +33,13 @@
               <h3>Français</h3>
             </div>
           </b-dropdown-item>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('es')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/es.png" width="30">
+              <h3>Español</h3>
+            </div>
+          </b-dropdown-item>
         </b-dropdown>
       </div>
       <div class="navbar-end">
