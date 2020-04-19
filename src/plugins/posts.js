@@ -25,6 +25,19 @@ export default {
         link: "https://github.com/hugolgst",
         picture: "https://avatars3.githubusercontent.com/u/15371828?s=460&u=46a045fe604f4e4275c48f0e09a8932784c85bf8&v=4"
       }
+    },
+    {
+      name: "Create intents using the website",
+      date: "April 19, 2020",
+      description: "Create your own intents in your instance of Olivia directly using the website.",
+      path: "create-intents-via-the-website",
+      content: require("../../public/blog/create-intents-via-the-website/post.md").default,
+      author: {
+        name: "Hugo Lageneste",
+        id: "@hugolgst",
+        link: "https://github.com/hugolgst",
+        picture: "https://avatars3.githubusercontent.com/u/15371828?s=460&u=46a045fe604f4e4275c48f0e09a8932784c85bf8&v=4"
+      }
     }
   ]
 }
