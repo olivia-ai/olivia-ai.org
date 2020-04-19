@@ -22,7 +22,7 @@
   },
   "home": {
     "introduction": {
-      "title": "Tu nuevo mejor amigo.",
+      "title": "Tu nueva mejor amiga.",
       "text": "Un chatbot contextual y de código abierto, creado a partir de una <strong>red neuronal artificial</strong>.",
       "chat": "Chat en línea",
       "github": "Ver en GitHub"
@@ -96,7 +96,7 @@
     "email": "correo electrónico"
   },
   "footer": {
-    "bestFriend": "Tu nuevo mejor amigo",
+    "bestFriend": "Tu nueva mejor amiga.",
     "location": "Ginebra, Suiza",
     "license": "Con licencia <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
     "about": {
