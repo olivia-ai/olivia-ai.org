@@ -3,7 +3,10 @@
     <div class="hero-body">
       <div class="hero-body">
         <div class="columns is-centered">
-          <div class="column is-8">
+          <div class="column is-2">
+            <img src="/img/hugo.jpeg"/>
+          </div>
+          <div class="column is-6">
             <h1 class="title">
               Hugo Lageneste<span class="subtitle">, {{ calculateAge("2002-12-04") }} {{ $t('creator.age') }}</span>
             </h1>
@@ -13,23 +16,15 @@
             <h2 class="subtitle" v-html="$t('creator.skills')"/>
             <h2 class="subtitle">
               <div class="columns">
-                <div class="column is-2">
-                  <a href="https://github.com/hugolgst">
-                    ● github
-                  </a>
-                </div>
-
-                <div class="column is-2">
-                  <a href="https://www.linkedin.com/in/hugolageneste/">
-                    ● linkedin
-                  </a>
-                </div>
-
-                <div class="column is-2">
-                  <a href="mailto:hugo.lageneste@pm.me">
-                    ● {{ $t('creator.email') }}
-                  </a>
-                </div>
+                <a
+                  v-for="social in socials"
+                  :key="social.icon"
+                  :href="social.link"
+                  style="padding-left: 0.75rem">
+                  <b-icon
+                    :icon="social.icon"
+                    size="is-medium"/>
+                </a>
               </div>
             </h2>
           </div>
@@ -41,6 +36,16 @@
 
 <script>
   export default {
+    data () {
+      return {
+        socials: [
+          { link: 'https://github.com/hugolgst', icon: 'github' },
+          { link: 'https://www.linkedin.com/in/hugolageneste/', icon: 'linkedin' },
+          { link: 'https://instagram.com/hugolgst', icon: 'instagram' },
+          { link: 'mailto:hugo.lageneste@pm.me', icon: 'email' },
+        ]
+      }
+    },
     methods: {
       calculateAge(birthday) {
         let date = new Date(birthday)
