@@ -2,9 +2,10 @@
   <div class="hero is-fullheight">
     <b-navbar class="is-spaced">
       <template slot="brand">
-        <a @click="$router.back()">
+        <a style="padding-right: 5px" @click="$router.back()">
           <b-icon icon="arrow-left"></b-icon>
         </a>
+        <locale-switch @change="() => { loadVoice(); loadRecognition(); }"/>
       </template>
     </b-navbar>
 
@@ -84,6 +85,8 @@
 </template>
 
 <script>
+  import LocaleSwitch from '@/components/LocaleSwitch'
+
   document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -105,6 +108,7 @@
   });
 
   export default {
+    components: { LocaleSwitch },
     data() {
       return {
         message: this.$t('chat.defaultMessage'),
@@ -233,8 +237,10 @@
       },
 
       loadVoice() {
-        this.voice = speechSynthesis.getVoices().find(voice => {
-          let language = this.languages[localStorage.getItem('language')]
+        this.message = this.$t('chat.defaultMessage')
+        this.voice = speechSynthesis.getVoices().find((voice) => {
+          let locale = this.$i18n.locale
+          let language = this.languages[locale]
 
           return (voice.lang.startsWith(language.lang) && voice.name.includes("Female")) || voice.name.includes(language.name)
         })
