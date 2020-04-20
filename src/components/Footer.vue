@@ -44,7 +44,7 @@
               <div class="column">
                 <h6 class="title is-6">{{ $t('footer.information.title') }}</h6>
                 <ul>
-                  <li><a class="has-text-dark" href="https://olivia-ai.org/hugo">{{ $t('footer.information.creator') }}</a></li>
+                  <li><router-link class="has-text-dark" to="/hugo">{{ $t('footer.information.creator') }}</router-link></li>
                   <li><a class="has-text-dark" href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">{{ $t('footer.information.license') }}</a></li>
                 </ul>
               </div>

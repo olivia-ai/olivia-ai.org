@@ -3,13 +3,13 @@
     <div class="hero-body">
       <div class="columns is-multiline is-centered">
         <div class="column is-4" v-for="post in posts" :key="post.name">
-          <router-link :to="'/blog/' + post.path">
+          <router-link :to="`/blog/${post.path}`">
             <!-- POST CARD -->
             <div class="card">
               <!-- THUMBMAIL -->
               <div class="card-image">
                 <figure class="image">
-                  <img :src="'/blog/' + post.path + '/thumbmail.png'" alt="Thumbmail">
+                  <img :src="`/blog/${post.path}/thumbmail.png`" :alt="`Thumbnail: ${post.name}`">
                 </figure>
               </div>
 

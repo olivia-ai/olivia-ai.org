@@ -1,11 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
+
 import Resource from 'vue-resource'
 import Buefy from 'buefy'
-import './registerServiceWorker'
+import '@/registerServiceWorker'
+import router from '@/plugins/router'
+import i18n from '@/plugins/i18n'
+
 import 'bulma-timeline/dist/css/bulma-timeline.min.css'
-import router from './plugins/router'
-import i18n from './plugins/i18n'
 
 Vue.use(Buefy)
 Vue.use(Resource)

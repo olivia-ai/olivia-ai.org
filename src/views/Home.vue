@@ -25,7 +25,7 @@
 
           <!-- IMAGE -->
           <div class="column is-6 is-narrow">
-            <img src="img/oliviaiphone11ipadpro.jpg" alt="Mockup iPhone 11 Pro">
+            <img src="/img/oliviaiphone11ipadpro.jpg" alt="Mockup iPhone 11 Pro">
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
           </div>
 
           <div class="column is-4">
-            <img src="img/olivia-privacy.png" width="350">
+            <img src="/img/olivia-privacy.png" width="350">
           </div>
         </div>
       </div>
