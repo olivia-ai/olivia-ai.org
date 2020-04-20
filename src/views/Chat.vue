@@ -2,20 +2,18 @@
   <div class="hero is-fullheight">
     <b-navbar class="is-spaced">
       <template slot="brand">
-        <router-link
-            class="navbar-item"
-            to="/">
+        <a @click="$router.back()">
           <b-icon icon="arrow-left"></b-icon>
-        </router-link>
+        </a>
       </template>
     </b-navbar>
 
     <audio id="sound-on">
-      <source src="../../public/sounds/on.mp3" type="audio/mpeg">
+      <source src="/sounds/on.mp3" type="audio/mpeg">
     </audio>
 
     <audio id="sound-off">
-      <source src="../../public/sounds/off.mp3" type="audio/mpeg">
+      <source src="/sounds/off.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Olivia's answer -->

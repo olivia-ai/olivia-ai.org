@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            <img width="450" src="../../../public/img/olivia-dashboard.png" alt="Olivia Dashboard">
+            <img width="450" src="/img/olivia-dashboard.png" alt="Olivia Dashboard">
           </h1>
           <div class="columns is-centered">
             <div class="column is-2">
