@@ -115,7 +115,25 @@
         writing: false,
         writing_text: '...',
         url: null,
-        hotwordAppeared: false
+        hotwordAppeared: false,
+        languages: {
+          "en": {
+            lang: "en-GB",
+            name: "Samantha"
+          },
+          "ca": {
+            lang: "ca",
+            name: ""
+          },
+          "fr": {
+            lang: "fr",
+            name: ""
+          },
+          "es": {
+            lang: "es-ES",
+            name: "Jorge"
+          }
+        }
       }
     },
     methods: {
@@ -214,6 +232,51 @@
         })
 
         this.websocket.onclose = this.initSocket
+      },
+
+      loadVoice() {
+        this.voice = speechSynthesis.getVoices().find(voice => {
+          let language = this.languages[localStorage.getItem('language')]
+
+          return (voice.lang.startsWith(language.lang) && voice.name.includes("Female")) || voice.name.includes(language.name)
+        })
+
+        if (this.voice === undefined) {
+          this.voice = speechSynthesis.getVoices().find(voice => {
+            return (voice.lang.startsWith("en") && voice.name.includes("Female")) || voice.name.includes("Samantha")
+          })
+        }
+
+        console.log(this.voice.lang + ' voice loaded.')
+      },
+
+      loadRecognition() {
+        if (typeof webkitSpeechRecognition !== "undefined") {
+          const SpeechRecognition = webkitSpeechRecognition
+          const recognition = new SpeechRecognition()
+
+          recognition.lang = this.languages[localStorage.getItem('language')].lang
+          recognition.start()
+          recognition.onresult = (event) => {
+            let input = event.results[0][0].transcript
+
+            if (this.hotwordAppeared) {
+              this.hotwordAppeared = false
+              document.getElementById("sound-off").play()
+              this.input = input
+              this.send()
+            }
+
+            if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
+              this.hotwordAppeared = true
+              document.getElementById("sound-on").play()
+            }
+          }
+
+          recognition.onend = function() {
+            recognition.start();
+          };
+        }
       }
     },
     mounted() {
@@ -227,37 +290,12 @@
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
-        this.voice = speechSynthesis.getVoices().find(voice => (voice.lang === "en-GB" && voice.name.includes("Female")) || voice.name.includes("Samantha"))
+        this.loadVoice()
       }
 
       this.initSocket()
 
-      if (typeof webkitSpeechRecognition !== "undefined") {
-        const SpeechRecognition = webkitSpeechRecognition
-        const recognition = new SpeechRecognition()
-
-        recognition.lang = "en-US"
-        recognition.start()
-        recognition.onresult = (event) => {
-          let input = event.results[0][0].transcript
-
-          if (this.hotwordAppeared) {
-            this.hotwordAppeared = false
-            document.getElementById("sound-off").play()
-            this.input = input
-            this.send()
-          }
-
-          if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
-            this.hotwordAppeared = true
-            document.getElementById("sound-on").play()
-          }
-        }
-
-        recognition.onend = function() {
-          recognition.start();
-        };
-      }
+      this.loadRecognition()
 
       setInterval(() => {
         this.writing_text += '.'
