@@ -20,24 +20,15 @@
             <b-icon class="media-left" icon="translate"/>
           </a>
 
-          <b-dropdown-item aria-role="listitem" @click="changeLocale('en')">
+          <b-dropdown-item
+            v-for="lang in locales"
+            :key="lang.locale"
+            :class="{ 'is-active': $i18n.locale === lang.locale }"
+            aria-role="listitem"
+            @click="changeLocale(lang.locale)">
             <div class="media">
-              <img class="media-left" src="/img/locales/en.png" width="30">
-              <h3>English</h3>
-            </div>
-          </b-dropdown-item>
-
-          <b-dropdown-item aria-role="listitem" @click="changeLocale('fr')">
-            <div class="media">
-              <img class="media-left" src="/img/locales/fr.png" width="30">
-              <h3>Français</h3>
-            </div>
-          </b-dropdown-item>
-
-          <b-dropdown-item aria-role="listitem" @click="changeLocale('es')">
-            <div class="media">
-              <img class="media-left" src="/img/locales/es.png" width="30">
-              <h3>Español</h3>
+              <img class="media-left" :src="`/img/locales/${lang.locale}.png`" width="30">
+              <h3>{{ lang.name }}</h3>
             </div>
           </b-dropdown-item>
         </b-dropdown>
@@ -105,6 +96,15 @@
 
 <script>
   export default {
+    data () {
+      return {
+        locales: [
+          { locale: 'en', name: 'English' },
+          { locale: 'fr', name: 'Français' },
+          { locale: 'es', name: 'Español' },
+        ]
+      }
+    },
     methods: {
       changeLocale(locale) {
         this.$i18n.locale = locale
