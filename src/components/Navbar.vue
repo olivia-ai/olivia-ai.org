@@ -31,6 +31,13 @@
               <h3>{{ lang.name }}</h3>
             </div>
           </b-dropdown-item>
+
+          <b-dropdown-item aria-role="listitem" @click="changeLocale('ca')">
+            <div class="media">
+              <img class="media-left" src="/img/locales/ca.png" width="30">
+              <h3>Català</h3>
+            </div>
+          </b-dropdown-item>
         </b-dropdown>
       </div>
       <div class="navbar-end">
