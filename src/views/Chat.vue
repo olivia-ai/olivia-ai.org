@@ -2,10 +2,13 @@
   <div class="hero is-fullheight">
     <b-navbar class="is-spaced">
       <template slot="brand">
-        <a style="padding-right: 5px" @click="$router.back()">
+        <router-link
+            class="navbar-item"
+            to="/">
           <b-icon icon="arrow-left"></b-icon>
-        </a>
-        <locale-switch @change="() => { loadVoice(); loadRecognition(); }"/>
+        </router-link>
+
+        <locale-switch navbar @change="() => { loadVoice(); loadRecognition(); }"/>
       </template>
     </b-navbar>
 
