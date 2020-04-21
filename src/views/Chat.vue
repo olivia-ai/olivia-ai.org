@@ -8,7 +8,7 @@
           <b-icon icon="arrow-left"></b-icon>
         </router-link>
 
-        <locale-switch navbar @change="() => { loadVoice(); loadRecognition(); }"/>
+        <locale-switch navbar @change="() => { loadSpeechApi(); }"/>
       </template>
     </b-navbar>
 
@@ -127,8 +127,8 @@
             name: "Samantha"
           },
           "ca": {
-            lang: "ca",
-            name: ""
+            lang: "es-ES",
+            name: "Monica"
           },
           "fr": {
             lang: "fr",
@@ -136,7 +136,7 @@
           },
           "es": {
             lang: "es-ES",
-            name: "Jorge"
+            name: "Monica"
           }
         }
       }
@@ -155,11 +155,25 @@
       },
 
       mute() {
+        let locale = this.$i18n.locale
+        let availableInLang = this.languages[locale].lang.startsWith(locale)
+        if (!availableInLang) {
+          this.alertNotAvailable()
+          return
+        }
+
         this.muted = !this.muted
         localStorage.setItem('muted', this.muted)
       },
 
       dictate() {
+        let locale = this.$i18n.locale
+        let availableInLang = this.languages[locale].lang.startsWith(locale)
+        if (!availableInLang) {
+          this.alertNotAvailable()
+          return
+        }
+
         this.hotwordAppeared = true
         document.getElementById("sound-on").play()
       },
@@ -239,8 +253,42 @@
         this.websocket.onclose = this.initSocket
       },
 
+      loadSpeechApi() {
+        let locale = this.$i18n.locale
+        let availableInLang = this.languages[locale].lang.startsWith(locale)
+        if (!availableInLang) {
+          // Mute Olivia
+          this.muted = true
+          localStorage.setItem('muted', this.muted)
+
+          // Send an alert to tell the user that this lang isn't available
+          this.$buefy.snackbar.open({
+            message: this.$t('chat.voiceNotAvailable'),
+            duration: 5000,
+            position: 'is-top',
+            type: 'is-warning',
+          })
+
+          return
+        }
+
+        this.loadVoice()
+        this.loadRecognition()
+      },
+
+      alertNotAvailable() {
+        // Send an alert to tell the user that this lang isn't available
+        this.$buefy.snackbar.open({
+          message: this.$t('chat.voiceNotAvailable'),
+          duration: 5000,
+          position: 'is-top',
+          type: 'is-warning',
+        })
+      },
+
       loadVoice() {
         this.message = this.$t('chat.defaultMessage')
+
         this.voice = speechSynthesis.getVoices().find((voice) => {
           let locale = this.$i18n.locale
           let language = this.languages[locale]
@@ -297,12 +345,10 @@
 
       // Wait that the voices are loaded to choose the right one
       window.speechSynthesis.onvoiceschanged = () => {
-        this.loadVoice()
+        this.loadSpeechApi()
       }
 
       this.initSocket()
-
-      this.loadRecognition()
 
       setInterval(() => {
         this.writing_text += '.'
