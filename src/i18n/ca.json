@@ -29,7 +29,7 @@
     },
     "speakAbility": {
       "title": "Capacitat de parla",
-      "text": "Olivia pot sentir-te dient <strong>“Hola Olivia”</strong> o prement el botó central.<br>Et respondrà a menys que li hagis desactivat la veu."
+      "text": "Olivia pot sentir-te dient <strong>“Hey Olivia”</strong> o prement el botó central.<br>Et respondrà a menys que li hagis desactivat la veu."
     },
     "privacy": {
       "title": "Privacitat",

@@ -10,6 +10,22 @@
 
         <locale-switch navbar @change="() => { loadSpeechApi(); }"/>
       </template>
+
+      <template slot="end">
+        <b-icon class="navbar-item" icon="volume-high"></b-icon>
+
+        <p class="navbar-item">
+          <b-field expanded style="width: 100px">
+            <b-slider
+                size="is-small"
+                rounded
+                v-model="volume"
+                lazy
+                :custom-formatter="val => val + '%'">
+            </b-slider>
+          </b-field>
+        </p>
+      </template>
     </b-navbar>
 
     <audio id="sound-on">
@@ -114,6 +130,7 @@
     components: { LocaleSwitch },
     data() {
       return {
+        volume: 50,
         message: this.$t('chat.defaultMessage'),
         input: '',
         muted: localStorage.getItem('muted') === 'true',
@@ -150,7 +167,8 @@
         const message = new SpeechSynthesisUtterance(text.replace(/<.+>/, ""))
 
         message.voice = this.voice
-        message.lang = "en-US"
+        message.volume = this.volume / 100
+
         window.speechSynthesis.speak(message)
       },
 
@@ -335,6 +353,11 @@
       }
     },
     mounted() {
+      if (localStorage.getItem("volume") === undefined) {
+        localStorage.setItem("volume", "50")
+        this.volume = 50
+      }
+
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
@@ -350,11 +373,18 @@
 
       this.initSocket()
 
+      let oldVolume
       setInterval(() => {
         this.writing_text += '.'
         if (this.writing_text.length === 4) {
           this.writing_text = '.'
         }
+
+        // Save the volume in localStorage
+        if (oldVolume != this.volume) {
+          localStorage.setItem("volume", this.volume)
+        }
+        oldVolume = this.volume
       }, 300)
     }
   }
