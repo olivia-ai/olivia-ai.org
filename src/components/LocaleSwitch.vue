@@ -7,7 +7,7 @@
     <b-dropdown-item
       v-for="lang in locales"
       :key="lang.locale"
-      :class="{ 'is-active': $i18n.locale === lang.locale }"
+      :class="{ 'language-active': $i18n.locale === lang.locale }"
       aria-role="listitem"
       @click="changeLocale(lang.locale)">
       <div class="media">
@@ -17,6 +17,14 @@
     </b-dropdown-item>
   </b-dropdown>
 </template>
+
+
+<style>
+  .language-active {
+    background-color: #f5f5f5;
+    color: #1b1b1b;
+  }
+</style>
 
 <script>
   export default {

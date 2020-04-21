@@ -1,122 +1,122 @@
 {
   "generic": {
-    "close": "Fermer",
-    "create": "Créer",
-    "save": "Sauvegarder",
-    "delete": "Supprimer"
+    "close": "Tancar",
+    "create": "Crear",
+    "save": "Salvar",
+    "delete": "Suprimir"
   },
   "navbar": {
-    "documentation": "Documentation",
-    "changelog": "Journal des modifications",
-    "blog": "Blog",
-    "dashboard": "Tableau de bord",
+    "documentation": "Documentació",
+    "changelog": "Revista de canvis",
+    "blog": "Bloc",
+    "dashboard": "Tauler de comandament",
     "intents": {
       "title": "Intents",
-      "text": "Où vous pouvez ajouter des intents"
+      "text": "On podeu afegir intents"
     },
     "data": {
-      "title": "Données",
-      "text": "Pour obtenir des données d'entraînement"
+      "title": "Dades",
+      "text": "Per obtenir dades de formació"
     },
-    "chat": "Discussion"
+    "chat": "Discussió"
   },
   "home": {
     "introduction": {
-      "title": "Votre nouvelle meilleure amie.",
-      "text": "Un chatbot contextuel et open-source, créé à partir d'un <strong>réseau neuronal artificiel</strong>.",
-      "chat": "Discutez en ligne",
-      "github": "Voir sur GitHub"
+      "title": "La teva nova millor amiga.",
+      "text": "Un chatbot contextual i de codi obert, creat a partir d’una <strong>xarxa neuronal artificial</strong>.",
+      "chat": "Xateja en línia",
+      "github": "Veure a GitHub"
     },
     "speakAbility": {
-      "title": "Capacité à parler",
-      "text": "Olivia peut vous écouter en disant <strong>“Hey Olivia”</strong> ou en cliquant sur le bouton central.<br>Elle parle pour vous répondre, à moins que vous ayez désactivé sa voix."
+      "title": "Capacitat de parlar",
+      "text": "Olivia us pot escoltar dient <strong> “Hey Olivia” </strong> o fent clic al botó central. <br> Parla per respondre-vos, tret que hagueu desactivat la seva veu."
     },
     "privacy": {
-      "title": "Vie privée",
-      "text": "Olivia respecte votre <strong>vie privée</strong>. Toutes les données utilisées par Olivia sont sauvegardées dans <strong>votre client</strong><br>Vous possédez <strong>vos propres données</strong>, c'est aussi simple que ça."
+      "title": "Privacitat",
+      "text": "Olivia respecta la vostra <strong>privadesa</strong>. Totes les dades utilitzades per Olivia es guarden a <strong>el vostre client</strong><br>Teniu <strong>les vostres pròpies dades</strong>, és tan senzill."
     },
     "features": {
-      "title": "Fonctionnalités",
+      "title": "Característiques",
       "modulable": {
-        "title": "Complètement modulable",
-        "text": "Olivia est organisée en modules pour faciliter l'ajout de nouvelles fonctionnalités. Ces modules peuvent être écrits en Go pour exécuter plusieurs tâches."
+        "title": "Totalment modular",
+        "text": "Olivia s’organitza en mòduls per facilitar l’addició de noves funcionalitats. Aquests mòduls es poden escriure en Go per realitzar diverses tasques."
       },
       "openSource": {
-        "title": "Entièremment open-source",
-        "text": "Le projet est entièremment open-source du site web jusqu'au serveur. Ainsi pouvez-vous construire votre propre chatbot et contribuer à Olivia."
+        "title": "Completament de codi obert",
+        "text": "El projecte és completament de codi obert des de la pagina web al servidor. Així que podeu crear el vostre propi chatbot i contribuir a Olivia."
       },
       "pwa": {
-        "title": "Application web progressive (PWA)",
-        "text": "Vous pouvez directement ajouter l'application web à votre écran d'accueil depuis le site, et vous ne vous souviendrez plus que c'est un site fonctionnant derrière cette application à l'apparence native."
+        "title": "Aplicació web progressiva (PWA)",
+        "text": "Podeu afegir directament l'aplicació web a la pantalla d'inici des de la pàgina web i ja no recordareu que es tracta d'una pàgina web que funciona darrere d'aquesta aplicació d'aspecte nadiu."
       }
     }
   },
   "changelog": {
-    "april2020": "Avril 2020",
-    "march2020": "Mars 2020",
-    "january2020": "Janvier 2020",
-    "august2019": "Août 2019",
-    "start": "Lancement"
+    "april2020": "Abril 2020",
+    "march2020": "Març 2020",
+    "january2020": "Gener 2020",
+    "august2019": "Agost 2019",
+    "start": "Llançament"
   },
   "chat": {
-    "welcome": "Salut, je suis Olivia. Vous pouvez me parler en écrivant dans le champ ci-dessous, en disant le mot-clé “Hey Olivia” ou en cliquant le cercle principal puis en parlant.",
-    "defaultMessage": "Que puis-je faire pour vous?",
-    "fieldPlaceholder": "Écrivez votre message"
+    "welcome": "Hola, sóc l'Olivia. Podeu parlar-me escrivint al camp següent, dient la paraula clau “Hey Olivia” o fent clic al cercle principal i parlant.",
+    "defaultMessage": "Què puc fer per tu?",
+    "fieldPlaceholder": "Escriu el teu missatge"
   },
   "dashboard": {
     "data": {
-      "intentsTags": "Tags des intents",
-      "errorLoss": "Perte de la fonction erreur",
-      "errorLossText": "Perte de la fonction erreur du réseau de neurones",
-      "networkIterations": "Itérations du réseau",
-      "hiddenLayers": "Couches masquées",
-      "learningTime": "Temps d'apprentissage",
-      "learningRate": "Taux d'apprentissage"
+      "intentsTags": "Etiquetes dels intents",
+      "errorLoss": "Pèrdua d’error",
+      "errorLossText": "Pèrdua de la funció d’error de xarxa neuronal",
+      "networkIterations": "Iteracions de xarxa",
+      "hiddenLayers": "Capes ocultes",
+      "learningTime": "Temps d’aprenentatge",
+      "learningRate": "Taxa d’aprenentatge"
     },
     "intents": {
       "credentials": {
-        "title": "Identifiants",
-        "enter": "Entrer les identifiants",
+        "title": "Identificadors",
+        "enter": "Introduïu els identificadors",
         "token": {
-          "title": "Jeton",
-          "text": "Le jeton d'autentification"
+          "title": "Testimoni",
+          "text": "El testimoni d'autenticació"
         }
       },
       "create": {
-        "title": "Créer un intent"
+        "title": "Crear un intent"
       },
-      "sync": "Synchroniser le modèle",
+      "sync": "Sincronitza el model",
 
-      "patterns": "Modèles",
-      "responses": "Réponses",
-      "tag": "Tag",
-      "contextualTag": "Tag contextuel",
-      "context": "Contexte"
+      "patterns": "Models",
+      "responses": "Respostes",
+      "tag": "Etiqueta",
+      "contextualTag": "Etiqueta contextual",
+      "context": "Context"
     }
   },
   "creator": {
-    "age": "ans.",
-    "location": "Basé à <strong>Genève, Suisse</strong>.",
-    "studies": "Étudiant au <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. Option <strong>Sciences de la Vie et de la Terre</strong>, spécialisation dans les <strong>sciences informatiques</strong>.",
-    "olivia": "Créateur et mainteneur d'<strong>Olivia, un projet de 1.500 étoiles</strong> sur <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
-    "skills": "Compétences: langages de programmation: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
-    "email": "courriel"
+    "age": "anys.",
+    "location": "Basat en <strong>Ginebra, Suïssa</strong>.",
+    "studies": "Estudiant a <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. Opció <strong> Ciències de la vida i de la Terra </strong>, especialització en <strong> ciències de la informàtica </strong>.",
+    "olivia": "Creador i mantenidor de <strong> Olivia, un projecte de 1.500 estrelles </strong> a <a href='https://github.com/olivia-ai/olivia'> GitHub </a>",
+    "skills": "Habilitats: llenguatges de programació: <strong> Go, JS, Ruby, Crystal, Python </strong>, tecnologies: <strong> Ruby on Rails, Vue.js, LaTeX, Docker, Git </strong>",
+    "email": "correu electrònic"
   },
   "footer": {
-    "bestFriend": "Votre nouvelle meilleure amie",
-    "location": "Genève, Suisse",
-    "license": "Sous licence <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "bestFriend": "La teva nova millor amiga.",
+    "location": "Ginebra, Suïssa",
+    "license": "Llicenciat <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
     "about": {
-      "title": "À propos",
-      "contact": "Contact"
+      "title": "Sobre",
+      "contact": "Contacte"
     },
     "information": {
-      "title": "Informations",
-      "creator": "Créateur",
-      "license": "Licence"
+      "title": "Informació",
+      "creator": "Creador",
+      "license": "Llicència"
     },
     "community": {
-      "title": "Communauté"
+      "title": "Comunitat"
     }
   }
 }

@@ -6,28 +6,33 @@
           <h1 class="title">
             <img width="450" src="/img/olivia-dashboard.png" alt="Olivia Dashboard">
           </h1>
+
           <div class="columns is-centered">
-            <div class="column is-2">
-              <b-button rounded @click="credentialsModal = true">
-                <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
-              </b-button>
-            </div>
+            <div class="column is-6">
+              <b-field grouped>
+                <p class="control">
+                  <b-button rounded @click="credentialsModal = true">
+                    <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
+                  </b-button>
+                </p>
 
-            <div class="column is-2" v-if="token != undefined">
-              <b-button class="is-primary" rounded @click="createIntentModal = true">
-                <strong>{{ $t('dashboard.intents.create.title')}}</strong>
-              </b-button>
-            </div>
+                <p class="control">
+                  <b-button class="is-primary" rounded @click="createIntentModal = true">
+                    <strong>{{ $t('dashboard.intents.create.title')}}</strong>
+                  </b-button>
+                </p>
 
-            <div class="column is-2" v-if="token != undefined">
-              <b-button
-                        icon-left="sync"
-                        rounded
-                        @click="syncNetwork()"
-                        v-if="token != undefined"
-                        style="float: right">
-                <strong>{{ $t('dashboard.intents.sync')}}</strong>
-              </b-button>
+                <p class="control">
+                  <b-button
+                      icon-left="sync"
+                      rounded
+                      @click="syncNetwork()"
+                      v-if="token != undefined"
+                      style="float: right">
+                    <strong>{{ $t('dashboard.intents.sync')}}</strong>
+                  </b-button>
+                </p>
+              </b-field>
             </div>
           </div>
         </div>
