@@ -272,6 +272,8 @@
       },
 
       loadSpeechApi() {
+        this.message = this.$t('chat.defaultMessage')
+
         let locale = this.$i18n.locale
         let availableInLang = this.languages[locale].lang.startsWith(locale)
         if (!availableInLang) {
@@ -305,8 +307,6 @@
       },
 
       loadVoice() {
-        this.message = this.$t('chat.defaultMessage')
-
         this.voice = speechSynthesis.getVoices().find((voice) => {
           let locale = this.$i18n.locale
           let language = this.languages[locale]
@@ -353,27 +353,24 @@
       }
     },
     mounted() {
+      let loader = this.$buefy.loading.open()
+
       if (localStorage.getItem("volume") === undefined) {
         localStorage.setItem("volume", "50")
         this.volume = 50
       }
 
       this.url = process.env.VUE_APP_URL
-      if (this.url == undefined) {
+      if (this.url === undefined) {
         this.url = "wss://olivia-api.herokuapp.com"
       }
       this.url += "/websocket"
 
       this.createUserInformations()
-
-      // Wait that the voices are loaded to choose the right one
-      window.speechSynthesis.onvoiceschanged = () => {
-        this.loadSpeechApi()
-      }
-
       this.initSocket()
 
       let oldVolume
+      let loaded = false
       setInterval(() => {
         this.writing_text += '.'
         if (this.writing_text.length === 4) {
@@ -381,10 +378,16 @@
         }
 
         // Save the volume in localStorage
-        if (oldVolume != this.volume) {
+        if (oldVolume !== this.volume) {
           localStorage.setItem("volume", this.volume)
         }
         oldVolume = this.volume
+
+        if (speechSynthesis.getVoices().length != 0 && !loaded) {
+          loader.close()
+          this.loadSpeechApi()
+          loaded = true
+        }
       }, 300)
     }
   }
