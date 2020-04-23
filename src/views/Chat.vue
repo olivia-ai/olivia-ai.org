@@ -138,6 +138,7 @@
         writing_text: '...',
         url: null,
         hotwordAppeared: false,
+        voicesLoaded: false,
         languages: {
           "en": {
             lang: "en-GB",
@@ -204,7 +205,8 @@
             type: 1,
             content: this.input,
             user_token: localStorage.getItem('token'),
-            information: JSON.parse(localStorage.getItem('information'))
+            information: JSON.parse(localStorage.getItem('information')),
+            locale: this.$i18n.locale
           })
         )
 
@@ -370,7 +372,6 @@
       this.initSocket()
 
       let oldVolume
-      let loaded = false
       setInterval(() => {
         this.writing_text += '.'
         if (this.writing_text.length === 4) {
@@ -383,10 +384,10 @@
         }
         oldVolume = this.volume
 
-        if (speechSynthesis.getVoices().length != 0 && !loaded) {
+        if (speechSynthesis.getVoices().length !== 0 && !this.voicesLoaded) {
+          this.voicesLoaded = true
           loader.close()
           this.loadSpeechApi()
-          loaded = true
         }
       }, 300)
     }
