@@ -150,7 +150,7 @@
           },
           "fr": {
             lang: "fr",
-            name: ""
+            name: "Amelie"
           },
           "es": {
             lang: "es-ES",
