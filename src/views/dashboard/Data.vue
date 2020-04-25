@@ -105,13 +105,15 @@
       }
     },
     async mounted() {
+      let loader = this.$buefy.loading.open()
+
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
       }
       this.url = this.url.replace("ws", "http")
 
-      this.$http.get(this.url + '/api/dashboard').then(
+      this.$http.get(this.url + '/api/' + this.$i18n.locale + '/dashboard').then(
         data => {
           this.data = data.body
           let errors = data.body.training.errors
@@ -160,6 +162,8 @@
               }
             }
           })
+
+          loader.close()
         }
       )
     }

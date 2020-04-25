@@ -8,31 +8,25 @@
           </h1>
 
           <div class="columns is-centered">
-            <div class="column is-6">
-              <b-field grouped>
-                <p class="control">
-                  <b-button rounded @click="credentialsModal = true">
-                    <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
-                  </b-button>
-                </p>
+            <div class="column is-3">
+              <b-button rounded @click="credentialsModal = true">
+                <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
+              </b-button>
+            </div>
 
-                <p class="control">
-                  <b-button class="is-primary" rounded @click="createIntentModal = true">
-                    <strong>{{ $t('dashboard.intents.create.title')}}</strong>
-                  </b-button>
-                </p>
+            <div class="column is-3">
+              <b-button class="is-primary" rounded @click="createIntentModal = true">
+                <strong>{{ $t('dashboard.intents.create.title')}}</strong>
+              </b-button>
+            </div>
 
-                <p class="control">
-                  <b-button
-                      icon-left="sync"
-                      rounded
-                      @click="syncNetwork()"
-                      v-if="token != undefined"
-                      style="float: right">
-                    <strong>{{ $t('dashboard.intents.sync')}}</strong>
-                  </b-button>
-                </p>
-              </b-field>
+            <div class="column is-3" v-if="token != undefined">
+              <b-button
+                  icon-left="sync"
+                  rounded
+                  @click="syncNetwork()">
+                <strong>{{ $t('dashboard.intents.sync')}}</strong>
+              </b-button>
             </div>
           </div>
         </div>
@@ -134,12 +128,6 @@
       CreateIntent
     },
     methods: {
-      getIntents() {
-        this.$http.get(this.url + '/api/intents').then(data => {
-          this.intents = data.body
-        })
-      },
-
       openIntentModal(intent) {
         this.$buefy.modal.open({
           parent: this,
@@ -149,7 +137,7 @@
       },
 
       syncNetwork() {
-        this.$http.post(this.url + '/api/train', {}, {
+        this.$http.post(this.url + '/api/' + this.$i18n.locale + '/train', {}, {
           headers: {
             'Olivia-Token': localStorage.getItem('Olivia-Token')
           }
@@ -165,13 +153,18 @@
       }
     },
     mounted() {
+      let loader = this.$buefy.loading.open()
+
       this.url = process.env.VUE_APP_URL
       if (this.url == undefined) {
         this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
       }
       this.url = this.url.replace("ws", "http")
 
-      this.getIntents()
+      this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
+        this.intents = data.body
+        loader.close()
+      })
     }
   }
 </script>
