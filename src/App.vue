@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <navbar v-if="$route.path !== '/chat'"></navbar>
+    <navbar v-if="$route.path !== '/chat'"/>
 
-    <router-view></router-view>
+    <router-view/>
 
-    <app-footer v-if="$route.path !== '/chat'"></app-footer>
+    <app-footer v-if="$route.path !== '/chat'"/>
   </div>
 </template>
 
 <script>
-  import Navbar from '@/components/Navbar'
-  import AppFooter from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import AppFooter from '@/components/Footer'
 
-  export default {
-    name: 'App',
-    components: {
-      Navbar,
-      AppFooter
-    }
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    AppFooter
   }
+}
 </script>
 
 <style lang="scss">

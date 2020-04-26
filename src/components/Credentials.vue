@@ -7,20 +7,24 @@
       <section class="modal-card-body">
         <b-field :label="$t('dashboard.intents.credentials.token.title')">
           <b-input
-              type="text"
-              v-model="token"
-              :placeholder="$t('dashboard.intents.credentials.token.text')"
-              required>
-          </b-input>
+            v-model="token"
+            type="text"
+            :placeholder="$t('dashboard.intents.credentials.token.text')"
+            required/>
         </b-field>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-rounded" type="button" @click="$parent.close()">
+        <button
+          class="button is-rounded"
+          type="button"
+          @click="$parent.close()">
           <strong>
             {{ $t('generic.close') }}
           </strong>
         </button>
-        <button class="button is-primary is-rounded" @click="saveToken()">
+        <button
+          class="button is-primary is-rounded"
+          @click="saveToken()">
           <strong>
             {{ $t('generic.save') }}
           </strong>
@@ -32,17 +36,17 @@
 
 
 <script>
-  export default {
-    data() {
-      return {
-        token:  localStorage.getItem('Olivia-Token')
-      }
-    },
-    methods: {
-      saveToken() {
-        localStorage.setItem('Olivia-Token', this.token)
-        this.$parent.close()
-      }
+export default {
+  data() {
+    return {
+      token:  localStorage.getItem('Olivia-Token')
+    }
+  },
+  methods: {
+    saveToken() {
+      localStorage.setItem('Olivia-Token', this.token)
+      this.$parent.close()
     }
   }
+}
 </script>

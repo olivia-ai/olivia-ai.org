@@ -2,14 +2,19 @@
   <div class="hero">
     <div class="hero-body">
       <div class="columns is-multiline is-centered">
-        <div class="column is-4" v-for="post in posts" :key="post.name">
+        <div
+          v-for="post in posts"
+          :key="post.name"
+          class="column is-4">
           <router-link :to="`/blog/${post.path}`">
             <!-- POST CARD -->
             <div class="card">
               <!-- THUMBMAIL -->
               <div class="card-image">
                 <figure class="image">
-                  <img :src="`/blog/${post.path}/thumbmail.png`" :alt="`Thumbnail: ${post.name}`">
+                  <img
+                    :src="`/blog/${post.path}/thumbmail.png`"
+                    :alt="`Thumbnail: ${post.name}`">
                 </figure>
               </div>
 
@@ -37,7 +42,7 @@
                     </a>
                   </div>
                   <div class="column">
-                    <font-awesome-icon icon="calendar" /> {{ post.date }}
+                    <font-awesome-icon icon="calendar"/> {{ post.date }}
                   </div>
                 </div>
               </div>
@@ -50,13 +55,13 @@
 </template>
 
 <script>
-  import posts from '../../plugins/posts.js'
+import posts from '../../plugins/posts.js'
 
-  export default {
-    data() {
-      return {
-        posts: posts.posts
-      }
+export default {
+  data() {
+    return {
+      posts: posts.posts
     }
   }
+}
 </script>
