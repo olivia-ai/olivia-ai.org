@@ -13,6 +13,8 @@
         <strong>Olivia</strong>
       </router-link>
 
+      <locale-switch navbar/>
+
       <a
         role="button"
         class="navbar-burger burger"
@@ -28,9 +30,6 @@
     <div
       id="navbar"
       class="navbar-menu">
-      <div class="navbar-start">
-        <locale-switch navbar/>
-      </div>
       <div class="navbar-end">
         <a
           class="navbar-item"
