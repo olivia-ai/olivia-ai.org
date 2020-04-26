@@ -42,7 +42,7 @@
                     </a>
                   </div>
                   <div class="column">
-                    <font-awesome-icon icon="calendar"/> {{ post.date }}
+                    <i class="mdi mdi-calendar"/> {{ post.date }}
                   </div>
                 </div>
               </div>
