@@ -7,7 +7,7 @@ module.exports = {
   rules: {
     'no-console': 0,
     'no-debugger': 0,
-    'no-undef': 0,
+    'no-undef': 2,
     'vue/html-indent': 2,
     'vue/require-default-prop': 1,
     'vue/attributes-order': 2,
