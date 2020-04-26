@@ -43,7 +43,7 @@
             <div class="timeline-item is-primary">
               <div class="timeline-marker is-primary"/>
               <div class="timeline-content">
-                <p class="heading">{{ $t('changelog.august2020') }}</p>
+                <p class="heading">{{ $t('changelog.august2019') }}</p>
                 <p class="content">
                   <vue-markdown :source="august2019"/>
                 </p>
