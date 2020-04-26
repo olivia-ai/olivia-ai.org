@@ -7,35 +7,35 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: require('@/views/Home.vue').default
+      component: () => import('@/views/Home.vue')
     },
     {
       path: '/chat',
-      component: require('@/views/Chat.vue').default
+      component: () => import('@/views/Chat.vue')
     },
     {
       path: '/changelog',
-      component: require('@/views/Changelog.vue').default
+      component: () => import('@/views/Changelog.vue')
     },
     {
       path: '/hugo',
-      component: require('@/views/Creator.vue').default
+      component: () => import('@/views/Creator.vue')
     },
     {
       path: '/blog',
-      component: require('@/views/blog/Blog.vue').default
+      component: () => import('@/views/blog/Blog.vue')
     },
     {
       path: '/blog/:id',
-      component: require('@/views/blog/Post.vue').default
+      component: () => import('@/views/blog/Post.vue')
     },
     {
       path: '/dashboard/data',
-      component: require('@/views/dashboard/Data.vue').default
+      component: () => import('@/views/dashboard/Data.vue')
     },
     {
       path: '/dashboard/intents',
-      component: require('@/views/dashboard/Intents.vue').default
+      component: () => import('@/views/dashboard/Intents.vue')
     }
   ],
   mode: 'history'
