@@ -181,10 +181,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  .is-pink {
-    color: #ff3aaf;
-    font-size: 35px;
-  }
-</style>

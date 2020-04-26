@@ -169,9 +169,9 @@ export default {
 
     this.url = process.env.VUE_APP_URL
     if (this.url == undefined) {
-      this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      this.url = 'https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com'
     }
-    this.url = this.url.replace("ws", "http")
+    this.url = this.url.replace('ws', 'http')
 
     this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
       this.intents = data.body

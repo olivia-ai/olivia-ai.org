@@ -159,21 +159,21 @@ export default {
       hotwordAppeared: false,
       voicesLoaded: false,
       languages: {
-        "en": {
-          lang: "en-GB",
-          name: "Samantha"
+        en: {
+          lang: 'en-GB',
+          name: 'Samantha'
         },
-        "ca": {
-          lang: "es-ES",
-          name: "Monica"
+        ca: {
+          lang: 'es-ES',
+          name: 'Monica'
         },
-        "fr": {
-          lang: "fr",
-          name: "Amelie"
+        fr: {
+          lang: 'fr',
+          name: 'Amelie'
         },
-        "es": {
-          lang: "es-ES",
-          name: "Monica"
+        es: {
+          lang: 'es-ES',
+          name: 'Monica'
         }
       }
     }
@@ -184,7 +184,7 @@ export default {
         return
       }
 
-      const message = new SpeechSynthesisUtterance(text.replace(/<.+>/, ""))
+      const message = new SpeechSynthesisUtterance(text.replace(/<.+>/, ''))
 
       message.voice = this.voice
       message.volume = this.volume / 100
@@ -213,7 +213,7 @@ export default {
       }
 
       this.hotwordAppeared = true
-      document.getElementById("sound-on").play()
+      document.getElementById('sound-on').play()
     },
 
     send() {
@@ -279,7 +279,7 @@ export default {
 
       // Send the information on connection
       this.websocket.addEventListener('open', () => {
-        console.log("Websocket connection opened.")
+        console.log('Websocket connection opened.')
         this.websocket.send(
           JSON.stringify({
             type: 0,
@@ -332,12 +332,12 @@ export default {
         let locale = this.$i18n.locale
         let language = this.languages[locale]
 
-        return (voice.lang.startsWith(language.lang) && voice.name.includes("Female")) || voice.name.includes(language.name)
+        return (voice.lang.startsWith(language.lang) && voice.name.includes('Female')) || voice.name.includes(language.name)
       })
 
       if (this.voice === undefined) {
         this.voice = speechSynthesis.getVoices().find(voice => {
-          return (voice.lang.startsWith("en") && voice.name.includes("Female")) || voice.name.includes("Samantha")
+          return (voice.lang.startsWith('en') && voice.name.includes('Female')) || voice.name.includes('Samantha')
         })
       }
 
@@ -345,7 +345,7 @@ export default {
     },
 
     loadRecognition() {
-      if (typeof webkitSpeechRecognition !== "undefined") {
+      if (typeof webkitSpeechRecognition !== 'undefined') {
         const SpeechRecognition = webkitSpeechRecognition
         const recognition = new SpeechRecognition()
 
@@ -356,14 +356,14 @@ export default {
 
           if (this.hotwordAppeared) {
             this.hotwordAppeared = false
-            document.getElementById("sound-off").play()
+            document.getElementById('sound-off').play()
             this.input = input
             this.send()
           }
 
-          if ((input === "hi Olivia" || input === "hey Olivia") && !this.hotwordAppeared) {
+          if ((input === 'hi Olivia' || input === 'hey Olivia') && !this.hotwordAppeared) {
             this.hotwordAppeared = true
-            document.getElementById("sound-on").play()
+            document.getElementById('sound-on').play()
           }
         }
 
@@ -376,16 +376,16 @@ export default {
   mounted() {
     let loader = this.$buefy.loading.open()
 
-    if (localStorage.getItem("volume") === undefined) {
-      localStorage.setItem("volume", "50")
+    if (localStorage.getItem('volume') === undefined) {
+      localStorage.setItem('volume', '50')
       this.volume = 50
     }
 
     this.url = process.env.VUE_APP_URL
     if (this.url === undefined) {
-      this.url = "wss://olivia-api.herokuapp.com"
+      this.url = 'wss://olivia-api.herokuapp.com'
     }
-    this.url += "/websocket"
+    this.url += '/websocket'
 
     this.createUserInformations()
     this.initSocket()
@@ -399,7 +399,7 @@ export default {
 
       // Save the volume in localStorage
       if (oldVolume !== this.volume) {
-        localStorage.setItem("volume", this.volume)
+        localStorage.setItem('volume', this.volume)
       }
       oldVolume = this.volume
 
