@@ -125,11 +125,3 @@
     </section>
   </div>
 </template>
-
-<style>
-  .is-pink {
-    color: #ff3aaf;
-    font-size: 25px;
-  }
-</style>
-

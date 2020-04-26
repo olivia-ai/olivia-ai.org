@@ -141,12 +141,13 @@ export default {
           type: 'line',
           data: {
             labels,
-            datasets: [{
-              data: errors,
-              label: this.$t('dashboard.data.errorLoss'),
-              borderColor: "#ff3aaf",
-              fill: false
-            }
+            datasets: [
+              {
+                data: errors,
+                label: this.$t('dashboard.data.errorLoss'),
+                borderColor: "#ff3aaf",
+                fill: false
+              }
             ]
           },
           options: {

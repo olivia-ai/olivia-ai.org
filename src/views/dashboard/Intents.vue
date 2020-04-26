@@ -120,20 +120,6 @@
   </div>
 </template>
 
-<style>
-  .is-pink {
-    color: #ff3aaf;
-    font-size: 30px;
-  }
-
-  .new-card {
-    border-radius: 10px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: #f5f5f5;
-  }
-</style>
-
 <script>
 import Credentials from '../../components/Credentials'
 import CreateIntent from '../../components/CreateIntent'

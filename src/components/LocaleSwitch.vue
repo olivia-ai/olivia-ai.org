@@ -25,14 +25,6 @@
   </b-dropdown>
 </template>
 
-
-<style>
-  .language-active {
-    background-color: #f5f5f5;
-    color: #1b1b1b;
-  }
-</style>
-
 <script>
 export default {
   props: {
@@ -60,3 +52,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.language-active {
+    background-color: #f5f5f5;
+    color: #1b1b1b;
+}
+</style>
