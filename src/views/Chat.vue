@@ -278,7 +278,7 @@ export default {
       })
 
       // Send the information on connection
-      this.websocket.addEventListener('open', _ => {
+      this.websocket.addEventListener('open', () => {
         console.log("Websocket connection opened.")
         this.websocket.send(
           JSON.stringify({

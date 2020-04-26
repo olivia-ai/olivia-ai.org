@@ -54,7 +54,6 @@
 
 
 <script>
-import Navbar from '../../components/Navbar'
 import VueMarkdown from 'vue-markdown'
 import posts from '../../plugins/posts.js'
 

@@ -38,16 +38,40 @@
 
 <script>
 export default {
-  props: ['tag', 'patterns', 'responses', 'context'],
+  props: {
+    tag: {
+      type: String,
+      required: true
+    },
+    patterns: {
+      type: Array,
+      required: true
+    },
+    responses: {
+      type: Array,
+      required: true
+    },
+    context: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       token: localStorage.getItem('Olivia-Token'),
       url: ''
     }
   },
+  mounted() {
+    this.url = process.env.VUE_APP_URL
+    if (this.url == undefined) {
+      this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+    }
+    this.url = this.url.replace("ws", "http")
+
+  },
   methods: {
     deleteIntent(tag) {
-      console.log('ssss')
       let token = localStorage.getItem('Olivia-Token')
       this.$http.delete(this.url + '/api/intent', {
         body: {
@@ -68,13 +92,6 @@ export default {
         this.getIntents()
       })
     }
-  },
-  mounted() {
-    this.url = process.env.VUE_APP_URL
-    if (this.url == undefined) {
-      this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
-    }
-    this.url = this.url.replace("ws", "http")
   }
 }
 </script>
