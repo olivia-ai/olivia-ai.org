@@ -1,66 +1,88 @@
 <template>
-  <div class="hero">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="timeline">
-            <header class="timeline-header">
-              <span class="tag is-medium is-primary">2020</span>
-            </header>
-            <div class="timeline-item is-primary">
-              <div class="timeline-marker is-primary"/>
-              <div class="timeline-content">
-                <p class="heading">{{ $t('changelog.april2020') }}</p>
-                <p class="content">
-                  <vue-markdown :source="april2020"/>
-                </p>
+  <div>
+    <div class="hero">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          <img
+            width="410"
+            src="/img/olivia-changelog.png"
+            alt="Olivia Dashboard">
+        </h1>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="timeline">
+              <header class="timeline-header">
+                <span class="tag is-medium is-primary">
+                  <strong style="color: #fff">2020</strong>
+                </span>
+              </header>
+              <div class="timeline-item is-primary">
+                <div class="timeline-marker is-primary"/>
+                <div class="timeline-content">
+                  <p class="heading">{{ $t('changelog.april2020') }}</p>
+                  <p class="content">
+                    <vue-markdown :source="april2020"/>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="timeline-item is-primary">
-              <div class="timeline-marker is-primary"/>
-              <div class="timeline-content">
-                <p class="heading">{{ $t('changelog.march2020') }}</p>
-                <p class="content">
-                  <vue-markdown :source="march2020"/>
-                </p>
+              <div class="timeline-item is-primary">
+                <div class="timeline-marker is-primary"/>
+                <div class="timeline-content">
+                  <p class="heading">{{ $t('changelog.march2020') }}</p>
+                  <p class="content">
+                    <vue-markdown :source="march2020"/>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div class="timeline-item is-primary">
-              <div class="timeline-marker is-primary"/>
-              <div class="timeline-content">
-                <p class="heading">{{ $t('changelog.january2020') }}</p>
-                <p class="content">
-                  <vue-markdown :source="january2020"/>
-                </p>
+              <div class="timeline-item is-primary">
+                <div class="timeline-marker is-primary"/>
+                <div class="timeline-content">
+                  <p class="heading">{{ $t('changelog.january2020') }}</p>
+                  <p class="content">
+                    <vue-markdown :source="january2020"/>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <header class="timeline-header">
-              <span class="tag is-primary">2019</span>
-            </header>
-            <div class="timeline-item is-primary">
-              <div class="timeline-marker is-primary"/>
-              <div class="timeline-content">
-                <p class="heading">{{ $t('changelog.august2019') }}</p>
-                <p class="content">
-                  <vue-markdown :source="august2019"/>
-                </p>
+              <header class="timeline-header">
+                <span class="tag is-primary">
+                  <strong style="color: #fff">2019</strong>
+                </span>
+              </header>
+              <div class="timeline-item is-primary">
+                <div class="timeline-marker is-primary"/>
+                <div class="timeline-content">
+                  <p class="heading">{{ $t('changelog.august2019') }}</p>
+                  <p class="content">
+                    <vue-markdown :source="august2019"/>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <header class="timeline-header">
-              <span class="tag is-primary">2018</span>
-            </header>
-            <div class="timeline-item"/>
-            <header class="timeline-header">
-              <span class="tag is-primary">2017</span>
-            </header>
-            <div class="timeline-item"/>
-            <header class="timeline-header">
-              <span class="tag is-medium is-primary">{{ $t('changelog.start') }}</span>
-            </header>
+              <header class="timeline-header">
+                <span class="tag is-primary">
+                  <strong style="color: #fff">2018</strong>
+                </span>
+              </header>
+              <div class="timeline-item"/>
+              <header class="timeline-header">
+                <span class="tag is-primary">
+                  <strong style="color: #fff">2017</strong>
+                </span>
+              </header>
+              <div class="timeline-item"/>
+              <header class="timeline-header">
+                <span class="tag is-medium is-primary">
+                  <strong style="color: #fff">{{ $t('changelog.start') }}</strong>
+                </span>
+              </header>
+            </div>
           </div>
         </div>
       </div>
