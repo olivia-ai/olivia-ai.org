@@ -232,6 +232,7 @@ export default {
 
     loadRecognition() {
       if (typeof webkitSpeechRecognition !== 'undefined') {
+        // eslint-disable-next-line no-undef
         const SpeechRecognition = webkitSpeechRecognition
         const recognition = new SpeechRecognition()
 

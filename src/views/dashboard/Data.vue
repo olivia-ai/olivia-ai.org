@@ -20,43 +20,81 @@
           <div class="tile is-4 is-parent is-vertical">
             <div class="tile is-child notification">
               <p class="title">
-                <b-icon
-                  size="is-medium"
-                  class="is-pink"
-                  icon="tag-multiple"/> {{ data.layers.output }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="30%"></b-skeleton>
+                <span v-else>
+                  <b-icon
+                    size="is-medium"
+                    class="is-pink"
+                    icon="tag-multiple"></b-icon> {{ data.layers.output }}
+                </span>
               </p>
               <p class="subtitle">
-                {{ $t('dashboard.data.intentsTags') }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="40%"></b-skeleton>
+                <span v-else>{{ $t('dashboard.data.intentsTags') }}</span>
               </p>
             </div>
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <b-icon
-                  size="is-medium"
-                  class="is-pink"
-                  icon="close"/> {{ Math.round(data.training.errors[18]*10000)/10000 }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="60%"></b-skeleton>
+
+                <span v-else>
+                  <b-icon
+                    size="is-medium"
+                    class="is-pink"
+                    icon="close"></b-icon> {{ Math.round(data.training.errors[18]*10000)/10000 }}
+                </span>
               </p>
               <p class="subtitle">
-                {{ $t('dashboard.data.errorLoss') }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="30%"></b-skeleton>
+
+                <span v-else>{{ $t('dashboard.data.errorLoss') }}</span>
               </p>
             </div>
 
             <div class="tile is-child notification is-bold">
               <p class="title">
-                <b-icon
-                  size="is-medium"
-                  class="is-pink"
-                  icon="layers"/> {{ data.layers.hidden }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="20%"></b-skeleton>
+
+                <span v-else>
+                  <b-icon
+                    size="is-medium"
+                    class="is-pink"
+                    icon="layers"></b-icon> {{ data.layers.hidden }}
+                </span>
               </p>
               <p class="subtitle">
-                {{ $t('dashboard.data.hiddenLayers') }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="50%"></b-skeleton>
+
+                <span v-else>{{ $t('dashboard.data.hiddenLayers') }}</span>
               </p>
             </div>
           </div>
           <div class="tile is-parent">
             <div class="tile is-child notification">
-              <canvas id="error-loss"/>
+              <b-loading
+                :is-full-page="false"
+                :active.sync="loading"
+                :can-cancel="true"></b-loading>
+              <canvas id="error-loss"></canvas>
             </div>
           </div>
         </div>
@@ -65,13 +103,25 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <b-icon
-                  size="is-medium"
-                  class="is-pink"
-                  icon="clock"/> {{ data.training.time }}s
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="30%"></b-skeleton>
+
+                <span v-else>
+                  <b-icon
+                    size="is-medium"
+                    class="is-pink"
+                    icon="clock"></b-icon> {{ data.training.time }}s
+                </span>
               </p>
               <p class="subtitle">
-                {{ $t('dashboard.data.learningTime') }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="30%"></b-skeleton>
+
+                <span v-else>{{ $t('dashboard.data.learningTime') }}</span>
               </p>
             </div>
           </div>
@@ -79,13 +129,25 @@
           <div class="tile is-parent">
             <div class="tile is-child notification">
               <p class="title">
-                <b-icon
-                  size="is-medium"
-                  class="is-pink"
-                  icon="percent"/> {{ data.training.rate }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="20%"></b-skeleton>
+
+                <span v-else>
+                  <b-icon
+                    size="is-medium"
+                    class="is-pink"
+                    icon="percent"></b-icon> {{ data.training.rate }}
+                </span>
               </p>
               <p class="subtitle">
-                {{ $t('dashboard.data.learningRate') }}
+                <b-skeleton
+                  v-if="loading"
+                  active
+                  width="30%"></b-skeleton>
+
+                <span v-else>{{ $t('dashboard.data.learningRate') }}</span>
               </p>
             </div>
           </div>
@@ -112,12 +174,11 @@ export default {
           hidden: 0,
           output: 0,
         }
-      }
+      },
+      loading: true
     }
   },
   async mounted() {
-    let loader = this.$buefy.loading.open()
-
     this.url = process.env.VUE_APP_URL
     if (this.url == undefined) {
       this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
@@ -175,7 +236,7 @@ export default {
           }
         })
 
-        loader.close()
+        this.loading = false
       }
     )
   }

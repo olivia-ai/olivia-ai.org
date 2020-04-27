@@ -1,11 +1,11 @@
 export default {
   posts: [
     {
-      name: "The math behind a neural network",
-      date: "January 20, 2020",
-      description: "Understand what is the mechanism behind Olivia: when to use a neural network and what are the math used to build a neural network.",
-      path: "the-math-behind-a-neural-network",
-      content: require("../../public/blog/the-math-behind-a-neural-network/post.md").default,
+      name: "Create intents using the website",
+      date: "April 19, 2020",
+      description: "Create your own intents in your instance of Olivia directly using the website.",
+      path: "create-intents-via-the-website",
+      content: require("../../public/blog/create-intents-via-the-website/post.md").default,
       author: {
         name: "Hugo Lageneste",
         id: "@hugolgst",
@@ -27,11 +27,11 @@ export default {
       }
     },
     {
-      name: "Create intents using the website",
-      date: "April 19, 2020",
-      description: "Create your own intents in your instance of Olivia directly using the website.",
-      path: "create-intents-via-the-website",
-      content: require("../../public/blog/create-intents-via-the-website/post.md").default,
+      name: "The math behind a neural network",
+      date: "January 20, 2020",
+      description: "Understand what is the mechanism behind Olivia: when to use a neural network and what are the math used to build a neural network.",
+      path: "the-math-behind-a-neural-network",
+      content: require("../../public/blog/the-math-behind-a-neural-network/post.md").default,
       author: {
         name: "Hugo Lageneste",
         id: "@hugolgst",

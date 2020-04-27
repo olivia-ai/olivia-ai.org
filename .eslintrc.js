@@ -7,7 +7,7 @@ module.exports = {
   rules: {
     'no-console': 0,
     'no-debugger': 0,
-    'no-undef': 2,
+    'no-undef': 0,
     'vue/html-indent': 2,
     'vue/require-default-prop': 1,
     'vue/attributes-order': 2,
@@ -15,7 +15,7 @@ module.exports = {
     'vue/html-end-tags': 2,
     'vue/max-attributes-per-line': 2,
     'vue/require-prop-types': 2,
-    'vue/html-self-closing': 2,
+    'vue/html-self-closing': 0,
     'vue/no-multi-spaces': 2,
     'vue/html-quotes': 2,
     'vue/html-closing-bracket-spacing': [
