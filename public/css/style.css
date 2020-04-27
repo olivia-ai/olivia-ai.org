@@ -1,7 +1,3 @@
-* {
-    transition: all .2s ease-in-out;
-}
-
 .m-cue .a-cue-icon {
     background: #E82525;
     transform: translateX(0px) translateY(0px);
