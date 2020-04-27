@@ -7,7 +7,11 @@ import '@/registerServiceWorker'
 import router from '@/plugins/router'
 import i18n from '@/plugins/i18n'
 
+import '@/utils/burgers'
 import 'bulma-timeline/dist/css/bulma-timeline.min.css'
+import '@mdi/font/css/materialdesignicons.min.css'
+import '@/css/style.css'
+import '@/css/bulma.scss'
 
 Vue.use(Buefy)
 Vue.use(Resource)
