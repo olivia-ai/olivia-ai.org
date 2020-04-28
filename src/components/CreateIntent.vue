@@ -50,44 +50,44 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      params: {
-        tag: '',
-        patterns: [],
-        responses: [],
-        context: ''
+  export default {
+    data() {
+      return {
+        params: {
+          tag: '',
+          patterns: [],
+          responses: [],
+          context: ''
+        }
       }
-    }
-  },
-  methods: {
-    createIntent() {
-      this.$http.post(this.url + '/api/intent', this.params, {
-        headers: {
-          'Olivia-Token': localStorage.getItem('Olivia-Token')
-        }
-      }).then(data => {
-        if (data.body.message !== undefined) {
-          this.$buefy.snackbar.open({
-            message: data.body.message,
-            type: 'is-warning',
-            position: 'is-top'
-          })
-          return
-        }
+    },
+    methods: {
+      createIntent() {
+        this.$http.post(this.url + '/api/intent', this.params, {
+          headers: {
+            'Olivia-Token': localStorage.getItem('Olivia-Token')
+          }
+        }).then(data => {
+          if (data.body.message !== undefined) {
+            this.$buefy.snackbar.open({
+              message: data.body.message,
+              type: 'is-warning',
+              position: 'is-top'
+            })
+            return
+          }
 
-        this.$parent.getIntents()
-        this.$parent.close()
-      })
+          this.$parent.getIntents()
+          this.$parent.close()
+        })
+      }
+    },
+    mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
     }
-  },
-  mounted() {
-    this.url = process.env.VUE_APP_URL
-    if (this.url == undefined) {
-      this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
-    }
-    this.url = this.url.replace("ws", "http")
   }
-}
 </script>

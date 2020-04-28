@@ -43,25 +43,25 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      socials: [
-        { link: 'https://github.com/hugolgst', icon: 'github' },
-        { link: 'https://www.linkedin.com/in/hugolageneste/', icon: 'linkedin' },
-        { link: 'https://instagram.com/hugolgst', icon: 'instagram' },
-        { link: 'mailto:hugo.lageneste@pm.me', icon: 'email' },
-      ]
-    }
-  },
-  methods: {
-    calculateAge(birthday) {
-      let date = new Date(birthday)
-      let ageDifMs = Date.now() - date.getTime()
-      let ageDate = new Date(ageDifMs)
+  export default {
+    data () {
+      return {
+        socials: [
+          { link: 'https://github.com/hugolgst', icon: 'github' },
+          { link: 'https://www.linkedin.com/in/hugolageneste/', icon: 'linkedin' },
+          { link: 'https://instagram.com/hugolgst', icon: 'instagram' },
+          { link: 'mailto:hugo.lageneste@pm.me', icon: 'email' },
+        ]
+      }
+    },
+    methods: {
+      calculateAge(birthday) {
+        let date = new Date(birthday)
+        let ageDifMs = Date.now() - date.getTime()
+        let ageDate = new Date(ageDifMs)
 
-      return Math.abs(ageDate.getUTCFullYear() - 1970)
+        return Math.abs(ageDate.getUTCFullYear() - 1970)
+      }
     }
   }
-}
 </script>

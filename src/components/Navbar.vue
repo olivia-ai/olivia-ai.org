@@ -21,9 +21,9 @@
         aria-label="menu"
         aria-expanded="false"
         data-target="navbar">
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
 
@@ -112,9 +112,9 @@
 </template>
 
 <script>
-import LocaleSwitch from './LocaleSwitch'
+  import LocaleSwitch from './LocaleSwitch'
 
-export default {
-  components: { LocaleSwitch }
-}
+  export default {
+    components: { LocaleSwitch }
+  }
 </script>

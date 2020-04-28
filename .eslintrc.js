@@ -26,7 +26,11 @@ module.exports = {
         selfClosingTag: 'never'
       }
     ],
-    'vue/script-indent': 2
+    'vue/script-indent': ["error", 2, {
+      "baseIndent": 1,
+      "switchCase": 0,
+      "ignores": []
+    }]
   },
   parserOptions: {
     parser: 'babel-eslint'

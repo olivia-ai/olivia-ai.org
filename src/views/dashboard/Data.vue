@@ -158,101 +158,101 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
+  import Chart from 'chart.js'
 
-export default {
-  data() {
-    return {
-      data: {
-        training: {
-          rate: '...',
-          time: '...',
-          errors: [],
-        },
-        layers: {
-          input: 0,
-          hidden: 0,
-          output: 0,
-        }
-      },
-      loading: true
-    }
-  },
-  methods: {
-    loadData() {
-      this.$http.get(this.url + '/api/' + this.$i18n.locale + '/dashboard').then(
-        data => {
-          this.data = data.body
-          let errors = data.body.training.errors
-          errors.shift()
-
-          let iterations = 1000
-          let labels = []
-          for (let i = 0; i <= 18; i++) {
-            let a = i / 20
-            labels.push(iterations * a)
+  export default {
+    data() {
+      return {
+        data: {
+          training: {
+            rate: '...',
+            time: '...',
+            errors: [],
+          },
+          layers: {
+            input: 0,
+            hidden: 0,
+            output: 0,
           }
+        },
+        loading: true
+      }
+    },
+    methods: {
+      loadData() {
+        this.$http.get(this.url + '/api/' + this.$i18n.locale + '/dashboard').then(
+          data => {
+            this.data = data.body
+            let errors = data.body.training.errors
+            errors.shift()
 
-          new Chart(document.getElementById("error-loss"), {
-            type: 'line',
-            data: {
-              labels,
-              datasets: [
-                {
-                  data: errors,
-                  label: this.$t('dashboard.data.errorLoss'),
-                  borderColor: "#ff3aaf",
-                  fill: false
-                }
-              ]
-            },
-            options: {
-              responsive: true,
-              title: {
-                display: true,
-                text: this.$t('dashboard.data.errorLossText')
-              },
-              scales: {
-                x: {
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: this.$t('dashboard.data.networkIterations')
+            let iterations = 1000
+            let labels = []
+            for (let i = 0; i <= 18; i++) {
+              let a = i / 20
+              labels.push(iterations * a)
+            }
+
+            new Chart(document.getElementById("error-loss"), {
+              type: 'line',
+              data: {
+                labels,
+                datasets: [
+                  {
+                    data: errors,
+                    label: this.$t('dashboard.data.errorLoss'),
+                    borderColor: "#ff3aaf",
+                    fill: false
                   }
-                },
-                y: {
+                ]
+              },
+              options: {
+                responsive: true,
+                title: {
                   display: true,
-                  scaleLabel: {
+                  text: this.$t('dashboard.data.errorLossText')
+                },
+                scales: {
+                  x: {
                     display: true,
-                    labelString: this.$t('dashboard.data.errorLoss')
+                    scaleLabel: {
+                      display: true,
+                      labelString: this.$t('dashboard.data.networkIterations')
+                    }
+                  },
+                  y: {
+                    display: true,
+                    scaleLabel: {
+                      display: true,
+                      labelString: this.$t('dashboard.data.errorLoss')
+                    }
                   }
                 }
               }
-            }
-          })
+            })
 
-          this.loading = false
-        }
-      )
-    }
-  },
-  async mounted() {
-    this.url = process.env.VUE_APP_URL
-    if (this.url == undefined) {
-      this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
-    }
-    this.url = this.url.replace("ws", "http")
-    
-    this.loadData()
-
-    let lastLocale = this.$i18n.locale
-    setInterval(() => {
-      if (lastLocale != this.$i18n.locale) {
-        this.loadData()
+            this.loading = false
+          }
+        )
       }
+    },
+    async mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = "https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com"
+      }
+      this.url = this.url.replace("ws", "http")
 
-      lastLocale = this.$i18n.locale
-    }, 1000)
+      this.loadData()
+
+      let lastLocale = this.$i18n.locale
+      setInterval(() => {
+        if (lastLocale != this.$i18n.locale) {
+          this.loadData()
+        }
+
+        lastLocale = this.$i18n.locale
+      }, 1000)
+    }
   }
-}
 </script>

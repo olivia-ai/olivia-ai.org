@@ -36,17 +36,17 @@
 
 
 <script>
-export default {
-  data() {
-    return {
-      token:  localStorage.getItem('Olivia-Token')
-    }
-  },
-  methods: {
-    saveToken() {
-      localStorage.setItem('Olivia-Token', this.token)
-      this.$parent.close()
+  export default {
+    data() {
+      return {
+        token:  localStorage.getItem('Olivia-Token')
+      }
+    },
+    methods: {
+      saveToken() {
+        localStorage.setItem('Olivia-Token', this.token)
+        this.$parent.close()
+      }
     }
   }
-}
 </script>

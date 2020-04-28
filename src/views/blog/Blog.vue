@@ -76,13 +76,13 @@
 </template>
 
 <script>
-import posts from '../../plugins/posts.js'
+  import posts from '../../plugins/posts.js'
 
-export default {
-  data() {
-    return {
-      posts: posts.posts
+  export default {
+    data() {
+      return {
+        posts: posts.posts
+      }
     }
   }
-}
 </script>

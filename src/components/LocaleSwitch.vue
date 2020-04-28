@@ -26,31 +26,31 @@
 </template>
 
 <script>
-export default {
-  props: {
-    navbar: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data () {
-    return {
-      locales: [
-        { locale: 'en', name: 'English' },
-        { locale: 'fr', name: 'Français' },
-        { locale: 'es', name: 'Español' },
-        { locale: 'ca', name: 'Català' }
-      ]
-    }
-  },
-  methods: {
-    changeLocale(locale) {
-      this.$i18n.locale = locale
-      localStorage.setItem('language', locale)
-      this.$emit('change', locale)
+  export default {
+    props: {
+      navbar: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data () {
+      return {
+        locales: [
+          { locale: 'en', name: 'English' },
+          { locale: 'fr', name: 'Français' },
+          { locale: 'es', name: 'Español' },
+          { locale: 'ca', name: 'Català' }
+        ]
+      }
+    },
+    methods: {
+      changeLocale(locale) {
+        this.$i18n.locale = locale
+        localStorage.setItem('language', locale)
+        this.$emit('change', locale)
+      }
     }
   }
-}
 </script>
 
 <style>

@@ -91,25 +91,25 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+  import VueMarkdown from 'vue-markdown'
 
-export default {
-  data() {
-    return {
-      august2019: 'Loading...',
-      march2020: 'Loading...',
-      april2020: 'Loading...',
-      january2020: 'Loading...'
+  export default {
+    data() {
+      return {
+        august2019: 'Loading...',
+        march2020: 'Loading...',
+        april2020: 'Loading...',
+        january2020: 'Loading...'
+      }
+    },
+    components: {
+      VueMarkdown
+    },
+    mounted() {
+        import('../../public/changelog/august-2019.md').then(res => this.august2019 = res.default)
+        import('../../public/changelog/january-2020.md').then(res => this.january2020 = res.default)
+        import('../../public/changelog/march-2020.md').then(res => this.march2020 = res.default)
+        import('../../public/changelog/april-2020.md').then(res => this.april2020 = res.default)
     }
-  },
-  components: {
-    VueMarkdown
-  },
-  mounted() {
-      import('../../public/changelog/august-2019.md').then(res => this.august2019 = res.default)
-      import('../../public/changelog/january-2020.md').then(res => this.january2020 = res.default)
-      import('../../public/changelog/march-2020.md').then(res => this.march2020 = res.default)
-      import('../../public/changelog/april-2020.md').then(res => this.april2020 = res.default)
   }
-}
 </script>

@@ -64,25 +64,25 @@
 
 
 <script>
-import VueMarkdown from 'vue-markdown'
-import posts from '../../plugins/posts.js'
+  import VueMarkdown from 'vue-markdown'
+  import posts from '../../plugins/posts.js'
 
-export default {
-  components: {
-    VueMarkdown
-  },
-  data() {
-    return {
-      posts: posts.posts,
-      post: {}
-    }
-  },
-  mounted() {
-    this.posts.forEach(post => {
-      if (post.path === this.$route.params.id) {
-        this.post = post
+  export default {
+    components: {
+      VueMarkdown
+    },
+    data() {
+      return {
+        posts: posts.posts,
+        post: {}
       }
-    })
+    },
+    mounted() {
+      this.posts.forEach(post => {
+        if (post.path === this.$route.params.id) {
+          this.post = post
+        }
+      })
+    }
   }
-}
 </script>

@@ -120,75 +120,75 @@
 </template>
 
 <script>
-import Credentials from '../../components/Credentials'
-import CreateIntent from '../../components/CreateIntent'
-import ModalIntent from '../../components/Intent'
+  import Credentials from '../../components/Credentials'
+  import CreateIntent from '../../components/CreateIntent'
+  import ModalIntent from '../../components/Intent'
 
-export default {
-  data() {
-    return {
-      intents: [],
-      credentialsModal: false,
-      createIntentModal: false,
-      url: '',
-      token: localStorage.getItem('Olivia-Token')
-    }
-  },
-  components: {
-    Credentials,
-    CreateIntent
-  },
-  methods: {
-    openIntentModal(intent) {
-      this.$buefy.modal.open({
-        parent: this,
-        component: ModalIntent,
-        props: intent
-      })
-    },
-
-    syncNetwork() {
-      this.$http.post(this.url + '/api/' + this.$i18n.locale + '/train', {}, {
-        headers: {
-          'Olivia-Token': localStorage.getItem('Olivia-Token')
-        }
-      }).then(data => {
-        if (data.body.message !== undefined) {
-          this.$buefy.snackbar.open({
-            message: data.body.message,
-            type: 'is-warning',
-            position: 'is-top'
-          })
-        }
-      })
-    },
-
-    loadIntents() {
-      let loader = this.$buefy.loading.open()
-
-      this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
-        this.intents = data.body
-        loader.close()
-      })
-    }
-  },
-  mounted() {
-    this.url = process.env.VUE_APP_URL
-    if (this.url == undefined) {
-      this.url = 'https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com'
-    }
-    this.url = this.url.replace('ws', 'http')
-
-    this.loadIntents()
-
-    let lastLocale = this.$i18n.locale
-    setInterval(() => {
-      if (lastLocale != this.$i18n.locale) {
-        this.loadIntents()
+  export default {
+    data() {
+      return {
+        intents: [],
+        credentialsModal: false,
+        createIntentModal: false,
+        url: '',
+        token: localStorage.getItem('Olivia-Token')
       }
+    },
+    components: {
+      Credentials,
+      CreateIntent
+    },
+    methods: {
+      openIntentModal(intent) {
+        this.$buefy.modal.open({
+          parent: this,
+          component: ModalIntent,
+          props: intent
+        })
+      },
 
-      lastLocale = this.$i18n.locale
-    }, 1000)
+      syncNetwork() {
+        this.$http.post(this.url + '/api/' + this.$i18n.locale + '/train', {}, {
+          headers: {
+            'Olivia-Token': localStorage.getItem('Olivia-Token')
+          }
+        }).then(data => {
+          if (data.body.message !== undefined) {
+            this.$buefy.snackbar.open({
+              message: data.body.message,
+              type: 'is-warning',
+              position: 'is-top'
+            })
+          }
+        })
+      },
+
+      loadIntents() {
+        let loader = this.$buefy.loading.open()
+
+        this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
+          this.intents = data.body
+          loader.close()
+        })
+      }
+    },
+    mounted() {
+      this.url = process.env.VUE_APP_URL
+      if (this.url == undefined) {
+        this.url = 'https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com'
+      }
+      this.url = this.url.replace('ws', 'http')
+
+      this.loadIntents()
+
+      let lastLocale = this.$i18n.locale
+      setInterval(() => {
+        if (lastLocale != this.$i18n.locale) {
+          this.loadIntents()
+        }
+
+        lastLocale = this.$i18n.locale
+      }, 1000)
+    }
   }
-}
 </script>
