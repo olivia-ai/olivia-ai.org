@@ -62,7 +62,7 @@
                 </div>
               </b-modal>
 
-              <div class="card new-card">
+              <div class="new-card">
                 <div class="card-content">
                   <p class="title">
                     <b-tooltip
@@ -71,7 +71,7 @@
                       <b-icon
                         size="is-medium"
                         class="is-pink"
-                        icon="tag-multiple"/>
+                        icon="tag-multiple"></b-icon>
                     </b-tooltip>
                     <b-tooltip
                       v-else
@@ -79,15 +79,14 @@
                       <b-icon
                         size="is-medium"
                         class="is-pink"
-                        icon="content-copy"/>
+                        icon="content-copy"></b-icon>
                     </b-tooltip>
                     {{ intent.tag }}
                     <a @click="openIntentModal(intent)">
                       <b-icon
                         style="float: right"
                         class="is-pink"
-                        icon="menu"
-                      />
+                        icon="menu"></b-icon>
                     </a>
                   </p>
                   <p class="subtitle">
@@ -162,21 +161,34 @@ export default {
           })
         }
       })
+    },
+
+    loadIntents() {
+      let loader = this.$buefy.loading.open()
+
+      this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
+        this.intents = data.body
+        loader.close()
+      })
     }
   },
   mounted() {
-    let loader = this.$buefy.loading.open()
-
     this.url = process.env.VUE_APP_URL
     if (this.url == undefined) {
       this.url = 'https://cors-anywhere.herokuapp.com/wss://olivia-api.herokuapp.com'
     }
     this.url = this.url.replace('ws', 'http')
 
-    this.$http.get(this.url + '/api/' + this.$i18n.locale + '/intents').then(data => {
-      this.intents = data.body
-      loader.close()
-    })
+    this.loadIntents()
+
+    let lastLocale = this.$i18n.locale
+    setInterval(() => {
+      if (lastLocale != this.$i18n.locale) {
+        this.loadIntents()
+      }
+
+      lastLocale = this.$i18n.locale
+    }, 1000)
   }
 }
 </script>

@@ -20,7 +20,7 @@
               class="column is-4">
               <router-link :to="`/blog/${post.path}`">
                 <!-- POST CARD -->
-                <div class="card new-card">
+                <div class="new-card">
                   <!-- THUMBMAIL -->
                   <div class="card-image">
                     <figure class="image">
@@ -41,6 +41,8 @@
                         </p>
                       </div>
                     </div>
+
+                    <br>
 
                     <!-- CONTENT -->
                     <div class="content">

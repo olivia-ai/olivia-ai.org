@@ -1,5 +1,15 @@
 <template>
   <div>
+    <div class="hero">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          <img
+            width="335"
+            src="/img/olivia-blog.png"
+            alt="Olivia Dashboard">
+        </h1>
+      </div>
+    </div>
     <!-- POST TITLE -->
     <section class="hero">
       <div class="hero-body">
