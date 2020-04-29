@@ -39,7 +39,8 @@
           { locale: 'en', name: 'English' },
           { locale: 'fr', name: 'Français' },
           { locale: 'es', name: 'Español' },
-          { locale: 'ca', name: 'Català' }
+          { locale: 'ca', name: 'Català' },
+          { locale: 'pt-br', name: 'Português-Brasileiro' }
         ]
       }
     },
