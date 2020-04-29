@@ -28,7 +28,7 @@
       "github": "Voir sur GitHub"
     },
     "speakAbility": {
-      "title": "Capacité à parler",
+      "title": "Capacité de parler",
       "text": "Olivia peut vous écouter en disant <strong>“Hey Olivia”</strong> ou en cliquant sur le bouton central.<br>Elle parle pour vous répondre, à moins que vous ayez désactivé sa voix."
     },
     "privacy": {
