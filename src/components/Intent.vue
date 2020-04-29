@@ -95,6 +95,8 @@
     },
     methods: {
       deleteIntent(tag) {
+        let loader = this.$buefy.loading.open()
+
         let token = localStorage.getItem('Olivia-Token')
         this.$http.delete(this.url + '/api/' + this.$i18n.locale + '/intent', {
           body: {
@@ -104,6 +106,8 @@
             'Olivia-Token': token
           }
         }).then(data => {
+          loader.close()
+
           if (data.body.message !== undefined) {
             this.$buefy.snackbar.open({
               message: data.body.message,
@@ -112,7 +116,8 @@
             })
           }
 
-          this.loadIntents()
+          this.$parent.$parent.intents = data.body
+          this.$parent.close()
         })
       }
     }

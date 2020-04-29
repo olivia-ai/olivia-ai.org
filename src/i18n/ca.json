@@ -87,13 +87,15 @@
         "title": "Crear un intent"
       },
       "sync": "Sincronitzar el model",
+      "scan": "Escàner",
       "patterns": "Models",
       "responses": "Respostes",
       "tag": "Tag",
       "contextualTag": "Etiqueta contextual",
       "context": "Context",
       "intentCreated": "Intent creada correctament.",
-      "scanned": "QR Code escanejat, afegint el intent."
+      "scanned": "QR Code escanejat, afegint el intent.",
+      "formatCode": "El format del codi QR no és correcte."
     }
   },
   "creator": {

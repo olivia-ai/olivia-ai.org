@@ -86,14 +86,15 @@
         "title": "Create an intent"
       },
       "sync": "Sync the model",
-
+      "scan": "Scan",
       "patterns": "Patterns",
       "responses": "Responses",
       "tag": "Tag",
       "contextualTag": "Contextual tag",
       "context": "Context",
       "intentCreated": "Intent created with success.",
-      "scanned": "QR code scanned, adding the intent."
+      "scanned": "QR code scanned, adding the intent.",
+      "formatCode": "The format of the QR code isn't right."
     }
   },
   "creator": {

@@ -79,14 +79,15 @@
         "title": "Crear un intent"
       },
       "sync": "Sincronizar el modelo",
-
+      "scan": "Escanea",
       "patterns": "Modelos",
       "responses": "Respuestas",
       "tag": "Etiqueta",
       "contextualTag": "Etiqueta contextual",
       "context": "Contexto",
       "intentCreated": "El intent fue creada con éxito.",
-      "scanned": "Código QR escaneado, intención actual añadida."
+      "scanned": "Código QR escaneado, intención actual añadida.",
+      "formatCode": "El formato del código QR no es correcto."
     }
   },
   "creator": {
