@@ -1,47 +1,50 @@
 <template>
-  <div>
-    <div class="card new-card">
-      <div class="card-content">
-        <div class="columns">
-          <div class="column is-8">
-            <p class="title">{{ tag }}</p>
-            <p class="subtitle">
-              <strong>{{ $t('dashboard.intents.patterns') }}</strong>:
-              {{ patterns.join(' — ') }}
-            </p>
-            <p class="subtitle">
-              <strong>{{ $t('dashboard.intents.responses') }}</strong>:
-              {{ responses.join(' — ') }}
-            </p>
+  <div class="columns is-centered">
+    <div class="column is-9">
+      <div class="card new-card">
+        <div class="card-content">
+          <p class="title">{{ tag }}</p>
+          <p class="subtitle">
+            <strong>{{ $t('dashboard.intents.patterns') }}</strong>:
+            {{ patterns.join(' — ') }}
+          </p>
+          <p class="subtitle">
+            <strong>{{ $t('dashboard.intents.responses') }}</strong>:
+            {{ responses.join(' — ') }}
+          </p>
 
-            <p
+          <p
               v-if="context != ''"
               class="subtitle">
-              <strong>{{ $t('dashboard.intents.context') }}</strong>:
-              {{ context }}
-            </p>
+            <strong>{{ $t('dashboard.intents.context') }}</strong>:
+            {{ context }}
+          </p>
 
-            <b-button
+          <b-button
               v-if="token != undefined"
               icon-left="delete"
               rounded
               type="is-danger"
               @click="deleteIntent(tag)">
-              <strong>{{ $t('generic.delete') }}</strong>
-            </b-button>
-          </div>
+            <strong>{{ $t('generic.delete') }}</strong>
+          </b-button>
+        </div>
+      </div>
+    </div>
 
-          <div class="column">
-            <b-tooltip
+    <div class="column">
+      <div
+          class="card new-card"
+          style="width: 220px; float: right;">
+        <div class="card-content">
+          <b-tooltip
               label="Scan this QR Code on Olivia to add this intent"
-              style="float: right"
               position="is-left">
-              <vue-qrcode
-                :value="codeValue"
+            <vue-qrcode
                 tag="img"
+                :value="codeValue"
                 :options="{ width: 200, color: { dark: '#444444' } }"></vue-qrcode>
-            </b-tooltip>
-          </div>
+          </b-tooltip>
         </div>
       </div>
     </div>
@@ -49,11 +52,11 @@
 </template>
 
 <script>
-  import VueQrcode from '@chenfengyuan/vue-qrcode';
+  import VueQrcode from '@chenfengyuan/vue-qrcode'
 
   export default {
     components: {
-      VueQrcode
+      VueQrcode,
     },
     props: {
       tag: {
@@ -88,12 +91,12 @@
       }
       this.url = this.url.replace("ws", "http")
 
-      this.codeValue = `${this.tag};${this.patterns};${this.responses};${this.context}`
+      this.codeValue = `${this.tag};${this.patterns.join('|')};${this.responses.join('|')};${this.context}`
     },
     methods: {
       deleteIntent(tag) {
         let token = localStorage.getItem('Olivia-Token')
-        this.$http.delete(this.url + '/api/intent', {
+        this.$http.delete(this.url + '/api/' + this.$i18n.locale + '/intent', {
           body: {
             tag
           },
@@ -109,7 +112,7 @@
             })
           }
 
-          this.getIntents()
+          this.loadIntents()
         })
       }
     }

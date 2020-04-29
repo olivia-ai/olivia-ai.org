@@ -91,7 +91,9 @@
       "responses": "Responses",
       "tag": "Tag",
       "contextualTag": "Contextual tag",
-      "context": "Context"
+      "context": "Context",
+      "intentCreated": "Intent created with success.",
+      "scanned": "QR code scanned, adding the intent."
     }
   },
   "creator": {

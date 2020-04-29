@@ -1,55 +1,66 @@
 <template>
-  <form action="">
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">{{ $t('dashboard.intents.create.title') }}</p>
-      </header>
-      <section class="modal-card-body">
-        <b-field grouped>
-          <b-input
-            v-model="params.tag"
-            expanded
-            :placeholder="$t('dashboard.intents.tag')"/>
-          <b-input
-            v-model="params.context"
-            expanded
-            :placeholder="$t('dashboard.intents.context')"/>
-        </b-field>
-        <b-field>
-          <b-taginput
-            v-model="params.patterns"
-            ellipsis
-            :placeholder="$t('dashboard.intents.patterns') + '..'"/>
-        </b-field>
-        <b-field>
-          <b-taginput
-            v-model="params.responses"
-            ellipsis
-            :placeholder="$t('dashboard.intents.responses') + '..'"/>
-        </b-field>
-      </section>
-      <footer class="modal-card-foot">
-        <button
-          class="button is-rounded"
-          type="button"
-          @click="$parent.close()">
-          <strong>
-            {{ $t('generic.close') }}
-          </strong>
-        </button>
-        <a
-          class="button is-primary is-rounded"
-          @click="createIntent()">
-          <strong>
-            {{ $t('generic.create') }}
-          </strong>
-        </a>
-      </footer>
+  <div
+    class="card new-card"
+    style="width: 700px">
+    <div class="card-content">
+      <p class="title">{{ $t('dashboard.intents.create.title') }}</p>
+
+      <b-field
+        grouped>
+        <b-input
+          v-model="params.tag"
+          rounded
+          expanded
+          :placeholder="$t('dashboard.intents.tag')"></b-input>
+        <b-input
+          v-model="params.context"
+          rounded
+          expanded
+          :placeholder="$t('dashboard.intents.context')"></b-input>
+      </b-field>
+      <b-field>
+        <b-taginput
+          v-model="params.patterns"
+          style="border-radius: 25px;"
+          ellipsis
+          rounded
+          :placeholder="' ' + $t('dashboard.intents.patterns') + '..'"></b-taginput>
+      </b-field>
+      <b-field>
+        <b-taginput
+          v-model="params.responses"
+          ellipsis
+          rounded
+          :placeholder="' ' + $t('dashboard.intents.responses') + '..'"></b-taginput>
+      </b-field>
+
+      <a
+        class="button is-primary is-rounded"
+        @click="createIntent()">
+        <strong>
+          {{ $t('generic.create') }}
+        </strong>
+      </a>
     </div>
-  </form>
+  </div>
 </template>
 
+<style>
+  .tag:not(body) {
+    background-color: #e4e4e4;
+  }
+
+  .taginput .taginput-container .autocomplete input {
+    border-radius: 25px;
+  }
+
+  .taginput .taginput-container.is-focusable {
+    border-radius: 25px;
+  }
+</style>
+
 <script>
+
   export default {
     data() {
       return {
@@ -61,13 +72,20 @@
         }
       }
     },
+    components: {
+    },
     methods: {
       createIntent() {
-        this.$http.post(this.url + '/api/intent', this.params, {
+        let loader = this.$buefy.loading.open()
+
+        this.$http.post(this.url + '/api/' + this.$i18n.locale + '/intent', this.params, {
           headers: {
             'Olivia-Token': localStorage.getItem('Olivia-Token')
           }
         }).then(data => {
+          loader.close()
+
+
           if (data.body.message !== undefined) {
             this.$buefy.snackbar.open({
               message: data.body.message,
@@ -77,7 +95,7 @@
             return
           }
 
-          this.$parent.getIntents()
+          this.$parent.$parent.intents.push(data.body)
           this.$parent.close()
         })
       }

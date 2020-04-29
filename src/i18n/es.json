@@ -84,7 +84,9 @@
       "responses": "Respuestas",
       "tag": "Etiqueta",
       "contextualTag": "Etiqueta contextual",
-      "context": "Contexto"
+      "context": "Contexto",
+      "intentCreated": "El intent fue creada con éxito.",
+      "scanned": "Código QR escaneado, intención actual añadida."
     }
   },
   "creator": {

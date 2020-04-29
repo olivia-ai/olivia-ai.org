@@ -91,7 +91,9 @@
       "responses": "Réponses",
       "tag": "Tag",
       "contextualTag": "Tag contextuel",
-      "context": "Contexte"
+      "context": "Contexte",
+      "intentCreated": "Intent créé avec succès.",
+      "scanned": "QR code scanné, ajout de l'intent en cours."
     }
   },
   "creator": {

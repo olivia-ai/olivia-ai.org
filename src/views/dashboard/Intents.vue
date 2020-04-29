@@ -10,34 +10,37 @@
               alt="Olivia Dashboard">
           </h1>
 
-          <div class="columns is-centered">
-            <div class="column is-3">
-              <b-button
-                rounded
-                @click="credentialsModal = true">
-                <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
-              </b-button>
-            </div>
+          <div class="buttons is-centered">
+            <b-button
+              rounded
+              icon-left="account"
+              @click="credentialsModal = true">
+              <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
+            </b-button>
 
-            <div class="column is-3">
-              <b-button
-                class="is-primary"
-                rounded
-                @click="createIntentModal = true">
-                <strong>{{ $t('dashboard.intents.create.title')}}</strong>
-              </b-button>
-            </div>
+            <b-button
+              class="is-primary"
+              rounded
+              icon-left="plus-thick"
+              @click="createIntentModal = true">
+              <strong>{{ $t('dashboard.intents.create.title')}}</strong>
+            </b-button>
 
-            <div
+            <b-button
+              class="is-primary"
+              rounded
+              icon-left="plus-thick"
+              @click="createScannerModal = true">
+              <strong>scan</strong>
+            </b-button>
+
+            <b-button
               v-if="token != undefined"
-              class="column is-3">
-              <b-button
-                icon-left="sync"
-                rounded
-                @click="syncNetwork()">
-                <strong>{{ $t('dashboard.intents.sync')}}</strong>
-              </b-button>
-            </div>
+              icon-left="sync"
+              rounded
+              @click="syncNetwork()">
+              <strong>{{ $t('dashboard.intents.sync')}}</strong>
+            </b-button>
           </div>
         </div>
       </div>
@@ -109,6 +112,14 @@
     </b-modal>
 
     <b-modal
+      :active.sync="createScannerModal"
+      has-modal-card
+      aria-role="dialog"
+      aria-modal>
+      <modal-scanner></modal-scanner>
+    </b-modal>
+
+    <b-modal
       :active.sync="credentialsModal"
       has-modal-card
       trap-focus
@@ -123,6 +134,7 @@
   import Credentials from '../../components/Credentials'
   import CreateIntent from '../../components/CreateIntent'
   import ModalIntent from '../../components/Intent'
+  import ModalScanner from '../../components/Scanner'
 
   export default {
     data() {
@@ -130,13 +142,15 @@
         intents: [],
         credentialsModal: false,
         createIntentModal: false,
+        createScannerModal: false,
         url: '',
         token: localStorage.getItem('Olivia-Token')
       }
     },
     components: {
       Credentials,
-      CreateIntent
+      CreateIntent,
+      ModalScanner
     },
     methods: {
       openIntentModal(intent) {
