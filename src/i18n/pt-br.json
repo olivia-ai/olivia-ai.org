@@ -1,0 +1,125 @@
+{
+  "generic": {
+    "close": "Fechar",
+    "create": "Criar",
+    "save": "Salvar",
+    "delete": "Apagar"
+  },
+  "navbar": {
+    "documentation": "Documentação",
+    "changelog": "Changelog",
+    "blog": "Blog",
+    "dashboard": "Painel de Controle",
+    "intents": {
+      "title": "Intenções",
+      "text": "Onde você pode adicionar intenções"
+    },
+    "data": {
+      "title": "Dados",
+      "text": "Para obter dados de treinamento"
+    },
+    "chat": "Chat"
+  },
+  "home": {
+    "introduction": {
+      "title": "Sua nova melhor amiga.",
+      "text": "Um chatbot contextual de código aberto criado com uma <strong>rede neural artificial</strong>.",
+      "chat": "Chat online",
+      "github": "Veja no GitHub"
+    },
+    "speakAbility": {
+      "title": "Capacidade de falar",
+      "text": "Olivia pode te ouvir dizendo <strong>“Hey Olivia”</strong> ou clicando no botão central.<br>Ela fala para responder, a menos que você tenha desativado a voz dela."
+    },
+    "privacy": {
+      "title": "Privacidade",
+      "text": "Olivia respeita sua <strong>privacidade</strong>. Todos os dados usados por Olivia são salvos no <strong>seu dispositivo</strong><br>Você é dono dos <strong>seus dados</strong>, simples assim."
+    },
+    "features": {
+      "title": "Funcionalidades",
+      "modulable": {
+        "title": "Completamente modular",
+        "text": "Olivia é organizada em modulos para facilitar a adição de novas capacidades. Estes modulos podem ser escritos em Go para executar multiplas tarefas."
+      },
+      "openSource": {
+        "title": "Totalmente de código aberto",
+        "text": "O projeto é totalmente de código aberto do site ao back-end. Assim, você pode criar seu próprio chatbot e contribuir com a Olivia."
+      },
+      "pwa": {
+        "title": "Aplicativo de Web Progressivo (PWA)",
+        "text": "Você pode adicionar o PWA diretamente na tela inicial do seu site, e você não precisa e nem vai lembrar que é um site sendo executado por trás desse aplicativo nativo."
+      }
+    }
+  },
+  "changelog": {
+    "april2020": "Abril 2020",
+    "march2020": "Março 2020",
+    "january2020": "Janeiro 2020",
+    "august2019": "Agosto 2019",
+    "start": "Início"
+  },
+  "chat": {
+    "welcome": "Oi, eu sou Olivia. Você pode falar comigo escrevendo no campo abaixo, dizendo a frase chave “Hey Olivia” ou clique no circulo principal e fale.",
+    "defaultMessage": "O que eu posso fazer por você?",
+    "fieldPlaceholder": "Escreva sua mensagem"
+  },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Tags de intenções",
+      "errorLoss": "Erro de perda",
+      "errorLossText": "Erro de perda da rede neural",
+      "networkIterations": "Iterações de rede",
+      "hiddenLayers": "Camadas ocultas",
+      "learningTime": "Tempo de aprendizagem",
+      "learningRate": "Taxa de aprendizagem"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Credenciais",
+        "enter": "Inserir credenciais",
+        "token": {
+          "title": "Token",
+          "text": "O token de autenticação"
+        }
+      },
+      "create": {
+        "title": "Criar uma intenção"
+      },
+      "sync": "Sincronizar o modelo",
+      "scan": "Escanear",
+      "patterns": "Padrões",
+      "responses": "Respostas",
+      "tag": "Tag",
+      "contextualTag": "Tag contextual",
+      "context": "Contexto",
+      "intentCreated": "Intenção criada com sucesso.",
+      "scanned": "QR-Code escaneado, adicionando a intenção.",
+      "formatCode": "O formato do QR-Code não está correto."
+    }
+  },
+  "creator": {
+    "age": "idade.",
+    "location": "Baseado em <strong>Geneva, Suíça</strong>.",
+    "studies": "● Estudou em <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. Opção por <strong>Ciências da Terra e da Vida</strong> , especialização em <strong>Ciência da computação</strong>.",
+    "olivia": "● Criador e mantenedor de <strong>Olivia, projeto com 1.5K de Estrelas</strong> em <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Habilidades: Linguagens de programação: <strong>Go, JS, Ruby, Crystal, Python</strong>, tecnologias: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "email"
+  },
+  "footer": {
+    "bestFriend": "Sua nova melhor amiga",
+    "location": "Geneva, Suiça",
+    "license": "Licenciado sob <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "about": {
+      "title": "Sobre",
+      "contact": "Contato"
+    },
+    "information": {
+      "title": "Informação",
+      "creator": "Criador",
+      "license": "Licença"
+    },
+    "community": {
+      "title": "Communidade"
+    }
+  }
+}
