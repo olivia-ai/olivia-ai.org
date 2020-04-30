@@ -5,7 +5,7 @@
       :class="{ 'navbar-item': navbar }">
       <b-icon
         class="media-left"
-        icon="translate"/>
+        icon="translate"></b-icon>
     </a>
 
     <b-dropdown-item

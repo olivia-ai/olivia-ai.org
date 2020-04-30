@@ -97,10 +97,10 @@
 
                     <b-icon
                       v-if="muted"
-                      icon="volume-off"/>
+                      icon="volume-off"></b-icon>
                     <b-icon
                       v-else
-                      icon="volume-high"/>
+                      icon="volume-high"></b-icon>
                   </button>
                 </b-tooltip>
               </p>
@@ -150,6 +150,10 @@
           es: {
             lang: 'es-ES',
             name: 'Monica'
+          },
+          'pt-br': {
+            lang: 'pt',
+            name: 'Joana'
           }
         },
 
@@ -292,7 +296,7 @@
         this.message = this.$t('chat.defaultMessage')
 
         let locale = this.$i18n.locale
-        let availableInLang = this.languages[locale].lang.startsWith(locale)
+        let availableInLang = this.languages[locale].lang.substring(0,2) === locale.substring(0,2)
         if (!availableInLang) {
           // Mute Olivia
           this.muted = true
