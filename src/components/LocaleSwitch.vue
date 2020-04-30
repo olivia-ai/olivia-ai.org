@@ -5,7 +5,7 @@
       :class="{ 'navbar-item': navbar }">
       <b-icon
         class="media-left"
-        icon="translate"/>
+        icon="translate"></b-icon>
     </a>
 
     <b-dropdown-item
@@ -39,7 +39,8 @@
           { locale: 'en', name: 'English' },
           { locale: 'fr', name: 'Français' },
           { locale: 'es', name: 'Español' },
-          { locale: 'ca', name: 'Català' }
+          { locale: 'ca', name: 'Català' },
+          { locale: 'pt-br', name: 'Português-Brasileiro' }
         ]
       }
     },
