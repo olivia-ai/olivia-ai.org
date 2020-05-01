@@ -12,34 +12,34 @@
 
           <div class="buttons is-centered">
             <b-button
-                rounded
-                icon-left="account"
-                @click="credentialsModal = true">
+              rounded
+              icon-left="account"
+              @click="credentialsModal = true">
               <strong>{{ $t('dashboard.intents.credentials.enter') }}</strong>
             </b-button>
 
             <b-button
-                class="is-primary"
-                rounded
-                icon-left="plus-thick"
-                @click="createIntentModal = true">
+              class="is-primary"
+              rounded
+              icon-left="plus-thick"
+              @click="createIntentModal = true">
               <strong>{{ $t('dashboard.intents.create.title')}}</strong>
             </b-button>
 
             <b-button
-                class="is-primary"
-                rounded
-                icon-left="qrcode-scan"
-                @click="createScannerModal = true">
+              class="is-primary"
+              rounded
+              icon-left="qrcode-scan"
+              @click="createScannerModal = true">
               <strong>{{ $t('dashboard.intents.scan') }}</strong>
             </b-button>
 
             <b-button
-                v-if="token != undefined"
-                class="is-primary"
-                icon-left="sync"
-                rounded
-                @click="syncNetwork()">
+              v-if="token != undefined"
+              class="is-primary"
+              icon-left="sync"
+              rounded
+              @click="syncNetwork()">
               <strong>{{ $t('dashboard.intents.sync')}}</strong>
             </b-button>
           </div>

@@ -14,18 +14,18 @@
           </p>
 
           <p
-              v-if="context != ''"
-              class="subtitle">
+            v-if="context != ''"
+            class="subtitle">
             <strong>{{ $t('dashboard.intents.context') }}</strong>:
             {{ context }}
           </p>
 
           <b-button
-              v-if="token != undefined"
-              icon-left="delete"
-              rounded
-              type="is-danger"
-              @click="deleteIntent(tag)">
+            v-if="token != undefined"
+            icon-left="delete"
+            rounded
+            type="is-danger"
+            @click="deleteIntent(tag)">
             <strong>{{ $t('generic.delete') }}</strong>
           </b-button>
         </div>
@@ -34,16 +34,16 @@
 
     <div class="column">
       <div
-          class="card new-card"
-          style="width: 220px; float: right;">
+        class="card new-card"
+        style="width: 220px; float: right;">
         <div class="card-content">
           <b-tooltip
-              label="Scan this QR Code on Olivia to add this intent"
-              position="is-left">
+            label="Scan this QR Code on Olivia to add this intent"
+            position="is-left">
             <vue-qrcode
-                tag="img"
-                :value="codeValue"
-                :options="{ width: 200, color: { dark: '#444444' } }"></vue-qrcode>
+              tag="img"
+              :value="codeValue"
+              :options="{ width: 200, color: { dark: '#444444' } }"></vue-qrcode>
           </b-tooltip>
         </div>
       </div>

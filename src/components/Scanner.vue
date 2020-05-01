@@ -5,8 +5,8 @@
     <div class="card-content">
       <p class="title">Scan an intent's QR code</p>
       <qrcode-stream
-          style="border-radius: 10px;"
-          @decode="onDecode">
+        style="border-radius: 10px;"
+        @decode="onDecode">
       </qrcode-stream>
     </div>
   </div>
