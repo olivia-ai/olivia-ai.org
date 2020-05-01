@@ -176,10 +176,14 @@
     },
     methods: {
       getCoverage() {
+        let loader = this.$buefy.loading.open()
+
         this.$http.get(this.url + '/api/coverage').then(data => {
           this.coverage = data.body
 
           this.calculateFrontCoverage()
+
+          loader.close()
         })
       },
 
