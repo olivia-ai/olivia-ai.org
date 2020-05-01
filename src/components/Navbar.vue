@@ -55,7 +55,9 @@
           </strong>
         </router-link>
 
-        <b-dropdown aria-role="list">
+        <b-dropdown
+          aria-role="list"
+          position="is-bottom-left">
           <a
             slot="trigger"
             class="navbar-item">
@@ -90,6 +92,21 @@
                 style="color: #1b1b1b">
                 <h3>{{ $t('navbar.data.title') }}</h3>
                 <small>{{ $t('navbar.data.text') }}</small>
+              </router-link>
+            </div>
+          </b-dropdown-item>
+
+          <b-dropdown-item aria-role="listitem">
+            <div class="media">
+              <b-icon
+                class="media-left"
+                icon="translate"/>
+              <router-link
+                to="/dashboard/language"
+                class="media-content"
+                style="color: #1b1b1b">
+                <h3>{{ $t('navbar.language.title') }}</h3>
+                <small>{{ $t('navbar.language.text') }}</small>
               </router-link>
             </div>
           </b-dropdown-item>

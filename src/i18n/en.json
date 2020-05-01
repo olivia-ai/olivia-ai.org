@@ -18,6 +18,10 @@
       "title": "Data",
       "text": "For getting training data"
     },
+    "language": {
+      "title": "Cobertura de traduccions",
+      "text": "Per veure la cobertura de les traduccions"
+    },
     "chat": "Chat"
   },
   "home": {
@@ -95,6 +99,19 @@
       "intentCreated": "Intent created with success.",
       "scanned": "QR code scanned, adding the intent.",
       "formatCode": "The format of the QR code isn't right."
+    },
+    "language": {
+      "flag": "Flag",
+      "language": "Language",
+      "modulesCoverage": "Modules translation coverage",
+      "intentsCoverage": "Intents translation coverage",
+      "messagesCoverage": "Messages translation coverage",
+      "websiteCoverage": "Website translation coverage",
+      "notCoveredModules": "Translations not covered by the modules: ",
+      "notCoveredIntents": "Translations not covered by the intents: ",
+      "notCoveredMessages": "Translations not covered by the messages: ",
+      "notCoveredWebsite": "Translations not covered by the website messages: ",
+      "translationsDone": "All translations have been done."
     }
   },
   "creator": {

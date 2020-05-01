@@ -18,6 +18,10 @@
       "title": "Dades",
       "text": "Per obtenir dades d’entrenament"
     },
+    "language": {
+      "title": "Cobertura de traducciones",
+      "text": "Para ver la cobertura de las traducciones"
+    },
     "chat": "Discussió"
   },
   "home": {

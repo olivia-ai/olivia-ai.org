@@ -36,6 +36,10 @@ export default new Router({
     {
       path: '/dashboard/intents',
       component: () => import('@/views/dashboard/Intents.vue')
+    },
+    {
+      path: '/dashboard/language',
+      component: () => import('@/views/dashboard/Language.vue')
     }
   ],
   mode: 'history'

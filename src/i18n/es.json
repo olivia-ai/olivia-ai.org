@@ -18,6 +18,10 @@
       "title": "Datos",
       "text": "Para obtener datos de entrenamiento"
     },
+    "language": {
+      "title": "Cobertura de traducciones",
+      "text": "Para ver la cobertura de las traducciones"
+    },
     "chat": "Discusión"
   },
   "home": {
@@ -88,6 +92,19 @@
       "intentCreated": "El intent fue creada con éxito.",
       "scanned": "Código QR escaneado, intención actual añadida.",
       "formatCode": "El formato del código QR no es correcto."
+    },
+    "language": {
+      "flag": "Bandera",
+      "language": "Idioma",
+      "modulesCoverage": "Cobertura de traducción de módulos",
+      "intentsCoverage": "Cobertura de traducción de intenciones",
+      "messagesCoverage": "Cobertura de traducción de mensajes",
+      "websiteCoverage": "Cobertura de la traducción de la página web",
+      "notCoveredModules": "Traducciones no cubiertas por los módulos: ",
+      "notCoveredIntents": "Traducciones no cubiertas por las intenciones: ",
+      "notCoveredMessages": "Traducciones no cubiertas por los mensajes: ",
+      "notCoveredWebsite": "Traducciones no cubiertas por los mensajes del sitio web: ",
+      "translationsDone": "Todas las traducciones se han hecho."
     }
   },
   "creator": {
