@@ -1,7 +1,6 @@
 FROM node:lts-alpine
 
-ARG VUE_APP_URL
-ENV VUE_APP_URL $VUE_APP_URL
+ARG VUE_APP_URL=ws://localhost:8080
 
 RUN npm install -g http-server
 WORKDIR /app
