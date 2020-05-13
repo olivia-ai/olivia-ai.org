@@ -40,6 +40,14 @@ export default new Router({
     {
       path: '/dashboard/language',
       component: () => import('@/views/dashboard/Language.vue')
+    },
+    { 
+      path: '/404', 
+      component: () => import('@/components/404.vue') 
+    },  
+    { 
+      path: '*', 
+      redirect: '/404' 
     }
   ],
   mode: 'history'
