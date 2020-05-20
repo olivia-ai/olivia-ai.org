@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div class="container">
-      <br>
-      <br>
-    </div>
-
     <footer class="section">
       <div class="container is-small">
         <div class="columns">

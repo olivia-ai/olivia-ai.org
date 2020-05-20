@@ -123,5 +123,23 @@
         </div>
       </div>
     </section>
+
+    <section class="hero has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title">Technologies</p>
+          <img
+            class="line" 
+            src="/img/technologies.png">
+        </div>
+      </div>
+    </section>
   </div>
 </template>
+
+<style>
+.line {
+  filter: grayscale(100%);
+  opacity: .8;
+}
+</style>
