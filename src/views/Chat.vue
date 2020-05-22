@@ -336,12 +336,12 @@
           let locale = this.$i18n.locale
           let language = this.languages[locale]
 
-          return (voice.lang.startsWith(language.lang) && voice.name.includes('Female')) || voice.name.includes(language.name)
+          return voice.name.includes(language.name)
         })
 
         if (this.voice === undefined) {
           this.voice = speechSynthesis.getVoices().find(voice => {
-            return (voice.lang.startsWith('en') && voice.name.includes('Female')) || voice.name.includes('Samantha')
+            return voice.lang.startsWith(this.$i18n.locale)
           })
         }
 
