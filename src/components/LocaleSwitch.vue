@@ -37,6 +37,7 @@
       return {
         locales: [
           { locale: 'en', name: 'English' },
+          { locale: 'de', name: 'German' },
           { locale: 'fr', name: 'Français' },
           { locale: 'es', name: 'Español' },
           { locale: 'ca', name: 'Català' },
