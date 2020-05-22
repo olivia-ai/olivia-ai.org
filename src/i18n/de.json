@@ -1,0 +1,142 @@
+{
+  "generic": {
+    "close": "Schließen",
+    "create": "Erstellen",
+    "save": "Speichern",
+    "delete": "Löschen"
+  },
+  "navbar": {
+    "documentation": "Dokumentation",
+    "changelog": "Changelog",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "intents": {
+      "title": "Intents",
+      "text": "Where you can add intents"
+    },
+    "data": {
+      "title": "Daten",
+      "text": "Um Trainingsdaten zu bekommen"
+    },
+    "language": {
+      "title": "Coverage of translations",
+      "text": "To see the coverage of the translations"
+    },
+    "chat": "Chat"
+  },
+  "home": {
+    "introduction": {
+      "title": "Dein neuer bester Freund.",
+      "text": "An open-source contextual chatbot built with an <strong>artificial neural network</strong>.",
+      "chat": "Chat online",
+      "github": "See on GitHub"
+    },
+    "speakAbility": {
+      "title": "Fähigkeiten",
+      "text": "Olivia kann Ihnen zuhören, indem Sie <strong>„Hallo Olivia“</strong> sagen oder auf die zentrale Schaltfläche klicken. <br>Sie spricht, um Ihnen zu antworten, es sei denn, Sie haben ihre Stimme deaktiviert."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "Olivia respects your <strong>privacy</strong>. All the data used by Olivia is saved in <strong>your client</strong><br>You own <strong>your data</strong>, simply as that."
+    },
+    "features": {
+      "title": "Features",
+      "modulable": {
+        "title": "Komplett Modular",
+        "text": "Olivia ist in Modulen organisiert, um das Hinzufügen neuer Funktionen zu erleichtern. Diese Module können in Go geschrieben werden, um mehrere Aufgaben auszuführen."
+      },
+      "openSource": {
+        "title": "Open-source",
+        "text": "Das Projekt ist vollständig Open Source von der Website bis zum Backend. So können Sie Ihren eigenen Chatbot erstellen und zu Olivia beitragen."
+      },
+      "pwa": {
+        "title": "Progressive web app",
+        "text": "Sie können die PWA direkt von der Website zu Ihrem Homescreen hinzufügen, und Sie werden es nicht merken, dass es sich um eine Website handelt, die hinter dieser nativen App läuft."
+      }
+    }
+  },
+  "changelog": {
+    "april2020": "April 2020",
+    "march2020": "März 2020",
+    "january2020": "Januar 2020",
+    "august2019": "August 2019",
+    "start": "Start"
+  },
+  "chat": {
+    "welcome": "Hallo, Ich bin Olivia. Sie können mit mir sprechen, indem Sie in das Feld unten schreiben, den Trigger „Hallo Olivia“ sagen oder auf den Hauptkreis klicken und sprechen.",
+    "defaultMessage": "Was kann ich für dich tun?",
+    "fieldPlaceholder": "Schreibe deine Nachricht"
+  },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Intents' tags",
+      "errorLoss": "Error loss",
+      "errorLossText": "Error loss of the neural network",
+      "networkIterations": "Network iterations",
+      "hiddenLayers": "Hidden layers",
+      "learningTime": "Learning time",
+      "learningRate": "Learning rate"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Credentials",
+        "enter": "Enter credentials",
+        "token": {
+          "title": "Token",
+          "text": "The authentication token"
+        }
+      },
+      "create": {
+        "title": "Create an intent"
+      },
+      "sync": "Sync the model",
+      "scan": "Scan",
+      "patterns": "Patterns",
+      "responses": "Responses",
+      "tag": "Tag",
+      "contextualTag": "Contextual tag",
+      "context": "Context",
+      "intentCreated": "Intent created with success.",
+      "scanned": "QR code scanned, adding the intent.",
+      "formatCode": "The format of the QR code isn't right."
+    },
+    "language": {
+      "flag": "Flag",
+      "language": "Language",
+      "modulesCoverage": "Modules translation coverage",
+      "intentsCoverage": "Intents translation coverage",
+      "messagesCoverage": "Messages translation coverage",
+      "websiteCoverage": "Website translation coverage",
+      "notCoveredModules": "Translations not covered by the modules: ",
+      "notCoveredIntents": "Translations not covered by the intents: ",
+      "notCoveredMessages": "Translations not covered by the messages: ",
+      "notCoveredWebsite": "Translations not covered by the website messages: ",
+      "translationsDone": "All translations have been done."
+    }
+  },
+  "creator": {
+    "age": "years old.",
+    "location": "Based in <strong>Geneva, Switzerland</strong>.",
+    "studies": "● Student at <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Earth and life sciences</strong> option, specialization in <strong>computer science</strong>.",
+    "olivia": "● Creator and maintainer of <strong>Olivia, 1.5K stars-projet</strong> on <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Skills: programming languages: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "email"
+  },
+  "footer": {
+    "bestFriend": "Dein neuer bester Freund",
+    "location": "Geneva, Switzerland",
+    "license": "Licenced under <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "about": {
+      "title": "Über",
+      "contact": "Kontakt"
+    },
+    "information": {
+      "title": "Information",
+      "creator": "Creator",
+      "license": "License"
+    },
+    "community": {
+      "title": "Community"
+    }
+  }
+}

@@ -139,6 +139,10 @@
             lang: 'en-GB',
             name: 'Samantha'
           },
+          de: {
+            lang: 'de-DE',
+            name: 'Anna'
+          },
           ca: {
             lang: 'es-ES',
             name: 'Monica'
