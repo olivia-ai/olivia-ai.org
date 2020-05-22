@@ -7,37 +7,19 @@
   },
   "navbar": {
     "documentation": "Dokumentation",
-    "changelog": "Changelog",
-    "blog": "Blog",
-    "dashboard": "Dashboard",
-    "intents": {
-      "title": "Intents",
-      "text": "Where you can add intents"
-    },
     "data": {
       "title": "Daten",
       "text": "Um Trainingsdaten zu bekommen"
-    },
-    "language": {
-      "title": "Coverage of translations",
-      "text": "To see the coverage of the translations"
     },
     "chat": "Chat"
   },
   "home": {
     "introduction": {
-      "title": "Dein neuer bester Freund.",
-      "text": "An open-source contextual chatbot built with an <strong>artificial neural network</strong>.",
-      "chat": "Chat online",
-      "github": "See on GitHub"
+      "title": "Dein neuer bester Freund."
     },
     "speakAbility": {
       "title": "Fähigkeiten",
       "text": "Olivia kann Ihnen zuhören, indem Sie <strong>„Hallo Olivia“</strong> sagen oder auf die zentrale Schaltfläche klicken. <br>Sie spricht, um Ihnen zu antworten, es sei denn, Sie haben ihre Stimme deaktiviert."
-    },
-    "privacy": {
-      "title": "Privacy",
-      "text": "Olivia respects your <strong>privacy</strong>. All the data used by Olivia is saved in <strong>your client</strong><br>You own <strong>your data</strong>, simply as that."
     },
     "features": {
       "title": "Features",
@@ -67,53 +49,6 @@
     "defaultMessage": "Was kann ich für dich tun?",
     "fieldPlaceholder": "Schreibe deine Nachricht"
   },
-  "dashboard": {
-    "data": {
-      "intentsTags": "Intents' tags",
-      "errorLoss": "Error loss",
-      "errorLossText": "Error loss of the neural network",
-      "networkIterations": "Network iterations",
-      "hiddenLayers": "Hidden layers",
-      "learningTime": "Learning time",
-      "learningRate": "Learning rate"
-    },
-    "intents": {
-      "credentials": {
-        "title": "Credentials",
-        "enter": "Enter credentials",
-        "token": {
-          "title": "Token",
-          "text": "The authentication token"
-        }
-      },
-      "create": {
-        "title": "Create an intent"
-      },
-      "sync": "Sync the model",
-      "scan": "Scan",
-      "patterns": "Patterns",
-      "responses": "Responses",
-      "tag": "Tag",
-      "contextualTag": "Contextual tag",
-      "context": "Context",
-      "intentCreated": "Intent created with success.",
-      "scanned": "QR code scanned, adding the intent.",
-      "formatCode": "The format of the QR code isn't right."
-    },
-    "language": {
-      "flag": "Flag",
-      "language": "Language",
-      "modulesCoverage": "Modules translation coverage",
-      "intentsCoverage": "Intents translation coverage",
-      "messagesCoverage": "Messages translation coverage",
-      "websiteCoverage": "Website translation coverage",
-      "notCoveredModules": "Translations not covered by the modules: ",
-      "notCoveredIntents": "Translations not covered by the intents: ",
-      "notCoveredMessages": "Translations not covered by the messages: ",
-      "notCoveredWebsite": "Translations not covered by the website messages: ",
-      "translationsDone": "All translations have been done."
-    }
-  },
   "creator": {
     "age": "years old.",
     "location": "Based in <strong>Geneva, Switzerland</strong>.",
@@ -125,18 +60,9 @@
   "footer": {
     "bestFriend": "Dein neuer bester Freund",
     "location": "Geneva, Switzerland",
-    "license": "Licenced under <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
     "about": {
       "title": "Über",
       "contact": "Kontakt"
-    },
-    "information": {
-      "title": "Information",
-      "creator": "Creator",
-      "license": "License"
-    },
-    "community": {
-      "title": "Community"
     }
   }
 }
