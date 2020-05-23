@@ -1,0 +1,142 @@
+{
+  "generic": {
+    "close": "Chiudi",
+    "create": "Crea",
+    "save": "Salva",
+    "delete": "Cancella"
+  },
+  "navbar": {
+    "documentation": "Documentazione",
+    "changelog": "Changelog",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "intents": {
+      "title": "Scopi",
+      "text": "Dove puoi aggiungere gli scopi"
+    },
+    "data": {
+      "title": "Dati",
+      "text": "Per ottenere dati per il training"
+    },
+    "language": {
+      "title": "Copertura delle traduzioni",
+      "text": "Per vedere la copertura delle traduzioni"
+    },
+    "chat": "Chat"
+  },
+  "home": {
+    "introduction": {
+      "title": "la tua nuova migliore amica.",
+      "text": "Una chatbot contestuale open-source realizzata con una <strong>rete neurale artificiale</strong>.",
+      "chat": "Chat online",
+      "github": "Vedi su GitHub"
+    },
+    "speakAbility": {
+      "title": "Abilità di parlare",
+      "text": "Olivia può cominciare ad ascoltarti dicendo <strong>“Hey Olivia”</strong> o cliccando il bottone centrale.<br>She speak to reply you, unless you've disabled her voice."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "text": "Olivia rispetta la tua <strong>privacy</strong>. Tutti i dati usati da Olivia sono conservati sul <strong>tuo client</strong><br>Tu possiedi <strong>i tuoi dati</strong>, semplicemente così."
+    },
+    "features": {
+      "title": "Funzionalità",
+      "modulable": {
+        "title": "Completamente modulabile",
+        "text": "Olivia è organizzata in moduli per facilitare l'aggiunta di nuove capacità. Questi moduli possono essere scritti in Go per eseguire molteplici compiti."
+      },
+      "openSource": {
+        "title": "Totalmente open-source",
+        "text": "Il progetto è completamente open-source dal website al backend. puoi realizzare il tuo personale chatbot e contribuire ad Olivia."
+      },
+      "pwa": {
+        "title": "Web App Progressiva",
+        "text": "Puoi aggiungere direttamente la WAP alla tua homescreen dal sito, e non ti ricorderai che quello è un sito che gira dietro questa app simil-nativa."
+      }
+    }
+  },
+  "changelog": {
+    "april2020": "Aprile 2020",
+    "march2020": "Marzo 2020",
+    "january2020": "Gennaio 2020",
+    "august2019": "Agosto 2019",
+    "start": "Comincia"
+  },
+  "chat": {
+    "welcome": "Hey, Sono Olivia. Puoi parlarmi scrivendo nel campo sotto, dicendo la parola “Hey Olivia” o cliccando nel cerchio principale e parlando.",
+    "defaultMessage": "Cosa posso fare per te?",
+    "fieldPlaceholder": "Scrivi un messaggio"
+  },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Etichette degli scopi",
+      "errorLoss": "Errore di perdita",
+      "errorLossText": "Errore perdita della rete neurale",
+      "networkIterations": "Interazioni della rete",
+      "hiddenLayers": "Strato nascosto",
+      "learningTime": "Momento dell'apprendimento",
+      "learningRate": "Punteggio dell'apprendimento"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Credenziali",
+        "enter": "Inserisci credenziali",
+        "token": {
+          "title": "Token",
+          "text": "Token di autenticazione"
+        }
+      },
+      "create": {
+        "title": "Crea uno scopo"
+      },
+      "sync": "Sincronizza il modello",
+      "scan": "Scansiona",
+      "patterns": "Modelli",
+      "responses": "Risposte",
+      "tag": "Etichetta",
+      "contextualTag": "Etichetta contestuale",
+      "context": "Contesto",
+      "intentCreated": "Scopo creato con successo.",
+      "scanned": "Codice QR scansionato, Scopo in caricamento.",
+      "formatCode": "Il formato del codice QR non è corretto."
+    },
+    "language": {
+      "flag": "Bandiera",
+      "language": "Lingua",
+      "modulesCoverage": "Grado di completamento della traduzione dei moduli",
+      "intentsCoverage": "Grado di completamento della traduzione degli scopi",
+      "messagesCoverage": "Grado di completamento della traduzione dei messaggi",
+      "websiteCoverage": "Grado di completamento della traduzione del sito web",
+      "notCoveredModules": "Traduzioni non coperte dai moduli: ",
+      "notCoveredIntents": "Traduzioni non coperte dagli scopi: ",
+      "notCoveredMessages": "Traduzioni non coperte dai messaggi: ",
+      "notCoveredWebsite": "Traduzioni non coperte dai messaggi del sito web: ",
+      "translationsDone": "Tutte le traduzionni sono state realizzate."
+    }
+  },
+  "creator": {
+    "age": "anni di età.",
+    "location": "Situata a <strong>Ginevra, Svizzera</strong>.",
+    "studies": "● Studente al <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Scienze della Terra e dell vita</strong>, specializzazione in <strong>scienze informatiche</strong>.",
+    "olivia": "● Creatore e sviluppatore di <strong>Olivia, progetto da 1.5K stelle </strong> su <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Conoscenze: linguaggi di programmazione: <strong>Go, JS, Ruby, Crystal, Python</strong>, tecnologie: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "email"
+  },
+  "footer": {
+    "bestFriend": "La tua nuova migliore amica",
+    "location": "Ginevra, Switzerland",
+    "license": "Licenza sotto <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "about": {
+      "title": "About",
+      "contact": "Contatti"
+    },
+    "information": {
+      "title": "Informazione",
+      "creator": "Creatore",
+      "license": "Licenza"
+    },
+    "community": {
+      "title": "Communità"
+    }
+  }
+}
