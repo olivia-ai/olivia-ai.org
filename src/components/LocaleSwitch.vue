@@ -36,11 +36,12 @@
     data () {
       return {
         locales: [
-          { locale: 'en', name: 'English' },
-          { locale: 'de', name: 'German' },
-          { locale: 'fr', name: 'Français' },
-          { locale: 'es', name: 'Español' },
           { locale: 'ca', name: 'Català' },
+          { locale: 'en', name: 'English' },
+          { locale: 'es', name: 'Español' },
+          { locale: 'fr', name: 'Français' },
+          { locale: 'de', name: 'German' },
+          { locale: 'it', name: 'Italiano' },
           { locale: 'pt-br', name: 'Português-Brasileiro' }
         ]
       }
