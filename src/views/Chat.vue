@@ -155,6 +155,10 @@
             lang: 'es-ES',
             name: 'Monica'
           },
+          it: {
+            lang: 'it-IT',
+            name: 'Alice'
+          },
           'pt-br': {
             lang: 'pt',
             name: 'Joana'
