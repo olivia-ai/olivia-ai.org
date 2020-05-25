@@ -42,7 +42,7 @@
     "features": {
       "title": "Features",
       "modulable": {
-        "title": "Completely modulable",
+        "title": "Completely modular",
         "text": "Olivia is organized in modules to facilitate the addition of new capabilities. These modules can be written in Go to execute multiple tasks."
       },
       "openSource": {
