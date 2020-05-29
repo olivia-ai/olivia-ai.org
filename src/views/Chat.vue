@@ -166,7 +166,7 @@
           'tr': {
             lang: 'tr',
             name: 'Sezer'
-           }
+          }
         },
 
         writing: false,
