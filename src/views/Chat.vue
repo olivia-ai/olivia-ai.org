@@ -162,7 +162,11 @@
           'pt-br': {
             lang: 'pt',
             name: 'Joana'
-          }
+          },
+          'tr': {
+            lang: 'tr',
+            name: 'Sezer'
+           }
         },
 
         writing: false,
