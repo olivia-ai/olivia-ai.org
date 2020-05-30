@@ -40,9 +40,9 @@
       "text": "Olivia <strong>gizliliğinize</strong> saygı duyar.Olivia tarafından kullanılan tüm veriler <strong>istemci tarafında kaydedilir.</strong><br>Sahip olduğunuz ve size ait verileriniz sadece <strong>sizindir.</strong>."
     },
     "features": {
-      "title": "Özellikler",
+      "title": "Kabiliyetleri ve Özellikleri",
       "modulable": {
-        "title": "Tüm Modüller",
+        "title": "Modüler Yapı",
         "text": "Olivia, yeni yeteneklerin eklenmesini kolaylaştırmak için modüller halde kodlanmıştır. Bu modüller, birden çok görevi yürütmek için Go'da yazılmaktadır."
       },
       "openSource": {
