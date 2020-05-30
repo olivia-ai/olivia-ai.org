@@ -165,7 +165,7 @@
           },
           'tr': {
             lang: 'tr',
-            name: 'Sezer'
+            name: 'Yelda'
           }
         },
 
