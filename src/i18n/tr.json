@@ -1,0 +1,142 @@
+{
+  "generic": {
+    "close": "Kapat",
+    "create": "Oluştur",
+    "save": "Kaydet",
+    "delete": "Sil"
+  },
+  "navbar": {
+    "documentation": "Dökümantasyon",
+    "changelog": "Değişiklik Geçmişi",
+    "blog": "Blog",
+    "dashboard": "Kontrol Paneli",
+    "intents": {
+      "title": "Aktiviteler",
+      "text": "Aktiviteleri nereye ekleyebilirim?"
+    },
+    "data": {
+      "title": "Veri",
+      "text": "Eğitim verilerini almak için"
+    },
+    "language": {
+      "title": "Çeviri oranı",
+      "text": "Ne kadar çeviri yapıldığını görün"
+    },
+    "chat": "Sohbet"
+  },
+  "home": {
+    "introduction": {
+      "title": "Yeni en iyi arkadaşın.",
+      "text": "<strong>Yapay sinir ağı</strong> ile oluşturulmuş bir açık kaynak kodlu bağlamsal sohbet botu.",
+      "chat": "Çevrimiçi sohbet",
+      "github": "GitHub'tan bak"
+    },
+    "speakAbility": {
+      "title": "Konuşma yeteneği",
+      "text": "Olivia'ya eğer <strong>“Hey Olivia”</strong> diye seslenirseniz ya da merkezdeki butona tıklarsanız sizi dinler.<br>Sesini devre dışı bırakmadıkça, size cevap vermek için konuşur."
+    },
+    "privacy": {
+      "title": "Gizlilik",
+      "text": "Olivia <strong>gizliliğinize</strong> saygı duyar.Olivia tarafından kullanılan tüm veriler <strong>istemci tarafında kaydedilir.</strong><br>Sahip olduğunuz ve size ait verileriniz sadece <strong>sizindir.</strong>."
+    },
+    "features": {
+      "title": "Özellikler",
+      "modulable": {
+        "title": "Tüm Modüller",
+        "text": "Olivia, yeni yeteneklerin eklenmesini kolaylaştırmak için modüller halde kodlanmıştır. Bu modüller, birden çok görevi yürütmek için Go'da yazılmaktadır."
+      },
+      "openSource": {
+        "title": "Tamamen açık kaynak kodlu",
+        "text": "Proje, web sitesi kısmında kod arkaplanına kadar tamamen açık kaynaklıdır. Böylece siz de kendi chatbot'unuzu oluşturabilir ve Olivia'ya katkıda bulunabilirsiniz."
+      },
+      "pwa": {
+        "title": "Aşamalı web uygulaması",
+        "text": "PWA'yı doğrudan web sitenizden ana ekranınıza ekleyebilirsiniz ve bu yerel benzeri uygulamanın arkasında çalışan bir web sitesi olduğunu unutacaksınız."
+      }
+    }
+  },
+  "changelog": {
+    "april2020": "Nisan 2020",
+    "march2020": "Mayıs 2020",
+    "january2020": "Ocak 2020",
+    "august2019": "Ağustos 2019",
+    "start": "Başlangıç"
+  },
+  "chat": {
+    "welcome": "Merhaba, ben Olivia. Aşağıdaki alana yazarak, veya “Hey Olivia” diyerek ya da ana daireyi tıklayıp konuşarak benimle iletişim kurabilirsiniz.",
+    "defaultMessage": "Sizin için ne yapabilirim?",
+    "fieldPlaceholder": "Mesajınızı yazın"
+  },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Intentler' etiketler",
+      "errorLoss": "Hata miktarı",
+      "errorLossText": "Sinir ağında hata kaybı",
+      "networkIterations": "Ağ yinelemeleri",
+      "hiddenLayers": "Gizli katmanlar",
+      "learningTime": "Öğrenme zamanı",
+      "learningRate": "Öğrenme oranı"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Kimlik bilgileri",
+        "enter": "Kimlik bilgilerinizi girin",
+        "token": {
+          "title": "Token",
+          "text": "Kimlik doğrulama tokeni"
+        }
+      },
+      "create": {
+        "title": "Bir intent oluşturun"
+      },
+      "sync": "Modeli senkronize et",
+      "scan": "Tara",
+      "patterns": "Desenler",
+      "responses": "Cevaplar",
+      "tag": "Etiket",
+      "contextualTag": "İçeriğe dair etiket",
+      "context": "İçerik",
+      "intentCreated": "Intent başarıla ile oluşturuldu.",
+      "scanned": "QR kod tarandı, niyete eklendi.",
+      "formatCode": "QR kod formatı doğru değil."
+    },
+    "language": {
+      "flag": "Bayrak",
+      "language": "Dil",
+      "modulesCoverage": "Modüllerin çeviri oranı",
+      "intentsCoverage": "Intentlerin çeviri oranı",
+      "messagesCoverage": "Mesajların çeviri oranı",
+      "websiteCoverage": "Websitenin çeviri oranı",
+      "notCoveredModules": "Modüller kapsamına girmeyen çeviriler: ",
+      "notCoveredIntents": "Intentlerin kapsamadığı çeviriler: ",
+      "notCoveredMessages": "İletiler kapsamında olmayan çeviriler: ",
+      "notCoveredWebsite": "Web sitesi mesajlarında yer almayan çeviriler: ",
+      "translationsDone": "Tüm çeviriler yapılmıştır."
+    }
+  },
+  "creator": {
+    "age": "yaşında.",
+    "location": "Menşei  <strong>Cenevre, İsviçre</strong>.",
+    "studies": "● kurumunda öğrenci <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Yer ve yaşam bilimleri</strong> seçme hakkı, uzmanlık alanı <strong>bilgisayar bilimleri</strong>.",
+    "olivia": "● kurucu ve sürdürücüsü <strong>Olivia, 1.5K stars-projet</strong> on <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Yetenekleri: programlama dilleri: <strong>Go, JS, Ruby, Crystal, Python</strong>, teknolojiler: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "email"
+  },
+  "footer": {
+    "bestFriend": "Yeni en iyi arkadaşın",
+    "location": "Cenevre, İsviçre",
+    "license": "Lisans türü <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
+    "about": {
+      "title": "Hakkında",
+      "contact": "İletişim"
+    },
+    "information": {
+      "title": "Bilgi edinme",
+      "creator": "Yaratıcı",
+      "license": "Lisans"
+    },
+    "community": {
+      "title": "Topluluk"
+    }
+  }
+}

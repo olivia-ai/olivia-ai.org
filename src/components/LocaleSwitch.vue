@@ -42,7 +42,8 @@
           { locale: 'fr', name: 'Français' },
           { locale: 'de', name: 'German' },
           { locale: 'it', name: 'Italiano' },
-          { locale: 'pt-br', name: 'Português-Brasileiro' }
+          { locale: 'pt-br', name: 'Português-Brasileiro' },
+          { locale: 'tr', name: 'Türkiye' }
         ]
       }
     },
