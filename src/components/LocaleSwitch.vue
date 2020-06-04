@@ -43,7 +43,7 @@
           { locale: 'de', name: 'German' },
           { locale: 'it', name: 'Italiano' },
           { locale: 'pt-br', name: 'Português-Brasileiro' },
-          { locale: 'tr', name: 'Türkiye' }
+          { locale: 'tr-TR', name: 'Türkçe' }
         ]
       }
     },
