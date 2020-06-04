@@ -10,5 +10,5 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE $WEBPORT
-CMD http-server dist -p $WEBPORT
+EXPOSE $PORT
+CMD http-server dist -p $PORT
