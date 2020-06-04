@@ -169,7 +169,7 @@
           },
           'nl': {
             lang: 'nl',
-            name: 'Claire'
+            name: 'Ellen'
           }
         },
 
