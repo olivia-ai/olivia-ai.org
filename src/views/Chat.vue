@@ -166,6 +166,10 @@
           'tr': {
             lang: 'tr',
             name: 'Yelda'
+          },
+          'nl': {
+            lang: 'nl',
+            name: 'Claire'
           }
         },
 
