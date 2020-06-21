@@ -172,7 +172,10 @@
             name: 'Ellen'
           }
         },
-
+        gr: {
+          lang: 'el-GR',
+          name: ''
+        },
         writing: false,
         writing_text: '...',
         message: this.$t('chat.defaultMessage'),
