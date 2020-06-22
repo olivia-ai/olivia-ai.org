@@ -170,11 +170,11 @@
           'nl': {
             lang: 'nl',
             name: 'Ellen'
+          },
+          gr: {
+            lang: 'el-GR',
+            name: 'Melina'
           }
-        },
-        gr: {
-          lang: 'el-GR',
-          name: ''
         },
         writing: false,
         writing_text: '...',
