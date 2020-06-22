@@ -171,7 +171,7 @@
             lang: 'nl',
             name: 'Ellen'
           },
-          gr: {
+          el: {
             lang: 'el-GR',
             name: 'Melina'
           }

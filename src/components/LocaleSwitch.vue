@@ -38,7 +38,7 @@
         locales: [
           { locale: 'ca', name: 'Català' },
           { locale: 'nl', name: 'Dutch' },
-          { locale: 'gr', name: 'Ελληνικά' },
+          { locale: 'el', name: 'Ελληνικά' },
           { locale: 'en', name: 'English' },
           { locale: 'es', name: 'Español' },
           { locale: 'fr', name: 'Français' },
