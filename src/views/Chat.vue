@@ -170,9 +170,12 @@
           'nl': {
             lang: 'nl',
             name: 'Ellen'
+          },
+          el: {
+            lang: 'el-GR',
+            name: 'Melina'
           }
         },
-
         writing: false,
         writing_text: '...',
         message: this.$t('chat.defaultMessage'),
