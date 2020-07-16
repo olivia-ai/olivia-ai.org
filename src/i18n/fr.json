@@ -117,7 +117,7 @@
   "creator": {
     "age": "ans.",
     "location": "Basé à <strong>Genève, Suisse</strong>.",
-    "studies": "Étudiant au <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. Option <strong>Sciences de la Vie et de la Terre</strong>, spécialisation dans les <strong>sciences informatiques</strong>.",
+    "studies": "A étudié au <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. Option <strong>Sciences de la Vie et de la Terre</strong>, spécialisation dans les <strong>sciences informatiques</strong>.",
     "olivia": "Créateur et mainteneur d'<strong>Olivia, un projet de 1.500 étoiles</strong> sur <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
     "skills": "Compétences: langages de programmation: <strong>Go, JS, Ruby, Crystal, Python</strong>, technologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
     "email": "courriel"

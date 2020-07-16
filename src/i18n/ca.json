@@ -102,14 +102,6 @@
       "formatCode": "El format del codi QR no és correcte."
     }
   },
-  "creator": {
-    "age": "anys.",
-    "location": "Amb seu a <strong>Ginebra, Suïssa</strong>.",
-    "studies": "● Estudiant at <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Ciències de la vida i la Terra</strong> ,especialització en <strong>ciències de la computació</strong>.",
-    "olivia": "● Creador i conservador de <strong>Olivia, un projecte de 1.500 estrelles</strong> en <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
-    "skills": "● Competències: llenguatges de programació <strong>Go, JS, Ruby, Crystal, Python</strong>, tecnologies: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
-    "email": "correu electrònic"
-  },
   "footer": {
     "bestFriend": "La teva nova millor amiga",
     "location": "Ginebra, Suïssa",
