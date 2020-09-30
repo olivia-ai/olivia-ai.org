@@ -51,7 +51,7 @@
       },
       "pwa": {
         "title": "Προοδευτική διαδικτυακή εφαρμογή",
-        "text": "Μπορείτε απευθείας να προθέσετε την ΠΔΑ στην αρχική σας οθόνη από την ιστοσελίδα και δεν θα καταλάβετε ότι είναι ιστοσελίδα που τρέχει πίσω απο την εφαρμογή."
+        "text": "Μπορείτε απευθείας να προσθέσετε την ΠΔΑ στην αρχική σας οθόνη από την ιστοσελίδα και δεν θα καταλάβετε ότι είναι ιστοσελίδα που τρέχει πίσω απο την εφαρμογή."
       }
     }
   },
@@ -107,16 +107,16 @@
       "intentsCoverage": "Κάλυψη μεταφράσεων προθέσεων",
       "messagesCoverage": "Κάλυψη μεταφράσεων μηνυμάτων",
       "websiteCoverage": "Κάλυψη μεταφράσεων ιστοσελίδας",
-      "notCoveredModules": "Οι μεταφράσεις δεν έχουν καλυφεί από τα αρθρώματα: ",
-      "notCoveredIntents": "Οι μεταφράσεις δεν έχουν καλυφεί από τις προθέσεις: ",
-      "notCoveredMessages": "Οι μεταφράσεις δεν έχουν καλυφεί από τα μηνύματα ",
-      "notCoveredWebsite": "Οι μεταφράσεις δεν έχουν καλυφεί από μηνύματα της ιστοσελίδας: ",
+      "notCoveredModules": "Οι μεταφράσεις δεν έχουν καλυφθεί από τα αρθρώματα: ",
+      "notCoveredIntents": "Οι μεταφράσεις δεν έχουν καλυφθεί από τις προθέσεις: ",
+      "notCoveredMessages": "Οι μεταφράσεις δεν έχουν καλυφθεί από τα μηνύματα ",
+      "notCoveredWebsite": "Οι μεταφράσεις δεν έχουν καλυφθεί από μηνύματα της ιστοσελίδας: ",
       "translationsDone": "Όλες οι μεταφράσεις έχουν γίνει."
     }
   },
   "creator": {
     "age": "ετών.",
-    "location": "Βασισμένος στην <strong>Γενέυη, Ελβετία</strong>.",
+    "location": "Βασισμένος στην <strong>Γενεύη, Ελβετία</strong>.",
     "studies": "● Φοίτησε στο <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a>. <strong>Earth and life sciences</strong> option, specialization in <strong>computer science</strong>.",
     "olivia": "● Δημιουργός και συντηρητής της <strong>Olivia, 1.5K stars-project</strong> στο <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
     "skills": "● Ικανότητες: Γλώσσες προγραμματισμού: <strong>Go, JS, Ruby, Crystal, Python</strong>, τεχνολογίες: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
