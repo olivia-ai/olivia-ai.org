@@ -7,19 +7,37 @@
   },
   "navbar": {
     "documentation": "Dokumentation",
+    "changelog": "Änderungsprotokoll",
+    "blog": "Blog",
+    "dashboard": "Dashboard",
+    "intents": {
+      "title": "Absichten",
+      "text": "Wo Sie Absichten ergänzen können"
+    },
     "data": {
       "title": "Daten",
       "text": "Um Trainingsdaten zu bekommen"
+    },
+    "language": {
+      "title": "Abdeckung der Übersetzungen",
+      "text": "Um die Abdeckung der Übersetzungen zu sehen"
     },
     "chat": "Chat"
   },
   "home": {
     "introduction": {
       "title": "Dein neuer bester Freund."
+      "text": "Ein quelloffener kontextbasierter Chatbot, der mit einem <strong>künstlichen neuronalen Netz</strong>gebaut wurde.",
+      "chat": "Online chatten",
+      "github": "Auf GitHub ansehen"
     },
     "speakAbility": {
       "title": "Fähigkeiten",
       "text": "Olivia kann Ihnen zuhören, indem Sie <strong>„Hallo Olivia“</strong> sagen oder auf die zentrale Schaltfläche klicken. <br>Sie spricht, um Ihnen zu antworten, es sei denn, Sie haben ihre Stimme deaktiviert."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "text": "Olivia respektiert deine <strong>Privatsphäre</strong>. Alle von Olivia genutzten Daten werden in <strong>deinem Client</strong> gespeichert. Du besitzt <strong>deine Daten</strong>, so einfach ist das."
     },
     "features": {
       "title": "Features",
@@ -29,11 +47,11 @@
       },
       "openSource": {
         "title": "Open-source",
-        "text": "Das Projekt ist vollständig Open Source von der Website bis zum Backend. So können Sie Ihren eigenen Chatbot erstellen und zu Olivia beitragen."
+        "text": "Das Projekt ist vollständig quelloffen – von der Website bis zum Backend. So können Sie Ihren eigenen Chatbot erstellen und zu Olivia beitragen."
       },
       "pwa": {
         "title": "Progressive web app",
-        "text": "Sie können die PWA direkt von der Website zu Ihrem Homescreen hinzufügen, und Sie werden es nicht merken, dass es sich um eine Website handelt, die hinter dieser nativen App läuft."
+        "text": "Sie können die PWA direkt von der Website zu Ihrem Startbildschirm hinzufügen, und Sie werden nicht merken, dass es sich um eine Website handelt, die hinter dieser nativen App läuft."
       }
     }
   },
@@ -45,16 +63,80 @@
     "start": "Start"
   },
   "chat": {
-    "welcome": "Hallo, Ich bin Olivia. Sie können mit mir sprechen, indem Sie in das Feld unten schreiben, den Trigger „Hallo Olivia“ sagen oder auf den Hauptkreis klicken und sprechen.",
+    "welcome": "Hallo, Ich bin Olivia. Sie können mit mir sprechen, indem Sie in das Feld unten schreiben, den Trigger „Hallo Olivia“ sagen oder auf den großen Kreis klicken und sprechen.",
     "defaultMessage": "Was kann ich für dich tun?",
     "fieldPlaceholder": "Schreibe deine Nachricht"
   },
+  "dashboard": {
+    "data": {
+      "intentsTags": "Absichten-Tag",
+      "errorLoss": "Fehlerverlust",
+      "errorLossText": "Fehlerverlust des neuronalen Netzes",
+      "networkIterations": "Neuronennetz-Iterationen",
+      "hiddenLayers": "Versteckte Schichten",
+      "learningTime": "Lernzeit",
+      "learningRate": "Lernrate"
+    },
+    "intents": {
+      "credentials": {
+        "title": "Anmeldedaten",
+        "enter": "Anmeldedaten eingeben",
+        "token": {
+          "title": "Token",
+          "text": "Das Authentifizierungs-Token"
+        }
+      },
+      "create": {
+        "title": "Erstelle eine Absicht"
+      },
+      "sync": "Synchronisiere das Modell",
+      "scan": "Scan",
+      "patterns": "Muster",
+      "responses": "Antworten",
+      "tag": "Tag",
+      "contextualTag": "Kontextueller Tag",
+      "context": "Kontext",
+      "intentCreated": "Absicht erfolgreich erstellt.",
+      "scanned": "QR-Code gescannt, füge die Absicht hinzu.",
+      "formatCode": "Das Format des QR-Codes ist falsch."
+    },
+    "language": {
+      "flag": "Flag",
+      "language": "Sprache",
+      "modulesCoverage": "Abdeckung der Modul-Übersetzungen",
+      "intentsCoverage": "Abdeckung der Absichten-Übersetzungen",
+      "messagesCoverage": "Abdeckung der Nachrichten-Übersetzungen",
+      "websiteCoverage": "Abdeckung der Website-Übersetzungen",
+      "notCoveredModules": "Übersetzungen, die nicht von den Modulen abgedeckt werden: ",
+      "notCoveredIntents": "Übersetzungen, die nicht von den Abischten abgedeckt werden: ",
+      "notCoveredMessages": "Überstetzungen, die nicht von den Nachrichten abgedeckt werden: ",
+      "notCoveredWebsite": "Übersetzungen, die nicht von den Website-Nachrichten abgedeckt werden: ",
+      "translationsDone": "All translations have been done."
+    }
+  },
+  "creator": {
+    "age": "Jahre alt.",
+    "location": "Wohnt in <strong>Genf, Schweiz</strong>.",
+    "studies": "● Hat am <a href='https://www.google.com/search?q=Lyc%C3%A9e+Madame+de+Sta%C3%ABl'>Lycée Madame de Staël</a> studiert. Option <strong>Geo- und Biowissenschaften</strong>, Spezialisierung in <strong>Informatik</strong>.",
+    "olivia": "● Gründer und Entwickler von <strong>Olivia, 2,500-Sterne-Projekt</strong> auf <a href='https://github.com/olivia-ai/olivia'>GitHub</a>",
+    "skills": "● Kompetenzen: Programmiersprachen: <strong>Go, JS, Ruby, Crystal, Python</strong>, Technologien: <strong>Ruby on Rails, Vue.js, LaTeX, Docker, Git</strong>",
+    "email": "E-Mail"
+  },
   "footer": {
     "bestFriend": "Dein neuer bester Freund",
-    "location": "Geneva, Switzerland",
+    "location": "Genf, Schweiz",
+    "license": "Lizenziert unter <a href='https://github.com/olivia-ai/olivia/blob/master/LICENSE'>MIT</a>",
     "about": {
       "title": "Über",
       "contact": "Kontakt"
+    },
+    "information": {
+      "title": "Information",
+      "creator": "Gründer",
+      "license": "Lizenz"
+    },
+    "community": {
+      "title": "Community"
     }
   }
 }
