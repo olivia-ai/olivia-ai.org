@@ -26,7 +26,7 @@
   },
   "home": {
     "introduction": {
-      "title": "Dein neuer bester Freund."
+      "title": "Dein neuer bester Freund.",
       "text": "Ein quelloffener kontextbasierter Chatbot, der mit einem <strong>künstlichen neuronalen Netz</strong>gebaut wurde.",
       "chat": "Online chatten",
       "github": "Auf GitHub ansehen"
