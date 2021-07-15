@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="columns is-centered">
           <div class="column is-2">
-            <img src="/img/hugo.jpeg">
+            <img src="https://avatars.githubusercontent.com/u/15371828?v=4">
           </div>
           <div class="column is-6">
             <h1 class="title">
