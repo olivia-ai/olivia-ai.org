@@ -1,5 +1,6 @@
-import { Link as ChakraLink, Flex } from '@chakra-ui/react'
+import { Link as ChakraLink, Flex, Icon } from '@chakra-ui/react'
 
+import { BsEnvelope } from 'react-icons/bs'
 import React from 'react'
 
 interface Props {
@@ -16,7 +17,7 @@ const Link = ({ title, href }: Props): JSX.Element => {
     bgClip="text"
     bgColor="link"
     _hover={{
-      bgGradient: 'linear(to-br, #F3119B, #B22093)',
+      bgGradient: 'linear(to-br, olivia.500, olivia.700)',
     }}
     transition="0.2s"
   >
@@ -24,14 +25,30 @@ const Link = ({ title, href }: Props): JSX.Element => {
   </ChakraLink>
 }
 
-const Links = (): JSX.Element => {
-  return <>
+export const Links = (): JSX.Element => {
+  return <Flex  
+    display={{ base: 'none', md: 'flex' }}
+    w="40vw"
+    alignItems="center"
+    justifyContent="space-between"
+  >
     <Link title="home" href="#" />
     <Link title="discover" href="#" />
     <Link title="blog" href="#" />
     <Link title="code" href="#" />
     <Link title="about" href="#" />
-  </>
+  </Flex>
 }
 
-export default Links
+export const ContactButton = (): JSX.Element => (
+  <Icon 
+    as={BsEnvelope} 
+    w={5}
+    h={5}
+    color="link"
+    _hover={{
+      color: 'linear(to-br, olivia.500, olivia.700)',
+      cursor: 'pointer'
+    }}
+  />
+)

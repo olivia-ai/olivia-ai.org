@@ -7,6 +7,10 @@ const fonts = {
 
 const colors = {
   'olivia-gradient': 'linear(to-br, #F3119B, #B22093)',
+  olivia: {
+    500: '#F3119B',
+    700: '#B22093'
+  },
   'link': '#564C4C'
 }
 
