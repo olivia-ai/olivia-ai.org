@@ -1,7 +1,12 @@
+import Background from '../components/Background'
+import NavigationBar from '../components/navigation-bar/Bar'
 import React from 'react'
 
 const Index = (): JSX.Element => (
-  <p>Work in progress</p>
+  <>
+    <Background />
+    <NavigationBar />
+  </>
 )
 
 export default Index
