@@ -9,6 +9,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
     <Head>
       <title>Olivia</title>
       <link rel="shortcut icon" href="/favicon.ico" />
+      <meta name="theme-color" content="#FBDFF0" />
     </Head>
     <Component {...pageProps} />
   </ChakraProvider>
