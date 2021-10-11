@@ -1,7 +1,6 @@
 import { ContactButton, Links } from './Links'
 import { Flex, Icon, Image } from '@chakra-ui/react'
 
-import { BsEnvelope } from 'react-icons/bs'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import React from 'react'
 
