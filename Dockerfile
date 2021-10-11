@@ -1,14 +1,12 @@
-FROM node:lts-alpine
+FROM node:12
+WORKDIR /usr/src/app
 
-ARG VUE_APP_URL=ws://localhost:8080
+COPY . ./
 
-RUN npm install -g http-server
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-
+# building the app
+RUN npm i
 RUN npm run build
 
-EXPOSE $PORT
-CMD http-server dist -p $PORT
+# Running the app
+EXPOSE 3000
+CMD [ "npm", "start" ]

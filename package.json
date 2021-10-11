@@ -1,81 +1,32 @@
 {
-  "name": "website",
-  "version": "0.1.0",
-  "private": true,
+  "name": "with-chakra-ui-typescript",
+  "version": "1.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "cordova-serve-android": "cross-env BASE_URL='' vue-cli-service cordova-serve-android",
-    "cordova-build-android": "cross-env BASE_URL='' vue-cli-service cordova-build-android",
-    "cordova-serve-ios": "cross-env BASE_URL='' vue-cli-service cordova-serve-ios",
-    "cordova-build-ios": "cross-env BASE_URL='' vue-cli-service cordova-build-ios",
-    "cordova-serve-browser": "cross-env BASE_URL='' vue-cli-service cordova-serve-browser",
-    "cordova-build-browser": "cross-env BASE_URL='' vue-cli-service cordova-build-browser",
-    "capacitor-copy": "vue-cli-service capacitor-copy",
-    "capacitor-init": "vue-cli-service capacitor-init",
-    "capacitor-open": "vue-cli-service capacitor-open",
-    "capacitor-update": "vue-cli-service capacitor-update"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "eslint-fix": "eslint --fix ."
   },
   "dependencies": {
-    "@capacitor/cli": "^1.4.0",
-    "@capacitor/core": "^1.3.0",
-    "@chenfengyuan/vue-qrcode": "^1.0.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.12.0",
-    "@fortawesome/vue-fontawesome": "^0.1.8",
-    "@mdi/font": "^5.1.45",
-    "axios": "^0.19.0",
-    "braces": ">=2.3.1",
-    "buefy": "^0.8.17",
-    "bulma-timeline": "^3.0.4",
-    "chart.js": "^2.9.3",
-    "eslint-plugin-vue": "^6.2.2",
-    "js-yaml": ">=3.13.1",
-    "raw-loader": "^4.0.0",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-github-button": "^1.1.2",
-    "vue-i18n": "^8.17.2",
-    "vue-markdown": "^2.2.4",
-    "vue-qrcode-reader": "^2.1.1",
-    "vue-resource": "^1.5.1",
-    "vue-router": "^3.1.3",
-    "vue-set-state": "^0.1.1"
+    "@chakra-ui/icons": "^1.0.5",
+    "@chakra-ui/react": "^1.4.2",
+    "@chakra-ui/theme-tools": "1.1.2",
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
+    "framer-motion": "^4.0.3",
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-pwa": "^4.0.5",
-    "@vue/cli-service": "^4.1.1",
-    "element-theme-chalk": "^2.12.0",
-    "node-sass": "^4.13.1",
-    "sass-loader": "^7.3.1",
-    "vue-cli-plugin-cordova": "^2.3.8",
-    "vue-cli-plugin-pwa": "^1.0.0-alpha.1",
-    "vue-template-compiler": "^2.6.10"
+    "@types/node": "^14.6.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-plugin-react": "^7.23.2",
+    "typescript": "4.2.3"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "license": "MIT"
 }

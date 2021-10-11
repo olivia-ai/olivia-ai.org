@@ -1,0 +1,25 @@
+name: Linter
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12.x'
+    - name: Install modules
+      run: |
+        npm i
+        npm i -g eslint
+        npm install -g eslint-plugin-react
+    - name: Run ESLint
+      run: eslint . --ext .js,.jsx,.ts,.tsx

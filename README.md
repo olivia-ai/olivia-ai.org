@@ -1,47 +1,32 @@
-<h1 align="center">
-  <br>
-  <img src="https://olivia-ai.org/img/oliviaiphone11ipadpro.jpg" alt="Olivia's website" width="400">
-  <br>
-</h1>
+# {app name}
+Front-end application of {app name} using Next.js, TypeScript and ChakraUI.
 
-<h4 align="center">Olivia's website and online chat</h4>
-
-<p align="center">
-  <a href="https://app.netlify.com/sites/olivia-ai/deploys"><img src="https://api.netlify.com/api/v1/badges/a465948c-abf9-4677-8943-f14d0e3bc648/deploy-status"></a>
-</p>
-
-<p align="center">
-  <a href="https://olivia-ai.org">Website</a> —
-  <a href="https://olivia-ai.org/chat">Chat online</a> —
-  <a href="#genting-started">Getting started</a> —
-  <a href="https://olivia-ai.org/blog">Blog</a> —
-  <a href="https://olivia-ai.org/changelog">Changelog</a> —
-  <a href="https://trello.com/b/azB6r2IC/olivia">Trello</a> —
-  <a href="#license">License</a>
-</p>
-
-## Getting started
-With docker:
-
-Build the image
+## How to use
+### Using NodeJS
+Install of the neccesary packages:
 ```bash
-$ docker build -t front .
+$ npm i
 ```
 
-And then run it
+#### Test
 ```bash
-$ docker run -p 8080:8080 front
+$ npm run dev
 ```
 
-## License
-[MIT](https://github.com/olivia-ai/olivia-ai.org/blob/master/LICENSE)
+#### Production
+```bash
+$ npm run build
+$ npm run start
+```
 
-<p align="center">
-  <img width="60" src="https://olivia-ai.org/img/icons/olivia.png">
-<p>
+### Docker
+```bash
+$ docker build . -t react-template
+$ docker run -p 3000:3000 react-template
+```
 
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/hugolgst">Hugo Lageneste</a>
-</p>
+## Deploy your own using Vercel
 
-![Olivia's wave](https://olivia-ai.org/img/background-olivia.png)
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui-typescript&repository-name=with-chakra-ui-typescript)
