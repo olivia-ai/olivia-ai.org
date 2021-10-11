@@ -11,6 +11,7 @@ const Background = (): JSX.Element => {
     position="absolute"
     zIndex="-100"
     filter="blur(50px)"
+    overflow="hidden"
   />
 }
 
