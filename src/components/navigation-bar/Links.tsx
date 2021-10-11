@@ -34,7 +34,7 @@ const links: Array<LinkProps> = [
 ]
 
 // useLinks is a simple hook to retrieve the link elements generated from the array
-const useLinks = (): Array<JSX.Element> | undefined => {
+export const useLinks = (): Array<JSX.Element> | undefined => {
   const [ linksElements, setLinksElements ] = useState<Array<JSX.Element>>()
 
   useEffect(() => {

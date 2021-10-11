@@ -1,7 +1,7 @@
 import { ContactButton, Links } from './Links'
-import { Flex, Icon, Image } from '@chakra-ui/react'
+import { Flex, Image } from '@chakra-ui/react'
 
-import { HiOutlineMenuAlt4 } from 'react-icons/hi'
+import Burger from './Burger'
 import React from 'react'
 
 const Logo = (): JSX.Element => (
@@ -10,13 +10,6 @@ const Logo = (): JSX.Element => (
     alt="Olivia character waving" 
     h={50}
     w={50}
-  />
-)
-
-const MenuIcon = (): JSX.Element => (
-  <Icon 
-    as={HiOutlineMenuAlt4} 
-    display={{ base: 'block', md: 'none' }}
   />
 )
 
@@ -29,7 +22,7 @@ const NavigationBar = (): JSX.Element => {
     justifyContent="space-between"
     borderBottom="solid 1px #CFCFCF"
   >
-    <MenuIcon />
+    <Burger />
     <Logo />
     
     <Links />
