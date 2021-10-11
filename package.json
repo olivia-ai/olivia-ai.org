@@ -1,6 +1,6 @@
 {
-  "name": "with-chakra-ui-typescript",
-  "version": "1.0.0",
+  "name": "olivia.swiss",
+  "version": "3.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -13,6 +13,7 @@
     "@chakra-ui/theme-tools": "1.1.2",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
+    "@fontsource/inter": "^4.5.0",
     "framer-motion": "^4.0.3",
     "next": "latest",
     "react": "^17.0.2",

@@ -1,11 +1,16 @@
 import { extendTheme } from '@chakra-ui/react'
 
-const fonts = { mono: '\'Menlo\', monospace' }
+const fonts = { 
+  mono: '\'Menlo\', monospace',
+  body: 'Inter'
+}
+
+const colors = {
+  'olivia-gradient': 'linear-gradient(94.06deg, #F3119B 5.44%, #B22093 98.14%)'
+}
 
 const theme = extendTheme({
-  colors: {
-    black: '#16161D',
-  },
+  colors,
   fonts
 })
 
