@@ -1,4 +1,4 @@
-import { Link as ChakraLink, Flex, Icon, IconButton } from '@chakra-ui/react'
+import { Link as ChakraLink, Flex, Icon } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
 import { BsEnvelope } from 'react-icons/bs'
