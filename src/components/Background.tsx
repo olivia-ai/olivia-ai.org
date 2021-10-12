@@ -20,7 +20,8 @@ const Background = (): JSX.Element => (
       position="absolute"
       zIndex="-100"
       style={{
-        backdropFilter: 'blur(50px)'
+        backdropFilter: 'blur(50px)',
+        WebkitBackdropFilter: 'blur(50px)'
       }}
       overflow="hidden"
     />
