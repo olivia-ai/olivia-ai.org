@@ -34,7 +34,6 @@
     "typescript": "4.2.3"
   },
   "pre-commit": [
-    "export",
     "eslint-fix"
   ],
   "license": "MIT"

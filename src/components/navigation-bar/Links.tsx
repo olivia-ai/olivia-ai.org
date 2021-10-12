@@ -20,6 +20,7 @@ const Link = ({ title, href }: LinkProps): JSX.Element => {
       bgGradient: 'linear(to-br, olivia.500, olivia.700)',
     }}
     transition="0.2s"
+    m="0 2vw"
   >
     {title}
   </ChakraLink>
@@ -54,7 +55,7 @@ export const Links = (): JSX.Element => {
     display={{ base: 'none', md: 'flex' }}
     w="40vw"
     alignItems="center"
-    justifyContent="space-between"
+    justifyContent="space-around"
   >
     {links}
   </Flex>
