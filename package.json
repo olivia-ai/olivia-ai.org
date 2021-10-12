@@ -6,7 +6,7 @@
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",
-    "eslint-fix": "eslint --fix ."
+    "eslint-fix": "eslint --fix src/."
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.5",
@@ -30,7 +30,12 @@
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
+    "pre-commit": "^1.2.2",
     "typescript": "4.2.3"
   },
+  "pre-commit": [
+    "export",
+    "eslint-fix"
+  ],
   "license": "MIT"
 }
