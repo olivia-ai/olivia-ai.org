@@ -29,7 +29,7 @@ const Link = ({ title, href }: LinkProps): JSX.Element => {
 const links: Array<LinkProps> = [
   { title: 'home', href: '#' },
   { title: 'version two', href: 'https://olivia-ai.org' },
-  { title: 'code', href: 'https://github.com/olivia' }
+  { title: 'code', href: 'https://github.com/olivia-ai' }
 ]
 
 // useLinks is a simple hook to retrieve the link elements generated from the array
