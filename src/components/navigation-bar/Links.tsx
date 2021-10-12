@@ -1,4 +1,4 @@
-import { Link as ChakraLink, Flex, Icon } from '@chakra-ui/react'
+import { Link as ChakraLink, Flex, Icon, IconButton } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 
 import { BsEnvelope } from 'react-icons/bs'
@@ -63,14 +63,17 @@ export const Links = (): JSX.Element => {
 }
 
 export const ContactButton = (): JSX.Element => (
-  <Icon 
-    as={BsEnvelope} 
-    w={5}
-    h={5}
-    color="link"
-    _hover={{
-      color: 'linear(to-br, olivia.500, olivia.700)',
-      cursor: 'pointer'
-    }}
-  />
+  <a href="mailto:hi@olivia.swiss">
+    <Icon 
+      aria-label="Contact"
+      as={BsEnvelope} 
+      w={5}
+      h={5}
+      color="link"
+      _hover={{
+        color: 'linear(to-br, olivia.500, olivia.700)',
+        cursor: 'pointer'
+      }}
+    />
+  </a>
 )
