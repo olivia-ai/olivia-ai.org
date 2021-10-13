@@ -1,7 +1,7 @@
-import { ContactButton, Links } from './Links'
-import { Flex, Image } from '@chakra-ui/react'
+import { Box, Flex, Image } from '@chakra-ui/react'
 
 import Burger from './Burger'
+import { Links } from './Links'
 import React from 'react'
 
 const Logo = (): JSX.Element => (
@@ -26,8 +26,8 @@ const NavigationBar = (): JSX.Element => {
     <Logo />
     
     <Links />
-    
-    <ContactButton />
+
+    <Box w={50} />
   </Flex>
 }
 

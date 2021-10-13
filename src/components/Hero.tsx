@@ -1,4 +1,4 @@
-import { Center, Flex, Heading, Image } from '@chakra-ui/react'
+import { Center, Flex, Heading, Image, chakra } from '@chakra-ui/react'
 
 import React from 'react'
 
@@ -17,18 +17,17 @@ const HeadingText = (): JSX.Element => (
       fontWeight="500"
       fontSize="3em"
       ml="50px"
-    >best friend</Heading>
-    <Heading
-      fontWeight="400"
-      fontSize="3em"
-      ml="100px"
-    >is coming 👀</Heading>
+    >best <chakra.span
+        bgGradient="linear(to-br, olivia.500, olivia.700)"
+        bgClip="text"
+      >friend</chakra.span>.</Heading>
   </Flex>
 )
 
 const Hero = (): JSX.Element => {
   return <Center
-    h="95vh"
+    h="92vh"
+    pt="6vh"
   >
     <Flex 
       h={{ base: '60vh', md: '35vh' }}
@@ -37,7 +36,7 @@ const Hero = (): JSX.Element => {
       alignItems="center"
     >
       <Flex 
-        w="50vw"
+        w="30vw"
         alignItems="center"
         justifyContent="center"
       >
@@ -45,6 +44,7 @@ const Hero = (): JSX.Element => {
           pos="absolute"
           src="messages.svg"
           pointerEvents="none"
+          w="35vw"
           display={{ base: 'none', md: 'block' }}
         />
         <HeadingText />
