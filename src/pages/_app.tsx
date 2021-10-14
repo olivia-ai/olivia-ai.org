@@ -17,6 +17,11 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
       <meta property="og:title" content="Olivia" />
       <meta property="og:url" content="https://olivia.swiss" />
       <meta property="og:description" content="💁‍♀️Your new best friend powered by deep learning, made in Switzerland." />
+      <meta name="twitter:image:src" content="/repository-open-graph-template.png" />
+      <meta name="twitter:site" content="https://olivia.swiss" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Olivia" />
+      <meta name="twitter:description" content="💁‍♀️Your new best friend powered by deep learning, made in Switzerland." />
       <meta name="theme-color" content="#FBDFF0" />
     </Head>
     <Component {...pageProps} />
