@@ -27,7 +27,7 @@ const NavigationBar = (): JSX.Element => {
     
     <Links />
 
-    <Box w={50} />
+    <Box w={{ base: 5, md: 50 }} h={8} />
   </Flex>
 }
 

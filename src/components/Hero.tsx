@@ -9,13 +9,13 @@ const HeadingText = (): JSX.Element => (
   >
     <Heading
       fontWeight="400"
-      fontSize="3em"
+      fontSize="3.5em"
     >your new</Heading>
     <Heading 
       fontFamily="Noto Serif"
       fontStyle="italic"
       fontWeight="500"
-      fontSize="3em"
+      fontSize="3.5em"
       ml="50px"
     >best <chakra.span
         bgGradient="linear(to-br, olivia.500, olivia.700)"
@@ -44,7 +44,7 @@ const Hero = (): JSX.Element => {
           pos="absolute"
           src="messages.svg"
           pointerEvents="none"
-          w="35vw"
+          w="700px"
           display={{ base: 'none', md: 'block' }}
         />
         <HeadingText />

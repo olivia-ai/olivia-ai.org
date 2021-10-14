@@ -27,7 +27,13 @@ const Burger = (): JSX.Element => {
         <MenuButton display={{ base: 'block', md: 'none' }}>
           {isOpen ? <CloseIcon /> : <Icon as={HiOutlineMenuAlt4} />}
         </MenuButton>
-        <MenuList>
+        <MenuList
+          backgroundColor="transparent-bg"
+          style={{
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)'
+          }}
+        >
           {menuItems}
         </MenuList>
       </>
