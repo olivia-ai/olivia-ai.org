@@ -1,29 +1,51 @@
-import { Box } from '@chakra-ui/react'
+import { Flex, Image } from '@chakra-ui/react'
+
 import React from 'react'
 
-const Background = (): JSX.Element => (
-  <>
-    <style>{`
-      body {
-        background: url(/background.svg) no-repeat center center fixed !important;
-        background-size: cover !important;
-      }
-    `}</style>
-
-    <Box 
-      m="0"
-      p="0"
+const HomeBG = (): JSX.Element => (
+  <Flex 
+    alignItems="center"
+    height="100vh"
+    filter="blur(50px)"
+    zIndex="-100"
+  >
+    <Image 
+      src="background.svg"
       width="100%"
-      height="100%"
-      position="absolute"
-      zIndex="-100"
-      style={{
-        backdropFilter: 'blur(50px)',
-        WebkitBackdropFilter: 'blur(50px)'
-      }}
-      overflow="hidden"
+      height="auto"
+      top="0"
+      left="0"
     />
-  </>
+  </Flex>
+)
+
+const FooterBG = () => (
+  <Flex 
+    alignItems="flex-end"
+    height="50vh"
+    filter="blur(50px)"
+    zIndex="-100"
+  >
+    <Image 
+      src="background-footer.svg"
+      width="100%"
+      height="auto"
+      top="0"
+      left="0"
+      filter="blur(50px)"
+    />
+  </Flex>
+)
+
+const Background = (): JSX.Element => (
+  <Flex 
+    direction="column"
+    position="absolute"
+    width="100%"
+  >
+    <HomeBG />
+    <FooterBG />
+  </Flex>
 )
 
 export default Background

@@ -1,5 +1,6 @@
-import { Center, Flex, Heading, Image, chakra } from '@chakra-ui/react'
+import { Button, Center, Flex, Heading, Image, chakra } from '@chakra-ui/react'
 
+import { ArrowDownIcon } from '@chakra-ui/icons'
 import React from 'react'
 
 const HeadingText = (): JSX.Element => (
@@ -28,7 +29,7 @@ const Hero = (): JSX.Element => {
     pt="6vh"
   >
     <Flex 
-      h={{ base: '60vh', md: '35vh' }}
+      h={{ base: '60vh', md: '45vh' }}
       direction="column"
       justifyContent="space-between"
       alignItems="center"
@@ -54,6 +55,14 @@ const Hero = (): JSX.Element => {
         w={{ base: '50vw', md: '25vw', lg: '10vw' }}
         pointerEvents="none"
       />
+
+      <Button 
+        variant="primary" 
+        size="lg"
+        rightIcon={<ArrowDownIcon />}
+      >
+        discover now
+      </Button>
     </Flex>
   </Center>
 }
