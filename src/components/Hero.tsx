@@ -25,7 +25,7 @@ const HeadingText = (): JSX.Element => (
   >
     <Flex 
       direction="column"
-      w={{ base: '80vw', md: 'auto' }}
+      w={{ base: '60vw', md: 'auto' }}
     >
       <Heading
         fontWeight="600"

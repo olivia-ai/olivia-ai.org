@@ -22,7 +22,7 @@ const HomeBG = (): JSX.Element => (
 const FooterBG = () => (
   <Flex 
     alignItems="flex-end"
-    height="50vh"
+    height="30vh"
     filter="blur(50px)"
     zIndex="-100"
   >
