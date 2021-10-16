@@ -33,7 +33,7 @@ const Container = ({ children }: Props) => {
       width="auto"
       height="fit-content"
       p="15px 30px"
-      borderRadius="35px"
+      borderRadius="45px"
       backgroundColor="olivia.400"
     >
       {children}
