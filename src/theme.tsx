@@ -19,6 +19,7 @@ const Button = {
     },
     lg: {
       fontSize: '1.8em',
+      fontWeight: '600',
       px: 10,
       py: 8
     }

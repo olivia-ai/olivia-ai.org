@@ -2,28 +2,51 @@ import { Button, Center, Flex, Heading, Image, chakra } from '@chakra-ui/react'
 
 import { ArrowDownIcon } from '@chakra-ui/icons'
 import React from 'react'
+import { motion } from 'framer-motion'
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+const image = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
 
 const HeadingText = (): JSX.Element => (
-  <Flex 
-    direction="column"
-    w={{ base: '80vw', md: 'auto' }}
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={item}
   >
-    <Heading
-      fontWeight="600"
-      fontSize="3.5em"
-    >your new</Heading>
-    <Heading 
-      fontWeight="600"
-      fontSize="3.5em"
-      ml="50px"
-    >best <chakra.span
-        bgGradient="linear(to-br, olivia.500, olivia.700)"
-        bgClip="text"
-      >friend</chakra.span>.</Heading>
-  </Flex>
+    <Flex 
+      direction="column"
+      w={{ base: '80vw', md: 'auto' }}
+    >
+      <Heading
+        fontWeight="600"
+        fontSize="3.5em"
+      >your new</Heading>
+      <Heading 
+        fontWeight="600"
+        fontSize="3.5em"
+        ml="50px"
+      >best <chakra.span
+          bgGradient="linear(to-br, olivia.500, olivia.700)"
+          bgClip="text"
+        >friend</chakra.span>.</Heading>
+    </Flex>
+  </motion.div>
 )
 
 const Hero = (): JSX.Element => {
+  const MotionImage = motion(Image)
+  const MotionButton = motion(Button)
+
   return <Center
     h="92vh"
     pt="6vh"
@@ -39,7 +62,10 @@ const Hero = (): JSX.Element => {
         alignItems="center"
         justifyContent="center"
       >
-        <Image
+        <MotionImage
+          variants={image}
+          initial="hidden"
+          animate="visible"
           pos="absolute"
           src="messages.svg"
           pointerEvents="none"
@@ -49,20 +75,26 @@ const Hero = (): JSX.Element => {
         <HeadingText />
       </Flex>
       
-      <Image 
+      <MotionImage 
+        variants={image}
+        initial="hidden"
+        animate="visible"
         src="swiss-made.svg" 
         alt="Swiss made"
         w={{ base: '50vw', md: '25vw', lg: '10vw' }}
         pointerEvents="none"
       />
 
-      <Button 
+      <MotionButton 
+        variants={item}
+        initial="hidden"
+        animate="visible"
         variant="primary" 
         size="lg"
         rightIcon={<ArrowDownIcon />}
       >
         discover now
-      </Button>
+      </MotionButton>
     </Flex>
   </Center>
 }

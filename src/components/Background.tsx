@@ -42,6 +42,7 @@ const Background = (): JSX.Element => (
     direction="column"
     position="absolute"
     width="100%"
+    pointerEvents="none"
   >
     <HomeBG />
     <FooterBG />
