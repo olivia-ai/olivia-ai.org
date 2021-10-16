@@ -1,23 +1,45 @@
 import { Box, Flex, Heading, Link, Text, chakra } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'
 
-import React from 'react'
+import { useInView } from 'react-intersection-observer'
 
 interface Props {
   children: React.ReactNode
 }
 
-const Container = ({ children }: Props) => (
-  <Box
-    maxWidth="325px"
-    width="auto"
-    height="fit-content"
-    p="15px 30px"
-    borderRadius="35px"
-    backgroundColor="olivia.400"
+const Container = ({ children }: Props) => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  return <motion.div
+    ref={ref}
+    animate={controls}
+    initial="hidden"
+    transition={{ duration: 0.3 }}
+    variants={{
+      hidden: { y: 20, opacity: 0 },
+      visible: { y: 0, opacity: 1 }
+    }}
   >
-    {children}
-  </Box>
-)
+    <Box
+      maxWidth="325px"
+      width="auto"
+      height="fit-content"
+      p="15px 30px"
+      borderRadius="35px"
+      backgroundColor="olivia.400"
+    >
+      {children}
+    </Box>
+  </motion.div>
+}
 
 const Bold = ({ children }: Props) => (
   <chakra.span fontWeight="700">{children}</chakra.span>
