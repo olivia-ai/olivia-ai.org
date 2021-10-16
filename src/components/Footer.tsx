@@ -55,7 +55,7 @@ const Footer = (): JSX.Element => (
   >
     <Flex 
       direction={{ base: 'column', md: 'row' }}
-      w="80%"
+      w="70%"
       h={{ base: '35vh', md: 'auto' }}
       alignItems="flex-end"
       justifyContent="space-between"
