@@ -13,7 +13,6 @@ const item = {
 }
 
 const Network = (): JSX.Element => {
-  const MotionFlex = motion(Flex)
   const controls = useAnimation()
   const [ref, inView] = useInView()
 

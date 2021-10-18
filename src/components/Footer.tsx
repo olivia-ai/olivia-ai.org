@@ -51,12 +51,12 @@ const Footer = (): JSX.Element => (
     alignItems="center"
     justifyContent="space-between"
     w="100%"
-    h={{ base: '50vh', md: '27.5vh' }}
+    h={{ base: '60vh', md: '27.5vh' }}
   >
     <Flex 
       direction={{ base: 'column', md: 'row' }}
       w="70%"
-      h={{ base: '35vh', md: 'auto' }}
+      h={{ base: '40vh', md: 'auto' }}
       alignItems="flex-end"
       justifyContent="space-between"
     >
@@ -78,9 +78,12 @@ const Footer = (): JSX.Element => (
     <Flex 
       direction="column"
       alignItems="center"
+      m="0 10%"
+      p={{ base: '5vh 0', md: 'auto' }}
     >
       <Heading 
         size="lg"
+        textAlign="center"
       >Made with love in <chakra.span bgGradient="linear(to-br, #D90707, #B11212)" bgClip="text">Switzerland</chakra.span> 🇨🇭</Heading>
       <Text 
         fontSize="1.2em"
