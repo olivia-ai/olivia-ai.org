@@ -23,7 +23,7 @@ const HomeBG = (): JSX.Element => (
 
 const FooterBG = () => (
   <Flex 
-    mt={{ base: '200vh', md: '145vh'}}
+    mt={{ base: '200vh', md: '135vh'}}
     alignItems="flex-end"
     height="35vh"
     filter="blur(40px)"

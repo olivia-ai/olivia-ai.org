@@ -97,7 +97,7 @@ const Features = (): JSX.Element => {
       <Box
         w="100%"
         minH="30vh"
-        bgGradient="linear(to-b, #F7BADF -41.14%, #B72094 136.79%)"
+        bgGradient="linear(to-b, #EA98CF, #C540A4)"
       >
         <Flex 
           ref={ref}
