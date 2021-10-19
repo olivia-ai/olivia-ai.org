@@ -96,7 +96,7 @@ const Features = (): JSX.Element => {
 
       <Box
         w="100%"
-        minH="40vh"
+        minH="30vh"
         bgGradient="linear(to-b, #F7BADF -41.14%, #B72094 136.79%)"
       >
         <Flex 
@@ -111,19 +111,19 @@ const Features = (): JSX.Element => {
             title="Privacy"
             icon={BsShieldLockFill}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          Olivia truly respects your privacy by keeping the data that belongs to <strong>you</strong>, in your computer. No telemetry is used at all.
           </Feature>
           <Feature 
             title="Open source"
             icon={FaCode}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          The core code as well as the client code is fully open-source and community driven. It allows users to work on their own version as well as continuously improving Olivia.
           </Feature>
           <Feature 
             title="Portability"
             icon={HiCubeTransparent}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          Your personal assistant uses state-of-the-art web technologies to run the trained version of the deep learning model, directly in your browser.
           </Feature>
         </Flex>
       </Box>
