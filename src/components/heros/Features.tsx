@@ -90,6 +90,7 @@ const Features = (): JSX.Element => {
         data="wave-1.svg"
         style={{
           width: '102%',
+          height: 'auto',
           margin: '0 -2px -2px -2px',
         }}
       />
