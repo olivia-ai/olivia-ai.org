@@ -9,31 +9,36 @@ const HomeBG = (): JSX.Element => (
     filter="blur(50px)"
     zIndex="-100"
   >
-    <Image 
-      src="background.svg"
-      width="100%"
-      height="auto"
-      top="0"
-      left="0"
+    <object 
+      data="background.svg" 
+      type="image/svg+xml" 
+      style={{
+        width: '100%',
+        height: 'auto',
+        top: 0,
+        left: 0
+      }}
     />
   </Flex>
 )
 
 const FooterBG = () => (
   <Flex 
-    mt="60vh"
+    mt={{ base: '200vh', md: '145vh'}}
     alignItems="flex-end"
-    height="30vh"
-    filter="blur(50px)"
+    height="35vh"
+    filter="blur(40px)"
     zIndex="-100"
   >
-    <Image 
-      src="background-footer.svg"
-      width="100%"
-      height="auto"
-      top="0"
-      left="0"
-      filter="blur(50px)"
+    <object 
+      data="background-footer.svg" 
+      type="image/svg+xml" 
+      style={{
+        width: '100%',
+        height: 'auto',
+        top: 0,
+        left: 0
+      }}
     />
   </Flex>
 )

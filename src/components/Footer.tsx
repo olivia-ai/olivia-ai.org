@@ -84,9 +84,11 @@ const Footer = (): JSX.Element => (
       <Heading 
         size="lg"
         textAlign="center"
+        color="white"
       >Made with love in <chakra.span bgGradient="linear(to-br, #D90707, #B11212)" bgClip="text">Switzerland</chakra.span> 🇨🇭</Heading>
       <Text 
         fontSize="1.2em"
+        color="white"
       >Licensed under <Link href="https://github.com/olivia-ai/olivia/blob/master/LICENSE">MIT</Link>.</Text>
     </Flex>
   </Flex>

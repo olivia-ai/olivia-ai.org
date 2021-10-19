@@ -18,14 +18,7 @@ const PageLoader = (): JSX.Element => (
       backgroundColor="white"
       zIndex="1000"
     >
-      <Image 
-        src="olivia-character.svg" 
-        alt="Olivia character waving"
-        w={100}
-      />
-
       <CircularProgress 
-        pos="absolute"
         isIndeterminate 
         color="olivia.500" 
         size={200}

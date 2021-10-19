@@ -46,6 +46,7 @@ const colors = {
   'olivia-gradient': 'linear(to-br, #F3119B, #B22093)',
   'transparent-bg': 'rgba(255, 255, 255, 0.2)',
   olivia: {
+    300: '#F7BADF',
     400: '#E357AD',
     500: '#F3119B',
     700: '#B22093'

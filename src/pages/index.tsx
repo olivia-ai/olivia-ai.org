@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import Background from '../components/Background'
+import Features from '../components/heros/Features'
 import Footer from '../components/Footer'
 import Hero from '../components/heros/Heading'
 import NavigationBar from '../components/navigation-bar/Bar'
@@ -23,6 +24,7 @@ const Index = (): JSX.Element => {
     <Background />
     <NavigationBar />
     <Hero />
+    <Features />
     <Network />
     <Footer />
   </>

@@ -25,6 +25,7 @@ const Network = (): JSX.Element => {
   return <Center
     h={{ base: '40vh', md: '60vh' }}
     pb="20vh"
+    pt="10vh"
   >
     <motion.div
       ref={ref}
