@@ -1,4 +1,4 @@
-import { Center, CircularProgress, Image } from '@chakra-ui/react'
+import { Center, CircularProgress } from '@chakra-ui/react'
 
 import React from 'react'
 
