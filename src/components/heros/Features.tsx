@@ -92,10 +92,12 @@ const Features = (): JSX.Element => {
           width: '102%',
           height: 'auto',
           margin: '0 -2px -2px -2px',
+          p: 0
         }}
       />
 
       <Box
+        m="0"
         w="100%"
         minH="30vh"
         bgGradient="linear(to-b, #EA98CF, #C540A4)"

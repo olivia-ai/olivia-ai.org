@@ -23,6 +23,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
       <meta name="twitter:title" content="Olivia" />
       <meta name="twitter:description" content="💁‍♀️Your new best friend powered by deep learning, made in Switzerland." />
       <meta name="theme-color" content="#FBDFF0" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"></link>
     </Head>
     <Component {...pageProps} />
   </ChakraProvider>

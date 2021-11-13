@@ -3,8 +3,10 @@ import React from 'react'
 
 const HomeBG = (): JSX.Element => (
   <Flex 
+    pos="absolute"
     alignItems="center"
     height="100vh"
+    width="100%"
     filter="blur(50px)"
     zIndex="-100"
   >
@@ -22,10 +24,12 @@ const HomeBG = (): JSX.Element => (
 )
 
 const FooterBG = () => (
-  <Flex 
-    mt={{ base: '252vh', md: '135vh'}}
+  <Flex
+    pos="absolute"
+    bottom={0}
     alignItems="flex-end"
     height="35vh"
+    width="100%"
     filter="blur(40px)"
     zIndex="-100"
   >
@@ -45,7 +49,6 @@ const FooterBG = () => (
 const Background = (): JSX.Element => (
   <Flex 
     direction="column"
-    position="absolute"
     width="100%"
     pointerEvents="none"
   >

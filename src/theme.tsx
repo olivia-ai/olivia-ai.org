@@ -39,7 +39,7 @@ const Button = {
 
 const fonts = { 
   mono: '\'Menlo\', monospace',
-  body: 'Inter, -apple-system'
+  body: 'Inter, -apple-system, system-ui'
 }
 
 const colors = {
