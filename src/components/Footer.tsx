@@ -51,12 +51,12 @@ const Footer = (): JSX.Element => (
     alignItems="center"
     justifyContent="space-between"
     w="100%"
-    h={{ base: '60vh', md: '27.5vh' }}
+    maxH={{ base: '60vh', md: '33vh' }}
   >
     <Flex 
       direction={{ base: 'column', md: 'row' }}
       w="70%"
-      h={{ base: '40vh', md: 'auto' }}
+      h={{ base: '40%', md: 'auto' }}
       alignItems="flex-end"
       justifyContent="space-between"
     >
@@ -79,7 +79,8 @@ const Footer = (): JSX.Element => (
       direction="column"
       alignItems="center"
       m="0 10%"
-      p={{ base: '5vh 0', md: 'auto' }}
+      p={{ base: '2.5% 0', md: 'auto' }}
+      boxSizing="border-box"
     >
       <Heading 
         size="lg"

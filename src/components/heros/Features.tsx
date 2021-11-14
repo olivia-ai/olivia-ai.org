@@ -92,7 +92,7 @@ const Features = (): JSX.Element => {
           width: '102%',
           height: 'auto',
           margin: '0 -2px -2px -2px',
-          p: 0
+          pointerEvents: 'none'
         }}
       />
 
@@ -137,6 +137,7 @@ const Features = (): JSX.Element => {
         style={{
           width: '102%',
           margin: '-2px -2px 0 -2px',
+          pointerEvents: 'none'
         }}
       />
     </Flex>

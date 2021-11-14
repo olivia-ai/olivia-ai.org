@@ -39,22 +39,16 @@ const FooterBG = () => (
       style={{
         width: '100%',
         height: 'auto',
-        top: 0,
-        left: 0
       }}
     />
   </Flex>
 )
 
 const Background = (): JSX.Element => (
-  <Flex 
-    direction="column"
-    width="100%"
-    pointerEvents="none"
-  >
+  <>
     <HomeBG />
     <FooterBG />
-  </Flex>
+  </>
 )
 
 export default Background
